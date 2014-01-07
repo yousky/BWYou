@@ -1,0 +1,10 @@
+Connector/Net 5.0.8  Release Notes
+------------------------------------
+
+Welcome to the release notes for Connector/Net 5.0.8
+
+Important Changes
+---------------------
+
+There are no major changes in this version.  Please see the changelog for the list of bugs fixed.
+

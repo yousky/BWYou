@@ -1,0 +1,102 @@
+﻿namespace SampleTest
+{
+    partial class frmClient
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.lsvMessage = new BWYou.Control.ListViewBase();
+            this.btnTestEnd = new System.Windows.Forms.Button();
+            this.btnTestStart = new System.Windows.Forms.Button();
+            this.btnSendStart = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // lsvMessage
+            // 
+            this.lsvMessage.DateTimeFormat = "HH:mm:ss";
+            this.lsvMessage.ItemsMaxCount = 100;
+            this.lsvMessage.Location = new System.Drawing.Point(12, 12);
+            this.lsvMessage.Name = "lsvMessage";
+            this.lsvMessage.ProbBackColor = System.Drawing.Color.GreenYellow;
+            this.lsvMessage.ProbForeColor = System.Drawing.Color.Red;
+            this.lsvMessage.ProbPriority = BWYou.Base.MessagePriority.Debug;
+            this.lsvMessage.Size = new System.Drawing.Size(760, 192);
+            this.lsvMessage.TabIndex = 1;
+            // 
+            // btnTestEnd
+            // 
+            this.btnTestEnd.Location = new System.Drawing.Point(12, 327);
+            this.btnTestEnd.Name = "btnTestEnd";
+            this.btnTestEnd.Size = new System.Drawing.Size(165, 23);
+            this.btnTestEnd.TabIndex = 77;
+            this.btnTestEnd.Text = "테스트 종료";
+            this.btnTestEnd.UseVisualStyleBackColor = true;
+            this.btnTestEnd.Click += new System.EventHandler(this.btnTestEnd_Click);
+            // 
+            // btnTestStart
+            // 
+            this.btnTestStart.Location = new System.Drawing.Point(12, 300);
+            this.btnTestStart.Name = "btnTestStart";
+            this.btnTestStart.Size = new System.Drawing.Size(165, 23);
+            this.btnTestStart.TabIndex = 76;
+            this.btnTestStart.Text = "테스트 시작";
+            this.btnTestStart.UseVisualStyleBackColor = true;
+            this.btnTestStart.Click += new System.EventHandler(this.btnTestStart_Click);
+            // 
+            // btnSendStart
+            // 
+            this.btnSendStart.Location = new System.Drawing.Point(183, 300);
+            this.btnSendStart.Name = "btnSendStart";
+            this.btnSendStart.Size = new System.Drawing.Size(165, 23);
+            this.btnSendStart.TabIndex = 76;
+            this.btnSendStart.Text = "전송 시작";
+            this.btnSendStart.UseVisualStyleBackColor = true;
+            this.btnSendStart.Click += new System.EventHandler(this.btnSendStart_Click);
+            // 
+            // frmClient
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(784, 362);
+            this.Controls.Add(this.btnTestEnd);
+            this.Controls.Add(this.btnSendStart);
+            this.Controls.Add(this.btnTestStart);
+            this.Controls.Add(this.lsvMessage);
+            this.Name = "frmClient";
+            this.Text = "frmClient";
+            this.Load += new System.EventHandler(this.frmClient_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private BWYou.Control.ListViewBase lsvMessage;
+        private System.Windows.Forms.Button btnTestEnd;
+        private System.Windows.Forms.Button btnTestStart;
+        private System.Windows.Forms.Button btnSendStart;
+    }
+}

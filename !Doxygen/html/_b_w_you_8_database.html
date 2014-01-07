@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>BWYou: BWYou.Database</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">BWYou
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- 다음에 의해 생성됨 :  Doxygen 1.7.6.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>메인&#160;페이지</span></a></li>
+      <li class="current"><a href="pages.html"><span>관련된&#160;페이지</span></a></li>
+      <li><a href="namespaces.html"><span>패키지</span></a></li>
+      <li><a href="annotated.html"><span>클래스</span></a></li>
+      <li><a href="files.html"><span>파일들</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title"><a class="el" href="namespace_b_w_you_1_1_database.html">BWYou.Database</a> </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h2><a class="anchor" id="developer"></a>
+개발자</h2>
+<ul>
+<li>You </li>
+</ul>
+<h2><a class="anchor" id="info"></a>
+개발목적</h2>
+<ul>
+<li>Database 관련 작업을 하나로 묶어 유지보수가 간단해지도록 하기 위함.</li>
+<li>여러 Database와 동일한 방식으로 작업이 가능하도록 하기 위함. </li>
+</ul>
+<h2><a class="anchor" id="advenced"></a>
+추가정보</h2>
+<ul>
+<li>Version : 1.1.0.0</li>
+<li>Last Updated : 2012.01.16<ol type="a">
+<li>단독 프로젝트로 독립</li>
+<li>mysql-connector-net-5.0.9-noinstall dll 추가</li>
+</ol>
+</li>
+<li>Error 발생시 : throw 발생.</li>
+<li>구현 사항<ol type="a">
+<li>Database3 : DBFactory의 업그레이드<ol type="i">
+<li>MSSQL, Oracle, MySQL 구현<ol type="A">
+<li>Open : 명시적 열기</li>
+<li>Close : 명시적 닫기</li>
+<li>Execute : 쿼리 실행</li>
+<li>Query : 일반 셀렉트 쿼리 실행(셀렉트 최적화). 일반 셀렉트시 추천!</li>
+<li>SelectQr : 일반 셀렉트 쿼리 실행(Dataset방식 이용)</li>
+<li>DBFParameter : 파라메터 설정</li>
+<li>Transaction : BeginTransaction, RollbackTransaction, CommitTransaction 구현</li>
+<li>연결 상태 및 커맨드 설정 추가 구현</li>
+</ol>
+</li>
+<li>파라메터 이용 가능</li>
+<li>DbCommand, DbConnection을 드러내어 직접 조종 가능하며, DB종류를 재확인 가능하도록 처리</li>
+<li>Error 발생시 throw 발생 및 LastError에 에러메세지 저장.</li>
+</ol>
+</li>
+<li>DBFactoryNaked 구현</li>
+</ol>
+</li>
+</ul>
+<h2><a class="anchor" id="explain"></a>
+설명</h2>
+<ul>
+<li>Database3 클래스를 이용하여 Database 관련 작업 호환성 강화</li>
+<li>DBFactory와 DBFactoryNaked, Database2의 3가지 클래스를 추가로 가지고 있지만 직접적인 사용 금지. 하위 호환을 위하여 남겨둠.</li>
+</ul>
+<h2><a class="anchor" id="Database3"></a>
+Database3</h2>
+<ul>
+<li>Database 종류와 상관없이 범용적인 Database 클래스로 사용하기 위함</li>
+<li>DBFactoryNaked를 이용함.</li>
+<li>DBFactory를 참고하여 파라메터 사용과 기능 추가에 유리하도록 기능 향상.</li>
+<li>비연결 지향. DB 자동 Open. Close</li>
+</ul>
+<ul>
+<li>사용예) <div class="fragment"><pre class="fragment">        <span class="keyword">static</span> <a class="code" href="namespace_b_w_you_1_1_database.html#ae0aaf39ef11ab1562cb50a811672881b" title="DB 종류 설정">DBname</a> _setDBName = <a class="code" href="namespace_b_w_you_1_1_database.html#ae0aaf39ef11ab1562cb50a811672881b" title="DB 종류 설정">DBname</a>.MSSQL;
+        <span class="keyword">static</span> <span class="keywordtype">string</span> _setDBString = <span class="stringliteral">&quot;SERVER=(local);UID=test;PWD=test;Database=test&quot;</span>;
+ 
+        Database3 db = <span class="keyword">new</span> Database3(_setDBName, _setDBString);               <span class="comment">// Database3형 객체 생성.</span>
+        DataTable dt = <span class="keyword">new</span> DataTable();                                         <span class="comment">// 기본 테이블 객체 생성.</span>
+
+        db.Open();                                                            <span class="comment">// DB 열기 : 대부분 열고, 닫을 필요 없이 그냥 쓰면 됨.</span>
+        db.Close();                                                           <span class="comment">// DB 닫기.</span>
+
+        db.Execute(<span class="stringliteral">&quot;create table addtest2 (id int, address varchar(30));&quot;</span>);   <span class="comment">// 결과 필요 없는 실행문 처리.</span>
+        <span class="keywordtype">string</span> query1 = <span class="stringliteral">&quot;Insert into addtest2 values (11,&#39;강원도 영월군&#39;)&quot;</span>;
+        <span class="keywordtype">string</span> query2 = <span class="stringliteral">&quot;Insert into addtest2 values (22,&#39;강릉시 영등포구&#39;)&quot;</span>;
+        db.Execute(query1);
+        db.Execute(query2);
+
+        db.Query(dt, <span class="stringliteral">&quot;Select * from addtest2;&quot;</span>);                              <span class="comment">// 결과를 테이블로 주는 쿼리 실행. Datareader 이용. 빠름.</span>
+        db.SelectQr(dt, <span class="stringliteral">&quot;Select * from addtest2;&quot;</span>)                            <span class="comment">// Query()와 동일한 기능이지만 DataAdapter 이용. 약간 느림.</span>
+        dataGridView1.DataSource = dt;                                          <span class="comment">// 결과 테이블 뿌려주기. DataGridView 객체 필요.</span>
+
+        <span class="keywordtype">string</span> query = <span class="stringliteral">&quot;Insert into addtest2 values (@id,@address)&quot;</span>;
+        DbParameter para1 = db.DBFParameter(<span class="stringliteral">&quot;@id&quot;</span>, DbType.Int16, 10, <span class="stringliteral">&quot;55&quot;</span>);                       <span class="comment">// 파라메터1 설정</span>
+        DbParameter para2 = db.DBFParameter(<span class="stringliteral">&quot;@address&quot;</span>, DbType.String, 30, <span class="stringliteral">&quot;광주시 파라메터&quot;</span>);    <span class="comment">// 파라메터2 설정</span>
+        DbParameter[] paras = { para1, para2 };                                                     <span class="comment">// 파라메터 배열 설정</span>
+        db.Query(dt, query, paras);                                                               <span class="comment">// 파라메터 이용 쿼리</span>
+</pre></div></li>
+</ul>
+<h2><a class="anchor" id="DB"></a>
+DB별 특징</h2>
+<ul>
+<li>MSSQL의 경우 각 문장의 끝에 ';'을 붙이더라도 문제 없는데 반해 Oracle에서는 문제가 날 경우가 있음.</li>
+<li>파라메터설정이 틀림 MSSQL - @XXXX, Oracle - :XXXX, MySQL - ?XXXX 형태</li>
+<li>DB별 내장함수와 타입의 차이로 인해 쿼리문 설정시 주의해야 함.</li>
+</ul>
+<h2><a class="anchor" id="Namespace"></a>
+네임스페이스</h2>
+<ul>
+<li>System.Data : DataSet, DataTable 등을 사용하기 위함. Query(), SelectQr() 사용시 필수.</li>
+<li>System.Data.Common : DbParameter 등을 사용하기 위함. DBFParameter() 사용시 필수. </li>
+</ul>
+</div></div><!-- contents -->
+
+
+<hr class="footer"/><address class="footer"><small>
+생성시간 : 월 1월 16 2012 15:23:29, 프로젝트명 : BWYou, 생성자 :  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

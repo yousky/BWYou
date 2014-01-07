@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BWYou</name>
+    </assembly>
+    <members>
+        <member name="T:BWYou.BWYou">
+            <summary>
+            메인페이지용
+            </summary>
+        </member>
+    </members>
+</doc>

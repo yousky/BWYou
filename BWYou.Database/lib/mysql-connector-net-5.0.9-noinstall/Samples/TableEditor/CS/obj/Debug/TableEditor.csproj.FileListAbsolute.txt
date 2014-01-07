@@ -1,0 +1,8 @@
+D:\Sync\프로그래머\!참고\mysql-connector-net-5.0.9-noinstall\Samples\TableEditor\CS\bin\Debug\TableEditor.exe
+D:\Sync\프로그래머\!참고\mysql-connector-net-5.0.9-noinstall\Samples\TableEditor\CS\bin\Debug\TableEditor.pdb
+D:\Sync\프로그래머\!참고\mysql-connector-net-5.0.9-noinstall\Samples\TableEditor\CS\bin\Debug\MySql.Data.dll
+D:\Sync\프로그래머\!참고\mysql-connector-net-5.0.9-noinstall\Samples\TableEditor\CS\obj\Debug\ResolveAssemblyReference.cache
+D:\Sync\프로그래머\!참고\mysql-connector-net-5.0.9-noinstall\Samples\TableEditor\CS\obj\Debug\TableEditor.Form1.resources
+D:\Sync\프로그래머\!참고\mysql-connector-net-5.0.9-noinstall\Samples\TableEditor\CS\obj\Debug\TableEditor.csproj.GenerateResource.Cache
+D:\Sync\프로그래머\!참고\mysql-connector-net-5.0.9-noinstall\Samples\TableEditor\CS\obj\Debug\TableEditor.exe
+D:\Sync\프로그래머\!참고\mysql-connector-net-5.0.9-noinstall\Samples\TableEditor\CS\obj\Debug\TableEditor.pdb

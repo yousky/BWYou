@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="SharpSSH">
+</Property><Property Name="솔루션 파일" Value="D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\SharpSSH.sln">
+</Property><Property Name="사용자 옵션 파일" Value="D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\SharpSSH.suo">
+</Property><Property Name="Date" Value="2011년 10월 20일 목요일">
+</Property><Property Name="Time" Value="오전 9:58">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="SharpSSH.sln" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH.sln(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="" Source="SharpSSH.suo" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH.suo(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\SharpSSH.csproj" Description="프로젝트 파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\SharpSSH.csproj(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\SharpSSH.csproj.user" Description="프로젝트 사용자 파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\SharpSSH.csproj.user(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\AssemblyInfo.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\AssemblyInfo.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\ITransferProtocol.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\ITransferProtocol.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\Exception.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\Exception.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\io\File.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\io\File.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\io\FileInputStream.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\io\FileInputStream.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\io\FileOutputStream.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\io\FileOutputStream.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\io\InputStream.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\io\InputStream.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\io\InputStreamWrapper.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\io\InputStreamWrapper.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\io\JStream.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\io\JStream.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\io\OutputStream.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\io\OutputStream.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\lang\Class.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\lang\Class.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\lang\Integer.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\lang\Integer.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\lang\Runnable.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\lang\Runnable.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\lang\StringBuffer.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\lang\StringBuffer.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\lang\Thread.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\lang\Thread.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\net\InetAddress.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\net\InetAddress.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\net\ServerSocket.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\net\ServerSocket.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\net\Socket.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\net\Socket.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\Platform.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\Platform.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\RuntimeException.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\RuntimeException.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\String.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\String.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\System.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\System.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\util\Arrays.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\util\Arrays.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\util\Enumeration.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\util\Enumeration.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\util\Hashtable.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\util\Hashtable.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\util\JavaString.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\util\JavaString.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\java\util\Vector.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\java\util\Vector.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\Buffer.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\Buffer.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\Channel.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\Channel.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\Channel.old.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\Channel.old.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\ChannelDirectTCPIP.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\ChannelDirectTCPIP.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\ChannelExec.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\ChannelExec.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\ChannelForwardedTCPIP.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\ChannelForwardedTCPIP.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\ChannelSession.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\ChannelSession.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\ChannelSftp.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\ChannelSftp.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\ChannelSftpStreamGet.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\ChannelSftpStreamGet.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\ChannelSftpStreamPut.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\ChannelSftpStreamPut.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\ChannelShell.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\ChannelShell.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\ChannelSubsystem.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\ChannelSubsystem.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\ChannelX11.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\ChannelX11.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\Cipher.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\Cipher.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\Compression.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\Compression.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\DH.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\DH.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\DHG1.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\DHG1.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\DHGEX.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\DHGEX.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\examples\AES.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\examples\AES.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\examples\ChangePassphrase.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\examples\ChangePassphrase.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\examples\KeyGen.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\examples\KeyGen.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\examples\KnownHosts.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\examples\KnownHosts.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\examples\PortForwardingL.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\examples\PortForwardingL.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\examples\PortForwardingR.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\examples\PortForwardingR.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\examples\ScpFrom.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\examples\ScpFrom.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\examples\ScpTo.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\examples\ScpTo.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\examples\Sftp.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\examples\Sftp.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\examples\Shell.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\examples\Shell.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\examples\StreamForwarding.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\examples\StreamForwarding.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\examples\UserAuthPubKey.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\examples\UserAuthPubKey.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\examples\util\ConsoleProgressBar.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\examples\util\ConsoleProgressBar.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\examples\util\InputForm.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\examples\util\InputForm.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\ForwardedTCPIPDaemon.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\ForwardedTCPIPDaemon.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\HASH.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\HASH.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\HostKey.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\HostKey.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\HostKeyRepository.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\HostKeyRepository.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\Identity.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\Identity.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\IdentityFile.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\IdentityFile.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\IO.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\IO.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\jce\AES128CBC.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\jce\AES128CBC.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\jce\BlowfishCBC.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\jce\BlowfishCBC.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\jce\DH.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\jce\DH.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\jce\HMACMD5.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\jce\HMACMD5.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\jce\HMACMD596.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\jce\HMACMD596.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\jce\HMACSHA1.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\jce\HMACSHA1.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\jce\HMACSHA196.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\jce\HMACSHA196.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\jce\KeyPairGenDSA.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\jce\KeyPairGenDSA.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\jce\KeyPairGenRSA.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\jce\KeyPairGenRSA.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\jce\MD5.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\jce\MD5.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\jce\Random.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\jce\Random.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\jce\SHA1.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\jce\SHA1.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\jce\SignatureDSA.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\jce\SignatureDSA.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\jce\SignatureRSA.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\jce\SignatureRSA.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\jce\TripleDESCBC.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\jce\TripleDESCBC.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\JSch.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\JSch.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\JSchAuthCancelException.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\JSchAuthCancelException.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\JSchException.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\JSchException.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\JSchPartialAuthException.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\JSchPartialAuthException.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\KeyExchange.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\KeyExchange.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\KeyPair.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\KeyPair.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\KeyPairDSA.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\KeyPairDSA.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\KeyPairGenDSA.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\KeyPairGenDSA.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\KeyPairGenRSA.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\KeyPairGenRSA.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\KeyPairRSA.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\KeyPairRSA.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\KnownHosts.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\KnownHosts.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\MAC.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\MAC.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\Packet.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\Packet.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\PortWatcher.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\PortWatcher.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\Proxy.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\Proxy.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\ProxyHTTP.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\ProxyHTTP.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\Random.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\Random.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\Request.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\Request.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\RequestExec.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\RequestExec.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\RequestPtyReq.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\RequestPtyReq.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\RequestSftp.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\RequestSftp.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\RequestShell.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\RequestShell.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\RequestSignal.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\RequestSignal.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\RequestSubsystem.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\RequestSubsystem.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\RequestWindowChange.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\RequestWindowChange.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\RequestX11.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\RequestX11.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\ServerSocketFactory.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\ServerSocketFactory.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\Session.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\Session.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\SftpATTRS.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\SftpATTRS.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\SftpException.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\SftpException.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\SftpProgressMonitor.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\SftpProgressMonitor.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\SignatureDSA.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\SignatureDSA.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\SignatureRSA.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\SignatureRSA.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\SocketFactory.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\SocketFactory.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\UIKeyboardInteractive.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\UIKeyboardInteractive.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\UserAuth.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\UserAuth.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\UserAuthKeyboardInteractive.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\UserAuthKeyboardInteractive.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\UserAuthNone.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\UserAuthNone.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\UserAuthPassword.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\UserAuthPassword.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\UserAuthPublicKey.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\UserAuthPublicKey.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\UserInfo.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\UserInfo.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\Util.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\Util.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\Scp.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\Scp.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\Sftp.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\Sftp.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\SshBase.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\SshBase.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\SshExe.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\SshExe.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\SshShell.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\SshShell.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\SshStream.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\SshStream.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\SshTransferException.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\SshTransferException.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\SshTransferProtocolBase.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\SshTransferProtocolBase.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\Streams\CombinedStream.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\Streams\CombinedStream.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\Streams\InputStream.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\Streams\InputStream.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\Streams\OutputStream.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\Streams\OutputStream.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\Streams\PipedInputStream.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\Streams\PipedInputStream.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\Streams\PipedOutputStream.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\Streams\PipedOutputStream.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\Streams\ProtectedConsoleStream.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\Streams\ProtectedConsoleStream.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\App.ico" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\App.ico(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\examples\README.txt" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\examples\README.txt(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\jsch\examples\util\InputForm.resx" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\SharpSSH\jsch\examples\util\InputForm.resx(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\SharpSSH.csproj" Description="프로젝트를 변환했습니다.">
+</Event><Event ErrorLevel="3" Project="SharpSSH" Source="SharpSSH\SharpSSH.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\Examples.csproj" Description="프로젝트 파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\Examples.csproj(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\Examples.csproj.user" Description="프로젝트 사용자 파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\Examples.csproj.user(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\AssemblyInfo.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\AssemblyInfo.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\ConsoleProgressBar.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\ConsoleProgressBar.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\jsch_samples\AES.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\jsch_samples\AES.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\jsch_samples\ChangePassphrase.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\jsch_samples\ChangePassphrase.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\jsch_samples\KeyGen.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\jsch_samples\KeyGen.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\jsch_samples\KnownHosts.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\jsch_samples\KnownHosts.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\jsch_samples\PortForwardingL.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\jsch_samples\PortForwardingL.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\jsch_samples\PortForwardingR.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\jsch_samples\PortForwardingR.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\jsch_samples\ScpFrom.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\jsch_samples\ScpFrom.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\jsch_samples\ScpTo.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\jsch_samples\ScpTo.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\jsch_samples\Sftp.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\jsch_samples\Sftp.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\jsch_samples\Shell.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\jsch_samples\Shell.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\jsch_samples\StreamForwarding.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\jsch_samples\StreamForwarding.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\jsch_samples\Subsystem.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\jsch_samples\Subsystem.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\jsch_samples\UserAuthPubKey.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\jsch_samples\UserAuthPubKey.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\jsch_samples\util\ConsoleProgressBar.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\jsch_samples\util\ConsoleProgressBar.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\jsch_samples\util\InputForm.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\jsch_samples\util\InputForm.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\jsch_samples\ViaHTTP.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\jsch_samples\ViaHTTP.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\sharpSshTest.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\sharpSshTest.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\sharpssh_samples\SshExeTest.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\sharpssh_samples\SshExeTest.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\sharpssh_samples\SshExpectTest.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\sharpssh_samples\SshExpectTest.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\sharpssh_samples\SshFileTransferTest.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\sharpssh_samples\SshFileTransferTest.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\sharpssh_samples\SshShellTest.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\sharpssh_samples\SshShellTest.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\sharpssh_samples\Util.cs" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\sharpssh_samples\Util.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\App.ico" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\App.ico(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\jsch_samples\README.txt" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\jsch_samples\README.txt(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\jsch_samples\util\InputForm.resx" Description="파일을 D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13.src\Backup\Examples\jsch_samples\util\InputForm.resx(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\Examples.csproj" Description="프로젝트를 변환했습니다.">
+</Event><Event ErrorLevel="3" Project="Examples" Source="Examples\Examples.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="SharpSSH.sln" Description="솔루션을 변환했습니다.">
+</Event><Event ErrorLevel="3" Project="" Source="SharpSSH.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="SharpSSH" Source="SharpSSH\SharpSSH.csproj" Description="검사 완료: 프로젝트 파일을 업그레이드할 필요가 없습니다.">
+</Event><Event ErrorLevel="0" Project="Examples" Source="Examples\Examples.csproj" Description="검사 완료: 프로젝트 파일을 업그레이드할 필요가 없습니다.">
+</Event></UpgradeLog>

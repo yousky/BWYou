@@ -1,0 +1,15 @@
+C:\Sync\프로젝트\!You\BWYou\BWYou.Web\obj\Debug\BWYou.Web.csprojResolveAssemblyReference.cache
+C:\Sync\프로젝트\!You\BWYou\BWYou.Web\bin\Debug\BWYou.Web.dll
+C:\Sync\프로젝트\!You\BWYou\BWYou.Web\bin\Debug\BWYou.Web.pdb
+C:\Sync\프로젝트\!You\BWYou\BWYou.Web\bin\Debug\BWYou.Base.dll
+C:\Sync\프로젝트\!You\BWYou\BWYou.Web\bin\Debug\Newtonsoft.Json.dll
+C:\Sync\프로젝트\!You\BWYou\BWYou.Web\bin\Debug\NLog.dll
+C:\Sync\프로젝트\!You\BWYou\BWYou.Web\bin\Debug\SmartThreadPool.dll
+C:\Sync\프로젝트\!You\BWYou\BWYou.Web\bin\Debug\BWYou.Base.pdb
+C:\Sync\프로젝트\!You\BWYou\BWYou.Web\bin\Debug\BWYou.Base.xml
+C:\Sync\프로젝트\!You\BWYou\BWYou.Web\bin\Debug\Newtonsoft.Json.pdb
+C:\Sync\프로젝트\!You\BWYou\BWYou.Web\bin\Debug\Newtonsoft.Json.xml
+C:\Sync\프로젝트\!You\BWYou\BWYou.Web\bin\Debug\NLog.xml
+C:\Sync\프로젝트\!You\BWYou\BWYou.Web\bin\Debug\SmartThreadPool.pdb
+C:\Sync\프로젝트\!You\BWYou\BWYou.Web\obj\Debug\BWYou.Web.dll
+C:\Sync\프로젝트\!You\BWYou\BWYou.Web\obj\Debug\BWYou.Web.pdb

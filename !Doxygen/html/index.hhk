@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a2a6607480172aebc7fe00cec80bb3777"><param name="Name" value="BeginTransaction"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_b_w_you.html"><param name="Name" value="BWYou"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_b_w_you_8_compress.html"><param name="Name" value="BWYou.Compress"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_b_w_you_8_crypt.html"><param name="Name" value="BWYou.Crypt"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_b_w_you_8_database.html"><param name="Name" value="BWYou.Database"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_b_w_you_8_network.html"><param name="Name" value="BWYou.Network"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_b_w_you_8_transfer.html"><param name="Name" value="BWYou.Transfer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_b_w_you.html"><param name="Name" value="BWYou::BWYou"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_compress.html"><param name="Name" value="BWYou::Compress"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_compress_1_1_z_i_p.html"><param name="Name" value="BWYou::Compress::ZIP"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_compress_1_1_z_i_p.html#a90c63fe691efe9052c6d6d47ed0b82da"><param name="Name" value="Compress"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_compress_1_1_z_i_p.html#aab82821ad0f46aa3d5e8290b71b958a5"><param name="Name" value="DeCompress"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_compress_1_1_z_i_p.html#af16479e1cf99875569b778039f9a3013"><param name="Name" value="fcEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_compress_1_1_z_i_p.html#af298cc9696e90807762d0c2a927772bc"><param name="Name" value="FileCompressEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_compress_1_1_z_i_p.html#a2a0495446da51bfcf50da83b4a2edbed"><param name="Name" value="OnCompressProgressEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_compress_1_1_z_i_p.html#ab9a923e939d08e1d3ca7b05e03fe5c76"><param name="Name" value="StrLastMessage"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html"><param name="Name" value="BWYou::Crypt"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a3f967d3ddffa3f5e09bd8a72950fd265"><param name="Name" value="ClassesRoot"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#aa0921510675f3629e2882a3bceef1d48"><param name="Name" value="ConverDecryptFile2EncrypteFile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a2f01bc65dac28a7b7b3426abf8d9550c"><param name="Name" value="ConverEncrypteFile2DecryptFile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#afca82f5cdf74f27be1de9d48789dd341"><param name="Name" value="Create"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a3f967d3ddffa3f5e09bd8a72950fd265"><param name="Name" value="CurrentConfig"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a3f967d3ddffa3f5e09bd8a72950fd265"><param name="Name" value="CurrentUser"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#abf6f150ea3764fec3d08babb0ba56e8d"><param name="Name" value="Decrypt"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a64fff17f1ff74a717a9ee5b109a044a9"><param name="Name" value="des"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a3f967d3ddffa3f5e09bd8a72950fd265"><param name="Name" value="DynData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#aaae23108050a1cb0874cd545d4d0e1ee"><param name="Name" value="Encrypt"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a209fb148fe0b8936d19d8ec12efe7433"><param name="Name" value="EncryptAndWriteFile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a388395bb53ce2416e1f5d0812d3ba1f1"><param name="Name" value="InAndOut"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#adbd27eca37b8170810092c8d0033041d"><param name="Name" value="LastError"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a3f967d3ddffa3f5e09bd8a72950fd265"><param name="Name" value="LocalMachine"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#afca82f5cdf74f27be1de9d48789dd341"><param name="Name" value="OpenOrCreate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a3f967d3ddffa3f5e09bd8a72950fd265"><param name="Name" value="PerformanceData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a7b93340fe7fe88f54d52b7fd5aacf934"><param name="Name" value="ReadFile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a30035f4f9edbee9a4a5a62e0b0721cc3"><param name="Name" value="ReadFileAndDecrypt"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a903afda33c3e2d7039ac4d31ab7816c5"><param name="Name" value="ReadRegistry"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a3f967d3ddffa3f5e09bd8a72950fd265"><param name="Name" value="Users"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a21957f07e596923f44d9f4e826854449"><param name="Name" value="WriteFile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a0d8f4cd5356eed973d0d364aec53a833"><param name="Name" value="WriteRegistry"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_b_w_you_1_1_database.html"><param name="Name" value="BWYou::Database"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html"><param name="Name" value="BWYou::Database::Database3"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a2a6607480172aebc7fe00cec80bb3777"><param name="Name" value="BeginTransaction"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#ab74323bdb708b3f7c3e0a5e1ee44ae79"><param name="Name" value="Close"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a404836506d1016115256ee226cb9cce8"><param name="Name" value="CommitTransaction"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a7fe13718f14c2fe671d9f0024f3b5a9e"><param name="Name" value="Database3"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a5dc792a95b4fe307728e61c964a734ce"><param name="Name" value="DBFParameter"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a561f83f0594d467ecd4aad6501751fc9"><param name="Name" value="Execute"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#af0bbf80af00c111f156f37f9b2566873"><param name="Name" value="GetDBname"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#afba1892449063f4574b3542b79613224"><param name="Name" value="LastError"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a1d814274de706da35ce80a7bc2a2ef02"><param name="Name" value="Open"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#ad0577e61e9ab35e3e66f750cd7adf511"><param name="Name" value="Query"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a0eeacb46655ab6ddac55d8835f7410d2"><param name="Name" value="ReturnCommand"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a778d4b82342c3e238ba47edd0a4bc37f"><param name="Name" value="ReturnConnection"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a65d05f90e63b43b75a0c4cfd72218c5e"><param name="Name" value="RollbackTransaction"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a15be57d33dc1e49d6e19cd8475c0bfef"><param name="Name" value="SelectQr"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#ae598eb0f12dea50e0ae7065aadd791f8"><param name="Name" value="SetCommand"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#ad88d03c318886e106a9bb422de6931e8"><param name="Name" value="State"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_d_b_factory_naked.html"><param name="Name" value="BWYou::Database::DBFactoryNaked"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_d_b_factory_naked.html#acf108e53d9150f407ebd9fcdce659186"><param name="Name" value="getDB"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_b_w_you_1_1_database.html"><param name="Name" value="BWYou::Database"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_b_w_you_1_1_database.html#ae0aaf39ef11ab1562cb50a811672881b"><param name="Name" value="MSSQL"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_b_w_you_1_1_database.html#ae0aaf39ef11ab1562cb50a811672881b"><param name="Name" value="MySQL"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_b_w_you_1_1_database.html#ae0aaf39ef11ab1562cb50a811672881b"><param name="Name" value="MySQL_noInstall"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_b_w_you_1_1_database.html#ae0aaf39ef11ab1562cb50a811672881b"><param name="Name" value="Odbc"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_b_w_you_1_1_database.html#ae0aaf39ef11ab1562cb50a811672881b"><param name="Name" value="OleDb"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_b_w_you_1_1_database.html#ae0aaf39ef11ab1562cb50a811672881b"><param name="Name" value="Oracle"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_network.html"><param name="Name" value="BWYou::Network"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_network_1_1_mail.html"><param name="Name" value="BWYou::Network::Mail"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_network_1_1_mail.html#a67b1c8b96c407c64aeefae186b70e351"><param name="Name" value="LastError"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_network_1_1_mail.html#af0805726e791d2e73410397fec220747"><param name="Name" value="Mail"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_network_1_1_mail.html#ad13f6e92a508030ae2a29d2645f80ed9"><param name="Name" value="SendMail"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_network.html"><param name="Name" value="BWYou::Network"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_network.html#a24f09991b1b2b05712a11529f3765140"><param name="Name" value="FindMacAddress"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_network.html#aab534f9230f58090ffcd3d228f641512"><param name="Name" value="LastError"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer.html"><param name="Name" value="BWYou::Transfer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html"><param name="Name" value="BWYou::Transfer::SCP"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a029c6f611ed4123d2a418cea32b8e88c"><param name="Name" value="Close"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a27674c6a42cf6c5b065eb29e7be02300"><param name="Name" value="Connect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a80c07e92640c3ec3a99074ee45cbce51"><param name="Name" value="FileTransferEventY"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a9ef391b5aeb4da1bfa3c4bd2d0cece91"><param name="Name" value="ftEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a220dd91eb853706ae6dc4dbb61553a52"><param name="Name" value="IsConnected"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#ae1ac6823e49264012c46b72ea1d3fb39"><param name="Name" value="MkdirLocal"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#af5add6e664f40475eaf2032f00d1c212"><param name="Name" value="MkdirRemote"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a5a74f2c321e1b64912d16191fa4e6357"><param name="Name" value="OnTransferProgressEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a4dd1ff5aee940bb607e091174062b568"><param name="Name" value="Receive"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a925477f06906a2c83ca54fe4b92eb944"><param name="Name" value="SCP"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#af7426af0487d7931e15a3c3503dd4e57"><param name="Name" value="Send"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a3f967d3ddffa3f5e09bd8a72950fd265"><param name="Name" value="ClassesRoot"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#ab74323bdb708b3f7c3e0a5e1ee44ae79"><param name="Name" value="Close"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#ab74323bdb708b3f7c3e0a5e1ee44ae79"><param name="Name" value="BWYou::Database::Database3"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a029c6f611ed4123d2a418cea32b8e88c"><param name="Name" value="BWYou::Transfer::SCP"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a404836506d1016115256ee226cb9cce8"><param name="Name" value="CommitTransaction"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_compress_1_1_z_i_p.html#a90c63fe691efe9052c6d6d47ed0b82da"><param name="Name" value="Compress"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a27674c6a42cf6c5b065eb29e7be02300"><param name="Name" value="Connect"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#aa0921510675f3629e2882a3bceef1d48"><param name="Name" value="ConverDecryptFile2EncrypteFile"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a2f01bc65dac28a7b7b3426abf8d9550c"><param name="Name" value="ConverEncrypteFile2DecryptFile"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#afca82f5cdf74f27be1de9d48789dd341"><param name="Name" value="Create"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a3f967d3ddffa3f5e09bd8a72950fd265"><param name="Name" value="CurrentConfig"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a3f967d3ddffa3f5e09bd8a72950fd265"><param name="Name" value="CurrentUser"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a7fe13718f14c2fe671d9f0024f3b5a9e"><param name="Name" value="Database3"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a5dc792a95b4fe307728e61c964a734ce"><param name="Name" value="DBFParameter"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_compress_1_1_z_i_p.html#aab82821ad0f46aa3d5e8290b71b958a5"><param name="Name" value="DeCompress"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#abf6f150ea3764fec3d08babb0ba56e8d"><param name="Name" value="Decrypt"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a64fff17f1ff74a717a9ee5b109a044a9"><param name="Name" value="des"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a3f967d3ddffa3f5e09bd8a72950fd265"><param name="Name" value="DynData"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#aaae23108050a1cb0874cd545d4d0e1ee"><param name="Name" value="Encrypt"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a209fb148fe0b8936d19d8ec12efe7433"><param name="Name" value="EncryptAndWriteFile"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a561f83f0594d467ecd4aad6501751fc9"><param name="Name" value="Execute"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_compress_1_1_z_i_p.html#af16479e1cf99875569b778039f9a3013"><param name="Name" value="fcEvent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_compress_1_1_z_i_p.html#af298cc9696e90807762d0c2a927772bc"><param name="Name" value="FileCompressEvent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a80c07e92640c3ec3a99074ee45cbce51"><param name="Name" value="FileTransferEventY"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_network.html#a24f09991b1b2b05712a11529f3765140"><param name="Name" value="FindMacAddress"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a9ef391b5aeb4da1bfa3c4bd2d0cece91"><param name="Name" value="ftEvent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_d_b_factory_naked.html#acf108e53d9150f407ebd9fcdce659186"><param name="Name" value="getDB"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#af0bbf80af00c111f156f37f9b2566873"><param name="Name" value="GetDBname"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a388395bb53ce2416e1f5d0812d3ba1f1"><param name="Name" value="InAndOut"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a220dd91eb853706ae6dc4dbb61553a52"><param name="Name" value="IsConnected"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#adbd27eca37b8170810092c8d0033041d"><param name="Name" value="LastError"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#adbd27eca37b8170810092c8d0033041d"><param name="Name" value="BWYou::Crypt"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#afba1892449063f4574b3542b79613224"><param name="Name" value="BWYou::Database::Database3"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_network.html#aab534f9230f58090ffcd3d228f641512"><param name="Name" value="BWYou::Network"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_network_1_1_mail.html#a67b1c8b96c407c64aeefae186b70e351"><param name="Name" value="BWYou::Network::Mail"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a3f967d3ddffa3f5e09bd8a72950fd265"><param name="Name" value="LocalMachine"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_network_1_1_mail.html#af0805726e791d2e73410397fec220747"><param name="Name" value="Mail"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#ae1ac6823e49264012c46b72ea1d3fb39"><param name="Name" value="MkdirLocal"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#af5add6e664f40475eaf2032f00d1c212"><param name="Name" value="MkdirRemote"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_b_w_you_1_1_database.html#ae0aaf39ef11ab1562cb50a811672881b"><param name="Name" value="MSSQL"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_b_w_you_1_1_database.html#ae0aaf39ef11ab1562cb50a811672881b"><param name="Name" value="MySQL"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_b_w_you_1_1_database.html#ae0aaf39ef11ab1562cb50a811672881b"><param name="Name" value="MySQL_noInstall"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_b_w_you_1_1_database.html#ae0aaf39ef11ab1562cb50a811672881b"><param name="Name" value="Odbc"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_b_w_you_1_1_database.html#ae0aaf39ef11ab1562cb50a811672881b"><param name="Name" value="OleDb"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_compress_1_1_z_i_p.html#a2a0495446da51bfcf50da83b4a2edbed"><param name="Name" value="OnCompressProgressEvent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a5a74f2c321e1b64912d16191fa4e6357"><param name="Name" value="OnTransferProgressEvent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a1d814274de706da35ce80a7bc2a2ef02"><param name="Name" value="Open"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#afca82f5cdf74f27be1de9d48789dd341"><param name="Name" value="OpenOrCreate"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_b_w_you_1_1_database.html#ae0aaf39ef11ab1562cb50a811672881b"><param name="Name" value="Oracle"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a3f967d3ddffa3f5e09bd8a72950fd265"><param name="Name" value="PerformanceData"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#ad0577e61e9ab35e3e66f750cd7adf511"><param name="Name" value="Query"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a7b93340fe7fe88f54d52b7fd5aacf934"><param name="Name" value="ReadFile"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a30035f4f9edbee9a4a5a62e0b0721cc3"><param name="Name" value="ReadFileAndDecrypt"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a903afda33c3e2d7039ac4d31ab7816c5"><param name="Name" value="ReadRegistry"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a4dd1ff5aee940bb607e091174062b568"><param name="Name" value="Receive"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a0eeacb46655ab6ddac55d8835f7410d2"><param name="Name" value="ReturnCommand"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a778d4b82342c3e238ba47edd0a4bc37f"><param name="Name" value="ReturnConnection"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a65d05f90e63b43b75a0c4cfd72218c5e"><param name="Name" value="RollbackTransaction"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a925477f06906a2c83ca54fe4b92eb944"><param name="Name" value="SCP"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a15be57d33dc1e49d6e19cd8475c0bfef"><param name="Name" value="SelectQr"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#af7426af0487d7931e15a3c3503dd4e57"><param name="Name" value="Send"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_network_1_1_mail.html#ad13f6e92a508030ae2a29d2645f80ed9"><param name="Name" value="SendMail"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#ae598eb0f12dea50e0ae7065aadd791f8"><param name="Name" value="SetCommand"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#ad88d03c318886e106a9bb422de6931e8"><param name="Name" value="State"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_compress_1_1_z_i_p.html#ab9a923e939d08e1d3ca7b05e03fe5c76"><param name="Name" value="StrLastMessage"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a3f967d3ddffa3f5e09bd8a72950fd265"><param name="Name" value="Users"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a21957f07e596923f44d9f4e826854449"><param name="Name" value="WriteFile"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_b_w_you_1_1_crypt.html#a0d8f4cd5356eed973d0d364aec53a833"><param name="Name" value="WriteRegistry"></OBJECT>
+</UL>
+</BODY>
+</HTML>

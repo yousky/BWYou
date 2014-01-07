@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="BWYou">
+</Property><Property Name="솔루션 파일" Value="D:\Sync\프로젝트\!You\BWYou_2010\BWYou.sln">
+</Property><Property Name="사용자 옵션 파일" Value="D:\Sync\프로젝트\!You\BWYou_2010\BWYou.suo">
+</Property><Property Name="Date" Value="2012년 11월 15일 목요일">
+</Property><Property Name="Time" Value="08:58">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="BWYou.sln" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.sln(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="" Source="BWYou.suo" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.suo(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou" Source="BWYou\BWYou.csproj" Description="프로젝트 파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou\BWYou.csproj(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou" Source="BWYou\BWYou.csproj.user" Description="프로젝트 사용자 파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou\BWYou.csproj.user(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou" Source="BWYou\BWYou.Crypt.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou\BWYou.Crypt.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou" Source="BWYou\BWYou.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou\BWYou.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou" Source="BWYou\BWYou.Network.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou\BWYou.Network.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou" Source="BWYou\Properties\AssemblyInfo.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou\Properties\AssemblyInfo.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou" Source="BWYou\BWYou.csproj" Description="프로젝트를 변환했습니다.">
+</Event><Event ErrorLevel="3" Project="BWYou" Source="BWYou\BWYou.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="SampleTest" Source="SampleTest\SampleTest.csproj" Description="프로젝트 파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\SampleTest\SampleTest.csproj(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SampleTest" Source="SampleTest\Common.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\SampleTest\Common.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SampleTest" Source="SampleTest\clsDatabase.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\SampleTest\clsDatabase.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SampleTest" Source="SampleTest\frmMain.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\SampleTest\frmMain.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SampleTest" Source="SampleTest\frmMain.Designer.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\SampleTest\frmMain.Designer.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SampleTest" Source="SampleTest\Program.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\SampleTest\Program.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SampleTest" Source="SampleTest\Properties\AssemblyInfo.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\SampleTest\Properties\AssemblyInfo.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SampleTest" Source="SampleTest\Properties\Resources.Designer.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\SampleTest\Properties\Resources.Designer.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SampleTest" Source="SampleTest\Properties\Settings.Designer.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\SampleTest\Properties\Settings.Designer.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SampleTest" Source="SampleTest\Properties\Settings.settings" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\SampleTest\Properties\Settings.settings(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SampleTest" Source="SampleTest\frmMain.resx" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\SampleTest\frmMain.resx(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SampleTest" Source="SampleTest\Properties\Resources.resx" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\SampleTest\Properties\Resources.resx(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="SampleTest" Source="SampleTest\SampleTest.csproj" Description="프로젝트를 변환했습니다.">
+</Event><Event ErrorLevel="3" Project="SampleTest" Source="SampleTest\SampleTest.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="BWYou.Compress" Source="BWYou.Compress\BWYou.Compress.csproj" Description="프로젝트 파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Compress\BWYou.Compress.csproj(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Compress" Source="BWYou.Compress\BWYou.Compress.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Compress\BWYou.Compress.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Compress" Source="BWYou.Compress\Properties\AssemblyInfo.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Compress\Properties\AssemblyInfo.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Compress" Source="BWYou.Compress\BWYou.Compress.csproj" Description="프로젝트를 변환했습니다.">
+</Event><Event ErrorLevel="3" Project="BWYou.Compress" Source="BWYou.Compress\BWYou.Compress.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="BWYou.Transfer" Source="BWYou.Transfer\BWYou.Transfer.csproj" Description="프로젝트 파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Transfer\BWYou.Transfer.csproj(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Transfer" Source="BWYou.Transfer\BWYou.Transfer.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Transfer\BWYou.Transfer.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Transfer" Source="BWYou.Transfer\Properties\AssemblyInfo.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Transfer\Properties\AssemblyInfo.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Transfer" Source="BWYou.Transfer\BWYou.Transfer.csproj" Description="프로젝트를 변환했습니다.">
+</Event><Event ErrorLevel="3" Project="BWYou.Transfer" Source="BWYou.Transfer\BWYou.Transfer.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="BWYou.Database" Source="BWYou.Database\BWYou.Database.csproj" Description="프로젝트 파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Database\BWYou.Database.csproj(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Database" Source="BWYou.Database\BWYou.Database.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Database\BWYou.Database.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Database" Source="BWYou.Database\Properties\AssemblyInfo.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Database\Properties\AssemblyInfo.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Database" Source="BWYou.Database\BWYou.Database.csproj" Description="프로젝트를 변환했습니다.">
+</Event><Event ErrorLevel="3" Project="BWYou.Database" Source="BWYou.Database\BWYou.Database.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="BWYou.Base" Source="BWYou.Base\BWYou.Base.csproj" Description="프로젝트 파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Base\BWYou.Base.csproj(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Base" Source="BWYou.Base\BWYou.Base.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Base\BWYou.Base.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Base" Source="BWYou.Base\ClassBase.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Base\ClassBase.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Base" Source="BWYou.Base\ClassWork.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Base\ClassWork.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Base" Source="BWYou.Base\MessageEventArgs.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Base\MessageEventArgs.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Base" Source="BWYou.Base\Properties\AssemblyInfo.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Base\Properties\AssemblyInfo.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Base" Source="BWYou.Base\ThreadBase.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Base\ThreadBase.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Base" Source="BWYou.Base\ThreadWhile.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Base\ThreadWhile.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Base" Source="BWYou.Base\WorkEventArgs.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Base\WorkEventArgs.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Base" Source="BWYou.Base\BWYou.Base.csproj" Description="프로젝트를 변환했습니다.">
+</Event><Event ErrorLevel="3" Project="BWYou.Base" Source="BWYou.Base\BWYou.Base.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="BWYou.Control" Source="BWYou.Control\BWYou.Control.csproj" Description="프로젝트 파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Control\BWYou.Control.csproj(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Control" Source="BWYou.Control\BWYou.Control.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Control\BWYou.Control.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Control" Source="BWYou.Control\ListViewBase.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Control\ListViewBase.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Control" Source="BWYou.Control\ListViewBase.Designer.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Control\ListViewBase.Designer.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Control" Source="BWYou.Control\ProgressBarBase.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Control\ProgressBarBase.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Control" Source="BWYou.Control\ProgressBarBase.Designer.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Control\ProgressBarBase.Designer.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Control" Source="BWYou.Control\Properties\AssemblyInfo.cs" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Control\Properties\AssemblyInfo.cs(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Control" Source="BWYou.Control\ListViewBase.resx" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Control\ListViewBase.resx(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Control" Source="BWYou.Control\ProgressBarBase.resx" Description="파일을 D:\Sync\프로젝트\!You\BWYou_2010\Backup\BWYou.Control\ProgressBarBase.resx(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Control" Source="BWYou.Control\BWYou.Control.csproj" Description="프로젝트를 변환했습니다.">
+</Event><Event ErrorLevel="3" Project="BWYou.Control" Source="BWYou.Control\BWYou.Control.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="BWYou.sln" Description="솔루션을 변환했습니다.">
+</Event><Event ErrorLevel="3" Project="" Source="BWYou.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="BWYou" Source="BWYou\BWYou.csproj" Description="검사 완료: 프로젝트 파일을 업그레이드할 필요가 없습니다.">
+</Event><Event ErrorLevel="0" Project="SampleTest" Source="SampleTest\SampleTest.csproj" Description="검사 완료: 프로젝트 파일을 업그레이드할 필요가 없습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Compress" Source="BWYou.Compress\BWYou.Compress.csproj" Description="검사 완료: 프로젝트 파일을 업그레이드할 필요가 없습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Transfer" Source="BWYou.Transfer\BWYou.Transfer.csproj" Description="검사 완료: 프로젝트 파일을 업그레이드할 필요가 없습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Database" Source="BWYou.Database\BWYou.Database.csproj" Description="검사 완료: 프로젝트 파일을 업그레이드할 필요가 없습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Base" Source="BWYou.Base\BWYou.Base.csproj" Description="검사 완료: 프로젝트 파일을 업그레이드할 필요가 없습니다.">
+</Event><Event ErrorLevel="0" Project="BWYou.Control" Source="BWYou.Control\BWYou.Control.csproj" Description="검사 완료: 프로젝트 파일을 업그레이드할 필요가 없습니다.">
+</Event></UpgradeLog>

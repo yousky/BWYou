@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>BWYou: BWYou.Transfer</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">BWYou
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- 다음에 의해 생성됨 :  Doxygen 1.7.6.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>메인&#160;페이지</span></a></li>
+      <li class="current"><a href="pages.html"><span>관련된&#160;페이지</span></a></li>
+      <li><a href="namespaces.html"><span>패키지</span></a></li>
+      <li><a href="annotated.html"><span>클래스</span></a></li>
+      <li><a href="files.html"><span>파일들</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title"><a class="el" href="class_b_w_you_1_1_transfer.html" title="전송 관련 클래스">BWYou.Transfer</a> </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h2><a class="anchor" id="developer"></a>
+개발자</h2>
+<ul>
+<li>You </li>
+</ul>
+<h2><a class="anchor" id="info"></a>
+개발목적</h2>
+<ul>
+<li>전송 관련 클래스 모음 </li>
+</ul>
+<h2><a class="anchor" id="advenced"></a>
+추가정보</h2>
+<ul>
+<li>Version : 0.1.0.1</li>
+<li>Last Updated : 2012.01.16</li>
+<li>Error 발생시 : throw 발생.</li>
+<li>구현 사항<ol type="a">
+<li>SCP를 통한 SEND, RECEIVE</li>
+</ol>
+</li>
+<li>미구현 사항<ol type="a">
+<li>SFTP, FTP</li>
+</ol>
+</li>
+</ul>
+<h2><a class="anchor" id="explain"></a>
+설명</h2>
+<ul>
+<li>전송 관련 클래스</li>
+</ul>
+<h2><a class="anchor" id="Transfer"></a>
+Transfer</h2>
+<ul>
+<li>전송 관련 클래스</li>
+</ul>
+<ul>
+<li>사용예) <div class="fragment"><pre class="fragment">            <span class="keywordflow">try</span>
+            {
+                BWYou.Transfer.Transfer.SCP scp = <span class="keyword">new</span> BWYou.Transfer.Transfer.SCP(<span class="stringliteral">&quot;xxx.xxx.xxx.xxx&quot;</span>, <span class="stringliteral">&quot;id&quot;</span>, <span class="stringliteral">&quot;pass&quot;</span>, 22); <span class="comment">//연결에 필요한 값을 넣어 객체 생성</span>
+                scp.ftEvent += <span class="keyword">new</span> BWYou.Transfer.Transfer.SCP.FileTransferEventY(이벤트처리함수);
+                scp.Connect();                                              <span class="comment">//연결된 상태로 유지(안하면 매번 명령 처리할 때마다 연결하므로 좀 느려짐</span>
+                scp.MkdirLocal(<span class="stringliteral">@&quot;c:\test\&quot;</span>);
+                scp.Receive(<span class="stringliteral">@&quot;/usr/local/test.zip&quot;</span>, <span class="stringliteral">@&quot;c:\test\test.zip&quot;</span>);   <span class="comment">//받기</span>
+                scp.MkdirRemote(<span class="stringliteral">@&quot;/home/test/&quot;</span>);
+                scp.Send(<span class="stringliteral">@&quot;D:\test\xxx.zip&quot;</span>, <span class="stringliteral">@&quot;/home/test/xxx.zip&quot;</span>);        <span class="comment">//보내기</span>
+                scp.Close();                                                <span class="comment">//연결된 상태 종료</span>
+                scp.ftEvent -= <span class="keyword">new</span> BWYou.Transfer.Transfer.SCP.FileTransferEventY(이벤트처리함수);
+            }
+            <span class="keywordflow">catch</span> (Exception ex)
+            {
+                <span class="comment">//에러 발생시 처리 방법</span>
+            }
+</pre></div></li>
+</ul>
+<h2><a class="anchor" id="주의사항"></a>
+파일 전송 주의 사항</h2>
+<ul>
+<li>SCP를 통해 리눅스로 파일을 전송할 경우에는 패스가 아닌 패스+파일네임까지 넣어야 전송이 된다. </li>
+</ul>
+</div></div><!-- contents -->
+
+
+<hr class="footer"/><address class="footer"><small>
+생성시간 : 월 1월 16 2012 15:23:29, 프로젝트명 : BWYou, 생성자 :  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

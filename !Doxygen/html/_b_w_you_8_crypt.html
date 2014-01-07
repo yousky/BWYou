@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>BWYou: BWYou.Crypt</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">BWYou
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- 다음에 의해 생성됨 :  Doxygen 1.7.6.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>메인&#160;페이지</span></a></li>
+      <li class="current"><a href="pages.html"><span>관련된&#160;페이지</span></a></li>
+      <li><a href="namespaces.html"><span>패키지</span></a></li>
+      <li><a href="annotated.html"><span>클래스</span></a></li>
+      <li><a href="files.html"><span>파일들</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title"><a class="el" href="class_b_w_you_1_1_crypt.html" title="보안 관계 사항을 위한 클래스">BWYou.Crypt</a> </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h2><a class="anchor" id="developer"></a>
+개발자</h2>
+<ul>
+<li>You </li>
+</ul>
+<h2><a class="anchor" id="info"></a>
+개발목적</h2>
+<ul>
+<li>자체 암호화 처리를 위하여 </li>
+</ul>
+<h2><a class="anchor" id="advenced"></a>
+추가정보</h2>
+<ul>
+<li>Version : 0.9.1.0</li>
+<li>Last Updated : 2012.01.16</li>
+<li>Error 발생시 : throw 발생.</li>
+<li>구현 사항<ol type="a">
+<li>파일, 레지스트리에 byte[], string 쓰기, 읽기</li>
+<li>DES를 이용한 암호화, 복호화 및 DES용 KEY, IV 생성</li>
+<li>파일과 함께 암, 복호화 처리 기능 추가</li>
+</ol>
+</li>
+<li>미구현 사항<ol type="a">
+<li>HASH, 대칭키 AES(DES상위버젼), 비대칭키 RSA</li>
+</ol>
+</li>
+</ul>
+<h2><a class="anchor" id="explain"></a>
+설명</h2>
+<ul>
+<li>자체 암호화 구현을 위하여 특정 키(KEY), 벡터(IV)를 이용하여 암호화 복호화를 구현</li>
+<li>DES용으로 임의의 문자열 2개, 3개로부터 KEY, IV를 만들기</li>
+<li>만들어진 KEY, IV를 저장하기 위해 레지스트리, 파일을 이용하여 읽기, 쓰기 구현</li>
+</ul>
+<h2><a class="anchor" id="Crypt"></a>
+Crypt</h2>
+<ul>
+<li>보안 관계 사항을 위한 클래스</li>
+</ul>
+<ul>
+<li>사용예) <div class="fragment"><pre class="fragment">            clsCrypt cry = <span class="keyword">new</span> clsCrypt();                                      <span class="comment">//보안 객체 생성</span>
+
+            byte[] key;     <span class="comment">//암, 복호화용 키</span>
+            byte[] iv;      <span class="comment">//암, 복호화용 벡터</span>
+            byte[] encode;  <span class="comment">//암호화 된 바이트</span>
+            <span class="keywordtype">string</span> decode;  <span class="comment">//복호화 된 문자열</span>
+
+            <span class="keywordflow">try</span>
+            {
+                cry.InAndOut(<span class="stringliteral">&quot;문자열1&quot;</span>, <span class="stringliteral">&quot;문자열2&quot;</span>, <span class="stringliteral">&quot;문자열3&quot;</span>, out key, out iv);                         <span class="comment">//특정 문자열로부터 키, 벡터 생성</span>
+                cry.WriteRegistry(clsCrypt.regTopPath.LocalMachine, <span class="stringliteral">@&quot;SOFTWARE\TEST&quot;</span>, <span class="stringliteral">&quot;KEY&quot;</span>, key);      <span class="comment">//생성된 키 레지 저장</span>
+                cry.ReadRegistry(clsCrypt.regTopPath.LocalMachine, <span class="stringliteral">@&quot;SOFTWARE\TEST&quot;</span>, <span class="stringliteral">&quot;KEY&quot;</span>, out key);   <span class="comment">//키 레지로부터 읽기</span>
+                cry.Encrypt(<span class="stringliteral">&quot;암호화할문자&quot;</span>, out encode, key, iv);                                       <span class="comment">//암호화</span>
+                cry.Decrypt(encode, out decode, key, iv);                                               <span class="comment">//복호화</span>
+            }
+            <span class="keywordflow">catch</span> (Exception ex)
+            {
+                <span class="comment">//에러 발생시 처리 방법</span>
+            }
+</pre></div> </li>
+</ul>
+</div></div><!-- contents -->
+
+
+<hr class="footer"/><address class="footer"><small>
+생성시간 : 월 1월 16 2012 15:23:29, 프로젝트명 : BWYou, 생성자 :  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

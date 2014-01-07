@@ -1,0 +1,14 @@
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_14_by_you.src\bin\Debug\sharpSshTest.exe
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_14_by_you.src\bin\Debug\sharpSshTest.pdb
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_14_by_you.src\Examples\obj\Debug\ResolveAssemblyReference.cache
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_14_by_you.src\Examples\obj\Debug\sharpSshTest.jsch_samples.InputForm.resources
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_14_by_you.src\Examples\obj\Debug\Examples.csproj.GenerateResource.Cache
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_14_by_you.src\Examples\obj\Debug\sharpSshTest.exe
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_14_by_you.src\Examples\obj\Debug\sharpSshTest.pdb
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_by_you.src\Examples\obj\Debug\sharpSshTest.exe
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_by_you.src\Examples\obj\Debug\sharpSshTest.pdb
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_by_you.src\bin\Debug\sharpSshTest.exe
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_by_you.src\bin\Debug\sharpSshTest.pdb
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_by_you.src\Examples\obj\Debug\ResolveAssemblyReference.cache
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_by_you.src\Examples\obj\Debug\sharpSshTest.jsch_samples.InputForm.resources
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_by_you.src\Examples\obj\Debug\Examples.csproj.GenerateResource.Cache

@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="BWYou BWYou"><param name="Local" value="index.html"><param name="ImageNumber" value="11"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="관련된 페이지"><param name="Local" value="pages.html"><param name="ImageNumber" value="1"></OBJECT>
+  <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="BWYou.Crypt"><param name="Local" value="_b_w_you_8_crypt.html"><param name="ImageNumber" value="11"></OBJECT>
+    <UL>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="BWYou.Network"><param name="Local" value="_b_w_you_8_network.html"><param name="ImageNumber" value="11"></OBJECT>
+    <UL>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="BWYou.Compress"><param name="Local" value="_b_w_you_8_compress.html"><param name="ImageNumber" value="11"></OBJECT>
+    <UL>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="BWYou.Database"><param name="Local" value="_b_w_you_8_database.html"><param name="ImageNumber" value="11"></OBJECT>
+    <UL>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="BWYou.Transfer"><param name="Local" value="_b_w_you_8_transfer.html"><param name="ImageNumber" value="11"></OBJECT>
+    <UL>
+    </UL>
+  </UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="패키지"><param name="ImageNumber" value="1"></OBJECT>
+  <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="패키지"><param name="Local" value="namespaces.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="BWYou"><param name="Local" value="namespace_b_w_you.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Crypt"><param name="Local" value="class_b_w_you_1_1_crypt.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="BWYou"><param name="Local" value="class_b_w_you_1_1_b_w_you.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Network"><param name="Local" value="class_b_w_you_1_1_network.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Compress"><param name="Local" value="class_b_w_you_1_1_compress.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Transfer"><param name="Local" value="class_b_w_you_1_1_transfer.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="BWYou.Database"><param name="Local" value="namespace_b_w_you_1_1_database.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="DBFactoryNaked"><param name="Local" value="class_b_w_you_1_1_database_1_1_d_b_factory_naked.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Database3"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="DBname"><param name="Local" value="namespace_b_w_you_1_1_database.html#ae0aaf39ef11ab1562cb50a811672881b"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="패키지 함수"><param name="Local" value="namespacemembers.html"><param name="ImageNumber" value="11"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="모두"><param name="Local" value="namespacemembers.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="열거형 타입"><param name="Local" value="namespacemembers_enum.html"><param name="ImageNumber" value="11"></OBJECT>
+    </UL>
+  </UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="클래스"><param name="ImageNumber" value="1"></OBJECT>
+  <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="클래스 목록"><param name="Local" value="annotated.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="BWYou.BWYou"><param name="Local" value="class_b_w_you_1_1_b_w_you.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="BWYou.Compress"><param name="Local" value="class_b_w_you_1_1_compress.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="BWYou.Crypt"><param name="Local" value="class_b_w_you_1_1_crypt.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="fileMode"><param name="Local" value="class_b_w_you_1_1_crypt.html#afca82f5cdf74f27be1de9d48789dd341"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="regTopPath"><param name="Local" value="class_b_w_you_1_1_crypt.html#a3f967d3ddffa3f5e09bd8a72950fd265"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ConverDecryptFile2EncrypteFile"><param name="Local" value="class_b_w_you_1_1_crypt.html#aa0921510675f3629e2882a3bceef1d48"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ConverDecryptFile2EncrypteFile"><param name="Local" value="class_b_w_you_1_1_crypt.html#a667855bcfda10e275f3be0ff7741d0f0"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ConverEncrypteFile2DecryptFile"><param name="Local" value="class_b_w_you_1_1_crypt.html#a2f01bc65dac28a7b7b3426abf8d9550c"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ConverEncrypteFile2DecryptFile"><param name="Local" value="class_b_w_you_1_1_crypt.html#acf29fbd722c20ed66242147104f01351"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Decrypt"><param name="Local" value="class_b_w_you_1_1_crypt.html#abf6f150ea3764fec3d08babb0ba56e8d"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Decrypt"><param name="Local" value="class_b_w_you_1_1_crypt.html#ac1699d25dc675ee358d1e97f35e138a4"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Decrypt"><param name="Local" value="class_b_w_you_1_1_crypt.html#a360d9cc4d11fff639c05aef571b9e878"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Decrypt"><param name="Local" value="class_b_w_you_1_1_crypt.html#aace910670b22a3e57d8117569760a5c3"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Decrypt"><param name="Local" value="class_b_w_you_1_1_crypt.html#a53eec0b9d8c6063a8f4492942a8af3bb"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Decrypt"><param name="Local" value="class_b_w_you_1_1_crypt.html#a05faf941c5bb44a8dbb2260c706d1b32"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Encrypt"><param name="Local" value="class_b_w_you_1_1_crypt.html#aaae23108050a1cb0874cd545d4d0e1ee"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Encrypt"><param name="Local" value="class_b_w_you_1_1_crypt.html#a3b8f3c8d4dfa6a9039c33b9da8aee89d"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Encrypt"><param name="Local" value="class_b_w_you_1_1_crypt.html#a0913ac7774503b796fe9af964fc7879a"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Encrypt"><param name="Local" value="class_b_w_you_1_1_crypt.html#a8911ae28a0050c2bff07a2b2b4271095"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Encrypt"><param name="Local" value="class_b_w_you_1_1_crypt.html#a20a3ea0e8d486490e7cec78829b83b1a"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Encrypt"><param name="Local" value="class_b_w_you_1_1_crypt.html#a59b3daced14ecf391ba9a6708de10ad3"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EncryptAndWriteFile"><param name="Local" value="class_b_w_you_1_1_crypt.html#a209fb148fe0b8936d19d8ec12efe7433"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EncryptAndWriteFile"><param name="Local" value="class_b_w_you_1_1_crypt.html#a4e90acb775040410e200c63ba5e29668"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="InAndOut"><param name="Local" value="class_b_w_you_1_1_crypt.html#a388395bb53ce2416e1f5d0812d3ba1f1"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="InAndOut"><param name="Local" value="class_b_w_you_1_1_crypt.html#aa08d031ef1dfb3e0e9b27006e18d9088"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ReadFile"><param name="Local" value="class_b_w_you_1_1_crypt.html#a7b93340fe7fe88f54d52b7fd5aacf934"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ReadFile"><param name="Local" value="class_b_w_you_1_1_crypt.html#adf55efb3dea3c471c4e59b0defbfb464"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ReadFileAndDecrypt"><param name="Local" value="class_b_w_you_1_1_crypt.html#a30035f4f9edbee9a4a5a62e0b0721cc3"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ReadFileAndDecrypt"><param name="Local" value="class_b_w_you_1_1_crypt.html#ae2f7f8cdeaa42a81bcbb8739cd494155"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ReadRegistry"><param name="Local" value="class_b_w_you_1_1_crypt.html#a903afda33c3e2d7039ac4d31ab7816c5"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ReadRegistry"><param name="Local" value="class_b_w_you_1_1_crypt.html#ad57d281bd318e36abf248a3c662c494e"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="WriteFile"><param name="Local" value="class_b_w_you_1_1_crypt.html#a21957f07e596923f44d9f4e826854449"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="WriteFile"><param name="Local" value="class_b_w_you_1_1_crypt.html#a5f711fa2664005aad1c1dee2eb8a11ed"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="WriteRegistry"><param name="Local" value="class_b_w_you_1_1_crypt.html#a0d8f4cd5356eed973d0d364aec53a833"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="WriteRegistry"><param name="Local" value="class_b_w_you_1_1_crypt.html#a7a53a24646b62b223ec8cfa26e64b039"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="des"><param name="Local" value="class_b_w_you_1_1_crypt.html#a64fff17f1ff74a717a9ee5b109a044a9"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="LastError"><param name="Local" value="class_b_w_you_1_1_crypt.html#adbd27eca37b8170810092c8d0033041d"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="BWYou.Database.Database3"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Database3"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a7fe13718f14c2fe671d9f0024f3b5a9e"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Database3"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a6690e9ab0a0e62d9226bcec0eed65717"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Database3"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a9498ea698daf6ea6ab6d0704d250442c"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="BeginTransaction"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a2a6607480172aebc7fe00cec80bb3777"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="BeginTransaction"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a7da3b471736061bc686209cb23028b8c"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Close"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#ab74323bdb708b3f7c3e0a5e1ee44ae79"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="CommitTransaction"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a404836506d1016115256ee226cb9cce8"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="DBFParameter"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a5dc792a95b4fe307728e61c964a734ce"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="DBFParameter"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a1e8271059896cf43db869d4e45ca06fa"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="DBFParameter"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a2990dad40c27eb25bfb71028549e4e89"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Execute"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a561f83f0594d467ecd4aad6501751fc9"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Execute"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a9ec6b44b3da3d101b94b2bcb534fe11f"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Execute"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a7da0ebc30c78810a0b01025efb3a83cd"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Open"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a1d814274de706da35ce80a7bc2a2ef02"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Query"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#ad0577e61e9ab35e3e66f750cd7adf511"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Query"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a1299eb5c234014496a9feadb78baa52d"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Query"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a85b0b6f8d2e512befce5fead80cbebb3"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ReturnCommand"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a0eeacb46655ab6ddac55d8835f7410d2"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ReturnConnection"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a778d4b82342c3e238ba47edd0a4bc37f"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="RollbackTransaction"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a65d05f90e63b43b75a0c4cfd72218c5e"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="SelectQr"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#a15be57d33dc1e49d6e19cd8475c0bfef"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="SetCommand"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#ae598eb0f12dea50e0ae7065aadd791f8"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="SetCommand"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#aef374f728868c1ac7252cc3586918d70"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="State"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#ad88d03c318886e106a9bb422de6931e8"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="GetDBname"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#af0bbf80af00c111f156f37f9b2566873"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="LastError"><param name="Local" value="class_b_w_you_1_1_database_1_1_database3.html#afba1892449063f4574b3542b79613224"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="BWYou.Database.DBFactoryNaked"><param name="Local" value="class_b_w_you_1_1_database_1_1_d_b_factory_naked.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="getDB"><param name="Local" value="class_b_w_you_1_1_database_1_1_d_b_factory_naked.html#acf108e53d9150f407ebd9fcdce659186"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="BWYou.Network.Mail"><param name="Local" value="class_b_w_you_1_1_network_1_1_mail.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Mail"><param name="Local" value="class_b_w_you_1_1_network_1_1_mail.html#af0805726e791d2e73410397fec220747"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="SendMail"><param name="Local" value="class_b_w_you_1_1_network_1_1_mail.html#ad13f6e92a508030ae2a29d2645f80ed9"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="SendMail"><param name="Local" value="class_b_w_you_1_1_network_1_1_mail.html#a6116c0e1c516c4c049552f9c2ab1c605"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="LastError"><param name="Local" value="class_b_w_you_1_1_network_1_1_mail.html#a67b1c8b96c407c64aeefae186b70e351"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="BWYou.Network"><param name="Local" value="class_b_w_you_1_1_network.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="FindMacAddress"><param name="Local" value="class_b_w_you_1_1_network.html#a24f09991b1b2b05712a11529f3765140"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="FindMacAddress"><param name="Local" value="class_b_w_you_1_1_network.html#ada4e641c8dd09e285e7bbe98009a0b64"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="LastError"><param name="Local" value="class_b_w_you_1_1_network.html#aab534f9230f58090ffcd3d228f641512"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="BWYou.Transfer.SCP"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="SCP"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a925477f06906a2c83ca54fe4b92eb944"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Close"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a029c6f611ed4123d2a418cea32b8e88c"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Connect"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a27674c6a42cf6c5b065eb29e7be02300"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="FileTransferEventY"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a80c07e92640c3ec3a99074ee45cbce51"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IsConnected"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a220dd91eb853706ae6dc4dbb61553a52"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MkdirLocal"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#ae1ac6823e49264012c46b72ea1d3fb39"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MkdirRemote"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#af5add6e664f40475eaf2032f00d1c212"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="OnTransferProgressEvent"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a5a74f2c321e1b64912d16191fa4e6357"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Receive"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a4dd1ff5aee940bb607e091174062b568"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Send"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#af7426af0487d7931e15a3c3503dd4e57"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ftEvent"><param name="Local" value="class_b_w_you_1_1_transfer_1_1_s_c_p.html#a9ef391b5aeb4da1bfa3c4bd2d0cece91"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="BWYou.Transfer"><param name="Local" value="class_b_w_you_1_1_transfer.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="BWYou.Compress.ZIP"><param name="Local" value="class_b_w_you_1_1_compress_1_1_z_i_p.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Compress"><param name="Local" value="class_b_w_you_1_1_compress_1_1_z_i_p.html#a90c63fe691efe9052c6d6d47ed0b82da"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="DeCompress"><param name="Local" value="class_b_w_you_1_1_compress_1_1_z_i_p.html#aab82821ad0f46aa3d5e8290b71b958a5"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="FileCompressEvent"><param name="Local" value="class_b_w_you_1_1_compress_1_1_z_i_p.html#af298cc9696e90807762d0c2a927772bc"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="OnCompressProgressEvent"><param name="Local" value="class_b_w_you_1_1_compress_1_1_z_i_p.html#a2a0495446da51bfcf50da83b4a2edbed"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="StrLastMessage"><param name="Local" value="class_b_w_you_1_1_compress_1_1_z_i_p.html#ab9a923e939d08e1d3ca7b05e03fe5c76"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="fcEvent"><param name="Local" value="class_b_w_you_1_1_compress_1_1_z_i_p.html#af16479e1cf99875569b778039f9a3013"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="클래스 색인"><param name="Local" value="classes.html"><param name="ImageNumber" value="1"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="클래스 멤버"><param name="Local" value="functions.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="모두"><param name="Local" value="functions.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="함수"><param name="Local" value="functions_func.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="변수"><param name="Local" value="functions_vars.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="열거형 타입"><param name="Local" value="functions_enum.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="속성"><param name="Local" value="functions_prop.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="이벤트"><param name="Local" value="functions_evnt.html"><param name="ImageNumber" value="11"></OBJECT>
+    </UL>
+  </UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="파일들"><param name="ImageNumber" value="1"></OBJECT>
+  <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="파일 목록"><param name="Local" value="files.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="D:/Sync/프로젝트/!You/BWYou/BWYou.Compress/BWYou.Compress.cs"><param name="Local" value="_b_w_you_8_compress_8cs.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="D:/Sync/프로젝트/!You/BWYou/BWYou.Database/BWYou.Database.cs"><param name="Local" value="_b_w_you_8_database_8cs.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="DBname"><param name="Local" value="namespace_b_w_you_1_1_database.html#ae0aaf39ef11ab1562cb50a811672881b"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="D:/Sync/프로젝트/!You/BWYou/BWYou.Transfer/BWYou.Transfer.cs"><param name="Local" value="_b_w_you_8_transfer_8cs.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="D:/Sync/프로젝트/!You/BWYou/BWYou/BWYou.Crypt.cs"><param name="Local" value="_b_w_you_8_crypt_8cs.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="D:/Sync/프로젝트/!You/BWYou/BWYou/BWYou.cs"><param name="Local" value="_b_w_you_8cs.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="D:/Sync/프로젝트/!You/BWYou/BWYou/BWYou.Network.cs"><param name="Local" value="_b_w_you_8_network_8cs.html"><param name="ImageNumber" value="11"></OBJECT>
+    </UL>
+  </UL>
+</UL>
+</BODY>
+</HTML>

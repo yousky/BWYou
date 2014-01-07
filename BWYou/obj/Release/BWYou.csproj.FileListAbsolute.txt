@@ -1,0 +1,12 @@
+D:\Sync\프로젝트\!You\BWYou\BWYou\bin\Release\BWYou.dll
+D:\Sync\프로젝트\!You\BWYou\BWYou\bin\Release\BWYou.pdb
+D:\Sync\프로젝트\!You\BWYou\BWYou\obj\Release\ResolveAssemblyReference.cache
+D:\Sync\프로젝트\!You\BWYou\BWYou\obj\Release\BWYou.dll
+D:\Sync\프로젝트\!You\BWYou\BWYou\obj\Release\BWYou.pdb
+D:\Sync\프로젝트\!You\BWYou_2010\BWYou\bin\Release\BWYou.XML
+D:\Sync\프로젝트\!You\BWYou_2010\BWYou\bin\Release\BWYou.dll
+D:\Sync\프로젝트\!You\BWYou_2010\BWYou\bin\Release\BWYou.pdb
+D:\Sync\프로젝트\!You\BWYou_2010\BWYou\obj\Release\ResolveAssemblyReference.cache
+D:\Sync\프로젝트\!You\BWYou_2010\BWYou\obj\Release\BWYou.dll
+D:\Sync\프로젝트\!You\BWYou_2010\BWYou\obj\Release\BWYou.pdb
+D:\Sync\프로젝트\!You\BWYou\BWYou\bin\Release\BWYou.XML

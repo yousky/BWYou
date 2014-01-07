@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>BWYou: BWYou.Compress</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">BWYou
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- 다음에 의해 생성됨 :  Doxygen 1.7.6.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>메인&#160;페이지</span></a></li>
+      <li class="current"><a href="pages.html"><span>관련된&#160;페이지</span></a></li>
+      <li><a href="namespaces.html"><span>패키지</span></a></li>
+      <li><a href="annotated.html"><span>클래스</span></a></li>
+      <li><a href="files.html"><span>파일들</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title"><a class="el" href="class_b_w_you_1_1_compress.html" title="압축 관련 클래스">BWYou.Compress</a> </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h2><a class="anchor" id="developer"></a>
+개발자</h2>
+<ul>
+<li>You </li>
+</ul>
+<h2><a class="anchor" id="info"></a>
+개발목적</h2>
+<ul>
+<li>압축 관련 클래스 모음 </li>
+</ul>
+<h2><a class="anchor" id="advenced"></a>
+추가정보</h2>
+<ul>
+<li>Version : 0.1.0.1</li>
+<li>Last Updated : 2012.01.16</li>
+<li>Error 발생시 : throw 발생.</li>
+<li>구현 사항<ol type="a">
+<li>ZIP 형식의 파일 압축하기, 압축해제하기</li>
+</ol>
+</li>
+<li>미구현 사항<ol type="a">
+<li>RAR, ARJ, etc..</li>
+<li>여러개 파일 압축, 폴더 압축</li>
+<li>압축률 설정</li>
+<li>암호로 압축</li>
+</ol>
+</li>
+</ul>
+<h2><a class="anchor" id="explain"></a>
+설명</h2>
+<ul>
+<li>압축 관련 클래스</li>
+</ul>
+<h2><a class="anchor" id="Compress"></a>
+Compress</h2>
+<ul>
+<li>압축 관련 클래스</li>
+</ul>
+<ul>
+<li>사용예) <div class="fragment"><pre class="fragment">            <span class="keywordflow">try</span>
+            {
+                BWYou.Compress.Compress.ZIP czip = <span class="keyword">new</span> BWYou.Compress.Compress.ZIP();               <span class="comment">//압축 객체 생성</span>
+                czip.fcEvent += <span class="keyword">new</span> BWYou.Compress.Compress.ZIP.FileCompressEvent(이벤트처리함수);
+                czip.Compress(<span class="stringliteral">@&quot;D:\test\test\test.zip&quot;</span>, <span class="stringliteral">@&quot;D:\test.xml&quot;</span>);                            <span class="comment">//압축</span>
+                czip.DeCompress(<span class="stringliteral">@&quot;D:\test\&quot;</span>, <span class="stringliteral">@&quot;D:\test\671342.zip&quot;</span>);                                <span class="comment">//압축해제</span>
+                czip.fcEvent -= <span class="keyword">new</span> BWYou.Compress.Compress.ZIP.FileCompressEvent(이벤트처리함수);
+            }
+            <span class="keywordflow">catch</span> (Exception ex)
+            {
+                <span class="comment">//에러 발생시 처리 방법</span>
+            }
+</pre></div> </li>
+</ul>
+</div></div><!-- contents -->
+
+
+<hr class="footer"/><address class="footer"><small>
+생성시간 : 월 1월 16 2012 15:23:29, 프로젝트명 : BWYou, 생성자 :  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

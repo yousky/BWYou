@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BWYou.Control</name>
+    </assembly>
+    <members>
+        <member name="T:BWYou.Control.TimerShow">
+            <summary>
+            지정 시간만큰 컨트롤 보이기
+            </summary>
+        </member>
+        <member name="M:BWYou.Control.TimerShow.Show(System.Windows.Forms.Form,System.String)">
+            <summary>
+            메세지를 지정한 시간만큼 지정 위치에 표시 한다.
+            </summary>
+            <param name="frmDisplay">표시 될 폼</param>
+            <param name="strMessage">표시 할 메세지</param>
+        </member>
+        <member name="M:BWYou.Control.TimerShow.Show(System.Windows.Forms.Form,System.String,System.Int32)">
+            <summary>
+            메세지를 지정한 시간만큼 지정 위치에 표시 한다.
+            </summary>
+            <param name="frmDisplay">표시 될 폼</param>
+            <param name="strMessage">표시 할 메세지</param>
+            <param name="nShowTime">표시 하는 시간(ms)</param>
+        </member>
+        <member name="M:BWYou.Control.TimerShow.Show(System.Windows.Forms.Form,System.String,System.Drawing.Point,System.Int32)">
+            <summary>
+            메세지를 지정한 시간만큼 지정 위치에 표시 한다.
+            </summary>
+            <param name="frmDisplay">표시 될 폼</param>
+            <param name="strMessage">표시 할 메세지</param>
+            <param name="ptLocation">표시 될 폼에서의 상대적인 위치</param>
+            <param name="nShowTime">표시 하는 시간(ms)</param>
+        </member>
+        <member name="M:BWYou.Control.TimerShow.Show(System.Windows.Forms.Form,System.Windows.Forms.Control,System.Boolean,System.Int32)">
+            <summary>
+            메세지가 들어간 컨트롤을 지정한 시간만큼 표시 한다.
+            </summary>
+            <param name="frmDisplay">표시 될 폼</param>
+            <param name="ctlMessage">표시 할 메세지 컨트롤</param>
+            <param name="bStopRemoveOnFocus">마우스로 표시 할 메세지 컨트롤을 가리키고 있으면 사라지지 않게 하는지 여부</param>
+            <param name="nShowTime">표시 하는 시간(ms)</param>
+        </member>
+        <member name="T:BWYou.Control.ProgressBarBase">
+            <summary>
+            진행률 보여주기용 프로그레스바 기본형
+            </summary>
+        </member>
+        <member name="F:BWYou.Control.ProgressBarBase.components">
+            <summary> 
+            필수 디자이너 변수입니다.
+            </summary>
+        </member>
+        <member name="M:BWYou.Control.ProgressBarBase.Dispose(System.Boolean)">
+            <summary> 
+            사용 중인 모든 리소스를 정리합니다.
+            </summary>
+            <param name="disposing">관리되는 리소스를 삭제해야 하면 true이고, 그렇지 않으면 false입니다.</param>
+        </member>
+        <member name="M:BWYou.Control.ProgressBarBase.InitializeComponent">
+            <summary> 
+            디자이너 지원에 필요한 메서드입니다. 
+            이 메서드의 내용을 코드 편집기로 수정하지 마십시오.
+            </summary>
+        </member>
+        <member name="M:BWYou.Control.ProgressBarBase.#ctor">
+            <summary>
+            생성자
+            </summary>
+        </member>
+        <member name="M:BWYou.Control.ProgressBarBase.ProgressInvoke(System.Int32)">
+            <summary>
+            쓰레드용 처리(델리게이트, 인보크)
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Control.ProgressBarBase.InvokeProgress(System.Int32)">
+            <summary>
+            프로그레스바에 진행률 보여라
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:BWYou.Control.ProgressBarBase.Progress(System.Int32)">
+            
+             <summary>
+             실제 작업
+             </summary>
+             <param name="value"></param>
+        </member>
+        <member name="P:BWYou.Control.ProgressBarBase.progressBar">
+            <summary>
+            프로그레스바 컨트롤
+            </summary>
+        </member>
+        <member name="T:BWYou.Control.ProgressBarBase.dProgress">
+            <summary>
+            델리게이트
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="T:BWYou.Control.ListViewBase">
+            <summary>
+            메세지 처리용 리스트뷰 기본형
+            </summary>
+        </member>
+        <member name="M:BWYou.Control.ListViewBase.#ctor">
+            <summary>
+            생성자
+            </summary>
+        </member>
+        <member name="M:BWYou.Control.ListViewBase.WriteMessageInvoke(System.Object,BWYou.Base.MessageEventArgs)">
+            <summary>
+            리스트뷰에 메세지 뿌리기 위한 쓰레드용 처리(델리게이트, 인보크)
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BWYou.Control.ListViewBase.InvokeWriteMessage(System.Object,BWYou.Base.MessageEventArgs)">
+            <summary>
+            리스트뷰에 메세지 뿌려라
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BWYou.Control.ListViewBase.InvokeWriteMessage(System.Object,System.String,BWYou.Base.MessagePriority)">
+            <summary>
+            리스트뷰에 메세지 뿌려라
+            </summary>
+            <param name="sender"></param>
+            <param name="message"></param>
+            <param name="priority"></param>
+        </member>
+        <member name="M:BWYou.Control.ListViewBase.InvokeWriteMessage(System.Object,System.String)">
+            <summary>
+            리스트뷰에 메세지 뿌려라
+            </summary>
+            <param name="sender"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:BWYou.Control.ListViewBase.InvokeWriteMessage(System.String,BWYou.Base.MessagePriority)">
+            <summary>
+            리스트뷰에 메세지 뿌려라
+            </summary>
+            <param name="message"></param>
+            <param name="priority"></param>
+        </member>
+        <member name="M:BWYou.Control.ListViewBase.InvokeWriteMessage(System.String)">
+            <summary>
+            리스트뷰에 메세지 뿌려라
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:BWYou.Control.ListViewBase.WriteMessage(System.Object,BWYou.Base.MessageEventArgs)">
+            <summary>
+            리스트뷰에 메세지 뿌리기
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:BWYou.Control.ListViewBase.components">
+            <summary> 
+            필수 디자이너 변수입니다.
+            </summary>
+        </member>
+        <member name="M:BWYou.Control.ListViewBase.Dispose(System.Boolean)">
+            <summary> 
+            사용 중인 모든 리소스를 정리합니다.
+            </summary>
+            <param name="disposing">관리되는 리소스를 삭제해야 하면 true이고, 그렇지 않으면 false입니다.</param>
+        </member>
+        <member name="M:BWYou.Control.ListViewBase.InitializeComponent">
+            <summary> 
+            디자이너 지원에 필요한 메서드입니다. 
+            이 메서드의 내용을 코드 편집기로 수정하지 마십시오.
+            </summary>
+        </member>
+        <member name="P:BWYou.Control.ListViewBase.ItemsMaxCount">
+            <summary>
+            리스트뷰에 보여 지는 최대 행 수
+            </summary>
+        </member>
+        <member name="P:BWYou.Control.ListViewBase.DateTimeFormat">
+            <summary>
+            리스트뷰의 시간이 보여지는 포맷
+            </summary>
+        </member>
+        <member name="P:BWYou.Control.ListViewBase.ProbBackColor">
+            <summary>
+            하이라이트 될 때의 배경색
+            </summary>
+        </member>
+        <member name="P:BWYou.Control.ListViewBase.ProbForeColor">
+            <summary>
+            하이라이트 될 때의 전경색
+            </summary>
+        </member>
+        <member name="P:BWYou.Control.ListViewBase.ProbPriority">
+            <summary>
+            하이라이트 되는 기준 Priority. 설정 값 이상이면 하이라이트
+            </summary>
+        </member>
+        <member name="P:BWYou.Control.ListViewBase.listView">
+            <summary>
+            리스트뷰 컨트롤
+            </summary>
+        </member>
+        <member name="T:BWYou.Control.ListViewBase.dWriteMessage">
+            <summary>
+            리스트뷰 메세지 뿌리기용 델리게이트
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+    </members>
+</doc>

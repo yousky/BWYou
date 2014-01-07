@@ -1,0 +1,14 @@
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_14_by_you.src\bin\Debug\Tamir.SharpSSH.dll
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_14_by_you.src\bin\Debug\Tamir.SharpSSH.pdb
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_14_by_you.src\SharpSSH\obj\Debug\ResolveAssemblyReference.cache
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_14_by_you.src\SharpSSH\obj\Debug\Tamir.SharpSsh.jsch.examples.InputForm.resources
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_14_by_you.src\SharpSSH\obj\Debug\SharpSSH.csproj.GenerateResource.Cache
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_14_by_you.src\SharpSSH\obj\Debug\Tamir.SharpSSH.dll
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_14_by_you.src\SharpSSH\obj\Debug\Tamir.SharpSSH.pdb
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_by_you.src\bin\Debug\Tamir.SharpSSH.dll
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_by_you.src\bin\Debug\Tamir.SharpSSH.pdb
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_by_you.src\SharpSSH\obj\Debug\ResolveAssemblyReference.cache
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_by_you.src\SharpSSH\obj\Debug\Tamir.SharpSsh.jsch.examples.InputForm.resources
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_by_you.src\SharpSSH\obj\Debug\SharpSSH.csproj.GenerateResource.Cache
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_by_you.src\SharpSSH\obj\Debug\Tamir.SharpSSH.dll
+D:\Sync\프로그래머\!참고\SharpSSH-1.1.1.13_by_you.src\SharpSSH\obj\Debug\Tamir.SharpSSH.pdb

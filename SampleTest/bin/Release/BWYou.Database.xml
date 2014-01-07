@@ -1,0 +1,349 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BWYou.Database</name>
+    </assembly>
+    <members>
+        <member name="T:BWYou.Database.DBname">
+            <summary>
+            DB 종류 설정
+            </summary>
+        </member>
+        <member name="F:BWYou.Database.DBname.MSSQL">
+            <summary>
+            MSSQL용 DB
+            </summary>
+        </member>
+        <member name="F:BWYou.Database.DBname.MySQL">
+            <summary>
+            MySql용 DB
+            </summary>
+        </member>
+        <member name="F:BWYou.Database.DBname.Oracle">
+            <summary>
+            Oracle용 DB
+            </summary>
+        </member>
+        <member name="F:BWYou.Database.DBname.OleDb">
+            <summary>
+            OleDb공용 DB
+            </summary>
+        </member>
+        <member name="F:BWYou.Database.DBname.Odbc">
+            <summary>
+            ODBC공용 DB
+            </summary>
+        </member>
+        <member name="T:BWYou.Database.DBFactoryNaked">
+            <summary>
+            프로바이더에만 독립적인 객체를 생성하며, 이전과 동일하게 모든 작업이 가능하다.
+            DB에 직접 접근하므로 위험성 큼.
+            고정프로바이더명의 경우 각 프로바이더를 설치하여 얻을 수 있음.
+            </summary>
+        </member>
+        <member name="M:BWYou.Database.DBFactoryNaked.getDB(BWYou.Database.DBname)">
+            <summary>
+            프로바이더에 독립적인 Base 객체 생성.
+            파라미터에 해당되는 값이 없는 경우 기본적으로 OleDb프로바이더가 제공됨. 
+            </summary>
+            <param name="setDB">"Oracle","MSSQL","OleDb","Odbc", "MySQL"중에서 선택</param>
+            <returns>DbProviderFactory 객체, DbConnection, DbCommand, DbDataAdapter, DbParameter등 공통 속성 제공</returns>
+            <remarks>
+            Oracle, MSSQL은 전용 프로바이더를 이용하는 반면 나머지는 범용 OleDb, ODBC프로바이더 이용함.
+            </remarks>
+            <example>
+            <code>
+            DbProviderFactory factory = DBFactoryNaked.GetDB(DBname.MSSQL);
+            DbConnection conn = factory.CreateConnection();
+            DbCommand comm = factory.CreateCommand();
+            DbDataAdapter adapter = factory.CreateDataAdapter();
+            DbParameter parmeter = factory.CreateParameter(); 
+            </code>
+            </example>
+        </member>
+        <member name="T:BWYou.Database.Database3">
+            <summary>
+            DB 종류와 상관없이 일관적인 작업을 하기 위한 클래스. 트랜잭션 기능 구현 추가
+             -            "Oracle" - Oracle용 : Oracle 10g XE 테스트 성공
+             -            "MSSQL" - MSSQL용 : SQL2005 테스트 성공. SQL SERVER 7.0 이상에서 사용 가능.
+             -            "MySQL" - MySQL용 : MysqlCon5.0.9.0, 6.4.3.0 테스트 성공. Mysql 버젼에 맞는 커넥터 DLL 필요
+            </summary>
+        </member>
+        <member name="F:BWYou.Database.Database3.DBF">
+            <summary>
+            공통 DbProviderFactory
+            </summary>
+        </member>
+        <member name="F:BWYou.Database.Database3._ConnectionString">
+            <summary>
+            기본 커넥션 문자열
+            </summary>
+        </member>
+        <member name="F:BWYou.Database.Database3._SetDB">
+            <summary>
+            기본 DB
+            </summary>
+        </member>
+        <member name="F:BWYou.Database.Database3.conn">
+            <summary>
+            공통 커넥션 객체 선언
+            </summary>
+        </member>
+        <member name="F:BWYou.Database.Database3.comm">
+            <summary>
+            공통 커맨드 객체 선언
+            </summary>
+        </member>
+        <member name="F:BWYou.Database.Database3.lastError">
+            <summary>
+            마지막 에러 메세지 저장
+            </summary>
+        </member>
+        <member name="M:BWYou.Database.Database3.#ctor">
+            <summary>
+            생성자. 아무 값을 안 주었을 경우 기본 MSSQL 설정
+            Connec
+            </summary>
+        </member>
+        <member name="M:BWYou.Database.Database3.#ctor(System.String)">
+            <summary>
+            오버로딩 생성자. ConnectionString을 설정하며 기본 MSSQL DB 설정
+            </summary>
+            <param name="setConnectionString">커넥션 문자열</param>
+        </member>
+        <member name="M:BWYou.Database.Database3.#ctor(BWYou.Database.DBname,System.String)">
+            <summary>
+            오버로딩 생성자. DB설정과 ConnectionString을 설정
+            </summary>
+            <param name="setDB">"Oracle","MSSQL", "MySQL", "OleDb","Odbc"중에서 선택</param>
+            <param name="setConnectionString">커넥션 문자열</param>
+        </member>
+        <member name="M:BWYou.Database.Database3.Open">
+            <summary>
+            명시적 DB 열기. 특별한 경우가 아닌 한 열 필요 없음.
+            </summary>
+            <returns>true : 정상, false : 이미 열려 있음, throw : 에러 발생</returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.Close">
+            <summary>
+            명시적 DB 닫기. 명시적으로 열었을 경우에는 꼭 닫아야 함.
+            </summary>
+            <returns>true : 정상, false : 열려 있지 않음, throw : 에러 발생</returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.Execute(System.String)">
+            <summary>
+            결과를 알 필요 없는 쿼리 실행. DB 연결 자동.
+            </summary>
+            <param name="query">쿼리문</param>
+            <returns>true : 정상, throw : 에러 발생</returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.Execute(System.String,System.Data.Common.DbParameter[]@)">
+            <summary>
+            결과를 알 필요 없는 쿼리 실행. DB 연결 자동. 파라메터 여러개 사용시
+            </summary>
+            <param name="query">쿼리문</param>
+            <param name="parameters">파라메터</param>
+            <returns>true : 정상, throw : 에러 발생</returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.Execute(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter}@)">
+            <summary>
+            결과를 알 필요 없는 쿼리 실행. DB 연결 자동. 파라메터 여러개 사용시
+            </summary>
+            <param name="query">쿼리문</param>
+            <param name="parameters">파라메터</param>
+            <returns>true : 정상, throw : 에러 발생</returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.Execute(System.String,System.Data.Common.DbParameter@)">
+            <summary>
+            결과를 알 필요 없는 쿼리 실행. DB 연결 자동. 파라메터 하나 사용시
+            </summary>
+            <param name="query">쿼리문</param>
+            <param name="parameter">파라메터</param>
+            <returns>true : 정상, throw : 에러 발생</returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.Query(System.Data.DataTable@,System.String)">
+            <summary>
+            쿼리 결과를 DataReader를 통하여 받기. 속도 빠름. DB연결 자동.
+            </summary>
+            <param name="dt">결과를 받을 DataTable</param>
+            <param name="query">쿼리</param>
+            <returns>true : 정상, throw : 에러 발생</returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.Query(System.Data.DataTable@,System.String,System.Data.Common.DbParameter[]@)">
+            <summary>
+            쿼리 결과를 DataReader를 통하여 받기. 파라메터 여러개 사용시
+            </summary>
+            <param name="dt">결과를 받을 DataTable</param>
+            <param name="query">쿼리</param>
+            <param name="parameters">파라메터</param>
+            <returns>true : 정상, throw : 에러 발생</returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.Query(System.Data.DataTable@,System.String,System.Collections.Generic.List{System.Data.Common.DbParameter}@)">
+            <summary>
+            쿼리 결과를 DataReader를 통하여 받기. 파라메터 여러개 사용시
+            </summary>
+            <param name="dt">결과를 받을 DataTable</param>
+            <param name="query">쿼리</param>
+            <param name="parameters">파라메터</param>
+            <returns>true : 정상, throw : 에러 발생</returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.Query(System.Data.DataTable@,System.String,System.Data.Common.DbParameter@)">
+            <summary>
+            쿼리 결과를 DataReader를 통하여 받기. 파라메터 하나 사용시
+            </summary>
+            <param name="dt">결과를 받을 DataTable</param>
+            <param name="query">쿼리</param>
+            <param name="parameter">파라메터</param>
+            <returns>true : 정상, throw : 에러 발생</returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.SelectQr(System.Data.DataTable@,System.String)">
+            <summary>
+            adapter를 이용하여 쿼리 결과로 DataTable을 채워 넘겨줌.
+            </summary>
+            <param name="dt">결과를 받을 DataTable</param>
+            <param name="query">쿼리</param>
+            <returns>true : 정상, throw : 에러 발생</returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.BeginTransaction">
+            <summary>
+            트랜잭션 시작시키기. 커넥션이 열리게 되므로 트랜잭션 완료 후 명시적으로 닫아야 함.
+            </summary>
+            <returns>true : 정상, throw : 에러 발생</returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.BeginTransaction(System.Data.IsolationLevel)">
+            <summary>
+            트랜잭션 시작시키기. 커넥션이 열리게 되므로 트랜잭션 완료 후 명시적으로 닫아야 함.
+            트랜잭션 격리 수준 지정.
+            </summary>
+            <param name="level">IsolationLevel 설정</param>
+            <returns>true : 정상, throw : 에러 발생</returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.RollbackTransaction">
+            <summary>
+            트랜잭션 롤백시키기. 커넥션을 닫지 않으므로 명시적으로 닫는것 잊지 말것.
+            </summary>
+            <returns>true : 정상, throw : 에러 발생</returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.CommitTransaction">
+            <summary>
+            트랜잭션 커밋시키기. 커넥션을 닫지 않으므로 명시적으로 닫는것 잊지 말것.
+            </summary>
+            <returns>true : 정상, throw : 에러 발생</returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.DBFParameter(System.String,System.Object)">
+            <summary>
+            Database2에 적합한 DbParameter를 돌려주며 이를 배열화하여 파라메터로 사용하면 됨.
+            Database2를 새로 객체 생성시는 이전의 DbParameter 역시 새로 생성하여야 함. 재사용시 문제 발생 가능성 있음.
+            </summary>
+            <param name="ParaName">파라메터명. MSSQL - @@XXXX, Oracle - :XXXX, MySQL - ?XXXX 형태</param>
+            <param name="value">파라메터값</param>
+            <returns>DbParameter : 정상, throw : 에러발생</returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.DBFParameter(System.String,System.Data.DbType,System.Object)">
+            <summary>
+            Database2에 적합한 DbParameter를 돌려주며 이를 배열화하여 파라메터로 사용하면 됨.
+            Database2를 새로 객체 생성시는 이전의 DbParameter 역시 새로 생성하여야 함. 재사용시 문제 발생 가능성 있음.
+            </summary>
+            <param name="ParaName">파라메터명. MSSQL - @@XXXX, Oracle - :XXXX, MySQL - ?XXXX 형태</param>
+            <param name="dbType">파라메터 형식</param>
+            <param name="value">파라메터값</param>
+            <returns>DbParameter : 정상, throw : 에러발생</returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.DBFParameter(System.String,System.Data.DbType,System.Int32,System.Object)">
+            <summary>
+            Database2에 적합한 DbParameter를 돌려주며 이를 배열화하여 파라메터로 사용하면 됨.
+            Database2를 새로 객체 생성시는 이전의 DbParameter 역시 새로 생성하여야 함. 재사용시 문제 발생 가능성 있음.
+            </summary>
+            <param name="ParaName">파라메터명. MSSQL - @@XXXX, Oracle - :XXXX, MySQL - ?XXXX 형태</param>
+            <param name="dbType">파라메터 형식</param>
+            <param name="DbTypeSize">파라메터 크기</param>
+            <param name="value">파라메터값</param>
+            <returns>DbParameter : 정상, throw : 에러발생</returns>
+            <remarks>
+            "varchar(30)"인 "@name" 파라메터의 값을 '테스트'라고 주고 싶을 경우
+            DBFParameter("@name", DbType.String, 30, "11002")
+            </remarks>
+        </member>
+        <member name="M:BWYou.Database.Database3.setDBErrorLog(System.Data.Common.DbException)">
+            <summary>
+            DB에러관련 에러 객체를 따로 출력하거나 하는 등을 위하여 따로 둠
+            </summary>
+            <param name="e">DbException 객체</param>
+        </member>
+        <member name="M:BWYou.Database.Database3.setErrorLog(System.Exception)">
+            <summary>
+            에러 객체를 따로 출력하거나 하는 등을 위하여 따로 둠.
+            </summary>
+            <param name="e">Exception 객체</param>
+        </member>
+        <member name="M:BWYou.Database.Database3.SetConnectString(System.String)">
+            <summary>
+            커넥션 문자열 변경
+            </summary>
+            <param name="ConnectionString">변경 문자열</param>
+            <returns>true : 정상, throw : 에러 발생</returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.SetDB(BWYou.Database.DBname)">
+            <summary>
+            DbProviderFactory 변경
+            </summary>
+            <param name="DBstring">"Oracle","MSSQL", "MySQL","OleDb","Odbc"중에서 선택</param>
+            <returns>true : 정상, throw : 에러 발생</returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.SetBasicCOMMCONN">
+            <summary>
+            공통 사용 객체의 인스턴스 생성 및 초기화
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.SetCommand(System.Int32)">
+            <summary>
+            커맨드의 타임 아웃 시간 설정
+            </summary>
+            <param name="timeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.SetCommand(System.Data.CommandType)">
+            <summary>
+            커맨드의 타입 설정
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.State">
+            <summary>
+            연결 상태 확인
+            </summary>
+            <returns>상태 문자열</returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.ReturnCommand">
+            <summary>
+            공통 커맨드 객체 받기(직접 조종 가능하므로 매~우 주의 필요)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.ReturnConnection">
+            <summary>
+            공통 커넥션 객체 받기(직접 조종 가능하므로 매~우 주의 필요)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Database.Database3.TableClear(System.Data.DataTable@)">
+            <summary>
+            테이블 초기화
+            </summary>
+            <param name="dt">초기화 할 테이블</param>
+            <returns>true : 정상, throw : 에러 발생</returns>
+        </member>
+        <member name="P:BWYou.Database.Database3.GetDBname">
+            <summary>
+            현재 세팅된 DB 종류 보기
+            </summary>
+        </member>
+        <member name="P:BWYou.Database.Database3.LastError">
+            <summary>
+            마지막 에러 메세지 보여주기
+            </summary>
+        </member>
+    </members>
+</doc>
