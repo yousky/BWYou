@@ -4,19 +4,9 @@
         <name>BWYou.Base</name>
     </assembly>
     <members>
-        <member name="T:BWYou.Base.ThreadWhile">
+        <member name="T:BWYou.Base.Config">
             <summary>
-            일정 주기마다 반복되는 스레드 기본형, ThreadBase 상속
-            </summary>
-        </member>
-        <member name="T:BWYou.Base.ThreadBase">
-            <summary>
-            스레드 기본 클래스, ClassWork 상속, Do() override하여 사용
-            </summary>
-        </member>
-        <member name="T:BWYou.Base.ClassWork">
-            <summary>
-            작업 클래스, ClassBase 상속, ProgressWork 이벤트
+            환경 값 처리 클래스
             </summary>
         </member>
         <member name="T:BWYou.Base.ClassBase">
@@ -89,6 +79,29 @@
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
+        </member>
+        <member name="M:BWYou.Base.Config.ReadConfigAppSettings(System.String,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+            XML 환경 파일 내부의 appSettings 값을 읽어서 Dictionary 형식으로 돌려주기
+            </summary>
+            <param name="filename">읽을 XML 환경 파일</param>
+            <param name="dicConfigKeyValue">appSettings의 Dictionary 형식 값</param>
+            <returns></returns>
+        </member>
+        <member name="T:BWYou.Base.ThreadWhile">
+            <summary>
+            일정 주기마다 반복되는 스레드 기본형, ThreadBase 상속
+            </summary>
+        </member>
+        <member name="T:BWYou.Base.ThreadBase">
+            <summary>
+            스레드 기본 클래스, ClassWork 상속, Do() override하여 사용
+            </summary>
+        </member>
+        <member name="T:BWYou.Base.ClassWork">
+            <summary>
+            작업 클래스, ClassBase 상속, ProgressWork 이벤트
+            </summary>
         </member>
         <member name="M:BWYou.Base.ClassWork.ProgressWork(System.Object,BWYou.Base.WorkEventArgs)">
             <summary>
@@ -272,6 +285,96 @@
             반복 실행 주기(nThreadSleepTime 밀리초 단위)
             </summary>
         </member>
+        <!-- 잘못된 형식의 XML 주석은 "T:BWYou.Base.ThreadMonitor" 멤버에 대해 무시됩니다. -->
+        <member name="M:BWYou.Base.ThreadMonitor.NotifyDeadClassWork4Monitor(System.Object,System.EventArgs)">
+            <summary>
+            감시 작업 죽었다는 걸 알림
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BWYou.Base.ThreadMonitor.NotifyDeadClassWork4Monitor(System.Object)">
+            <summary>
+            감시 작업 죽었다는 걸 알림
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="M:BWYou.Base.ThreadMonitor.#ctor(BWYou.Base.ClassWork,System.Int32,System.Int32)">
+            <summary>
+            생성자
+            DeadClassWork4MonitorNotify 이벤트를 통해 감시 할 작업이 죽었을 때 알림 발생 시킴
+            </summary>
+            <param name="classWork4Monitor">살아 있는지 감시 할 작업</param>
+            <param name="RepeatCycleSecond">감시 주기(초단위)</param>
+            <param name="ThreadTimeoutSecond"></param>
+        </member>
+        <member name="M:BWYou.Base.ThreadMonitor.WriteClassWork4Monitor_WorkProgress(System.Object,BWYou.Base.WorkEventArgs)">
+            <summary>
+            감시 클래스의 작업 상태 기록
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BWYou.Base.ThreadMonitor.WriteClassWork4Monitor_HeartBeatDateTime(System.Object,System.EventArgs)">
+            <summary>
+            감시 클래스의 HeartBeat 이벤트 시간 기록
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BWYou.Base.ThreadMonitor.Do">
+            <summary>
+            감시 하고 있는 작업 살아 있는지 여부 확인
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ThreadMonitor.Finalize">
+            <summary>
+            모니터 스레드 소멸자
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ThreadMonitor.Dispose">
+            <summary>
+            모니터 스레드 Dispose
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ThreadMonitor.Dispose(System.Boolean)">
+            <summary>
+            Dispose Pattern 구현
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="E:BWYou.Base.ThreadMonitor.DeadClassWork4MonitorNotify">
+            <summary>
+            감시 작업 죽었다는 걸 알리는 이벤트
+            </summary>
+        </member>
+        <member name="P:BWYou.Base.ThreadMonitor.WorkTimeoutSecond">
+            <summary>
+            시간 초과로 죽었다고 판단 할 시간(초단위)
+            </summary>
+        </member>
+        <member name="P:BWYou.Base.ThreadMonitor.LastHeartBeatDateTime">
+            <summary>
+            마지막 HeartBeat 발생한 일시
+            </summary>
+        </member>
+        <member name="P:BWYou.Base.ThreadMonitor.LastWorkProgressState">
+            <summary>
+            마지막 작업 상태
+            </summary>
+        </member>
+        <member name="P:BWYou.Base.ThreadMonitor.classWork4Monitor">
+            <summary>
+            살아 있는지 감시 할 스레드
+            </summary>
+        </member>
+        <member name="T:BWYou.Base.ThreadMonitor.DeadClassWork4MonitorNotifyEventHandler">
+            <summary>
+            감시 작업 죽었다는 걸 알리는 이벤트 핸들러
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="T:BWYou.Base.BWYou">
             <summary>
             테스트용
@@ -402,109 +505,6 @@
             <summary>
             메세지 중요도
             </summary>
-        </member>
-        <member name="T:BWYou.Base.Config">
-            <summary>
-            환경 값 처리 클래스
-            </summary>
-        </member>
-        <member name="M:BWYou.Base.Config.ReadConfigAppSettings(System.String,System.Collections.Generic.Dictionary{System.String,System.String}@)">
-            <summary>
-            XML 환경 파일 내부의 appSettings 값을 읽어서 Dictionary 형식으로 돌려주기
-            </summary>
-            <param name="filename">읽을 XML 환경 파일</param>
-            <param name="dicConfigKeyValue">appSettings의 Dictionary 형식 값</param>
-            <returns></returns>
-        </member>
-        <!-- 잘못된 형식의 XML 주석은 "T:BWYou.Base.ThreadMonitor" 멤버에 대해 무시됩니다. -->
-        <member name="M:BWYou.Base.ThreadMonitor.NotifyDeadClassWork4Monitor(System.Object,System.EventArgs)">
-            <summary>
-            감시 작업 죽었다는 걸 알림
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:BWYou.Base.ThreadMonitor.NotifyDeadClassWork4Monitor(System.Object)">
-            <summary>
-            감시 작업 죽었다는 걸 알림
-            </summary>
-            <param name="sender"></param>
-        </member>
-        <member name="M:BWYou.Base.ThreadMonitor.#ctor(BWYou.Base.ClassWork,System.Int32,System.Int32)">
-            <summary>
-            생성자
-            DeadClassWork4MonitorNotify 이벤트를 통해 감시 할 작업이 죽었을 때 알림 발생 시킴
-            </summary>
-            <param name="classWork4Monitor">살아 있는지 감시 할 작업</param>
-            <param name="RepeatCycleSecond">감시 주기(초단위)</param>
-            <param name="ThreadTimeoutSecond"></param>
-        </member>
-        <member name="M:BWYou.Base.ThreadMonitor.WriteClassWork4Monitor_WorkProgress(System.Object,BWYou.Base.WorkEventArgs)">
-            <summary>
-            감시 클래스의 작업 상태 기록
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:BWYou.Base.ThreadMonitor.WriteClassWork4Monitor_HeartBeatDateTime(System.Object,System.EventArgs)">
-            <summary>
-            감시 클래스의 HeartBeat 이벤트 시간 기록
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:BWYou.Base.ThreadMonitor.Do">
-            <summary>
-            감시 하고 있는 작업 살아 있는지 여부 확인
-            </summary>
-        </member>
-        <member name="M:BWYou.Base.ThreadMonitor.Finalize">
-            <summary>
-            모니터 스레드 소멸자
-            </summary>
-        </member>
-        <member name="M:BWYou.Base.ThreadMonitor.Dispose">
-            <summary>
-            모니터 스레드 Dispose
-            </summary>
-        </member>
-        <member name="M:BWYou.Base.ThreadMonitor.Dispose(System.Boolean)">
-            <summary>
-            Dispose Pattern 구현
-            </summary>
-            <param name="disposing"></param>
-        </member>
-        <member name="E:BWYou.Base.ThreadMonitor.DeadClassWork4MonitorNotify">
-            <summary>
-            감시 작업 죽었다는 걸 알리는 이벤트
-            </summary>
-        </member>
-        <member name="P:BWYou.Base.ThreadMonitor.WorkTimeoutSecond">
-            <summary>
-            시간 초과로 죽었다고 판단 할 시간(초단위)
-            </summary>
-        </member>
-        <member name="P:BWYou.Base.ThreadMonitor.LastHeartBeatDateTime">
-            <summary>
-            마지막 HeartBeat 발생한 일시
-            </summary>
-        </member>
-        <member name="P:BWYou.Base.ThreadMonitor.LastWorkProgressState">
-            <summary>
-            마지막 작업 상태
-            </summary>
-        </member>
-        <member name="P:BWYou.Base.ThreadMonitor.classWork4Monitor">
-            <summary>
-            살아 있는지 감시 할 스레드
-            </summary>
-        </member>
-        <member name="T:BWYou.Base.ThreadMonitor.DeadClassWork4MonitorNotifyEventHandler">
-            <summary>
-            감시 작업 죽었다는 걸 알리는 이벤트 핸들러
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
         </member>
     </members>
 </doc>

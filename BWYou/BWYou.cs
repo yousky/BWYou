@@ -4,10 +4,12 @@
  * \section info 개발목적
  *      - 공통으로 사용하는 라이브러리의 모듈화를 통한 생산성 향상
  * \section advenced 추가정보
- *          - Version : 0.7.4.0
- *          - Last Updated : 2013.07.22
+ *          - Version : 0.7.4.1
+ *          - Last Updated : 2014.03.05
+ *              -# Release 위치 지정
+ *          - Updated : 2013.07.22 Version : 0.7.4.0
  *              -# BWYou.Base 업데이트 (ver 0.3.0.0)
- *          - Last Updated : 2013.05.02 Version : 0.7.3.3
+ *          - Updated : 2013.05.02 Version : 0.7.3.3
  *              -# BWYou.Compress 업데이트 (ver 0.2.0.0)
  *              -# BWYou.Transfer 업데이트 (ver 0.2.0.1)
  *              -# BWYou.Base 업데이트 (ver 0.2.5.0)
@@ -25,14 +27,6 @@
  *          - Updated : 2012.09.19 Version : 0.7.2.3
  *              -# enum 관련 전체 정비
  *              -# Dispose 관련 정비
- *          - 현재까지 작업된 모듈 : 
- *              -# BWYou.Base       (ver 0.2.5.0)
- *              -# BWYou.Compress   (ver 0.2.0.0)
- *              -# BWYou.Control    (ver 0.1.1.0)
- *              -# BWYou.Database   (ver 1.2.0.0)
- *              -# BWYou.Network    (ver 0.3.3.1)
- *              -# BWYou.Transfer   (ver 0.2.0.0)
- *              -# BWYou.Crypt      (ver 0.9.3.1)
  * 
  */
 

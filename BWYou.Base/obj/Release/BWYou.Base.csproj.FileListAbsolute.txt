@@ -10,3 +10,8 @@ D:\Sync\프로젝트\!You\BWYou_2010\BWYou.Base\obj\Release\ResolveAssemblyRefer
 D:\Sync\프로젝트\!You\BWYou_2010\BWYou.Base\obj\Release\BWYou.Base.dll
 D:\Sync\프로젝트\!You\BWYou_2010\BWYou.Base\obj\Release\BWYou.Base.pdb
 D:\Sync\프로젝트\!You\BWYou\BWYou.Base\bin\Release\BWYou.Base.XML
+C:\GIT\!You\BWYou\BWYou.Base\bin\Release\BWYou.Base.dll
+C:\GIT\!You\BWYou\BWYou.Base\bin\Release\BWYou.Base.pdb
+C:\GIT\!You\BWYou\BWYou.Base\obj\Release\BWYou.Base.dll
+C:\GIT\!You\BWYou\BWYou.Base\obj\Release\BWYou.Base.pdb
+C:\GIT\!You\BWYou\BWYou.Base\bin\Release\BWYou.Base.XML

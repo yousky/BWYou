@@ -24,3 +24,12 @@ C:\Sync\프로젝트\!You\BWYou\BWYou.Transfer\bin\Debug\DiffieHellman.dll
 C:\Sync\프로젝트\!You\BWYou\BWYou.Transfer\obj\Debug\BWYou.Transfer.csprojResolveAssemblyReference.cache
 C:\Sync\프로젝트\!You\BWYou\BWYou.Transfer\obj\Debug\BWYou.Transfer.dll
 C:\Sync\프로젝트\!You\BWYou\BWYou.Transfer\obj\Debug\BWYou.Transfer.pdb
+C:\Sync\프로젝트\!You\BWYou\BWYou.Transfer\bin\Debug\BWYou.Transfer.XML
+C:\GIT\!You\BWYou\BWYou.Transfer\bin\Debug\BWYou.Transfer.dll
+C:\GIT\!You\BWYou\BWYou.Transfer\bin\Debug\BWYou.Transfer.pdb
+C:\GIT\!You\BWYou\BWYou.Transfer\bin\Debug\Tamir.SharpSSH.dll
+C:\GIT\!You\BWYou\BWYou.Transfer\bin\Debug\Org.Mentalis.Security.dll
+C:\GIT\!You\BWYou\BWYou.Transfer\bin\Debug\DiffieHellman.dll
+C:\GIT\!You\BWYou\BWYou.Transfer\obj\Debug\BWYou.Transfer.dll
+C:\GIT\!You\BWYou\BWYou.Transfer\obj\Debug\BWYou.Transfer.pdb
+C:\GIT\!You\BWYou\BWYou.Transfer\bin\Debug\BWYou.Transfer.XML

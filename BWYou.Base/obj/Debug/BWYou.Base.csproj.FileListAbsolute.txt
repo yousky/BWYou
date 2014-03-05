@@ -13,3 +13,9 @@ C:\Sync\프로젝트\!You\BWYou\BWYou.Base\bin\Debug\BWYou.Base.dll
 C:\Sync\프로젝트\!You\BWYou\BWYou.Base\bin\Debug\BWYou.Base.pdb
 C:\Sync\프로젝트\!You\BWYou\BWYou.Base\obj\Debug\BWYou.Base.dll
 C:\Sync\프로젝트\!You\BWYou\BWYou.Base\obj\Debug\BWYou.Base.pdb
+C:\Sync\프로젝트\!You\BWYou\BWYou.Base\bin\Debug\BWYou.Base.XML
+C:\GIT\!You\BWYou\BWYou.Base\bin\Debug\BWYou.Base.dll
+C:\GIT\!You\BWYou\BWYou.Base\bin\Debug\BWYou.Base.pdb
+C:\GIT\!You\BWYou\BWYou.Base\obj\Debug\BWYou.Base.dll
+C:\GIT\!You\BWYou\BWYou.Base\obj\Debug\BWYou.Base.pdb
+C:\GIT\!You\BWYou\BWYou.Base\bin\Debug\BWYou.Base.XML

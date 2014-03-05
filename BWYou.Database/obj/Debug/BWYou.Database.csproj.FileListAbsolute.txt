@@ -23,3 +23,12 @@ C:\Sync\프로젝트\!You\BWYou\BWYou.Database\bin\Debug\System.Data.OracleClien
 C:\Sync\프로젝트\!You\BWYou\BWYou.Database\obj\Debug\BWYou.Database.csprojResolveAssemblyReference.cache
 C:\Sync\프로젝트\!You\BWYou\BWYou.Database\obj\Debug\BWYou.Database.dll
 C:\Sync\프로젝트\!You\BWYou\BWYou.Database\obj\Debug\BWYou.Database.pdb
+C:\Sync\프로젝트\!You\BWYou\BWYou.Database\bin\Debug\BWYou.Database.XML
+C:\GIT\!You\BWYou\BWYou.Database\bin\Debug\BWYou.Database.dll
+C:\GIT\!You\BWYou\BWYou.Database\bin\Debug\BWYou.Database.pdb
+C:\GIT\!You\BWYou\BWYou.Database\bin\Debug\MySql.Data.dll
+C:\GIT\!You\BWYou\BWYou.Database\bin\Debug\System.Data.dll
+C:\GIT\!You\BWYou\BWYou.Database\bin\Debug\System.Data.OracleClient.dll
+C:\GIT\!You\BWYou\BWYou.Database\obj\Debug\BWYou.Database.dll
+C:\GIT\!You\BWYou\BWYou.Database\obj\Debug\BWYou.Database.pdb
+C:\GIT\!You\BWYou\BWYou.Database\bin\Debug\BWYou.Database.XML

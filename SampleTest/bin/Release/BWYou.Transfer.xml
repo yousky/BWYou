@@ -4,106 +4,6 @@
         <name>BWYou.Transfer</name>
     </assembly>
     <members>
-        <member name="T:BWYou.Transfer.SCP">
-            <summary>
-            SCP를 통한 파일 전송 클래스
-            </summary>
-        </member>
-        <member name="M:BWYou.Transfer.SCP.#ctor(System.String,System.String,System.String,System.Int32)">
-            <summary>
-            생성자, 기본 연결 값을 설정하고, 연결 객체 생성 후 이벤트를 등록한다.
-            </summary>
-            <param name="RemoteIP"></param>
-            <param name="id"></param>
-            <param name="pw"></param>
-            <param name="port"></param>
-        </member>
-        <member name="M:BWYou.Transfer.SCP.Finalize">
-            <summary>
-            이벤트 제거 후 객체를 제거
-            </summary>
-        </member>
-        <member name="M:BWYou.Transfer.SCP.IsConnected">
-            <summary>
-            연결 상태 확인
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:BWYou.Transfer.SCP.Connect">
-            <summary>
-            기본 설정 값으로 연결. 연결 상태 유지
-            </summary>
-        </member>
-        <member name="M:BWYou.Transfer.SCP.Close">
-            <summary>
-            연결 종료
-            </summary>
-        </member>
-        <member name="M:BWYou.Transfer.SCP.Send(System.String,System.String)">
-            <summary>
-            로컬에 있는 파일을 리모트로 보내기
-            </summary>
-            <param name="strLocalPathFile"></param>
-            <param name="strRemotePathFile"></param>
-        </member>
-        <member name="M:BWYou.Transfer.SCP.Receive(System.String,System.String)">
-            <summary>
-            리모트의 파일을 로컬로 받아오기
-            </summary>
-            <param name="strRemotePathFile"></param>
-            <param name="strLocalPathFile"></param>
-        </member>
-        <member name="M:BWYou.Transfer.SCP.Transfer(System.String,System.String,System.Boolean)">
-            <summary>
-            파일을 전송
-            </summary>
-            <param name="strLocalPathFile"></param>
-            <param name="strRemotePathFile"></param>
-            <param name="bIsSend">true : 보내기, false : 받기</param>
-        </member>
-        <member name="M:BWYou.Transfer.SCP.MkdirRemote(System.String)">
-            <summary>
-            리모트 디렉토리 만들기. 상위 디렉토리 생성 못함
-            </summary>
-            <param name="strRemotePath"></param>
-        </member>
-        <member name="M:BWYou.Transfer.SCP.MkdirRemoteShell(System.String)">
-            <summary>
-            리모트 디렉토리 만들기. 상위 디렉토리 자동 생성
-            </summary>
-            <param name="strRemotePath"></param>
-        </member>
-        <member name="M:BWYou.Transfer.SCP.MkdirLocal(System.String)">
-            <summary>
-            로컬 디렉토리 만들기
-            </summary>
-            <param name="strLocalPath"></param>
-        </member>
-        <member name="M:BWYou.Transfer.SCP.OnTransferProgressEvent(System.String,System.String,System.Int32,System.Int32,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="src"></param>
-            <param name="dst"></param>
-            <param name="transferredBytes"></param>
-            <param name="totalBytes"></param>
-            <param name="msg"></param>
-        </member>
-        <member name="E:BWYou.Transfer.SCP.ftEvent">
-            <summary>
-            Triggered on every interval with the transfer progress information.
-            </summary>
-        </member>
-        <member name="T:BWYou.Transfer.SCP.FileTransferEventY">
-            <summary>
-            
-            </summary>
-            <param name="src"></param>
-            <param name="dst"></param>
-            <param name="transferredBytes"></param>
-            <param name="totalBytes"></param>
-            <param name="message"></param>
-        </member>
         <member name="T:BWYou.Transfer.FTP">
             <summary>
             FTP 송수신 클래스
@@ -210,6 +110,106 @@
             FTP 다운로드 받은 용량 체크용 이벤트 핸들러
             </summary>
             <param name="RcvSize"></param>
+        </member>
+        <member name="T:BWYou.Transfer.SCP">
+            <summary>
+            SCP를 통한 파일 전송 클래스
+            </summary>
+        </member>
+        <member name="M:BWYou.Transfer.SCP.#ctor(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            생성자, 기본 연결 값을 설정하고, 연결 객체 생성 후 이벤트를 등록한다.
+            </summary>
+            <param name="RemoteIP"></param>
+            <param name="id"></param>
+            <param name="pw"></param>
+            <param name="port"></param>
+        </member>
+        <member name="M:BWYou.Transfer.SCP.Finalize">
+            <summary>
+            이벤트 제거 후 객체를 제거
+            </summary>
+        </member>
+        <member name="M:BWYou.Transfer.SCP.IsConnected">
+            <summary>
+            연결 상태 확인
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Transfer.SCP.Connect">
+            <summary>
+            기본 설정 값으로 연결. 연결 상태 유지
+            </summary>
+        </member>
+        <member name="M:BWYou.Transfer.SCP.Close">
+            <summary>
+            연결 종료
+            </summary>
+        </member>
+        <member name="M:BWYou.Transfer.SCP.Send(System.String,System.String)">
+            <summary>
+            로컬에 있는 파일을 리모트로 보내기
+            </summary>
+            <param name="strLocalPathFile"></param>
+            <param name="strRemotePathFile"></param>
+        </member>
+        <member name="M:BWYou.Transfer.SCP.Receive(System.String,System.String)">
+            <summary>
+            리모트의 파일을 로컬로 받아오기
+            </summary>
+            <param name="strRemotePathFile"></param>
+            <param name="strLocalPathFile"></param>
+        </member>
+        <member name="M:BWYou.Transfer.SCP.Transfer(System.String,System.String,System.Boolean)">
+            <summary>
+            파일을 전송
+            </summary>
+            <param name="strLocalPathFile"></param>
+            <param name="strRemotePathFile"></param>
+            <param name="bIsSend">true : 보내기, false : 받기</param>
+        </member>
+        <member name="M:BWYou.Transfer.SCP.MkdirRemote(System.String)">
+            <summary>
+            리모트 디렉토리 만들기. 상위 디렉토리 생성 못함
+            </summary>
+            <param name="strRemotePath"></param>
+        </member>
+        <member name="M:BWYou.Transfer.SCP.MkdirRemoteShell(System.String)">
+            <summary>
+            리모트 디렉토리 만들기. 상위 디렉토리 자동 생성
+            </summary>
+            <param name="strRemotePath"></param>
+        </member>
+        <member name="M:BWYou.Transfer.SCP.MkdirLocal(System.String)">
+            <summary>
+            로컬 디렉토리 만들기
+            </summary>
+            <param name="strLocalPath"></param>
+        </member>
+        <member name="M:BWYou.Transfer.SCP.OnTransferProgressEvent(System.String,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="src"></param>
+            <param name="dst"></param>
+            <param name="transferredBytes"></param>
+            <param name="totalBytes"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="E:BWYou.Transfer.SCP.ftEvent">
+            <summary>
+            Triggered on every interval with the transfer progress information.
+            </summary>
+        </member>
+        <member name="T:BWYou.Transfer.SCP.FileTransferEventY">
+            <summary>
+            
+            </summary>
+            <param name="src"></param>
+            <param name="dst"></param>
+            <param name="transferredBytes"></param>
+            <param name="totalBytes"></param>
+            <param name="message"></param>
         </member>
     </members>
 </doc>

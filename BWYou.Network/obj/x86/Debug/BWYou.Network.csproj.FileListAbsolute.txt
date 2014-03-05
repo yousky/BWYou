@@ -15,3 +15,8 @@ C:\Sync\프로젝트\!You\BWYou\BWYou.Network\bin\Debug\BWYou.Network.dll
 C:\Sync\프로젝트\!You\BWYou\BWYou.Network\bin\Debug\BWYou.Network.pdb
 C:\Sync\프로젝트\!You\BWYou\BWYou.Network\obj\x86\Debug\BWYou.Network.dll
 C:\Sync\프로젝트\!You\BWYou\BWYou.Network\obj\x86\Debug\BWYou.Network.pdb
+C:\GIT\!You\BWYou\BWYou.Network\bin\Debug\BWYou.Network.dll.config
+C:\GIT\!You\BWYou\BWYou.Network\bin\Debug\BWYou.Network.dll
+C:\GIT\!You\BWYou\BWYou.Network\bin\Debug\BWYou.Network.pdb
+C:\GIT\!You\BWYou\BWYou.Network\obj\x86\Debug\BWYou.Network.dll
+C:\GIT\!You\BWYou\BWYou.Network\obj\x86\Debug\BWYou.Network.pdb

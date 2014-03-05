@@ -20,3 +20,15 @@ D:\Sync\프로젝트\!You\BWYou_2010\BWYou.Control\obj\Release\BWYou.Control.Lis
 D:\Sync\프로젝트\!You\BWYou_2010\BWYou.Control\obj\Release\BWYou.Control.ProgressBarBase.resources
 D:\Sync\프로젝트\!You\BWYou_2010\BWYou.Control\obj\Release\BWYou.Control.dll
 D:\Sync\프로젝트\!You\BWYou_2010\BWYou.Control\obj\Release\BWYou.Control.pdb
+C:\GIT\!You\BWYou\BWYou.Control\bin\Release\BWYou.Control.XML
+C:\GIT\!You\BWYou\BWYou.Control\bin\Release\BWYou.Control.dll
+C:\GIT\!You\BWYou\BWYou.Control\bin\Release\BWYou.Control.pdb
+C:\GIT\!You\BWYou\BWYou.Control\bin\Release\BWYou.Base.dll
+C:\GIT\!You\BWYou\BWYou.Control\bin\Release\BWYou.Base.pdb
+C:\GIT\!You\BWYou\BWYou.Control\bin\Release\BWYou.Base.xml
+C:\GIT\!You\BWYou\BWYou.Control\obj\Release\BWYou.Control.csprojResolveAssemblyReference.cache
+C:\GIT\!You\BWYou\BWYou.Control\obj\Release\BWYou.Control.ListViewBase.resources
+C:\GIT\!You\BWYou\BWYou.Control\obj\Release\BWYou.Control.ProgressBarBase.resources
+C:\GIT\!You\BWYou\BWYou.Control\obj\Release\BWYou.Control.csproj.GenerateResource.Cache
+C:\GIT\!You\BWYou\BWYou.Control\obj\Release\BWYou.Control.dll
+C:\GIT\!You\BWYou\BWYou.Control\obj\Release\BWYou.Control.pdb

@@ -17,3 +17,10 @@ C:\Sync\프로젝트\!You\BWYou\BWYou.Compress\bin\Debug\ICSharpCode.SharpZipLib
 C:\Sync\프로젝트\!You\BWYou\BWYou.Compress\obj\Debug\BWYou.Compress.csprojResolveAssemblyReference.cache
 C:\Sync\프로젝트\!You\BWYou\BWYou.Compress\obj\Debug\BWYou.Compress.dll
 C:\Sync\프로젝트\!You\BWYou\BWYou.Compress\obj\Debug\BWYou.Compress.pdb
+C:\Sync\프로젝트\!You\BWYou\BWYou.Compress\bin\Debug\BWYou.Compress.XML
+C:\GIT\!You\BWYou\BWYou.Compress\bin\Debug\BWYou.Compress.dll
+C:\GIT\!You\BWYou\BWYou.Compress\bin\Debug\BWYou.Compress.pdb
+C:\GIT\!You\BWYou\BWYou.Compress\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\GIT\!You\BWYou\BWYou.Compress\obj\Debug\BWYou.Compress.dll
+C:\GIT\!You\BWYou\BWYou.Compress\obj\Debug\BWYou.Compress.pdb
+C:\GIT\!You\BWYou\BWYou.Compress\bin\Debug\BWYou.Compress.XML

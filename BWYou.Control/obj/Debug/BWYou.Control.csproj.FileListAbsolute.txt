@@ -31,3 +31,16 @@ C:\Sync\프로젝트\!You\BWYou\BWYou.Control\obj\Debug\BWYou.Control.ProgressBa
 C:\Sync\프로젝트\!You\BWYou\BWYou.Control\obj\Debug\BWYou.Control.csproj.GenerateResource.Cache
 C:\Sync\프로젝트\!You\BWYou\BWYou.Control\obj\Debug\BWYou.Control.dll
 C:\Sync\프로젝트\!You\BWYou\BWYou.Control\obj\Debug\BWYou.Control.pdb
+C:\Sync\프로젝트\!You\BWYou\BWYou.Control\bin\Debug\BWYou.Control.XML
+C:\GIT\!You\BWYou\BWYou.Control\bin\Debug\BWYou.Control.dll
+C:\GIT\!You\BWYou\BWYou.Control\bin\Debug\BWYou.Control.pdb
+C:\GIT\!You\BWYou\BWYou.Control\bin\Debug\BWYou.Base.dll
+C:\GIT\!You\BWYou\BWYou.Control\bin\Debug\BWYou.Base.pdb
+C:\GIT\!You\BWYou\BWYou.Control\bin\Debug\BWYou.Base.xml
+C:\GIT\!You\BWYou\BWYou.Control\obj\Debug\BWYou.Control.csprojResolveAssemblyReference.cache
+C:\GIT\!You\BWYou\BWYou.Control\obj\Debug\BWYou.Control.ListViewBase.resources
+C:\GIT\!You\BWYou\BWYou.Control\obj\Debug\BWYou.Control.ProgressBarBase.resources
+C:\GIT\!You\BWYou\BWYou.Control\obj\Debug\BWYou.Control.csproj.GenerateResource.Cache
+C:\GIT\!You\BWYou\BWYou.Control\obj\Debug\BWYou.Control.dll
+C:\GIT\!You\BWYou\BWYou.Control\obj\Debug\BWYou.Control.pdb
+C:\GIT\!You\BWYou\BWYou.Control\bin\Debug\BWYou.Control.XML

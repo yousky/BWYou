@@ -10,3 +10,8 @@ D:\Sync\프로젝트\!You\BWYou_2010\BWYou\obj\Release\ResolveAssemblyReference.
 D:\Sync\프로젝트\!You\BWYou_2010\BWYou\obj\Release\BWYou.dll
 D:\Sync\프로젝트\!You\BWYou_2010\BWYou\obj\Release\BWYou.pdb
 D:\Sync\프로젝트\!You\BWYou\BWYou\bin\Release\BWYou.XML
+C:\GIT\!You\BWYou\BWYou\bin\Release\BWYou.dll
+C:\GIT\!You\BWYou\BWYou\bin\Release\BWYou.pdb
+C:\GIT\!You\BWYou\BWYou\obj\Release\BWYou.dll
+C:\GIT\!You\BWYou\BWYou\obj\Release\BWYou.pdb
+C:\GIT\!You\BWYou\BWYou\bin\Release\BWYou.XML
