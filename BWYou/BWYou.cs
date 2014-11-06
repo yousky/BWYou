@@ -40,7 +40,7 @@ using System.Text;
 namespace BWYou
 {
     /// <summary>
-    /// 메인페이지용
+    /// 메인페이지용 
     /// </summary>
     public class BWYou
     {
