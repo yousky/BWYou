@@ -5,8 +5,11 @@
  *          - Database 관련 작업을 하나로 묶어 유지보수가 간단해지도록 하기 위함.
  *          - 여러 Database와 동일한 방식으로 작업이 가능하도록 하기 위함.
  *  \section advenced 추가정보
- *          - Version : 1.2.0.0
- *          - Last Updated : 2012.11.15
+ *          - Version : 1.2.0.1
+ *          - Last Updated : 2014.07.22
+ *              -# VS2013 컨버팅
+ *              -# Mysql.data.dll 버젼 변경(Connector NET 6.8.3) 
+ *          - Updated : 2012.11.15
  *              -# VS2010 컨버팅
  *              -# noinstall 을 정식으로 처리
  *          - Updated : 2012.08.29 Version : 1.1.3.0

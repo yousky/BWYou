@@ -1,0 +1,510 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BWYou.Base</name>
+    </assembly>
+    <members>
+        <member name="T:BWYou.Base.BWYou">
+            <summary>
+            테스트용
+            </summary>
+        </member>
+        <member name="F:BWYou.Base.BWYou.wlog">
+            <summary>
+            로그 파일 lock 체크용 object
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.BWYou.WriteLog(System.String,System.String)">
+            <summary>
+            로그 파일에 로그 쓰기
+            </summary>
+            <param name="LogFilePathName"></param>
+            <param name="Message"></param>
+        </member>
+        <member name="T:BWYou.Base.ClassBase">
+            <summary>
+            기본 클래스, 클래스명 부여, IDisposable 인터페이스, SayMessage 이벤트
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ClassBase.SayMessage(System.Object,BWYou.Base.MessageEventArgs)">
+            <summary>
+            메세지 이벤트 발생
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BWYou.Base.ClassBase.SayMessage(System.Object,System.String,BWYou.Base.MessagePriority)">
+            <summary>
+            메세지 이벤트 발생
+            </summary>
+            <param name="sender"></param>
+            <param name="message"></param>
+            <param name="priority"></param>
+        </member>
+        <member name="M:BWYou.Base.ClassBase.SayMessage(System.Object,System.String)">
+            <summary>
+            메세지 이벤트 발생
+            </summary>
+            <param name="sender"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:BWYou.Base.ClassBase.#ctor(System.String)">
+            <summary>
+            기본 클래스 생성자
+            </summary>
+            <param name="Name"></param>
+        </member>
+        <member name="M:BWYou.Base.ClassBase.#ctor">
+            <summary>
+            기본 클래스 생성자
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ClassBase.Finalize">
+            <summary>
+            기본 클래스 소멸자
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ClassBase.Dispose">
+            <summary>
+            기본 클래스 Dispose
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ClassBase.Dispose(System.Boolean)">
+            <summary>
+            Dispose Pattern 구현
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="P:BWYou.Base.ClassBase.Name">
+            <summary>
+            클래스 명
+            </summary>
+        </member>
+        <member name="E:BWYou.Base.ClassBase.MessageSay">
+            <summary>
+            메세지 처리 이벤트
+            </summary>
+        </member>
+        <member name="T:BWYou.Base.ClassBase.MessageSayEventHandler">
+            <summary>
+            메세지 처리용 이벤트 핸들러
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:BWYou.Base.ClassWork">
+            <summary>
+            작업 클래스, ClassBase 상속, ProgressWork 이벤트
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ClassWork.ProgressWork(System.Object,BWYou.Base.WorkEventArgs)">
+            <summary>
+            작업 진행 발생
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BWYou.Base.ClassWork.ProgressWork(System.Object,BWYou.Base.WorkProgressState,System.Int32)">
+            <summary>
+            작업 진행 발생
+            </summary>
+            <param name="sender"></param>
+            <param name="workProgressState"></param>
+            <param name="workProgress"></param>
+        </member>
+        <member name="M:BWYou.Base.ClassWork.ProgressWork(System.Object,BWYou.Base.WorkProgressState)">
+            <summary>
+            작업 진행 발생
+            </summary>
+            <param name="sender"></param>
+            <param name="workProgressState"></param>
+        </member>
+        <member name="M:BWYou.Base.ClassWork.BeatHeart(System.Object,System.EventArgs)">
+            <summary>
+            Heart Beat 발생
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BWYou.Base.ClassWork.BeatHeart(System.Object)">
+            <summary>
+            Heart Beat 발생
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="M:BWYou.Base.ClassWork.#ctor(System.String)">
+            <summary>
+            작업 클래스 생성자
+            </summary>
+            <param name="Name"></param>
+        </member>
+        <member name="M:BWYou.Base.ClassWork.#ctor">
+            <summary>
+            작업 클래스 생성자
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ClassWork.Finalize">
+            <summary>
+            작업 클래스 소멸자
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ClassWork.Dispose">
+            <summary>
+            작업 클래스 Dispose
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ClassWork.Dispose(System.Boolean)">
+            <summary>
+            Dispose Pattern 구현
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="E:BWYou.Base.ClassWork.WorkProgress">
+            <summary>
+            작업 진행 이벤트
+            </summary>
+        </member>
+        <member name="E:BWYou.Base.ClassWork.HeartBeat">
+            <summary>
+            Heart Beat 이벤트
+            </summary>
+        </member>
+        <member name="T:BWYou.Base.ClassWork.WorkEventHandler">
+            <summary>
+            작업 진행 이벤트 핸들러
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:BWYou.Base.ClassWork.HeartBeatEventHandler">
+            <summary>
+            Heart Beat 이벤트 핸들러
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:BWYou.Base.MessagePriority">
+            <summary>
+            중요도, 우선 순위
+            </summary>
+        </member>
+        <member name="F:BWYou.Base.MessagePriority.Info">
+            <summary>
+            Info Level - 0
+            </summary>
+        </member>
+        <member name="F:BWYou.Base.MessagePriority.Warn">
+            <summary>
+            Warn Level - 1
+            </summary>
+        </member>
+        <member name="F:BWYou.Base.MessagePriority.Debug">
+            <summary>
+            Debug Level - 2
+            </summary>
+        </member>
+        <member name="F:BWYou.Base.MessagePriority.Error">
+            <summary>
+            Error Level - 4
+            </summary>
+        </member>
+        <member name="F:BWYou.Base.MessagePriority.Fatal">
+            <summary>
+            Fatal Level - 8
+            </summary>
+        </member>
+        <member name="T:BWYou.Base.MessageEventArgs">
+            <summary>
+            메세지 이벤트
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.MessageEventArgs.#ctor(System.String,BWYou.Base.MessagePriority)">
+            <summary>
+            메세지 이벤트 생성자
+            </summary>
+            <param name="message"></param>
+            <param name="priority"></param>
+        </member>
+        <member name="P:BWYou.Base.MessageEventArgs.message">
+            <summary>
+            메세지
+            </summary>
+        </member>
+        <member name="P:BWYou.Base.MessageEventArgs.priority">
+            <summary>
+            메세지 중요도
+            </summary>
+        </member>
+        <member name="T:BWYou.Base.ThreadBase">
+            <summary>
+            스레드 기본 클래스, ClassWork 상속, Do() override하여 사용
+            </summary>
+        </member>
+        <member name="F:BWYou.Base.ThreadBase.nThreadSleepTime">
+            <summary>
+            스레드 내부 Sleep Time 기준. 밀리초
+            </summary>
+        </member>
+        <member name="F:BWYou.Base.ThreadBase.thr">
+            <summary>
+            작업 스레드
+            </summary>
+        </member>
+        <member name="F:BWYou.Base.ThreadBase.bStopThread">
+            <summary>
+            스레드 정지 신호
+            </summary>
+        </member>
+        <member name="F:BWYou.Base.ThreadBase.bPauseThread">
+            <summary>
+            스레드 일시 정지 신호
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ThreadBase.#ctor(System.String)">
+            <summary>
+            스레드 기본 생성자
+            </summary>
+            <param name="Name"></param>
+        </member>
+        <member name="M:BWYou.Base.ThreadBase.Start">
+            <summary>
+            스레드 실행
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ThreadBase.StopThread">
+            <summary>
+            스레드 중지하도록 요청
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ThreadBase.ForceStopThread">
+            <summary>
+            강제로 스레드 중지
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ThreadBase.PauseThread">
+            <summary>
+            스레드 일시 정지하도록 요청
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ThreadBase.ResumeThread">
+            <summary>
+            스레드 일시 정지 된 것 다시 시작 하도록 요청
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ThreadBase.DoDef">
+            <summary>
+            기본 스레드 하는 일
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ThreadBase.Do">
+            <summary>
+            반복 할 일.
+            ProgressWork(this, new WorkEventArgs(WorkProgressState.Working, 진행률값));
+            BeatHeart(this); 잊지 말 것
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ThreadBase.Finalize">
+            <summary>
+            스레드 기본 클래스 소멸자
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ThreadBase.Dispose">
+            <summary>
+            스레드 기본 클래스 Dispose
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ThreadBase.Dispose(System.Boolean)">
+            <summary>
+            Dispose Pattern 구현
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <!-- 잘못된 형식의 XML 주석은 "T:BWYou.Base.ThreadMonitor" 멤버에 대해 무시됩니다. -->
+        <member name="T:BWYou.Base.ThreadWhile">
+            <summary>
+            일정 주기마다 반복되는 스레드 기본형, ThreadBase 상속
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ThreadWhile.#ctor(System.String,System.Int32)">
+            <summary>
+            스레드 기본 생성자
+            </summary>
+            <param name="Name"></param>
+            <param name="nRepeatCycleSecond">반복 주기(초)</param>
+        </member>
+        <member name="M:BWYou.Base.ThreadWhile.DoDef">
+            <summary>
+            기본 스레드 하는 일
+            </summary>
+        </member>
+        <member name="P:BWYou.Base.ThreadWhile.nRepeatCycle">
+            <summary>
+            반복 실행 주기(nThreadSleepTime 밀리초 단위)
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ThreadMonitor.NotifyDeadClassWork4Monitor(System.Object,System.EventArgs)">
+            <summary>
+            감시 작업 죽었다는 걸 알림
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BWYou.Base.ThreadMonitor.NotifyDeadClassWork4Monitor(System.Object)">
+            <summary>
+            감시 작업 죽었다는 걸 알림
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="M:BWYou.Base.ThreadMonitor.#ctor(BWYou.Base.ClassWork,System.Int32,System.Int32)">
+            <summary>
+            생성자
+            DeadClassWork4MonitorNotify 이벤트를 통해 감시 할 작업이 죽었을 때 알림 발생 시킴
+            </summary>
+            <param name="classWork4Monitor">살아 있는지 감시 할 작업</param>
+            <param name="RepeatCycleSecond">감시 주기(초단위)</param>
+            <param name="ThreadTimeoutSecond"></param>
+        </member>
+        <member name="M:BWYou.Base.ThreadMonitor.WriteClassWork4Monitor_WorkProgress(System.Object,BWYou.Base.WorkEventArgs)">
+            <summary>
+            감시 클래스의 작업 상태 기록
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BWYou.Base.ThreadMonitor.WriteClassWork4Monitor_HeartBeatDateTime(System.Object,System.EventArgs)">
+            <summary>
+            감시 클래스의 HeartBeat 이벤트 시간 기록
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BWYou.Base.ThreadMonitor.Do">
+            <summary>
+            감시 하고 있는 작업 살아 있는지 여부 확인
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ThreadMonitor.Finalize">
+            <summary>
+            모니터 스레드 소멸자
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ThreadMonitor.Dispose">
+            <summary>
+            모니터 스레드 Dispose
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.ThreadMonitor.Dispose(System.Boolean)">
+            <summary>
+            Dispose Pattern 구현
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="E:BWYou.Base.ThreadMonitor.DeadClassWork4MonitorNotify">
+            <summary>
+            감시 작업 죽었다는 걸 알리는 이벤트
+            </summary>
+        </member>
+        <member name="P:BWYou.Base.ThreadMonitor.WorkTimeoutSecond">
+            <summary>
+            시간 초과로 죽었다고 판단 할 시간(초단위)
+            </summary>
+        </member>
+        <member name="P:BWYou.Base.ThreadMonitor.LastHeartBeatDateTime">
+            <summary>
+            마지막 HeartBeat 발생한 일시
+            </summary>
+        </member>
+        <member name="P:BWYou.Base.ThreadMonitor.LastWorkProgressState">
+            <summary>
+            마지막 작업 상태
+            </summary>
+        </member>
+        <member name="P:BWYou.Base.ThreadMonitor.classWork4Monitor">
+            <summary>
+            살아 있는지 감시 할 스레드
+            </summary>
+        </member>
+        <member name="T:BWYou.Base.ThreadMonitor.DeadClassWork4MonitorNotifyEventHandler">
+            <summary>
+            감시 작업 죽었다는 걸 알리는 이벤트 핸들러
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:BWYou.Base.WorkProgressState">
+            <summary>
+            작업 진행 상태
+            </summary>
+        </member>
+        <member name="F:BWYou.Base.WorkProgressState.Standby">
+            <summary>
+            작업 대기 중
+            </summary>
+        </member>
+        <member name="F:BWYou.Base.WorkProgressState.Unstarted">
+            <summary>
+            작업 시작 안 됨.(못 함)
+            </summary>
+        </member>
+        <member name="F:BWYou.Base.WorkProgressState.Working">
+            <summary>
+            작업 중
+            </summary>
+        </member>
+        <member name="F:BWYou.Base.WorkProgressState.Suspended">
+            <summary>
+            작업 일시 중단
+            </summary>
+        </member>
+        <member name="F:BWYou.Base.WorkProgressState.AbortRequested">
+            <summary>
+            작업 취소 요청 됨.(아직 취소 안 됨)
+            </summary>
+        </member>
+        <member name="F:BWYou.Base.WorkProgressState.Aborted">
+            <summary>
+            작업 취소 됨
+            </summary>
+        </member>
+        <member name="F:BWYou.Base.WorkProgressState.Stopped">
+            <summary>
+            작업 중지 됨.
+            </summary>
+        </member>
+        <member name="T:BWYou.Base.WorkEventArgs">
+            <summary>
+            작업 이벤트
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.WorkEventArgs.#ctor(BWYou.Base.WorkProgressState,System.Int32)">
+            <summary>
+            작업 이벤트 생성자
+            </summary>
+            <param name="workProgressState"></param>
+            <param name="workProgress"></param>
+        </member>
+        <member name="P:BWYou.Base.WorkEventArgs.workProgressState">
+            <summary>
+            현재 작업 진행 상태
+            </summary>
+        </member>
+        <member name="P:BWYou.Base.WorkEventArgs.workProgress">
+            <summary>
+            현재 작업 진행 정도
+            </summary>
+        </member>
+        <member name="T:BWYou.Base.Config">
+            <summary>
+            환경 값 처리 클래스
+            </summary>
+        </member>
+        <member name="M:BWYou.Base.Config.ReadConfigAppSettings(System.String,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+            XML 환경 파일 내부의 appSettings 값을 읽어서 Dictionary 형식으로 돌려주기
+            </summary>
+            <param name="filename">읽을 XML 환경 파일</param>
+            <param name="dicConfigKeyValue">appSettings의 Dictionary 형식 값</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
