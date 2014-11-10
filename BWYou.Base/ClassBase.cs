@@ -6,7 +6,7 @@ using System.Text;
 namespace BWYou.Base
 {
     /// <summary>
-    /// 기본 클래스, 클래스명 부여, IDisposable 인터페이스, SayMessage 이벤트
+    /// 기본 클래스, 클래스명 부여, IDisposable 인터페이스, MessageSay 이벤트 구현
     /// </summary>
     public class ClassBase : IDisposable
     {

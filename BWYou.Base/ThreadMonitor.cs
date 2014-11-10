@@ -9,11 +9,11 @@ namespace BWYou.Base
     /// 작업 중인 것 감시하는 스레드
     /// 
     /// 메인(폼 또는 콘솔) 스레드
-    /// 	실 작업 & 모니터 함수
+    /// 	실 작업 모니터 함수
     /// 		실 작업 스레드 생성
     /// 		모니터 클래스 생성(실 작업 스레드 전달)
     /// 	모니터 클래스 이벤트 리스닝 함수
-    /// 		실 작업 스레드 죽이지 않았으면서 죽었다는 이벤트 발생시 기존 실 작업 & 모니터 없애고 새로 실 작업 & 모니터 함수 다시 처리. 반복.. 
+    /// 		실 작업 스레드 죽이지 않았으면서 죽었다는 이벤트 발생시 기존 실 작업 모니터 없애고 새로 실 작업 모니터 함수 다시 처리. 반복.. 
     /// </summary>
     public class ThreadMonitor : ThreadWhile
     {
@@ -85,11 +85,17 @@ namespace BWYou.Base
             this.WorkTimeoutSecond = ThreadTimeoutSecond;
             ChangeClassWork4Monitor(classWork4Monitor);
         }
+        /// <summary>
+        /// 살아 있는지 감시 할 작업 변경
+        /// </summary>
+        /// <param name="classWork4Monitor">변경 할 살아 있는지 감시 할 작업</param>
         public void ChangeClassWork4Monitor(ClassWork classWork4Monitor)
         {
             this.classWork4Monitor = classWork4Monitor;
             if (classWork4Monitor != null)
             {
+                this.LastHeartBeatDateTime = DateTime.Now;
+                this.LastWorkProgressState = WorkProgressState.Working;
                 classWork4Monitor.HeartBeat += new HeartBeatEventHandler(WriteClassWork4Monitor_HeartBeatDateTime);
                 classWork4Monitor.WorkProgress += new WorkEventHandler(WriteClassWork4Monitor_WorkProgress);
             }
@@ -118,6 +124,7 @@ namespace BWYou.Base
         protected override void Do()
         {
             BeatHeart(this);    //감시 스레드 살아 있는지 여부 알림
+            ProgressWork(this, new WorkEventArgs(WorkProgressState.Working, 0));
 
             bool bDeadedThread = false;
             if (classWork4Monitor != null)

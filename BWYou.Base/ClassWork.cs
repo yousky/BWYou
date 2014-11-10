@@ -6,7 +6,7 @@ using System.Text;
 namespace BWYou.Base
 {
     /// <summary>
-    /// 작업 클래스, ClassBase 상속, ProgressWork 이벤트
+    /// 작업 클래스, ClassBase 상속, WorkProgress, HeartBeat 이벤트 구현
     /// </summary>
     public class ClassWork : ClassBase
     {

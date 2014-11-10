@@ -4,8 +4,11 @@
  *  \section info 개발목적
  *          - 즐겨 사용 할 클래스 모음
  *  \section advenced 추가정보
- *          - Version : 0.3.0.0
- *          - Last Updated : 2013.07.22
+ *          - Version : 0.3.0.1
+ *          - Last Updated : 2014.11.10
+ *              -# ThreadBase, ThreadWhile, ThreadMonitor BeatHeart 더 발생 시킴
+ *              -# ThreadMonitor 초기 값 세팅 추가
+ *          - Last Updated : 2013.07.22 Version : 0.3.0.0
  *              -# ClassWork HeartBeat Event 추가
  *              -# ThreadBase, ThreadWhile 재정리, 0.1초 간격으로 스레드 While문 처리 되도록 수정
  *              -# ThreadBase 일시 정지, 다시 시작 기능 추가

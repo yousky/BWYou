@@ -117,6 +117,7 @@ namespace BWYou.Base
                 try
                 {
                     SayMessage(this, new MessageEventArgs(Name + " 스레드  처리 시작", MessagePriority.Info));
+                    BeatHeart(this);
                     ProgressWork(this, new WorkEventArgs(WorkProgressState.Standby, 0));
 
                     while (bStopThread != true)
@@ -127,8 +128,8 @@ namespace BWYou.Base
                         }
                         else
                         {
-                            ProgressWork(this, new WorkEventArgs(WorkProgressState.Suspended, 0));
                             BeatHeart(this);
+                            ProgressWork(this, new WorkEventArgs(WorkProgressState.Suspended, 0));
                         }
 
                         Thread.Sleep(nThreadSleepTime);
@@ -143,6 +144,7 @@ namespace BWYou.Base
                 }
                 finally
                 {
+                    BeatHeart(this);
                     ProgressWork(this, new WorkEventArgs(WorkProgressState.Stopped, 0));
                 }
             }

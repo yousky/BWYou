@@ -37,6 +37,7 @@ namespace BWYou.Base
                 try
                 {
                     SayMessage(this, new MessageEventArgs(Name + " 스레드  처리 시작", MessagePriority.Info));
+                    BeatHeart(this);    //ThreadMonitor 감시 처리 위해
                     ProgressWork(this, new WorkEventArgs(WorkProgressState.Standby, 0));
 
                     int nCycle = nRepeatCycle - 1;
@@ -54,8 +55,8 @@ namespace BWYou.Base
                             }
                             else
                             {
-                                ProgressWork(this, new WorkEventArgs(WorkProgressState.Suspended, 0));
                                 BeatHeart(this);
+                                ProgressWork(this, new WorkEventArgs(WorkProgressState.Suspended, 0));
                             }
                         }
 
@@ -71,6 +72,7 @@ namespace BWYou.Base
                 }
                 finally
                 {
+                    BeatHeart(this);
                     ProgressWork(this, new WorkEventArgs(WorkProgressState.Stopped, 0));
                 }
             }
