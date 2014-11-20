@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BWYou", "BWYou\BWYou.csproj", "{A338F2A5-0626-4380-B059-196F6D27853A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleTest", "SampleTest\SampleTest.csproj", "{644AC49B-8513-4CD9-A052-E34D153983C7}"
@@ -20,6 +22,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BWYou.Network", "BWYou.Network\BWYou.Network.csproj", "{CDDD2A1E-47E5-441C-9350-E492568C35A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BWYou.Web", "BWYou.Web\BWYou.Web.csproj", "{C3CA59D6-0F39-44EA-AC3E-F724B1281EF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BWYou.Cloud", "BWYou.Cloud\BWYou.Cloud.csproj", "{573F091D-EF33-4BAC-B256-836723BECF77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -131,6 +135,16 @@ Global
 		{C3CA59D6-0F39-44EA-AC3E-F724B1281EF4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{C3CA59D6-0F39-44EA-AC3E-F724B1281EF4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C3CA59D6-0F39-44EA-AC3E-F724B1281EF4}.Release|x86.ActiveCfg = Release|Any CPU
+		{573F091D-EF33-4BAC-B256-836723BECF77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{573F091D-EF33-4BAC-B256-836723BECF77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{573F091D-EF33-4BAC-B256-836723BECF77}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{573F091D-EF33-4BAC-B256-836723BECF77}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{573F091D-EF33-4BAC-B256-836723BECF77}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{573F091D-EF33-4BAC-B256-836723BECF77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{573F091D-EF33-4BAC-B256-836723BECF77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{573F091D-EF33-4BAC-B256-836723BECF77}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{573F091D-EF33-4BAC-B256-836723BECF77}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{573F091D-EF33-4BAC-B256-836723BECF77}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

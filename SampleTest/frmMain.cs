@@ -30,6 +30,7 @@ namespace SampleTest
             //fServer.Show();
             //fClient.Show();
 
+
         }
 
         private void btnTest_Click(object sender, EventArgs e)
@@ -93,7 +94,7 @@ namespace SampleTest
             //ftp.Upload(".", @"C:\xray21\downLoadedImage\krh201005\13122\2477789\1.dcm");
             //ftp.Download("1.dcm", "1.dcm");
 
-            //BWYou.Transfer.FTP ftp = new BWYou.Transfer.FTP("112.220.125.186", "oracle", "oracle1234", "4322", true);
+            //BWYou.Transfer.FTP ftp = new BWYou.Transfer.FTP("112.220.125.186", txtSCP_ID.Text, txtSCP_PW.Text", "4322", true);
             //ftp.Download("1.dcm", "%2F/home2/tmp/200807/16/83542/1.2.276.0.357732.201.1.dcm");    //%2F는 역슬래쉬(/)를 의미하는 Web 문자
             //ftp.Download("2.dcm", "//home2/tmp/200807/16/83542/1.2.276.0.357732.201.1.dcm");      // / 한개로 못 찾으면 // 2개 하면 되는 경우 존재함..
 

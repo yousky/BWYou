@@ -59,6 +59,27 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\log4net\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.2\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.2\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.2\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.8.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage">
+      <HintPath>..\packages\WindowsAzure.Storage.4.3.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -66,6 +87,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Spatial, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.6.2\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -114,6 +139,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -129,6 +155,10 @@
       <Project>{8D941019-C465-49E7-BDBC-6685565DD150}</Project>
       <Name>BWYou.Base</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BWYou.Cloud\BWYou.Cloud.csproj">
+      <Project>{573f091d-ef33-4bac-b256-836723becf77}</Project>
+      <Name>BWYou.Cloud</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BWYou.Compress\BWYou.Compress.csproj">
       <Project>{4EC303D8-FD80-4066-9149-ED0CEC355F34}</Project>
       <Name>BWYou.Compress</Name>
@@ -137,13 +167,25 @@
       <Project>{7FC994D2-5B7C-4FCA-9124-76BCEC1E9E73}</Project>
       <Name>BWYou.Control</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BWYou.Crypt\BWYou.Crypt.csproj">
+      <Project>{fc9a4536-b129-4e3f-a927-45c5de0cde7f}</Project>
+      <Name>BWYou.Crypt</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BWYou.Database\BWYou.Database.csproj">
       <Project>{105E93F2-722D-4223-A1E2-E6DA1DD5E940}</Project>
       <Name>BWYou.Database</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BWYou.Network\BWYou.Network.csproj">
+      <Project>{cddd2a1e-47e5-441c-9350-e492568c35a4}</Project>
+      <Name>BWYou.Network</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BWYou.Transfer\BWYou.Transfer.csproj">
       <Project>{0CCD94A1-453E-431E-9761-5BF70E2E6544}</Project>
       <Name>BWYou.Transfer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWYou.Web\BWYou.Web.csproj">
+      <Project>{c3ca59d6-0f39-44ea-ac3e-f724b1281ef4}</Project>
+      <Name>BWYou.Web</Name>
     </ProjectReference>
     <ProjectReference Include="..\BWYou\BWYou.csproj">
       <Project>{A338F2A5-0626-4380-B059-196F6D27853A}</Project>

@@ -4,8 +4,10 @@
  *  \section info 개발목적
  *          - 자체 암호화 처리를 위하여
  *  \section advenced 추가정보
- *          - Version : 0.9.3.2
- *          - Last Updated : 2014.01.06
+ *          - Version : 0.9.3.3
+ *          - Last Updated : 2014.11.20
+ *              -# 빌드 타겟 플랫폼을 x86에서 Any Cpu로 변경. 테스트 안 함.
+ *          - Updated : 2014.01.06 Version : 0.9.3.2
  *              -# key iv 기본 변경
  *          - Updated : 2013.01.15 Version : 0.9.3.1
  *              -# 프로젝트화

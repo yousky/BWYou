@@ -4,8 +4,10 @@
  *  \section info 개발목적
  *          - 네트워크 관련 함수, 클래스 모음
  *  \section advenced 추가정보
- *          - Version : 0.3.3.1
- *          - Last Updated : 2013.01.15
+ *          - Version : 0.3.3.2
+ *          - Last Updated : 2014.11.20
+ *              -# 빌드 타겟 플랫폼을 x86에서 Any Cpu로 변경. 테스트 안 함.
+ *          - Updated : 2013.01.15 Version : 0.3.3.1
  *              -# 프로젝트화
  *          - Updated : 2012.11.15 Version : 0.3.3.0
  *              -# VS2010 컨버팅
