@@ -1,8 +1,10 @@
-﻿using System;
+﻿using BWYou.Cloud.Storage;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
@@ -90,6 +92,14 @@ namespace SampleTest
                 return;
             }
 
+            IStorage storage = new AzureStorage(txtSCP_PW.Text);
+            FileInfo fi = new FileInfo(@"X:\temp\400.html");
+            using (var fileStream = fi.OpenRead())
+            {
+                string filenamepng = storage.Upload(fileStream, "400.html", "test", string.Format(@"trsc\{0}\{1}\imgs", 1, 2));
+            }
+
+
             //BWYou.Transfer.FTP ftp = new BWYou.Transfer.FTP("192.168.0.21", txtSCP_ID.Text, txtSCP_PW.Text, "2121", false);
             //ftp.Upload(".", @"C:\xray21\downLoadedImage\krh201005\13122\2477789\1.dcm");
             //ftp.Download("1.dcm", "1.dcm");
@@ -109,15 +119,15 @@ namespace SampleTest
             //scp.MkdirRemote(@"/home/yousky/test/");
             //scp.Close();
             //scp.ftEvent -= new BWYou.Transfer.SCP.FileTransferEventY(WriteTransferProgress);
-            BWYou.Transfer.SCP scp = new BWYou.Transfer.SCP("211.110.10.102", txtSCP_ID.Text, txtSCP_PW.Text, 45214);
-            scp.ftEvent += new BWYou.Transfer.SCP.FileTransferEventY(WriteTransferProgress);
-            scp.Connect();
-            scp.MkdirRemote(@"./test");
-            scp.Send(@"D:\test\1.2.840.113619.2.134.1762888262.1769.1375739026.140_6449620469.dcm", @"./test/1.2.840.113619.2.134.1762888262.1769.1375739026.140_6449620469.dcm");
-            scp.MkdirLocal(@"D:\test\");
-            scp.Receive(@"./test/1.2.840.113619.2.134.1762888262.1769.1375739026.140_6449620469.dcm", @"D:\test\1.2.840.113619.2.134.1762888262.1769.1375739026.140_6449620469.dcm.back");
-            scp.Close();
-            scp.ftEvent -= new BWYou.Transfer.SCP.FileTransferEventY(WriteTransferProgress);
+            //BWYou.Transfer.SCP scp = new BWYou.Transfer.SCP("211.110.10.102", txtSCP_ID.Text, txtSCP_PW.Text, 45214);
+            //scp.ftEvent += new BWYou.Transfer.SCP.FileTransferEventY(WriteTransferProgress);
+            //scp.Connect();
+            //scp.MkdirRemote(@"./test");
+            //scp.Send(@"D:\test\1.2.840.113619.2.134.1762888262.1769.1375739026.140_6449620469.dcm", @"./test/1.2.840.113619.2.134.1762888262.1769.1375739026.140_6449620469.dcm");
+            //scp.MkdirLocal(@"D:\test\");
+            //scp.Receive(@"./test/1.2.840.113619.2.134.1762888262.1769.1375739026.140_6449620469.dcm", @"D:\test\1.2.840.113619.2.134.1762888262.1769.1375739026.140_6449620469.dcm.back");
+            //scp.Close();
+            //scp.ftEvent -= new BWYou.Transfer.SCP.FileTransferEventY(WriteTransferProgress);
         }
 
         private void btnTestCompress_Click(object sender, EventArgs e)

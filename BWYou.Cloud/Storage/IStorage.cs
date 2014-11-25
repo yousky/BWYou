@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace BWYou.Cloud.Storage
 {
@@ -31,5 +32,8 @@ namespace BWYou.Cloud.Storage
         /// <param name="useSequencedName">overwrite false and same file exist then filename[1], filename[2], ... use</param>
         /// <returns></returns>
         string Upload(string sourcefilepathname, string containerName, string destpath = "", bool useUUIDName = true, bool overwrite = false, bool useSequencedName = true);
+
+        bool Download(Uri sourceUri, string destfilename);
+        bool Download(Uri sourceUri, Stream deststream);
     }
 }

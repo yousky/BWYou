@@ -161,5 +161,22 @@ namespace BWYou.Cloud.Storage
             }
         }
 
+
+
+        public bool Download(Uri sourceUri, string destfilename)
+        {
+            CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+            ICloudBlob blob = blobClient.GetBlobReferenceFromServer(sourceUri);
+            blob.DownloadToFile(destfilename, FileMode.CreateNew);
+            return File.Exists(destfilename);
+        }
+
+        public bool Download(Uri sourceUri, Stream deststream)
+        {
+            CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+            ICloudBlob blob = blobClient.GetBlobReferenceFromServer(sourceUri);
+            blob.DownloadToStream(deststream);
+            return true;
+        }
     }
 }

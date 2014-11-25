@@ -257,6 +257,85 @@ namespace BWYou.Cloud.Storage
             }
         }
 
+        public bool Download(Uri sourceUri, string destfilename)
+        {
+            return TryDownload<string>(sourceUri, destfilename, WebDownload);
+        }
+
+        public bool Download(Uri sourceUri, Stream deststream)
+        {
+            return TryDownload<Stream>(sourceUri, deststream, WebDownload);
+        }
+
+        private bool TryDownload<T>(Uri sourceUri, T dest, Func<Uri, T, string, bool> func)
+        {
+            bool forceRequestAuth = false;
+
+            int retryCount = UCloudStorage.retryCount;
+
+            do
+            {
+                string authToken = GetAuthToken(forceRequestAuth);
+
+                if (string.IsNullOrEmpty(authToken) == true)
+                {
+                    return false;
+                }
+
+                try
+                {
+                    return func(sourceUri, dest, authToken);
+                }
+                catch (HttpWebResponseUnauthorizedException)
+                {
+                    forceRequestAuth = true;
+                }
+                catch (Exception)
+                {
+
+                }
+
+            } while (--retryCount > 0);
+
+            throw new OutOfReTryCountException();
+        }
+
+        private bool WebDownload(Uri sourceUri, string destfilename, string authToken)
+        {
+            WebClient webClient = new WebClient();
+            webClient.Headers.Add("X-Auth-Token", authToken);
+            webClient.DownloadFile(sourceUri, destfilename);
+
+            return File.Exists(destfilename);
+        }
+        private bool WebDownload(Uri sourceUri, Stream deststream, string authToken)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(sourceUri);
+            request.Method = "GET"; 
+            request.Headers.Add("X-Auth-Token", authToken);
+
+            using (HttpWebResponse response = GetResponse(request))
+            {
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    throw new HttpWebResponseException();
+                }
+                else if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    deststream = response.GetResponseStream();   //Todo 이렇게 stream 받아 올 수 있는지 테스트 필요... 
+                    return true;
+                }
+                else if (response.StatusCode == HttpStatusCode.Unauthorized)
+                {
+                    throw new HttpWebResponseUnauthorizedException();
+                }
+                else
+                {
+                    throw new HttpWebResponseException();
+                }
+            }
+        }
+
         /// <summary>
         /// request에 대한 response 획득
         /// </summary>
@@ -319,6 +398,7 @@ namespace BWYou.Cloud.Storage
             }
             return _AuthToken;
         }
+
 
 
     }
