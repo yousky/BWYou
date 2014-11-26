@@ -4,8 +4,10 @@
  *  \section info 개발목적
  *          - 클라우드 관련 클래스 모음
  *  \section advenced 추가정보
- *          - Version : 0.2.0.0
- *          - Last Updated : 2014.11.25
+ *          - Version : 0.2.0.1
+ *          - Last Updated : 2014.11.26
+ *              -# 스토리지 다운로드 시 파일의 경우 오버라이트 여부 조건 추가
+ *          - Last Updated : 2014.11.25 Version : 0.2.0.0
  *              -# 스토리지 다운로드 인터페이스 및 Azure, UCloud 스토리지 다운로드 기능 구현
  *          - Updated : 2014.11.20 Version : 0.1.0.0
  *              -# 스토리지 업로드 인터페이스 및 Azure, UCloud 스토리지 업로드 기능 구현

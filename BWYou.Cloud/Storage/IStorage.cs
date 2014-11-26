@@ -33,7 +33,21 @@ namespace BWYou.Cloud.Storage
         /// <returns></returns>
         string Upload(string sourcefilepathname, string containerName, string destpath = "", bool useUUIDName = true, bool overwrite = false, bool useSequencedName = true);
 
-        bool Download(Uri sourceUri, string destfilename);
+        /// <summary>
+        /// Download To File
+        /// </summary>
+        /// <param name="sourceUri">Source URI</param>
+        /// <param name="destfilename">Destination File Full Path</param>
+        /// <param name="overwrite">overwrite true, false</param>
+        /// <param name="useSequencedName">overwrite false and same file exist then filename[1], filename[2], ... use</param>
+        /// <returns></returns>
+        bool Download(Uri sourceUri, string destfilename, bool overwrite = false, bool useSequencedName = true);
+        /// <summary>
+        /// Download To Stream
+        /// </summary>
+        /// <param name="sourceUri">Source URI</param>
+        /// <param name="deststream">Destination Stream</param>
+        /// <returns></returns>
         bool Download(Uri sourceUri, Stream deststream);
     }
 }

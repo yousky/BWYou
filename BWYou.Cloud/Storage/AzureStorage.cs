@@ -162,15 +162,60 @@ namespace BWYou.Cloud.Storage
         }
 
 
-
-        public bool Download(Uri sourceUri, string destfilename)
+        /// <summary>
+        /// 스토리지 파일을 파일로 다운로드
+        /// </summary>
+        /// <param name="sourceUri"></param>
+        /// <param name="destfilename"></param>
+        /// <param name="overwrite"></param>
+        /// <param name="useSequencedName"></param>
+        /// <returns></returns>
+        public bool Download(Uri sourceUri, string destfilename, bool overwrite = false, bool useSequencedName = true)
         {
             CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
             ICloudBlob blob = blobClient.GetBlobReferenceFromServer(sourceUri);
-            blob.DownloadToFile(destfilename, FileMode.CreateNew);
-            return File.Exists(destfilename);
-        }
+            if (overwrite == true)
+            {
+                blob.DownloadToFile(destfilename, FileMode.Create);
+                return File.Exists(destfilename);
+            }
+            else
+            {
+                FileInfo fileInfo = new FileInfo(destfilename);
+                string destfilenameRe = destfilename;
 
+                string filename = destfilename.Substring(0, destfilename.Length - fileInfo.Extension.Length);
+
+                uint i = 0;
+                while (true)
+                {
+                    if (File.Exists(destfilenameRe) == true)
+                    {
+                        if (useSequencedName == true)
+                        {
+                            i++;
+                            destfilenameRe = filename + "[" + i.ToString() + "]" + fileInfo.Extension;
+                            continue;
+                        }
+                        else
+                        {
+                            throw new DuplicateFileException();
+                        }
+                    }
+                    else
+                    {
+                        blob.DownloadToFile(destfilenameRe, FileMode.CreateNew);
+                        return File.Exists(destfilenameRe);
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// 스토리지 파일을 스트림에 다운로드
+        /// </summary>
+        /// <param name="sourceUri"></param>
+        /// <param name="deststream"></param>
+        /// <returns></returns>
         public bool Download(Uri sourceUri, Stream deststream)
         {
             CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();

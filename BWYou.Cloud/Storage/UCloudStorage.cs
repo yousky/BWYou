@@ -158,6 +158,7 @@ namespace BWYou.Cloud.Storage
         /// <param name="useUUIDName"></param>
         /// <param name="overwrite"></param>
         /// <param name="useSequencedName"></param>
+        /// <param name="authToken"></param>
         /// <returns></returns>
         private Uri GetDestFileUrl(string sourcefilename, string containerName, string destpath, bool useUUIDName, bool overwrite, bool useSequencedName, string authToken)
         {
@@ -229,6 +230,7 @@ namespace BWYou.Cloud.Storage
         /// 유클라우드는 웹에서 존재 하기 때문에 이를 이용하여 파일 존재 여부 체크 가능
         /// </summary>
         /// <param name="url"></param>
+        /// <param name="authToken"></param>
         /// <returns></returns>
         private bool UCloudFileExist(Uri url, string authToken)
         {
@@ -256,18 +258,30 @@ namespace BWYou.Cloud.Storage
                 }
             }
         }
-
-        public bool Download(Uri sourceUri, string destfilename)
+        /// <summary>
+        /// 스토리지 파일을 파일로 다운로드
+        /// </summary>
+        /// <param name="sourceUri"></param>
+        /// <param name="destfilename"></param>
+        /// <param name="overwrite"></param>
+        /// <param name="useSequencedName"></param>
+        /// <returns></returns>
+        public bool Download(Uri sourceUri, string destfilename, bool overwrite = false, bool useSequencedName = true)
         {
-            return TryDownload<string>(sourceUri, destfilename, WebDownload);
+            return TryDownload<string>(sourceUri, destfilename, overwrite, useSequencedName, WebDownload);
         }
-
+        /// <summary>
+        /// 스토리지 파일을 스트림에 다운로드
+        /// </summary>
+        /// <param name="sourceUri"></param>
+        /// <param name="deststream"></param>
+        /// <returns></returns>
         public bool Download(Uri sourceUri, Stream deststream)
         {
-            return TryDownload<Stream>(sourceUri, deststream, WebDownload);
+            return TryDownload<Stream>(sourceUri, deststream, false, false, WebDownload);
         }
 
-        private bool TryDownload<T>(Uri sourceUri, T dest, Func<Uri, T, string, bool> func)
+        private bool TryDownload<T>(Uri sourceUri, T dest, bool overwrite, bool useSequencedName, Func<Uri, T, string, bool, bool, bool> func)
         {
             bool forceRequestAuth = false;
 
@@ -284,7 +298,7 @@ namespace BWYou.Cloud.Storage
 
                 try
                 {
-                    return func(sourceUri, dest, authToken);
+                    return func(sourceUri, dest, authToken, overwrite, useSequencedName);
                 }
                 catch (HttpWebResponseUnauthorizedException)
                 {
@@ -300,15 +314,48 @@ namespace BWYou.Cloud.Storage
             throw new OutOfReTryCountException();
         }
 
-        private bool WebDownload(Uri sourceUri, string destfilename, string authToken)
+        private bool WebDownload(Uri sourceUri, string destfilename, string authToken, bool overwrite, bool useSequencedName)
         {
             WebClient webClient = new WebClient();
             webClient.Headers.Add("X-Auth-Token", authToken);
-            webClient.DownloadFile(sourceUri, destfilename);
 
-            return File.Exists(destfilename);
+            if (overwrite == true)
+            {
+                webClient.DownloadFile(sourceUri, destfilename);
+                return File.Exists(destfilename);
+            }
+            else
+            {
+                FileInfo fileInfo = new FileInfo(destfilename);
+                string destfilenameRe = destfilename;
+
+                string filename = destfilename.Substring(0, destfilename.Length - fileInfo.Extension.Length);
+
+                uint i = 0;
+                while (true)
+                {
+                    if (File.Exists(destfilenameRe) == true)
+                    {
+                        if (useSequencedName == true)
+                        {
+                            i++;
+                            destfilenameRe = filename + "[" + i.ToString() + "]" + fileInfo.Extension;
+                            continue;
+                        }
+                        else
+                        {
+                            throw new DuplicateFileException();
+                        }
+                    }
+                    else
+                    {
+                        webClient.DownloadFile(sourceUri, destfilenameRe);
+                        return File.Exists(destfilenameRe);
+                    }
+                }
+            }
         }
-        private bool WebDownload(Uri sourceUri, Stream deststream, string authToken)
+        private bool WebDownload(Uri sourceUri, Stream deststream, string authToken, bool overwrite, bool useSequencedName)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(sourceUri);
             request.Method = "GET"; 

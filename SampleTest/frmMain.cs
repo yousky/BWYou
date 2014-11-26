@@ -32,6 +32,13 @@ namespace SampleTest
             //fServer.Show();
             //fClient.Show();
 
+            Uri uri = new Uri("https://maxst.blob.core.windows.net/public/trsc%5C14%5C24%5Cimg%5C8c59928cfef545c5b06c450c270d8203.jpg");
+            FileInfo fi = new FileInfo(Path.Combine(@"C:\Temp", uri.LocalPath.Substring(1)));
+            if (fi.Directory.Exists == false)
+            {
+                fi.Directory.Create();
+            }
+            string filename = Path.GetFileName(uri.LocalPath);
 
         }
 
