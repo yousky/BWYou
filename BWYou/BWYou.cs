@@ -4,18 +4,20 @@
  * \section info 개발목적
  *      - 공통으로 사용하는 라이브러리의 모듈화를 통한 생산성 향상
  * \section advenced 추가정보
- *          - Version : 0.7.5.2
- *          - Last Updated : 2014.11.26
+ *          - Version : 0.7.5.3
+ *          - Last Updated : 2014.12.01
+ *              -# BWYou.Cloud 업데이트 (ver 0.2.0.2)
+ *          - Updated : 2014.11.26
  *              -# BWYou.Cloud 업데이트 (ver 0.2.0.1)
- *          - Last Updated : 2014.11.25
+ *          - Updated : 2014.11.25
  *              -# BWYou.Cloud 업데이트 (ver 0.2.0.0)
- *          - Last Updated : 2014.11.20 Version : 0.7.5.0
+ *          - Updated : 2014.11.20 Version : 0.7.5.0
  *              -# BWYou.Cloud 추가 (ver 0.1.0.0)
  *              -# BWYou.Crypt 업데이트 (ver 0.9.3.3)
  *              -# BWYou.Network 업데이트 (ver 0.3.3.2)
- *          - Last Updated : 2014.11.10 Version : 0.7.4.3
+ *          - Updated : 2014.11.10 Version : 0.7.4.3
  *              -# BWYou.Base 업데이트 (ver 0.3.0.1)
- *          - Last Updated : 2014.07.22 Version : 0.7.4.2
+ *          - Updated : 2014.07.22 Version : 0.7.4.2
  *              -# VS2013 사용
  *              -# BWYou.Database 업데이트 (ver 1.2.0.1)
  *          - Updated : 2014.03.05 Version : 0.7.4.1

@@ -266,7 +266,7 @@ namespace BWYou.Cloud.Storage
         /// <param name="overwrite"></param>
         /// <param name="useSequencedName"></param>
         /// <returns></returns>
-        public bool Download(Uri sourceUri, string destfilename, bool overwrite = false, bool useSequencedName = true)
+        public string Download(Uri sourceUri, string destfilename, bool overwrite = false, bool useSequencedName = true)
         {
             return TryDownload<string>(sourceUri, destfilename, overwrite, useSequencedName, WebDownload);
         }
@@ -276,12 +276,12 @@ namespace BWYou.Cloud.Storage
         /// <param name="sourceUri"></param>
         /// <param name="deststream"></param>
         /// <returns></returns>
-        public bool Download(Uri sourceUri, Stream deststream)
+        public string Download(Uri sourceUri, Stream deststream)
         {
             return TryDownload<Stream>(sourceUri, deststream, false, false, WebDownload);
         }
 
-        private bool TryDownload<T>(Uri sourceUri, T dest, bool overwrite, bool useSequencedName, Func<Uri, T, string, bool, bool, bool> func)
+        private string TryDownload<T>(Uri sourceUri, T dest, bool overwrite, bool useSequencedName, Func<Uri, T, string, bool, bool, string> func)
         {
             bool forceRequestAuth = false;
 
@@ -293,7 +293,7 @@ namespace BWYou.Cloud.Storage
 
                 if (string.IsNullOrEmpty(authToken) == true)
                 {
-                    return false;
+                    return null;
                 }
 
                 try
@@ -314,7 +314,7 @@ namespace BWYou.Cloud.Storage
             throw new OutOfReTryCountException();
         }
 
-        private bool WebDownload(Uri sourceUri, string destfilename, string authToken, bool overwrite, bool useSequencedName)
+        private string WebDownload(Uri sourceUri, string destfilename, string authToken, bool overwrite, bool useSequencedName)
         {
             WebClient webClient = new WebClient();
             webClient.Headers.Add("X-Auth-Token", authToken);
@@ -322,7 +322,15 @@ namespace BWYou.Cloud.Storage
             if (overwrite == true)
             {
                 webClient.DownloadFile(sourceUri, destfilename);
-                return File.Exists(destfilename);
+                FileInfo fi = new FileInfo(destfilename);
+                if (fi.Exists)
+                {
+                    return fi.FullName;
+                }
+                else
+                {
+                    return null;
+                }
             }
             else
             {
@@ -350,12 +358,20 @@ namespace BWYou.Cloud.Storage
                     else
                     {
                         webClient.DownloadFile(sourceUri, destfilenameRe);
-                        return File.Exists(destfilenameRe);
+                        FileInfo fi = new FileInfo(destfilenameRe);
+                        if (fi.Exists)
+                        {
+                            return fi.FullName;
+                        }
+                        else
+                        {
+                            return null;
+                        }
                     }
                 }
             }
         }
-        private bool WebDownload(Uri sourceUri, Stream deststream, string authToken, bool overwrite, bool useSequencedName)
+        private string WebDownload(Uri sourceUri, Stream deststream, string authToken, bool overwrite, bool useSequencedName)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(sourceUri);
             request.Method = "GET"; 
@@ -370,7 +386,7 @@ namespace BWYou.Cloud.Storage
                 else if (response.StatusCode == HttpStatusCode.OK)
                 {
                     deststream = response.GetResponseStream();   //Todo 이렇게 stream 받아 올 수 있는지 테스트 필요... 
-                    return true;
+                    return "";
                 }
                 else if (response.StatusCode == HttpStatusCode.Unauthorized)
                 {

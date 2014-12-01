@@ -170,14 +170,22 @@ namespace BWYou.Cloud.Storage
         /// <param name="overwrite"></param>
         /// <param name="useSequencedName"></param>
         /// <returns></returns>
-        public bool Download(Uri sourceUri, string destfilename, bool overwrite = false, bool useSequencedName = true)
+        public string Download(Uri sourceUri, string destfilename, bool overwrite = false, bool useSequencedName = true)
         {
             CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
             ICloudBlob blob = blobClient.GetBlobReferenceFromServer(sourceUri);
             if (overwrite == true)
             {
                 blob.DownloadToFile(destfilename, FileMode.Create);
-                return File.Exists(destfilename);
+                FileInfo fi = new FileInfo(destfilename);
+                if (fi.Exists)
+                {
+                    return fi.FullName;
+                }
+                else
+                {
+                    return null;
+                }
             }
             else
             {
@@ -205,7 +213,15 @@ namespace BWYou.Cloud.Storage
                     else
                     {
                         blob.DownloadToFile(destfilenameRe, FileMode.CreateNew);
-                        return File.Exists(destfilenameRe);
+                        FileInfo fi = new FileInfo(destfilenameRe);
+                        if (fi.Exists)
+                        {
+                            return fi.FullName;
+                        }
+                        else
+                        {
+                            return null;
+                        }
                     }
                 }
             }
@@ -216,12 +232,12 @@ namespace BWYou.Cloud.Storage
         /// <param name="sourceUri"></param>
         /// <param name="deststream"></param>
         /// <returns></returns>
-        public bool Download(Uri sourceUri, Stream deststream)
+        public string Download(Uri sourceUri, Stream deststream)
         {
             CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
             ICloudBlob blob = blobClient.GetBlobReferenceFromServer(sourceUri);
             blob.DownloadToStream(deststream);
-            return true;
+            return "";
         }
     }
 }
