@@ -49,5 +49,10 @@ namespace BWYou.Cloud.Storage
         /// <param name="deststream">Destination Stream</param>
         /// <returns>Downloaded File's FullName</returns>
         string Download(Uri sourceUri, Stream deststream);
+        /// <summary>
+        /// Delete source
+        /// </summary>
+        /// <param name="sourceUri">Source URI</param>
+        void Delete(Uri sourceUri);
     }
 }

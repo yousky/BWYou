@@ -100,6 +100,7 @@ namespace SampleTest
             }
 
             IStorage storage = new AzureStorage(txtSCP_PW.Text);
+            storage.Delete(new Uri("https://maxst.blob.core.windows.net/public/wprsc%5C2%5Cunitypack%5Cgroup1.unityPackage"));
             FileInfo fi = new FileInfo(@"X:\temp\400.html");
             using (var fileStream = fi.OpenRead())
             {

@@ -239,5 +239,15 @@ namespace BWYou.Cloud.Storage
             blob.DownloadToStream(deststream);
             return "";
         }
+        /// <summary>
+        /// 스토리지 파일 제거
+        /// </summary>
+        /// <param name="sourceUri"></param>
+        public void Delete(Uri sourceUri)
+        {
+            CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+            ICloudBlob blob = blobClient.GetBlobReferenceFromServer(sourceUri);
+            blob.Delete();
+        }
     }
 }

@@ -10,6 +10,7 @@ namespace BWYou.Cloud.Storage
     /// </summary>
     public class UCloudStorage : IStorage
     {
+        //TODO library 새로 생김. 해당 라이브러리 이용하여 처리 하는 것으로 모두 변경 필요..
         //TODO Singleton을 굳이 써야 할까?
         #region For Singleton
         private static readonly UCloudStorage __singleton = new UCloudStorage();
@@ -462,7 +463,13 @@ namespace BWYou.Cloud.Storage
             return _AuthToken;
         }
 
-
-
+        /// <summary>
+        /// 스토리지 파일 제거. 아직 미구현
+        /// </summary>
+        /// <param name="sourceUri"></param>
+        public void Delete(Uri sourceUri)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
