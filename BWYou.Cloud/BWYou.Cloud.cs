@@ -4,8 +4,10 @@
  *  \section info 개발목적
  *          - 클라우드 관련 클래스 모음
  *  \section advenced 추가정보
- *          - Version : 0.2.0.3
- *          - Last Updated : 2014.12.03
+ *          - Version : 0.2.0.4
+ *          - Last Updated : 2014.12.04
+ *              -# Azure 스토리지 업로드 시에 path가 %5c로 나오는 버그 수정
+ *          - Last Updated : 2014.12.03 Version : 0.2.0.3
  *              -# 스토리지 Delete 인터페이스 및 Azure 스토리지 Delete 기능 구현
  *          - Updated : 2014.12.01 Version : 0.2.0.2
  *              -# 스토리지 다운로드 시 return bool 타입에서 string으로 변경. 다운로드 파일 FullName 리턴.

@@ -107,8 +107,8 @@ namespace BWYou.Cloud.Storage
                 {
 
                     destfilename = Guid.NewGuid().ToString().Replace("-", "") + fileInfo.Extension;
-
-                    CloudBlockBlob blockBlob = container.GetBlockBlobReference(Path.Combine(destpath, destfilename));
+                    string path = Path.Combine(destpath, destfilename);
+                    CloudBlockBlob blockBlob = container.GetBlockBlobReference(path.Replace(@"\", "/"));    //OS 또는 언어?에 따라 %5c로 path가 나타나는 버그가 존재하여 미리 변경하여 처리
                     if (blockBlob.Exists())
                     {
                         continue;
@@ -125,7 +125,8 @@ namespace BWYou.Cloud.Storage
 
                 if (overwrite)
                 {
-                    CloudBlockBlob blockBlob = container.GetBlockBlobReference(Path.Combine(destpath, destfilename));
+                    string path = Path.Combine(destpath, destfilename);
+                    CloudBlockBlob blockBlob = container.GetBlockBlobReference(path.Replace(@"\", "/"));
 
                     return blockBlob;
                 }
@@ -138,7 +139,8 @@ namespace BWYou.Cloud.Storage
                     uint i = 0;
                     while (true)
                     {
-                        CloudBlockBlob blockBlob = container.GetBlockBlobReference(Path.Combine(destpath, destfilenameRe));
+                        string path = Path.Combine(destpath, destfilenameRe);
+                        CloudBlockBlob blockBlob = container.GetBlockBlobReference(path.Replace(@"\", "/"));
                         if (blockBlob.Exists() == true)
                         {
                             if (useSequencedName == true)
