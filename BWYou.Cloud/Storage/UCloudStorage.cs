@@ -6,11 +6,10 @@ using BWYou.Cloud.Exceptions;
 namespace BWYou.Cloud.Storage
 {
     /// <summary>
-    /// UCloudStorage
+    /// UCloudStorage Http 이용 처리
     /// </summary>
     public class UCloudStorage : IStorage
     {
-        //TODO library 새로 생김. 해당 라이브러리 이용하여 처리 하는 것으로 모두 변경 필요..
         //TODO Singleton을 굳이 써야 할까?
         #region For Singleton
         private static readonly UCloudStorage __singleton = new UCloudStorage();
@@ -74,7 +73,7 @@ namespace BWYou.Cloud.Storage
 
                 if (string.IsNullOrEmpty(authToken) == true)
                 {
-                    return null;
+                    continue;
                 }
 
                 try
@@ -294,7 +293,7 @@ namespace BWYou.Cloud.Storage
 
                 if (string.IsNullOrEmpty(authToken) == true)
                 {
-                    return null;
+                    continue;
                 }
 
                 try
@@ -375,7 +374,7 @@ namespace BWYou.Cloud.Storage
         private string WebDownload(Uri sourceUri, Stream deststream, string authToken, bool overwrite, bool useSequencedName)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(sourceUri);
-            request.Method = "GET"; 
+            request.Method = "GET";
             request.Headers.Add("X-Auth-Token", authToken);
 
             using (HttpWebResponse response = GetResponse(request))
@@ -386,7 +385,18 @@ namespace BWYou.Cloud.Storage
                 }
                 else if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    deststream = response.GetResponseStream();   //Todo 이렇게 stream 받아 올 수 있는지 테스트 필요... 
+                    using (Stream responseStream = response.GetResponseStream())
+                    {
+                        var buffer = new byte[4096];
+                        long totalBytesRead = 0;
+                        int bytesRead;
+
+                        while ((bytesRead = responseStream.Read(buffer, 0, buffer.Length)) > 0)
+                        {
+                            totalBytesRead += bytesRead;
+                            deststream.Write(buffer, 0, bytesRead);
+                        }
+                    }
                     return "";
                 }
                 else if (response.StatusCode == HttpStatusCode.Unauthorized)
@@ -464,12 +474,68 @@ namespace BWYou.Cloud.Storage
         }
 
         /// <summary>
-        /// 스토리지 파일 제거. 아직 미구현
+        /// 스토리지 파일 제거.
         /// </summary>
         /// <param name="sourceUri"></param>
         public void Delete(Uri sourceUri)
         {
-            throw new NotImplementedException();
+            bool forceRequestAuth = false;
+
+            int retryCount = UCloudStorage.retryCount;
+
+            do
+            {
+                string authToken = GetAuthToken(forceRequestAuth);
+
+                if (string.IsNullOrEmpty(authToken) == true)
+                {
+                    continue;
+                }
+
+                try
+                {
+                    Delete(sourceUri, authToken);
+                    return;
+                }
+                catch (HttpWebResponseUnauthorizedException)
+                {
+                    forceRequestAuth = true;
+                }
+                catch (Exception)
+                {
+
+                }
+
+            } while (--retryCount > 0);
+
+            throw new OutOfReTryCountException();
+        }
+
+        private void Delete(Uri sourceUri, string authToken)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(sourceUri);
+            request.Method = "DELETE";
+            request.Headers.Add("X-Auth-Token", authToken);
+            using (HttpWebResponse response = GetResponse(request))
+            {
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    return; // 못 찾는 것도 지운 걸로 처리
+                }
+                else if (response.StatusCode == HttpStatusCode.NoContent)
+                {
+                    return;
+                }
+                else if (response.StatusCode == HttpStatusCode.Unauthorized)
+                {
+                    throw new HttpWebResponseUnauthorizedException();
+                }
+                else
+                {
+                    throw new HttpWebResponseException();
+                }
+            }
+
         }
     }
 }

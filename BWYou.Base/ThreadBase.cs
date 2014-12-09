@@ -80,7 +80,7 @@ namespace BWYou.Base
                     {
                         thr.Abort();   //끔
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         //무시무시
                     }
