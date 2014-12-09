@@ -1,0 +1,392 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BWYou.Cloud</name>
+    </assembly>
+    <members>
+        <member name="T:BWYou.Cloud.Exceptions.DuplicateFileException">
+            <summary>
+            중복 파일 존재로 인한 예외 발생
+            </summary>
+        </member>
+        <member name="M:BWYou.Cloud.Exceptions.DuplicateFileException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BWYou.Cloud.Exceptions.DuplicateFileException.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:BWYou.Cloud.Exceptions.DuplicateFileException.#ctor(System.String,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="inner"></param>
+        </member>
+        <member name="M:BWYou.Cloud.Exceptions.DuplicateFileException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:BWYou.Cloud.Exceptions.HttpWebResponseException">
+            <summary>
+            HttpWebResponse 중에 처리 되지 않은 예외 발생
+            </summary>
+        </member>
+        <member name="M:BWYou.Cloud.Exceptions.HttpWebResponseException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BWYou.Cloud.Exceptions.HttpWebResponseException.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:BWYou.Cloud.Exceptions.HttpWebResponseException.#ctor(System.String,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="inner"></param>
+        </member>
+        <member name="M:BWYou.Cloud.Exceptions.HttpWebResponseException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:BWYou.Cloud.Exceptions.HttpWebResponseUnauthorizedException">
+            <summary>
+            HttpWebResponse 중에 Unauthorized 예외 발생
+            </summary>
+        </member>
+        <member name="M:BWYou.Cloud.Exceptions.HttpWebResponseUnauthorizedException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BWYou.Cloud.Exceptions.HttpWebResponseUnauthorizedException.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:BWYou.Cloud.Exceptions.HttpWebResponseUnauthorizedException.#ctor(System.String,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="inner"></param>
+        </member>
+        <member name="M:BWYou.Cloud.Exceptions.HttpWebResponseUnauthorizedException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:BWYou.Cloud.Exceptions.OutOfReTryCountException">
+            <summary>
+            재시도 횟수 초과에 의한 예외 발생
+            </summary>
+        </member>
+        <member name="M:BWYou.Cloud.Exceptions.OutOfReTryCountException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BWYou.Cloud.Exceptions.OutOfReTryCountException.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:BWYou.Cloud.Exceptions.OutOfReTryCountException.#ctor(System.String,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="inner"></param>
+        </member>
+        <member name="M:BWYou.Cloud.Exceptions.OutOfReTryCountException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:BWYou.Cloud.Storage.AzureStorage">
+            <summary>
+            AzureStorage
+            Microsoft.WindowsAzure.Storage Nuget 설치 필수!!
+            </summary>
+        </member>
+        <member name="T:BWYou.Cloud.Storage.IStorage">
+            <summary>
+            Cloud Storage manipulation
+            </summary>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.IStorage.Upload(System.IO.Stream,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Upload To Storage
+            </summary>
+            <param name="inputStream">inputStream</param>
+            <param name="sourcefilename">Source File Name</param>
+            <param name="containerName">container Name</param>
+            <param name="destpath">Storage Destination path</param>
+            <param name="useUUIDName">true : UUIDName use, false : sourcefilename use</param>
+            <param name="overwrite">overwrite true, false</param>
+            <param name="useSequencedName">overwrite false and same file exist then filename[1], filename[2], ... use</param>
+            <returns>Saved File's Storage Uri</returns>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.IStorage.Upload(System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Upload To Storage
+            </summary>
+            <param name="sourcefilepathname">upload source File Full Path</param>
+            <param name="containerName">container Name</param>
+            <param name="destpath">Storage Destination path</param>
+            <param name="useUUIDName">true : UUIDName use, false : sourcefilename use</param>
+            <param name="overwrite">overwrite true, false</param>
+            <param name="useSequencedName">overwrite false and same file exist then filename[1], filename[2], ... use</param>
+            <returns>Saved File's Storage Uri</returns>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.IStorage.Download(System.Uri,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Download To File
+            </summary>
+            <param name="sourceUri">Source URI</param>
+            <param name="destfilename">Destination File Full Path</param>
+            <param name="overwrite">overwrite true, false</param>
+            <param name="useSequencedName">overwrite false and same file exist then filename[1], filename[2], ... use</param>
+            <returns>Downloaded File's FullName</returns>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.IStorage.Download(System.Uri,System.IO.Stream)">
+            <summary>
+            Download To Stream
+            </summary>
+            <param name="sourceUri">Source URI</param>
+            <param name="deststream">Destination Stream</param>
+            <returns>Downloaded File's FullName</returns>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.IStorage.Delete(System.Uri)">
+            <summary>
+            Delete source
+            </summary>
+            <param name="sourceUri">Source URI</param>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.AzureStorage.#ctor">
+            <summary>
+            storageAccount 설정 필수
+            </summary>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.AzureStorage.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="connectionString"></param>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.AzureStorage.#ctor(Microsoft.WindowsAzure.Storage.CloudStorageAccount)">
+            <summary>
+            
+            </summary>
+            <param name="storageAccount"></param>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.AzureStorage.Upload(System.IO.Stream,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            스트림을 스토리지에 업로드
+            </summary>
+            <param name="inputStream"></param>
+            <param name="sourcefilename"></param>
+            <param name="containerName"></param>
+            <param name="destpath"></param>
+            <param name="useUUIDName"></param>
+            <param name="overwrite"></param>
+            <param name="useSequencedName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.AzureStorage.Upload(System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            원본 파일을 스토리지에 업로드
+            </summary>
+            <param name="sourcefilepathname"></param>
+            <param name="containerName"></param>
+            <param name="destpath"></param>
+            <param name="useUUIDName"></param>
+            <param name="overwrite"></param>
+            <param name="useSequencedName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.AzureStorage.GetCloudBlockBlob(System.String,Microsoft.WindowsAzure.Storage.Blob.CloudBlobContainer,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            요구 사항에 맞는 이름으로 된 BlockBlob 획득
+            </summary>
+            <param name="sourcefilename">원본 파일 명</param>
+            <param name="container">컨테이너</param>
+            <param name="destpath">파일 저장 패스</param>
+            <param name="useUUIDName">UUID 이름 사용 여부. false일 경우는 filename과 동일 한 이름으로 저장</param>
+            <param name="overwrite">동일 이름 존재 시 덮어쓰기 여부. useUUIDName 사용 중일 경우는 항상 덮어쓰기 안 함</param>
+            <param name="useSequencedName">동일 이름 존재 시 순차적인 이름 사용 여부. 파일[0].확장자, 파일[1].확장자.. </param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.AzureStorage.Download(System.Uri,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            스토리지 파일을 파일로 다운로드
+            </summary>
+            <param name="sourceUri"></param>
+            <param name="destfilename"></param>
+            <param name="overwrite"></param>
+            <param name="useSequencedName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.AzureStorage.Download(System.Uri,System.IO.Stream)">
+            <summary>
+            스토리지 파일을 스트림에 다운로드
+            </summary>
+            <param name="sourceUri"></param>
+            <param name="deststream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.AzureStorage.Delete(System.Uri)">
+            <summary>
+            스토리지 파일 제거
+            </summary>
+            <param name="sourceUri"></param>
+        </member>
+        <member name="P:BWYou.Cloud.Storage.AzureStorage.storageAccount">
+            <summary>
+            AzureStorage Account
+            </summary>
+        </member>
+        <member name="T:BWYou.Cloud.Storage.UCloudStorage">
+            <summary>
+            UCloudStorage Http 이용 처리
+            </summary>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.UCloudStorage.Upload(System.IO.Stream,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            스트림을 스토리지에 업로드
+            </summary>
+            <param name="inputStream"></param>
+            <param name="sourcefilename"></param>
+            <param name="containerName"></param>
+            <param name="destpath"></param>
+            <param name="useUUIDName"></param>
+            <param name="overwrite"></param>
+            <param name="useSequencedName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.UCloudStorage.Upload(System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            원본 파일을 스토리지에 업로드
+            </summary>
+            <param name="sourcefilepathname"></param>
+            <param name="containerName"></param>
+            <param name="destpath"></param>
+            <param name="useUUIDName"></param>
+            <param name="overwrite"></param>
+            <param name="useSequencedName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.UCloudStorage.GetDestFileUrl(System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            요구 사항에 맞는 이름의 Url 획득
+            </summary>
+            <param name="sourcefilename"></param>
+            <param name="containerName"></param>
+            <param name="destpath"></param>
+            <param name="useUUIDName"></param>
+            <param name="overwrite"></param>
+            <param name="useSequencedName"></param>
+            <param name="authToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.UCloudStorage.UCloudFileExist(System.Uri,System.String)">
+            <summary>
+            해당 주소에 대한 GET HttpStatusCode OK 확인
+            유클라우드는 웹에서 존재 하기 때문에 이를 이용하여 파일 존재 여부 체크 가능
+            </summary>
+            <param name="url"></param>
+            <param name="authToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.UCloudStorage.Download(System.Uri,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            스토리지 파일을 파일로 다운로드
+            </summary>
+            <param name="sourceUri"></param>
+            <param name="destfilename"></param>
+            <param name="overwrite"></param>
+            <param name="useSequencedName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.UCloudStorage.Download(System.Uri,System.IO.Stream)">
+            <summary>
+            스토리지 파일을 스트림에 다운로드
+            </summary>
+            <param name="sourceUri"></param>
+            <param name="deststream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.UCloudStorage.GetResponse(System.Net.HttpWebRequest)">
+            <summary>
+            request에 대한 response 획득
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.UCloudStorage.Auth">
+            <summary>
+            인증
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.UCloudStorage.GetAuthToken(System.Boolean)">
+            <summary>
+            인증 토큰 획득
+            </summary>
+            <param name="forceRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.UCloudStorage.Delete(System.Uri)">
+            <summary>
+            스토리지 파일 제거.
+            </summary>
+            <param name="sourceUri"></param>
+        </member>
+        <member name="P:BWYou.Cloud.Storage.UCloudStorage.Instance">
+            <summary>
+            static Singleton Instance
+            </summary>
+        </member>
+        <member name="P:BWYou.Cloud.Storage.UCloudStorage.authUrl">
+            <summary>
+            인증 Url
+            </summary>
+        </member>
+        <member name="P:BWYou.Cloud.Storage.UCloudStorage.storageUser">
+            <summary>
+            스토리지 유저 아이디
+            </summary>
+        </member>
+        <member name="P:BWYou.Cloud.Storage.UCloudStorage.storagePass">
+            <summary>
+            스토리지 유저 패스
+            </summary>
+        </member>
+        <member name="P:BWYou.Cloud.Storage.UCloudStorage.retryCount">
+            <summary>
+            업로드 중 문제 발생 시 재시도 횟수
+            </summary>
+        </member>
+    </members>
+</doc>
