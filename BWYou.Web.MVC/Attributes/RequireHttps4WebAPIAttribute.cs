@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BWYou.Web.MVC.ViewModels;
+using System;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
-using BWYou.Web.MVC.ViewModels;
 
 namespace BWYou.Web.MVC.Attributes
 {

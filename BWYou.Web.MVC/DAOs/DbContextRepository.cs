@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using log4net;
-using System.Data.Entity;
-using BWYou.Web.MVC.Models;
+﻿using BWYou.Web.MVC.Attributes;
 using BWYou.Web.MVC.Extensions;
-using BWYou.Web.MVC.Attributes;
+using BWYou.Web.MVC.Models;
+using log4net;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace BWYou.Web.MVC.DAOs
 {

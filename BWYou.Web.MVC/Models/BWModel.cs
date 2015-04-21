@@ -1,10 +1,7 @@
-﻿using System;
+﻿using BWYou.Web.MVC.Attributes;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-using BWYou.Web.MVC.Attributes;
 
 namespace BWYou.Web.MVC.Models
 {

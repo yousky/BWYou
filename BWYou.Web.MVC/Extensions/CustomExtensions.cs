@@ -4,14 +4,8 @@ using log4net;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data.Entity.Core.Objects.DataClasses;
-using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
 
 namespace BWYou.Web.MVC.Extensions
 {
