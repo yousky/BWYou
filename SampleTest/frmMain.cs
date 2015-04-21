@@ -44,6 +44,7 @@ namespace SampleTest
 
         private void btnTest_Click(object sender, EventArgs e)
         {
+            lsvMessage.InvokeWriteMessage("test");
             string strMessage = "Test Error" + Environment.NewLine + "Test 1" + Environment.NewLine + "Test 2" + Environment.NewLine + "Test 3" + Environment.NewLine + "Test 4" + Environment.NewLine + "Test 5" + Environment.NewLine + "Test 6";
 
             BWYou.Control.TimerShow ts = new BWYou.Control.TimerShow();
@@ -87,6 +88,7 @@ namespace SampleTest
 
         private void btnTestTransfer_Click(object sender, EventArgs e)
         {
+
             if (txtSCP_ID.Text.Length == 0)
             {
                 txtSCP_ID.Focus();
