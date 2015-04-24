@@ -4,7 +4,7 @@
  *  \section info 개발목적
  *          - ASP.NET MVC + Entity Framwork + Identity 공통 처리
  *  \section advenced 추가정보
- *          - Version : 0.1.0.0
+ *          - Version : 0.2.0.0
  *          - Last Updated : 2015.04.20
  *              -# 최총 정리
  *          - 구현 사항
