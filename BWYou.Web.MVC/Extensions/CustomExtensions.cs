@@ -1,5 +1,6 @@
 ﻿using BWYou.Web.MVC.Attributes;
 using BWYou.Web.MVC.Models;
+using BWYou.Web.MVC.ViewModels;
 using log4net;
 using System;
 using System.Collections;
@@ -28,9 +29,8 @@ namespace BWYou.Web.MVC.Extensions
         {
             if (source == null)
             {
-                logger.Warn(string.Format("Clone Source is null return default(T): type={0}, id={1}",
-                                                source.GetType().FullName,
-                                                typeof(BWModel).IsAssignableFrom(source.GetType()) ? ((BWModel)(object)source).Id.ToString() : "source not BWModel"));
+                logger.Warn(string.Format("Clone Source is null return default(T): type={0}",
+                                                source.GetType().FullName));
                 return default(T);
             }
             if (seen.ContainsKey(source) == true)
@@ -132,9 +132,8 @@ namespace BWYou.Web.MVC.Extensions
         {
             if (source == null)
             {
-                logger.Warn(string.Format("ActivateRelation Source is null : type={0}, id={1}",
-                                                source.GetType().FullName,
-                                                typeof(BWModel).IsAssignableFrom(source.GetType()) ? ((BWModel)(object)source).Id.ToString() : "source not BWModel"));
+                logger.Warn(string.Format("ActivateRelation Source is null : type={0}",
+                                                source.GetType().FullName));
                 return;
             }
             if (seen.Contains(source) == true)
@@ -185,5 +184,47 @@ namespace BWYou.Web.MVC.Extensions
                 }
             }
         }
+
+
+        public static void MapFrom<TTarget, TSource>(this TTarget target, TSource source)
+            where TSource : BWModel
+            where TTarget : IModelLoader<TSource>
+        {
+            if (source == null)
+            {
+                logger.Warn(string.Format("MapFrom Source is null : type={0}",
+                                                source.GetType().FullName));
+                return;
+            }
+
+            var srcFields = (from PropertyInfo prop in source.GetType().GetProperties().Where(p => p.GetCustomAttributes(typeof(CascadeRelationAttribute), true).Length == 0
+                                                                    && p.GetCustomAttributes(typeof(CascadeRelationAttribute)).Count() == 0
+                                                                    && p.CanRead == true)
+                            select new
+                            {
+                                Name = prop.Name,
+                                Type = Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType
+                            }).ToList();
+
+            var targetFields = (from PropertyInfo prop in target.GetType().GetProperties().Where(p => p.GetCustomAttributes(typeof(CascadeRelationAttribute), true).Length == 0
+                                                                    && p.GetCustomAttributes(typeof(CascadeRelationAttribute)).Count() == 0
+                                                                    && p.CanWrite == true)
+                                select new
+                                {
+                                    Name = prop.Name,
+                                    Type = Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType
+                                }).ToList();
+
+            var commonFields = srcFields.Intersect(targetFields);
+
+            foreach (var field in commonFields)
+            {
+                var value = source.GetType().GetProperty(field.Name).GetValue(source, null);
+                target.GetType().GetProperty(field.Name).SetValue(target, value, null);
+            }
+
+        }
+
+
     }
 }

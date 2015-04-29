@@ -7,4 +7,6 @@ namespace BWYou.Web.MVC.ViewModels
     {
         void LoadModel(TEntity baseModel, bool recursive, string sort = "Id");
     }
+
+
 }

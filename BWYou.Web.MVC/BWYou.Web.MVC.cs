@@ -4,9 +4,10 @@
  *  \section info 개발목적
  *          - ASP.NET MVC + Entity Framwork + Identity 공통 처리
  *  \section advenced 추가정보
- *          - Version : 0.2.1.0
+ *          - Version : 0.2.2.0
  *          - Last Updated : 2015.04.29
  *              -# 관계 동시 삭제를 위한 ActivateRelation4Cascade 확장 함수 추가
+ *              -# 간단한 모델 맵핑을 위한 MapFrom 확장 함수 추가
  *          - Updated : 2015.04.20 Version : 0.2.0.0
  *              -# 최초 정리
  *          - 구현 사항

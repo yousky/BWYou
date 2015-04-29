@@ -9,34 +9,58 @@ using System.Threading.Tasks;
 
 namespace BWYou.Web.MVC.DAOs
 {
+    /// <summary>
+    /// IRepository 구현한 공통 구현체
+    /// </summary>
+    /// <typeparam name="TEntity"></typeparam>
     public class DbContextRepository<TEntity> : IRepository<TEntity>
         where TEntity : BWModel
     {
+        /// <summary>
+        /// 로그
+        /// </summary>
         public ILog logger = LogManager.GetLogger(typeof(DbContextRepository<TEntity>));
 
         private DbContext _dbContext;
         private DbSet<TEntity> _dbSet;
 
+        /// <summary>
+        /// 생성자
+        /// </summary>
         public DbContextRepository()
         {
 
         }
-
+        /// <summary>
+        /// 생성자
+        /// </summary>
+        /// <param name="dbContext"></param>
         public DbContextRepository(DbContext dbContext)
         {
             this._dbContext = dbContext;
             this._dbSet = dbContext.Set<TEntity>();
         }
-
+        /// <summary>
+        /// PK 이용 Select
+        /// </summary>
+        /// <param name="keyValues"></param>
+        /// <returns></returns>
         public TEntity Find(params object[] keyValues)
         {
             return this._dbSet.Find(keyValues);
         }
+        /// <summary>
+        /// 비동기 PK 이용 Select
+        /// </summary>
+        /// <param name="keyValues"></param>
+        /// <returns></returns>
         public Task<TEntity> FindAsync(params object[] keyValues)
         {
             return this._dbSet.FindAsync(keyValues);
         }
-
+        /// <summary>
+        /// IQueryable 노출
+        /// </summary>
         public IQueryable<TEntity> Query
         {
             get
@@ -44,7 +68,10 @@ namespace BWYou.Web.MVC.DAOs
                 return this._dbSet;
             }
         }
-
+        /// <summary>
+        /// 생성
+        /// </summary>
+        /// <param name="entity"></param>
         public void Create(TEntity entity)
         {
             this._dbSet.Add(entity);
@@ -107,12 +134,19 @@ namespace BWYou.Web.MVC.DAOs
                 }
             }
         }
-
+        /// <summary>
+        /// 삭제. 연결 된 관계 자료도 삭제 하기 위하여 자동 활성화
+        /// </summary>
+        /// <param name="entity"></param>
         public void Remove(TEntity entity)
         {
+            entity.ActivateRelation4Cascade(new HashSet<object>()); //Lazy loading이나, 특이한 관계 구조 처리를 수동으로 하기 위하여 관계 활성화 필수
             this._dbSet.Remove(entity);
         }
-
+        /// <summary>
+        /// 다시 불러오기
+        /// </summary>
+        /// <param name="entity"></param>
         public void Reload(TEntity entity)
         {
             this._dbContext.Entry(entity).Reload();
