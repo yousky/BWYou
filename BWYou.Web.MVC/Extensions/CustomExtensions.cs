@@ -13,6 +13,17 @@ namespace BWYou.Web.MVC.Extensions
     {
         public static ILog logger = LogManager.GetLogger(typeof(CustomExtensions));
 
+        /// <summary>
+        /// Deep 복사 본 만들기. DB 저장을 위해 관계 처리
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="seen"></param>
+        /// <param name="bCopykey"></param>
+        /// <param name="bCascade"></param>
+        /// <param name="direction"></param>
+        /// <param name="bClone"></param>
+        /// <returns></returns>
         public static T Clone<T>(this T source, Dictionary<object, object> seen, bool bCopykey, bool bCascade, CascadeRelationAttribute.CascadeDirection direction, bool bClone) where T : BWModel
         {
             if (source == null)
@@ -62,8 +73,10 @@ namespace BWYou.Web.MVC.Extensions
             //CascadeRelation에 속한 프로퍼티는 Cascade 복사
             if (bCascade == true)
             {
-                props = source.GetType().GetProperties().Where(p => p.GetCustomAttributes(typeof(CascadeRelationAttribute), true).Length != 0
-                                                                    || p.GetCustomAttributes(typeof(CascadeRelationAttribute)).Count() != 0);
+                props = source.GetType().GetProperties().Where(p => (p.GetCustomAttributes(typeof(CascadeRelationAttribute), true).Length != 0
+                                                                    || p.GetCustomAttributes(typeof(CascadeRelationAttribute)).Count() != 0)
+                                                                    && p.GetCustomAttributes(typeof(NonCopyableAttribute), true).Length == 0
+                                                                    && p.GetCustomAttributes(typeof(NonCopyableAttribute)).Count() == 0);
 
                 foreach (var prop in props)
                 {
@@ -107,6 +120,70 @@ namespace BWYou.Web.MVC.Extensions
             }
 
             return clone;
+        }
+
+        /// <summary>
+        /// 관계 정보를 모두 불러와서 활성화 시키기. 지우기용.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="seen"></param>
+        public static void ActivateRelation4Cascade<T>(this T source, HashSet<object> seen) where T : BWModel
+        {
+            if (source == null)
+            {
+                logger.Warn(string.Format("ActivateRelation Source is null : type={0}, id={1}",
+                                                source.GetType().FullName,
+                                                typeof(BWModel).IsAssignableFrom(source.GetType()) ? ((BWModel)(object)source).Id.ToString() : "source not BWModel"));
+                return;
+            }
+            if (seen.Contains(source) == true)
+            {
+                return;
+            }
+            else
+            {
+                seen.Add(source);
+            }
+
+            var props = source.GetType().GetProperties().Where(p => p.GetCustomAttributes(typeof(CascadeRelationAttribute), true).Length != 0
+                                                                                || p.GetCustomAttributes(typeof(CascadeRelationAttribute)).Count() != 0);
+
+            foreach (var prop in props)
+            {
+                CascadeRelationAttribute attr = (CascadeRelationAttribute)prop.GetCustomAttribute(typeof(CascadeRelationAttribute));
+                if (attr.Direction == CascadeRelationAttribute.CascadeDirection.Down)
+                {
+                    if (typeof(BWModel).IsAssignableFrom(prop.PropertyType))
+                    {
+                        var t = prop.GetValue(source, null);
+                        ((BWModel)t).ActivateRelation4Cascade(seen);
+                    }
+                    else if (typeof(ICollection<>).IsAssignableFrom(prop.PropertyType.GetGenericTypeDefinition()))
+                    {
+                        var t = (IEnumerable)prop.GetValue(source, null);
+                        foreach (var item in t)
+                        {
+                            if (typeof(BWModel).IsAssignableFrom(item.GetType()))
+                            {
+                                ((BWModel)item).ActivateRelation4Cascade(seen);
+                            }
+                            else
+                            {
+                                logger.Warn(string.Format("ActivateRelation Property ICollection<T> T not BWModel type={0}, ToString={1}",
+                                                                item.GetType().FullName,
+                                                                item.GetType().ToString()));
+                            }
+                        }
+                    }
+                    else
+                    {
+                        logger.Warn(string.Format("ActivateRelation Property not BWModel type={0}, ToString={1}",
+                                                        prop.PropertyType.FullName,
+                                                        prop.PropertyType.ToString()));
+                    }
+                }
+            }
         }
     }
 }

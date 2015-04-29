@@ -15,17 +15,13 @@ namespace BWYou.Web.MVC.DAOs
         public BWIdentityDbContext()
             : this("DefaultConnection", throwIfV1Schema: false)
         {
-#if DEBUG
-            this.Database.Log += m => System.Diagnostics.Debug.WriteLine(m);
-#endif
+
         }
 
         public BWIdentityDbContext(string nameOrConnectionString, bool throwIfV1Schema)
             : base(nameOrConnectionString, throwIfV1Schema)
         {
-#if DEBUG
-            this.Database.Log += m => System.Diagnostics.Debug.WriteLine(m);
-#endif
+
         }
 
         public override int SaveChanges()

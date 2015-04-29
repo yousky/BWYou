@@ -94,6 +94,7 @@ namespace BWYou.Web.MVC.DAOs
         /// 관리 되지 않고 있는 TEntity의 특정 칼럼중에서 값이 있는 칼럼들 모두 업데이트.
         /// </summary>
         /// <param name="entity"></param>
+        /// <param name="updateProperties"></param>
         public void UpdateExceptNullValue(TEntity entity, params string[] updateProperties)
         {
             this._dbContext.Entry(entity).State = EntityState.Unchanged;

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BWYou.Web.MVC.Models
 {
-    public class BWModel : IModelRelationActivator
+    public class BWModel
     {
         [Key]
         [Display(Name = "ID")]
@@ -22,47 +22,6 @@ namespace BWYou.Web.MVC.Models
         {
             CreateDT = DateTime.Now;
             UpdateDT = DateTime.Now;
-        }
-
-        /// <summary>
-        /// 관계 정보를 모두 불러와서 활성화 시키기 시작
-        /// </summary>
-        public void ActivateRelation4Cascade()
-        {
-            HashSet<object> seen = new HashSet<object>();
-            ActivateRelation4Cascade(seen);
-        }
-
-        public virtual void ActivateRelation4Cascade(HashSet<object> seen)
-        {
-            //무한 재귀 안 되도록 확인
-            if (seen.Contains(this) == true)
-            {
-                return;
-            }
-            else
-            {
-                seen.Add(this);
-            }
-        }
-
-        protected void ActivateRelation4Cascade(ICollection<IModelRelationActivator> collection, HashSet<object> seen)
-        {
-            if (collection != null)
-            {
-                foreach (var item in collection)
-                {
-                    item.ActivateRelation4Cascade(seen);
-                }
-            }
-        }
-
-        protected void ActivateRelation4Cascade(IModelRelationActivator model, HashSet<object> seen)
-        {
-            if (model != null)
-            {
-                model.ActivateRelation4Cascade(seen);
-            }
         }
     }
 }

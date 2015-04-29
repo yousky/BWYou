@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("BWYou.Cloud")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCopyright("CopyLeft@2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

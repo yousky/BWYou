@@ -9,11 +9,17 @@ namespace BWYou.Web.MVC.Attributes
     public class CascadeRelationAttribute : Attribute
     {
         /// <summary>
-        /// 연결의 방향
+        /// 관계 연결의 방향
         /// </summary>
         public CascadeDirection Direction { get; set; }
+        /// <summary>
+        /// 복사 가능 한 값인지 여부. false일 경우는 원본이 그대로 들어감.
+        /// </summary>
         public bool Clonable { get; set; }
-
+        /// <summary>
+        /// 생성자. 관계 연결의 방향이 필요
+        /// </summary>
+        /// <param name="Direction">관계 연결의 방향</param>
         public CascadeRelationAttribute(CascadeDirection Direction)
         {
             this.Direction = Direction;

@@ -174,7 +174,8 @@ namespace BWYou.Web.MVC.Services
 
         protected virtual TEntity Delete(TEntity model)
         {
-            model.ActivateRelation4Cascade();
+            HashSet<object> seen = new HashSet<object>();
+            model.ActivateRelation4Cascade(seen);
             this._repo.Remove(model);
             this._unitOfWork.SaveChanges();
             return model;

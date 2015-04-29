@@ -157,7 +157,6 @@
     <Compile Include="Extensions\ExpressionExtensions.cs" />
     <Compile Include="Extensions\OrderedQueryableExtensions.cs" />
     <Compile Include="Models\BWModel.cs" />
-    <Compile Include="Models\IModelRelationActivator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BWEntityService.cs" />
     <Compile Include="Services\IEntityService.cs" />
