@@ -140,6 +140,7 @@
     <Compile Include="Attributes\NonCopyableAttribute.cs" />
     <Compile Include="Attributes\RequireHttps4WebAPIAttribute.cs" />
     <Compile Include="Attributes\UpdatableAttribute.cs" />
+    <Compile Include="BindingModels\IBindingModel.cs" />
     <Compile Include="BWYou.Web.MVC.cs" />
     <Compile Include="Controllers\BWApiController.cs" />
     <Compile Include="Controllers\BWController.cs" />

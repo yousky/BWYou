@@ -1,4 +1,5 @@
 ﻿using BWYou.Web.MVC.Attributes;
+using BWYou.Web.MVC.BindingModels;
 using BWYou.Web.MVC.Models;
 using BWYou.Web.MVC.ViewModels;
 using log4net;
@@ -225,6 +226,39 @@ namespace BWYou.Web.MVC.Extensions
 
         }
 
+        public static void MapFromBindingModelToBaseModel<TSource, TTarget>(this TSource source, TTarget target)
+            where TSource : IBindingModel<TTarget>
+            where TTarget : BWModel
+        {
+            if (source == null)
+            {
+                logger.Warn(string.Format("MapFromBindingModelToBaseModel Source is null : type={0}",
+                                                source.GetType().FullName));
+                return;
+            }
 
+            var srcFields = (from PropertyInfo prop in source.GetType().GetProperties().Where(p => p.CanRead == true)
+                             select new
+                             {
+                                 Name = prop.Name,
+                                 Type = Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType
+                             }).ToList();
+
+            var targetFields = (from PropertyInfo prop in target.GetType().GetProperties().Where(p => p.CanWrite == true)
+                                select new
+                                {
+                                    Name = prop.Name,
+                                    Type = Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType
+                                }).ToList();
+
+            var commonFields = srcFields.Intersect(targetFields);
+
+            foreach (var field in commonFields)
+            {
+                var value = source.GetType().GetProperty(field.Name).GetValue(source, null);
+                target.GetType().GetProperty(field.Name).SetValue(target, value, null);
+            }
+
+        }
     }
 }

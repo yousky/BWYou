@@ -4,8 +4,9 @@
  * \section info 개발목적
  *      - 공통으로 사용하는 라이브러리의 모듈화를 통한 생산성 향상
  * \section advenced 추가정보
- *          - Version : 0.7.6.1
- *          - Last Updated : 2015.04.24
+ *          - Last Updated : 2015.06.02
+ *              -# 이제 여기에서 더 이상의 내용 정리 안 함. 각 개별 프로젝트에서 정리
+ *          - Last Updated : 2015.04.24 Version : 0.7.6.1
  *              -# BWYou.Web.MVC 추가 (ver 0.2.2.0)
  *          - Updated : 2014.12.03 Version : 0.7.5.6
  *              -# BWYou.Cloud 업데이트 (ver 0.2.0.5)
