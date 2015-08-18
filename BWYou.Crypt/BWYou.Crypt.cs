@@ -2,10 +2,18 @@
  *  \section developer 개발자
  *          - You
  *  \section info 개발목적
- *          - 자체 암호화 처리를 위하여
+ *          - 범용적으로 사용 되는 암호화, 복호화, 해싱 관련 알고리즘을 쉽게 사용 하기 위한 공통 모듈
  *  \section advenced 추가정보
- *          - Version : 0.9.3.3
- *          - Last Updated : 2014.11.20
+ *          - Version : 1.0.0.1
+ *          - Last Updated : 2015.08.18
+ *              -# 대상 프레임워크 4.5로 변경
+ *              -# BWYou.Crypt NameSpace 생성
+ *              -# BWYou.Crypt 클래스를 BWYou.Crypt.Crypt로 변경
+ *              -# Crypt 클래스는 Obsolete 처리
+ *              -# Algorithms NameSpace 추가
+ *              -# Hash 알고리즘으로 SHA256, 512 처리
+ *              -# Symmetric 알고리즘으로 Aes, TripleDES 처리
+ *          - Updated : 2014.11.20 Version : 0.9.3.3
  *              -# 빌드 타겟 플랫폼을 x86에서 Any Cpu로 변경. 테스트 안 함.
  *          - Updated : 2014.01.06 Version : 0.9.3.2
  *              -# key iv 기본 변경
@@ -18,42 +26,41 @@
  *              -# enum 값을 클래스 외부로 뺌.
  *          - Error 발생시 : throw 발생.
  *          - 구현 사항
- *              -# 파일, 레지스트리에 byte[], string 쓰기, 읽기
- *              -# DES를 이용한 암호화, 복호화 및 DES용 KEY, IV 생성
- *              -# 파일과 함께 암, 복호화 처리 기능 추가
+ *              -# SHA256, 512를 통한 해싱.
+ *              -# Aes, TripleDES를 통한 암호화, 복호화 및 KEY, IV 생성
+ *              -# UTF8 문자열과 Byte[]의 암호화, 해싱
+ *              -# Byte[], Base64 문자열을 통한 복호화
  *          - 미구현 사항
- *              -# HASH, 대칭키 AES(DES상위버젼), 비대칭키 RSA
+ *              -# 비대칭키 RSA
  * 
  *  \section explain 설명
- *          - 자체 암호화 구현을 위하여 특정 키(KEY), 벡터(IV)를 이용하여 암호화 복호화를 구현
- *          - DES용으로 임의의 문자열 2개, 3개로부터 KEY, IV를 만들기
- *          - 만들어진 KEY, IV를 저장하기 위해 레지스트리, 파일을 이용하여 읽기, 쓰기 구현
+ *          - 해싱 알고리즘을 이용하여 해싱 구현
+ *          - 대칭키 알고리즘을 이용하여 암호화 복호화를 구현
+ *          - 대칭키 알고리즘 이용 시 KEY, IV 입력 또는 생성 처리
+ *          - UTF8 문자열과 Byte[]의 암호화, 해싱
+ *          - Byte[], Base64 문자열을 통한 복호화
  * 
  *  \section Crypt Crypt
  *          - 보안 관계 사항을 위한 클래스
  * 
  *          - 사용예)
  *  \code
- 
-            clsCrypt cry = new clsCrypt();                                      //보안 객체 생성
 
-            byte[] key;     //암, 복호화용 키
-            byte[] iv;      //암, 복호화용 벡터
-            byte[] encode;  //암호화 된 바이트
-            string decode;  //복호화 된 문자열
+            string planUTF8String = "가나다라abcd1234)(*^$DIFO(lc;zp[raww02 b d90asafsd럼댁2ㄹ너ㅏㅇㄹ미;ㅓㄹ매dfaoie3oaAF_WERA)ㄹㅂ8ㅕ8ㄸ꺔ㅉㄸㄲ(";
 
-            try
-            {
-                cry.InAndOut("문자열1", "문자열2", "문자열3", out key, out iv);                         //특정 문자열로부터 키, 벡터 생성
-                cry.WriteRegistry(clsCrypt.regTopPath.LocalMachine, @"SOFTWARE\TEST", "KEY", key);      //생성된 키 레지 저장
-                cry.ReadRegistry(clsCrypt.regTopPath.LocalMachine, @"SOFTWARE\TEST", "KEY", out key);   //키 레지로부터 읽기
-                cry.Encrypt("암호화할문자", out encode, key, iv);                                       //암호화
-                cry.Decrypt(encode, out decode, key, iv);                                               //복호화
-            }
-            catch (Exception ex)
-            {
-                //에러 발생시 처리 방법
-            }
+            //Aes 암, 복호화
+            Symmetric sym = new Aes(out base64Key, out base64Iv);
+
+            string base64Key;
+            string base64Iv;
+
+            string encryptedBase64String = sym.EncryptFromUTF8StringToBase64String(planUTF8String);
+            string decryptedUTF8String = sym.DecryptFromBase64StringToUTF8String(encryptedBase64String);
+
+            //SHA256 해싱
+            Hash hash = new SHA256();
+            string computedHashBase64String = hash.ComputeHashFromUTF8StringToBase64String(planUTF8String);
+
 
  * 
  *  \endcode
@@ -69,7 +76,7 @@ using Microsoft.Win32;                  //레지스트리 이용하기 위함
 using System.Security.Cryptography;     //암호화용
 
 
-namespace BWYou
+namespace BWYou.Crypt
 {
 
     /// <summary>
@@ -107,6 +114,7 @@ namespace BWYou
         Users
     };
 
+    [Obsolete("This Class Is obsoleted, please Algorithms Namespace instead")]
     /// <summary>
     /// 보안 관계 사항을 위한 클래스
     /// </summary>
@@ -530,7 +538,7 @@ namespace BWYou
         #endregion
 
 
-        #region DES 암, 복호화
+        #region TripleDES 암, 복호화
 
         #region KEY, IV로 조합할 값들
         static string k1 = "@";
