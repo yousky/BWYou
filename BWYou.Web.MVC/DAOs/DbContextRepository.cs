@@ -92,6 +92,12 @@ namespace BWYou.Web.MVC.DAOs
         /// <param name="updateProperties">원하는 칼럼 배열</param>
         public void Update(TEntity entity, params string[] updateProperties)
         {
+            if (this._dbContext.Entry(entity).State != EntityState.Detached)
+            {
+                logger.Warn(string.Format("관리 되고 있는 Entity의 수동 업데이트 발생(Skip)  : type={0}, id={1}", entity.GetType().FullName, entity.Id));
+                return;
+            }
+
             this._dbContext.Entry(entity).State = EntityState.Unchanged;
 
             foreach (string name in updateProperties)
@@ -106,6 +112,12 @@ namespace BWYou.Web.MVC.DAOs
         /// <param name="entity"></param>
         public void UpdateExceptNullValue(TEntity entity)
         {
+            if (this._dbContext.Entry(entity).State != EntityState.Detached)
+            {
+                logger.Warn(string.Format("관리 되고 있는 Entity의 수동 업데이트 발생(Skip)  : type={0}, id={1}", entity.GetType().FullName, entity.Id));
+                return;
+            }
+
             this._dbContext.Entry(entity).State = EntityState.Modified;
 
             foreach (string name in this._dbContext.Entry(entity).CurrentValues.PropertyNames)
@@ -124,6 +136,12 @@ namespace BWYou.Web.MVC.DAOs
         /// <param name="updateProperties"></param>
         public void UpdateExceptNullValue(TEntity entity, params string[] updateProperties)
         {
+            if (this._dbContext.Entry(entity).State != EntityState.Detached)
+            {
+                logger.Warn(string.Format("관리 되고 있는 Entity 업데이트 무시 : type={0}, id={1}", entity.GetType().FullName, entity.Id));
+                return;
+            }
+
             this._dbContext.Entry(entity).State = EntityState.Unchanged;
 
             foreach (string name in updateProperties)

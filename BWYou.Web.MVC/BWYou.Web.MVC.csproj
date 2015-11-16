@@ -141,6 +141,7 @@
     <Compile Include="Attributes\FilterableAttribute.cs" />
     <Compile Include="Attributes\NonCopyableAttribute.cs" />
     <Compile Include="Attributes\RequireHttps4WebAPIAttribute.cs" />
+    <Compile Include="Attributes\RequireMappedHttpsAttribute.cs" />
     <Compile Include="Attributes\UpdatableAttribute.cs" />
     <Compile Include="BindingModels\IBindingModel.cs" />
     <Compile Include="BWYou.Web.MVC.cs" />
