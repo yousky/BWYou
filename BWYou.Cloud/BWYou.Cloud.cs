@@ -4,8 +4,10 @@
  *  \section info 개발목적
  *          - 클라우드 관련 클래스 모음
  *  \section advenced 추가정보
- *          - Version : 0.2.0.5
- *          - Last Updated : 2014.12.09
+ *          - Version : 0.2.1.0
+ *          - Last Updated : 2015.12.16
+ *              -# 파일 스토리지 기능 구현
+ *          - Last Updated : 2014.12.09 Version : 0.2.0.5
  *              -# UCloud 스토리지 Delete 기능 구현
  *              -# 닷넷 프레임워크 4.5를 대상으로 변경
  *          - Last Updated : 2014.12.04 Version : 0.2.0.4

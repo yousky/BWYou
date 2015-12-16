@@ -16,8 +16,8 @@ namespace BWYou.Crypt.Tests.Algorithms.Hashs
         {
             // 정렬
             //string planUTF8String = "가나다라abcd1234)(*^$DIFO(lc;zp[raww02 b d90asafsd럼댁2ㄹ너ㅏㅇㄹ미;ㅓㄹ매dfaoie3oaAF_WERA)ㄹㅂ8ㅕ8ㄸ꺔ㅉㄸㄲ(";
-            string planUTF8String = "caa96ab0781f436c8d3b2e1d7081397a,2.x,Pro,+mDj0qYYX0v/EgOjTmqFA1EW7Bb5bOU0VLwEB07Y014=";
-            string planUTF8String2 = "2cb5c9dcb3834f1fb2fc7ee6fe02421f,2.x,Free,+mDj0qYYX0v/EgOjTmqFA1EW7Bb5bOU0VLwEB07Y014=";
+            string planUTF8String = "caa96ab0781f436c8d3b2e1d7081397a,2.x,Pro,test.com";
+            string planUTF8String2 = "2cb5c9dcb3834f1fb2fc7ee6fe02421f,2.x,Free,test.com";
             string oldComputedHashBase64String = "Iw7PyGLd2sp4AZvc8/0+DU2UO+nlsI1H613zSqa7j/o=";
             Hash hash = new SHA256();
 

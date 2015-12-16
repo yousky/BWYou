@@ -267,6 +267,52 @@
             AzureStorage Account
             </summary>
         </member>
+        <member name="M:BWYou.Cloud.Storage.FileStorage.Upload(System.IO.Stream,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="inputStream"></param>
+            <param name="sourcefilename"></param>
+            <param name="containerName"></param>
+            <param name="destpath"></param>
+            <param name="useUUIDName"></param>
+            <param name="overwrite"></param>
+            <param name="useSequencedName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.FileStorage.InitDirectory(System.String)">
+            <summary>
+            생성 할 파일의 부모 디렉토리 존재 여부 확인 후 없으면 생성
+            </summary>
+            <param name="createFilePath"></param>
+        </member>
+        <member name="M:BWYou.Cloud.Storage.FileStorage.Upload(System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="sourcefilepathname"></param>
+            <param name="containerName"></param>
+            <param name="destpath"></param>
+            <param name="useUUIDName"></param>
+            <param name="overwrite"></param>
+            <param name="useSequencedName"></param>
+            <returns></returns>
+        </member>
+        <member name="P:BWYou.Cloud.Storage.FileStorage.retryCount">
+            <summary>
+            업로드 중 문제 발생 시 재시도 횟수
+            </summary>
+        </member>
+        <member name="P:BWYou.Cloud.Storage.FileStorage.RootPath">
+            <summary>
+            파일 저장 기본 루트 위치
+            </summary>
+        </member>
+        <member name="P:BWYou.Cloud.Storage.FileStorage.PublicRootUrl">
+            <summary>
+            외부에 보여 질 루트 Url
+            </summary>
+        </member>
         <member name="T:BWYou.Cloud.Storage.UCloudStorage">
             <summary>
             UCloudStorage Http 이용 처리
