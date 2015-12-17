@@ -58,9 +58,12 @@ namespace BWYou.Cloud.Storage
                     Uri url = new Uri(PublicRootUrl + "/" + relativeFilePath);
                     return url.AbsoluteUri;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
+                    if (typeof(DuplicateFileException) == ex.GetType())
+                    {
+                        throw ex;
+                    }
                 } 
             } while (--retryCount > 0);
 

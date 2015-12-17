@@ -1,4 +1,5 @@
-﻿using BWYou.Cloud.Storage;
+﻿using BWYou.Cloud.Exceptions;
+using BWYou.Cloud.Storage;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -20,12 +21,24 @@ namespace BWYou.Cloud.Tests.Storage
             string rootPath = @"C:\ArPlatform\Temp";
             string container = @"testConta";
             string destpath = @"testDest\ttt";
+            string srcpathname = @"X:\test\test.js";
             IStorage storage = new FileStorage(rootPath, publicRootUrl);
 
             // 동작
-            string uri = storage.Upload(@"X:\test\test.js", container, destpath, true, false);
+            Exception ex = null;
+            try
+            {
+                storage.Upload(srcpathname, container, destpath, false, false, false);
+                storage.Upload(srcpathname, container, destpath, false, false, false);
+            }
+            catch (Exception e)
+            {
+                ex = e;
+            }
+            string uri = storage.Upload(srcpathname, container, destpath, true, false);
 
             // 어설션
+            Assert.IsInstanceOf(typeof(DuplicateFileException), ex);
             Assert.IsTrue(uri.StartsWith(publicRootUrl) && uri.Contains(Path.Combine(container, destpath).Replace(@"\", @"/")));
         }
 
@@ -35,16 +48,29 @@ namespace BWYou.Cloud.Tests.Storage
             // 정렬
             string publicRootUrl = @"https://www.hyundaiar.com/temp";
             string rootPath = @"C:\ArPlatform\Temp";
-            string uri = @"https://www.hyundaiar.com/temp/testConta/testDest/ttt/522d0696796a4682b5cac279849bc7d2.js";
+            string uri = @"https://www.hyundaiar.com/temp/testConta/testDest/ttt/791f9f24545d4417bc05aaf4b5f4e26b.js";
             string destpath = @"C:\ArPlatform\Temp";
             string destfilename = @"test.js";
             IStorage storage = new FileStorage(rootPath, publicRootUrl);
 
             // 동작
-            string filepath = storage.Download(new Uri(uri), Path.Combine(destpath, destfilename), false, true);
+            Exception ex = null;
+            try
+            {
+                storage.Download(new Uri(uri), Path.Combine(destpath, destfilename), false, false);
+                storage.Download(new Uri(uri), Path.Combine(destpath, destfilename), false, false);
+            }
+            catch (Exception e)
+            {
+                ex = e;
+            }
+            string filepath1 = storage.Download(new Uri(uri), Path.Combine(destpath, destfilename), true, true);
+            string filepath2 = storage.Download(new Uri(uri), Path.Combine(destpath, destfilename), false, true);
 
             // 어설션
-            Assert.IsTrue(filepath.StartsWith(destpath));
+            Assert.IsInstanceOf(typeof(DuplicateFileException), ex);
+            Assert.IsTrue(filepath1 == Path.Combine(destpath, destfilename));
+            Assert.IsTrue(filepath2.StartsWith(destpath) && filepath2 != Path.Combine(destpath, destfilename));
         }
     }
 }
