@@ -1,4 +1,5 @@
 ﻿using BWYou.Web.MVC.Models;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -69,6 +70,19 @@ namespace BWYou.Web.MVC.DAOs
         /// </summary>
         /// <param name="source"></param>
         void Clone(TEntity source);
-
+        /// <summary>
+        /// DBSet 노출
+        /// </summary>
+        DbSet<TEntity> DBSet
+        {
+            get;
+        }
+        /// <summary>
+        /// DbContext 노출
+        /// </summary>
+        DbContext DBContext
+        {
+            get;
+        }
     }
 }

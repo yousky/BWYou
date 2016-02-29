@@ -4,8 +4,10 @@
  *  \section info 개발목적
  *          - ASP.NET MVC + Entity Framwork + Identity 공통 처리
  *  \section advenced 추가정보
- *          - Version : 0.2.2.2
- *          - Last Updated : 2015.11.16
+ *          - Version : 0.2.2.3
+ *          - Last Updated : 2016.02.29
+ *              -# DbContextRepository에서 DBSet, DBContext 노출
+ *          - Updated : 2015.11.16 Version : 0.2.2.2
  *              -# RequireMappedHttpsAttribute 추가
  *              -# 관리 되고 있는 Entity의 수동 업데이트 경고 처리
  *          - Updated : 2015.06.02 Version : 0.2.2.1

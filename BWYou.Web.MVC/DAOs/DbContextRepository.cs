@@ -180,5 +180,25 @@ namespace BWYou.Web.MVC.DAOs
             this._dbContext.Entry(source).State = EntityState.Detached;
             this._dbSet.Add(clone);
         }
+        /// <summary>
+        /// DBSet 노출
+        /// </summary>
+        public DbSet<TEntity> DBSet
+        {
+            get
+            {
+                return this._dbSet;
+            }
+        }
+        /// <summary>
+        /// DbContext 노출
+        /// </summary>
+        public DbContext DBContext
+        {
+            get
+            {
+                return this._dbContext;
+            }
+        }
     }
 }
