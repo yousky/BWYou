@@ -64,7 +64,10 @@ namespace BWYou.Web.MVC.DAOs
                     {
                         ((BWModel)entry.Entity).CreateDT = dtCur;
                     }
-                    ((BWModel)entry.Entity).UpdateDT = dtCur;
+                    if (entry.State != EntityState.Deleted)
+                    {
+                        ((BWModel)entry.Entity).UpdateDT = dtCur;
+                    }
                 }
             }
 

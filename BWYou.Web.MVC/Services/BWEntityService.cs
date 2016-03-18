@@ -254,7 +254,7 @@ namespace BWYou.Web.MVC.Services
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        private Expression<Func<TEntity, bool>> GetWhereClause(TEntity model)
+        public static Expression<Func<TEntity, bool>> GetWhereClause(TEntity model)
         {
             List<ExpressionFilter> filter = new List<ExpressionFilter>();
             var props = model.GetType().GetProperties().Where(p => p.GetCustomAttributes(typeof(FilterableAttribute), true).Length != 0);

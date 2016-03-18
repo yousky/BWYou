@@ -4,8 +4,12 @@
  *  \section info 개발목적
  *          - ASP.NET MVC + Entity Framwork + Identity 공통 처리
  *  \section advenced 추가정보
- *          - Version : 0.2.2.3
- *          - Last Updated : 2016.02.29
+ *          - Version : 0.2.2.5
+ *          - Last Updated : 2016.03.18
+ *              -# Deleted 상태에서 UpdateDT 변경 시도 하는 버그 수정
+ *          - Last Updated : 2016.03.17 Version : 0.2.2.4
+ *              -# BWEntityService에서 GetWhereClause 자식에게 노출
+ *          - Updated : 2016.02.29 Version : 0.2.2.3
  *              -# DbContextRepository에서 DBSet, DBContext 노출
  *          - Updated : 2015.11.16 Version : 0.2.2.2
  *              -# RequireMappedHttpsAttribute 추가
