@@ -37,17 +37,29 @@ namespace BWYou.Web.MVC.Services
         public virtual IEnumerable<TEntity> GetFilteredList(TEntity model)
         {
             var predicate = GetWhereClause(model);
-            return this._repo.Query.AsExpandable().Where(predicate).ToList();
+            return GetFilteredList(predicate);
         }
         public virtual IEnumerable<TEntity> GetFilteredList(TEntity model, string sort)
         {
             var predicate = GetWhereClause(model);
-            return this._repo.Query.AsExpandable().Where(predicate).SortBy(sort).ToList();
+            return GetFilteredList(predicate, sort);
         }
         public virtual IPagedList<TEntity> GetFilteredList(TEntity model, string sort, int pageNumber, int pageSize)
         {
             var predicate = GetWhereClause(model);
-            IOrderedQueryable<TEntity> orderedQueryable = this._repo.Query.AsExpandable().Where(predicate).SortBy(sort);
+            return GetFilteredList(predicate, sort, pageNumber, pageSize);
+        }
+        public virtual IEnumerable<TEntity> GetFilteredList(Expression<Func<TEntity, bool>> filter)
+        {
+            return this._repo.Query.AsExpandable().Where(filter).ToList();
+        }
+        public virtual IEnumerable<TEntity> GetFilteredList(Expression<Func<TEntity, bool>> filter, string sort)
+        {
+            return this._repo.Query.AsExpandable().Where(filter).SortBy(sort).ToList();
+        }
+        public virtual IPagedList<TEntity> GetFilteredList(Expression<Func<TEntity, bool>> filter, string sort, int pageNumber, int pageSize)
+        {
+            IOrderedQueryable<TEntity> orderedQueryable = this._repo.Query.AsExpandable().Where(filter).SortBy(sort);
             return orderedQueryable.ToPagedList(pageNumber, pageSize);
         }
 

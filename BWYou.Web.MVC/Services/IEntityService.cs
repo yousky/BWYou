@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using System.Web.Http.ModelBinding;
 
@@ -13,6 +14,10 @@ namespace BWYou.Web.MVC.Services
         IEnumerable<TEntity> GetFilteredList(TEntity model);
         IEnumerable<TEntity> GetFilteredList(TEntity model, string sort);
         IPagedList<TEntity> GetFilteredList(TEntity model, string sort, int pageNumber, int pageSize);
+
+        IEnumerable<TEntity> GetFilteredList(Expression<Func<TEntity, bool>> filter);
+        IEnumerable<TEntity> GetFilteredList(Expression<Func<TEntity, bool>> filter, string sort);
+        IPagedList<TEntity> GetFilteredList(Expression<Func<TEntity, bool>> filter, string sort, int pageNumber, int pageSize);
 
         IQueryable<TEntity> Query();
 
