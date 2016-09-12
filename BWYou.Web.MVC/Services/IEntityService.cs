@@ -12,18 +12,30 @@ namespace BWYou.Web.MVC.Services
     {
 
         IEnumerable<TEntity> GetFilteredList(TEntity model);
+        Task<IEnumerable<TEntity>> GetFilteredListAsync(TEntity model);
         IEnumerable<TEntity> GetFilteredList(TEntity model, string sort);
+        Task<IEnumerable<TEntity>> GetFilteredListAsync(TEntity model, string sort);
         IPagedList<TEntity> GetFilteredList(TEntity model, string sort, int pageNumber, int pageSize);
+        Task<IPagedList<TEntity>> GetFilteredListAsync(TEntity model, string sort, int pageNumber, int pageSize);
 
         IEnumerable<TEntity> GetFilteredList(Expression<Func<TEntity, bool>> filter);
+        Task<IEnumerable<TEntity>> GetFilteredListAsync(Expression<Func<TEntity, bool>> filter);
         IEnumerable<TEntity> GetFilteredList(Expression<Func<TEntity, bool>> filter, string sort);
+        Task<IEnumerable<TEntity>> GetFilteredListAsync(Expression<Func<TEntity, bool>> filter, string sort);
         IPagedList<TEntity> GetFilteredList(Expression<Func<TEntity, bool>> filter, string sort, int pageNumber, int pageSize);
+        Task<IPagedList<TEntity>> GetFilteredListAsync(Expression<Func<TEntity, bool>> filter, string sort, int pageNumber, int pageSize);
 
         IQueryable<TEntity> Query();
+
+        IQueryable<TEntity> GetFilteredQuery(TEntity model);
+        IOrderedQueryable<TEntity> GetFilteredQuery(TEntity model, string sort);
+        IQueryable<TEntity> GetFilteredQuery(Expression<Func<TEntity, bool>> filter);
+        IOrderedQueryable<TEntity> GetFilteredQuery(Expression<Func<TEntity, bool>> filter, string sort);
 
         IEnumerable<TEntity> GetList();
         Task<IEnumerable<TEntity>> GetListAsync();
         IPagedList<TEntity> GetList(string sort, int pageNumber, int pageSize);
+        Task<IPagedList<TEntity>> GetListAsync(string sort, int pageNumber, int pageSize);
 
         IEnumerable<TEntity> GetList(string sort);
         Task<IEnumerable<TEntity>> GetListAsync(string sort);

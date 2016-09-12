@@ -39,33 +39,85 @@ namespace BWYou.Web.MVC.Services
             var predicate = GetWhereClause(model);
             return GetFilteredList(predicate);
         }
+        public virtual Task<IEnumerable<TEntity>> GetFilteredListAsync(TEntity model)
+        {
+            var predicate = GetWhereClause(model);
+            return GetFilteredListAsync(predicate);
+        }
         public virtual IEnumerable<TEntity> GetFilteredList(TEntity model, string sort)
         {
             var predicate = GetWhereClause(model);
             return GetFilteredList(predicate, sort);
+        }
+        public virtual Task<IEnumerable<TEntity>> GetFilteredListAsync(TEntity model, string sort)
+        {
+            var predicate = GetWhereClause(model);
+            return GetFilteredListAsync(predicate, sort);
         }
         public virtual IPagedList<TEntity> GetFilteredList(TEntity model, string sort, int pageNumber, int pageSize)
         {
             var predicate = GetWhereClause(model);
             return GetFilteredList(predicate, sort, pageNumber, pageSize);
         }
+        public virtual Task<IPagedList<TEntity>> GetFilteredListAsync(TEntity model, string sort, int pageNumber, int pageSize)
+        {
+            var predicate = GetWhereClause(model);
+            return GetFilteredListAsync(predicate, sort, pageNumber, pageSize);
+        }
+
         public virtual IEnumerable<TEntity> GetFilteredList(Expression<Func<TEntity, bool>> filter)
         {
             return this._repo.Query.AsExpandable().Where(filter).ToList();
         }
+        public virtual async Task<IEnumerable<TEntity>> GetFilteredListAsync(Expression<Func<TEntity, bool>> filter)
+        {
+            return await this._repo.Query.AsExpandable().Where(filter).ToListAsync();
+        }
         public virtual IEnumerable<TEntity> GetFilteredList(Expression<Func<TEntity, bool>> filter, string sort)
         {
             return this._repo.Query.AsExpandable().Where(filter).SortBy(sort).ToList();
+        }
+        public virtual async Task<IEnumerable<TEntity>> GetFilteredListAsync(Expression<Func<TEntity, bool>> filter, string sort)
+        {
+            return await this._repo.Query.AsExpandable().Where(filter).SortBy(sort).ToListAsync();
         }
         public virtual IPagedList<TEntity> GetFilteredList(Expression<Func<TEntity, bool>> filter, string sort, int pageNumber, int pageSize)
         {
             IOrderedQueryable<TEntity> orderedQueryable = this._repo.Query.AsExpandable().Where(filter).SortBy(sort);
             return orderedQueryable.ToPagedList(pageNumber, pageSize);
         }
+        public virtual async Task<IPagedList<TEntity>> GetFilteredListAsync(Expression<Func<TEntity, bool>> filter, string sort, int pageNumber, int pageSize)
+        {
+            return await Task<IPagedList<TEntity>>.Run(() =>
+            {
+                IOrderedQueryable<TEntity> orderedQueryable = this._repo.Query.AsExpandable().Where(filter).SortBy(sort);
+                return orderedQueryable.ToPagedList(pageNumber, pageSize);
+            });
+        }
 
         public virtual IQueryable<TEntity> Query()
         {
             return this._repo.Query;
+        }
+
+        public virtual IQueryable<TEntity> GetFilteredQuery(TEntity model)
+        {
+            var predicate = GetWhereClause(model);
+            return GetFilteredQuery(predicate);
+        }
+        public virtual IOrderedQueryable<TEntity> GetFilteredQuery(TEntity model, string sort)
+        {
+            var predicate = GetWhereClause(model);
+            return GetFilteredQuery(predicate, sort);
+        }
+
+        public virtual IQueryable<TEntity> GetFilteredQuery(Expression<Func<TEntity, bool>> filter)
+        {
+            return this._repo.Query.AsExpandable().Where(filter);
+        }
+        public virtual IOrderedQueryable<TEntity> GetFilteredQuery(Expression<Func<TEntity, bool>> filter, string sort)
+        {
+            return this._repo.Query.AsExpandable().Where(filter).SortBy(sort);
         }
 
 
@@ -82,6 +134,14 @@ namespace BWYou.Web.MVC.Services
         {
             IOrderedQueryable<TEntity> orderedQueryable = this._repo.Query.SortBy(sort);
             return orderedQueryable.ToPagedList(pageNumber, pageSize);
+        }
+        public virtual async Task<IPagedList<TEntity>> GetListAsync(string sort, int pageNumber, int pageSize)
+        {
+            return await Task<IPagedList<TEntity>>.Run(() =>
+            {
+                IOrderedQueryable<TEntity> orderedQueryable = this._repo.Query.SortBy(sort);
+                return orderedQueryable.ToPagedList(pageNumber, pageSize);
+            });
         }
 
         public virtual IEnumerable<TEntity> GetList(string sort)

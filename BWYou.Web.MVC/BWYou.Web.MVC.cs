@@ -4,10 +4,16 @@
  *  \section info 개발목적
  *          - ASP.NET MVC + Entity Framwork + Identity 공통 처리
  *  \section advenced 추가정보
- *          - Version : 0.2.2.5
- *          - Last Updated : 2016.03.18
+ *          - Version : 0.3.0.0
+ *          - Last Updated : 2016.09.12
+ *              -# IEntityService의 비동기 함수들 및 Query 관련 함수들 추가
+ *              -# BWApiController의 비동기 함수들 추가
+ *              -# IModelLoader 인터페이스의 LoadModelAsync 추가
+ *          - Updated : 2016.09.06 Version : 0.2.3.0
+ *              -# IModelLoader 구조 변경
+ *          - Updated : 2016.03.18 Version : 0.2.2.5
  *              -# Deleted 상태에서 UpdateDT 변경 시도 하는 버그 수정
- *          - Last Updated : 2016.03.17 Version : 0.2.2.4
+ *          - Updated : 2016.03.17 Version : 0.2.2.4
  *              -# BWEntityService에서 GetWhereClause 자식에게 노출
  *          - Updated : 2016.02.29 Version : 0.2.2.3
  *              -# DbContextRepository에서 DBSet, DBContext 노출

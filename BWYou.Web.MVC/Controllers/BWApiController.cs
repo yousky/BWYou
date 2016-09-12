@@ -5,6 +5,7 @@ using System;
 using System.Data.Entity;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
@@ -42,9 +43,23 @@ namespace BWYou.Web.MVC.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, models);
         }
 
+        protected virtual async Task<HttpResponseMessage> BaseGetListAsync()
+        {
+            var models = await this._service.GetListAsync();
+
+            return Request.CreateResponse(HttpStatusCode.OK, models);
+        }
+
         protected virtual HttpResponseMessage BaseGetList(string sort)
         {
             var models = this._service.GetList(sort);
+
+            return Request.CreateResponse(HttpStatusCode.OK, models);
+        }
+
+        protected virtual async Task<HttpResponseMessage> BaseGetListAsync(string sort)
+        {
+            var models = await this._service.GetListAsync(sort);
 
             return Request.CreateResponse(HttpStatusCode.OK, models);
         }
@@ -56,9 +71,23 @@ namespace BWYou.Web.MVC.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, models);
         }
 
+        protected virtual async Task<HttpResponseMessage> BaseGetListAsync(int page, string sort)
+        {
+            var models = new PageResultViewModel<TEntity>(await this._service.GetListAsync(sort, page, pageSize));
+
+            return Request.CreateResponse(HttpStatusCode.OK, models);
+        }
+
         protected virtual HttpResponseMessage BaseGetFilteredList(TEntity searchModel)
         {
             var models = this._service.GetFilteredList(searchModel);
+
+            return Request.CreateResponse(HttpStatusCode.OK, models);
+        }
+
+        protected virtual async Task<HttpResponseMessage> BaseGetFilteredListAsync(TEntity searchModel)
+        {
+            var models = await this._service.GetFilteredListAsync(searchModel);
 
             return Request.CreateResponse(HttpStatusCode.OK, models);
         }
@@ -70,9 +99,23 @@ namespace BWYou.Web.MVC.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, models);
         }
 
+        protected virtual async Task<HttpResponseMessage> BaseGetFilteredListAsync(TEntity searchModel, string sort)
+        {
+            var models = await this._service.GetFilteredListAsync(searchModel, sort);
+
+            return Request.CreateResponse(HttpStatusCode.OK, models);
+        }
+
         protected virtual HttpResponseMessage BaseGetFilteredList(TEntity searchModel, int page, string sort)
         {
             var models = new PageResultViewModel<TEntity>(this._service.GetFilteredList(searchModel, sort, page, pageSize));
+
+            return Request.CreateResponse(HttpStatusCode.OK, models);
+        }
+
+        protected virtual async Task<HttpResponseMessage> BaseGetFilteredListAsync(TEntity searchModel, int page, string sort)
+        {
+            var models = new PageResultViewModel<TEntity>(await this._service.GetFilteredListAsync(searchModel, sort, page, pageSize));
 
             return Request.CreateResponse(HttpStatusCode.OK, models);
         }
@@ -89,12 +132,40 @@ namespace BWYou.Web.MVC.Controllers
             return Request.CreateResponse(HttpStatusCode.NotFound);
         }
 
+        protected virtual async Task<HttpResponseMessage> BaseGetAsync(int id)
+        {
+            var model = await this._service.GetAsync(id);
+
+            if (model != null)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, model);
+            }
+
+            return Request.CreateResponse(HttpStatusCode.NotFound);
+        }
+
         protected virtual HttpResponseMessage BasePost(TEntity model)
         {
             TryValidateModel(model);
             if (ModelState.IsValid)
             {
                 var retModel = this._service.ValidAndCreate(model, ModelState);
+
+                if (retModel != null)
+                {
+                    return Request.CreateResponse(HttpStatusCode.Created, retModel);
+                }
+            }
+
+            return Request.CreateResponse(HttpStatusCode.BadRequest, new ErrorResultViewModel(HttpStatusCode.BadRequest, ModelState));
+        }
+
+        protected virtual async Task<HttpResponseMessage> BasePostAsync(TEntity model)
+        {
+            TryValidateModel(model);
+            if (ModelState.IsValid)
+            {
+                var retModel = await this._service.ValidAndCreateAsync(model, ModelState);
 
                 if (retModel != null)
                 {
@@ -122,6 +193,23 @@ namespace BWYou.Web.MVC.Controllers
             return Request.CreateResponse(HttpStatusCode.BadRequest, new ErrorResultViewModel(HttpStatusCode.BadRequest, ModelState));
         }
 
+        protected virtual async Task<HttpResponseMessage> BasePutAsync(int id, TEntity model)
+        {
+            TryValidateModel(model);
+            if (ModelState.IsValid)
+            {
+                model.Id = id;
+                var retModel = await this._service.ValidAndUpdateAsync(model, ModelState);
+
+                if (retModel != null)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, retModel);
+                }
+            }
+
+            return Request.CreateResponse(HttpStatusCode.BadRequest, new ErrorResultViewModel(HttpStatusCode.BadRequest, ModelState));
+        }
+
         protected virtual HttpResponseMessage BaseDelete(int id)
         {
             var retModel = this._service.ValidAndDelete(id, ModelState);
@@ -134,9 +222,33 @@ namespace BWYou.Web.MVC.Controllers
             return Request.CreateResponse(HttpStatusCode.BadRequest, new ErrorResultViewModel(HttpStatusCode.BadRequest, ModelState));
         }
 
+        protected virtual async Task<HttpResponseMessage> BaseDeleteAsync(int id)
+        {
+            var retModel = await this._service.ValidAndDeleteAsync(id, ModelState);
+
+            if (retModel != null)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, retModel);
+            }
+
+            return Request.CreateResponse(HttpStatusCode.BadRequest, new ErrorResultViewModel(HttpStatusCode.BadRequest, ModelState));
+        }
+
         protected virtual HttpResponseMessage BaseClone(int id)
         {
             var retModel = this._service.ValidAndClone(id, ModelState);
+
+            if (retModel != null)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, retModel);
+            }
+
+            return Request.CreateResponse(HttpStatusCode.BadRequest, new ErrorResultViewModel(HttpStatusCode.BadRequest, ModelState));
+        }
+
+        protected virtual async Task<HttpResponseMessage> BaseCloneAsync(int id)
+        {
+            var retModel = await this._service.ValidAndCloneAsync(id, ModelState);
 
             if (retModel != null)
             {
