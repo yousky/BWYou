@@ -1,4 +1,5 @@
 ﻿using BWYou.Web.MVC.Models;
+using System;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,8 +10,8 @@ namespace BWYou.Web.MVC.DAOs
     /// Repository 인터페이스
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
-    public interface IRepository<TEntity>
-        where TEntity : BWModel
+    public interface IRepository<TEntity, TId>
+        where TEntity : IdModel<TId>
     {
         /// <summary>
         /// PK 이용 Select

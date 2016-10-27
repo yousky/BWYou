@@ -1,5 +1,6 @@
 ﻿using BWYou.Web.MVC.Attributes;
 using BWYou.Web.MVC.BindingModels;
+using BWYou.Web.MVC.Etc;
 using BWYou.Web.MVC.Models;
 using BWYou.Web.MVC.ViewModels;
 using log4net;
@@ -7,6 +8,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
 
 namespace BWYou.Web.MVC.Extensions
@@ -26,17 +28,18 @@ namespace BWYou.Web.MVC.Extensions
         /// <param name="direction"></param>
         /// <param name="bClone"></param>
         /// <returns></returns>
-        public static T Clone<T>(this T source, Dictionary<object, object> seen, bool bCopykey, bool bCascade, CascadeRelationAttribute.CascadeDirection direction, bool bClone) where T : BWModel
+        public static TEntity Clone<TEntity, TId>(this TEntity source, Dictionary<object, object> seen, bool bCopykey, bool bCascade, CascadeRelationAttribute.CascadeDirection direction, bool bClone)
+            where TEntity : IdModel<TId>
         {
             if (source == null)
             {
                 logger.Warn(string.Format("Clone Source is null return default(T): type={0}",
                                                 source.GetType().FullName));
-                return default(T);
+                return default(TEntity);
             }
             if (seen.ContainsKey(source) == true)
             {
-                return (T)seen[source];
+                return (TEntity)seen[source];
             }
 
             //부모자식 관계 일 때는 자식이 부모를 만들지 않고 원본을 그대로 돌려주도록 해야 함
@@ -44,13 +47,13 @@ namespace BWYou.Web.MVC.Extensions
             {
                 logger.Warn(string.Format("Clone Source as it is : type={0}, id={1}",
                                                 source.GetType().FullName,
-                                                typeof(BWModel).IsAssignableFrom(source.GetType()) ? ((BWModel)(object)source).Id.ToString() : "source not BWModel"));
+                                                typeof(TEntity).IsAssignableFrom(source.GetType()) ? ((TEntity)(object)source).Id.ToString() : "source not IdModel<TId>"));
                 seen.Add(source, source);
                 return source;
             }
 
 
-            T clone = (T)Activator.CreateInstance(source.GetType());
+            TEntity clone = (TEntity)Activator.CreateInstance(source.GetType());
             seen.Add(source, clone);
 
             //NonCopyable 하지 않고, CascadeRelation에 속하지 않은 프로퍼티 모두 복사
@@ -60,7 +63,7 @@ namespace BWYou.Web.MVC.Extensions
                                                                     && p.GetCustomAttributes(typeof(CascadeRelationAttribute)).Count() == 0);
             foreach (var prop in props)
             {
-                //Key의 이름은 Id로 한다고 본다. BWModel 사용 시 Id가 PK가 됨
+                //Key의 이름은 Id로 한다고 본다. IdModel<TId> 사용 시 Id가 PK가 됨
                 if (prop.Name == "Id")
                 {
                     if (bCopykey == false)
@@ -81,12 +84,12 @@ namespace BWYou.Web.MVC.Extensions
 
                 foreach (var prop in props)
                 {
-                    if (typeof(BWModel).IsAssignableFrom(prop.PropertyType))
+                    if (typeof(TEntity).IsAssignableFrom(prop.PropertyType))
                     {
                         var t = prop.GetValue(source, null);
 
                         CascadeRelationAttribute attr = (CascadeRelationAttribute)prop.GetCustomAttribute(typeof(CascadeRelationAttribute));
-                        prop.SetValue(clone, t == null ? null : ((BWModel)t).Clone(seen, bCopykey, bCascade, attr.Direction, attr.Clonable), null);
+                        prop.SetValue(clone, t == null ? null : ((TEntity)t).Clone<TEntity, TId>(seen, bCopykey, bCascade, attr.Direction, attr.Clonable), null);
                     }
                     else if (typeof(ICollection<>).IsAssignableFrom(prop.PropertyType.GetGenericTypeDefinition()))
                     {
@@ -97,14 +100,14 @@ namespace BWYou.Web.MVC.Extensions
                         var t = (IEnumerable)prop.GetValue(source, null);
                         foreach (var item in t)
                         {
-                            if (typeof(BWModel).IsAssignableFrom(item.GetType()))
+                            if (typeof(TEntity).IsAssignableFrom(item.GetType()))
                             {
                                 CascadeRelationAttribute attr = (CascadeRelationAttribute)prop.GetCustomAttribute(typeof(CascadeRelationAttribute));
-                                instance.Add(item == null ? null : ((BWModel)item).Clone(seen, bCopykey, bCascade, attr.Direction, attr.Clonable));
+                                instance.Add(item == null ? null : ((TEntity)item).Clone<TEntity, TId>(seen, bCopykey, bCascade, attr.Direction, attr.Clonable));
                             }
                             else
                             {
-                                logger.Warn(string.Format("Clone Property ICollection<T> T not BWModel type={0}, ToString={1}",
+                                logger.Warn(string.Format("Clone Property ICollection<T> T not IdModel<TId> type={0}, ToString={1}",
                                                                 item.GetType().FullName,
                                                                 item.GetType().ToString()));
                             }
@@ -113,7 +116,7 @@ namespace BWYou.Web.MVC.Extensions
                     }
                     else
                     {
-                        logger.Warn(string.Format("Clone Property not BWModel type={0}, ToString={1}",
+                        logger.Warn(string.Format("Clone Property not IdModel<TId> type={0}, ToString={1}",
                                                         prop.PropertyType.FullName,
                                                         prop.PropertyType.ToString()));
                     }
@@ -129,7 +132,7 @@ namespace BWYou.Web.MVC.Extensions
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
         /// <param name="seen"></param>
-        public static void ActivateRelation4Cascade<T>(this T source, HashSet<object> seen) where T : BWModel
+        public static void ActivateRelation4Cascade<T>(this T source, HashSet<object> seen) where T : IDbModel
         {
             if (source == null)
             {
@@ -154,23 +157,23 @@ namespace BWYou.Web.MVC.Extensions
                 CascadeRelationAttribute attr = (CascadeRelationAttribute)prop.GetCustomAttribute(typeof(CascadeRelationAttribute));
                 if (attr.Direction == CascadeRelationAttribute.CascadeDirection.Down)
                 {
-                    if (typeof(BWModel).IsAssignableFrom(prop.PropertyType))
+                    if (typeof(IDbModel).IsAssignableFrom(prop.PropertyType))
                     {
                         var t = prop.GetValue(source, null);
-                        ((BWModel)t).ActivateRelation4Cascade(seen);
+                        ((IDbModel)t).ActivateRelation4Cascade(seen);
                     }
                     else if (typeof(ICollection<>).IsAssignableFrom(prop.PropertyType.GetGenericTypeDefinition()))
                     {
                         var t = (IEnumerable)prop.GetValue(source, null);
                         foreach (var item in t)
                         {
-                            if (typeof(BWModel).IsAssignableFrom(item.GetType()))
+                            if (typeof(IDbModel).IsAssignableFrom(item.GetType()))
                             {
-                                ((BWModel)item).ActivateRelation4Cascade(seen);
+                                ((IDbModel)item).ActivateRelation4Cascade(seen);
                             }
                             else
                             {
-                                logger.Warn(string.Format("ActivateRelation Property ICollection<T> T not BWModel type={0}, ToString={1}",
+                                logger.Warn(string.Format("ActivateRelation Property ICollection<T> T not IDbModel type={0}, ToString={1}",
                                                                 item.GetType().FullName,
                                                                 item.GetType().ToString()));
                             }
@@ -178,7 +181,7 @@ namespace BWYou.Web.MVC.Extensions
                     }
                     else
                     {
-                        logger.Warn(string.Format("ActivateRelation Property not BWModel type={0}, ToString={1}",
+                        logger.Warn(string.Format("ActivateRelation Property not IDbModel type={0}, ToString={1}",
                                                         prop.PropertyType.FullName,
                                                         prop.PropertyType.ToString()));
                     }
@@ -188,7 +191,7 @@ namespace BWYou.Web.MVC.Extensions
 
 
         public static void MapFrom<TTarget, TSource>(this TTarget target, TSource source)
-            where TSource : BWModel
+            where TSource : IDbModel
             where TTarget : IModelLoader<TSource>
         {
             if (source == null)
@@ -228,7 +231,7 @@ namespace BWYou.Web.MVC.Extensions
 
         public static void MapFromBindingModelToBaseModel<TSource, TTarget>(this TSource source, TTarget target)
             where TSource : IBindingModel<TTarget>
-            where TTarget : BWModel
+            where TTarget : IDbModel
         {
             if (source == null)
             {
@@ -260,5 +263,39 @@ namespace BWYou.Web.MVC.Extensions
             }
 
         }
+        /// <summary>
+        /// 동적으로 Where 조건 만들기. model에서 FilterableAttribute이면서 값이 null이 아닌 것을 가지고.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static Expression<Func<T, bool>> GetWhereClause<T>(this T source) where T : IDbModel
+        {
+            List<ExpressionFilter> filter = new List<ExpressionFilter>();
+            var props = source.GetType().GetProperties().Where(p => p.GetCustomAttributes(typeof(FilterableAttribute), true).Length != 0);
+            foreach (var prop in props)
+            {
+                var value = prop.GetValue(source);
+                if (value != null)
+                {
+                    //Type t = Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType;
+                    //Convert.ChangeType(value, prop.PropertyType);
+                    filter.Add(new ExpressionFilter() { PropertyName = prop.Name, Operation = Op.Equals, Value = value });
+                }
+            }
+            if (filter.Count <= 0)
+            {
+                throw new Exception("Not Exist Filter");
+            }
+            return ExpressionBuilder.GetExpression<T>(filter);
+            //var deleg = ExpressionBuilder.GetExpression<TEntity>(filter).Compile();   //Compile 하면 DB쪽으로 검색 안 하는 듯 함.. 뭐여.. ~_~;
+            //return deleg;
+        }
+
+        //private Expression<Func<TEntity, bool>> GetWhereClause2(TEntity model)
+        //{
+        //    var predicate = ExpressionExtensions.BuildPredicate<TEntity>(model);
+        //    //var predicate = ExpressionExtensions.BuildPredicate<TEntity, TEntity>(model);
+        //    return predicate;
+        //}
     }
 }

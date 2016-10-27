@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BWYou.Web.MVC.DAOs
 {
-    public class BWIdentityDbContext<TUser> : IdentityDbContext<TUser> where TUser : Microsoft.AspNet.Identity.EntityFramework.IdentityUser
+    public class BWIdentityDbContext<TUser> : IdentityDbContext<TUser> where TUser : IdentityUser
     {
         public ILog logger = LogManager.GetLogger(typeof(BWIdentityDbContext<TUser>));
 
@@ -37,7 +37,7 @@ namespace BWYou.Web.MVC.DAOs
             return base.SaveChangesAsync();
         }
 
-        private void ChangeCurrentDT()
+        protected void ChangeCurrentDT()
         {
             int cntAdded = 0;
             int cntDeleted = 0;
@@ -57,16 +57,17 @@ namespace BWYou.Web.MVC.DAOs
                     cntAdded++;
                 }
 
-                if (typeof(BWModel).IsAssignableFrom(entry.Entity.GetType()))
+                if (typeof(ICUModel).IsAssignableFrom(entry.Entity.GetType()))
                 {
+                    Type t = typeof(int?);
                     DateTime dtCur = DateTime.Now;
                     if (entry.State == EntityState.Added)
                     {
-                        ((BWModel)entry.Entity).CreateDT = dtCur;
+                        ((ICUModel)entry.Entity).CreateDT = dtCur;
                     }
                     if (entry.State != EntityState.Deleted)
                     {
-                        ((BWModel)entry.Entity).UpdateDT = dtCur;
+                        ((ICUModel)entry.Entity).UpdateDT = dtCur;
                     }
                 }
             }

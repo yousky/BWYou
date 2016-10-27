@@ -3,7 +3,7 @@
 namespace BWYou.Web.MVC.BindingModels
 {
     public interface IBindingModel<TEntity>
-        where TEntity : BWModel
+        where TEntity : IDbModel
     {
         TEntity CreateBaseModel();
     }

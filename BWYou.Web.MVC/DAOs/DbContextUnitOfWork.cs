@@ -17,7 +17,8 @@ namespace BWYou.Web.MVC.DAOs
             this._dbContext = dbContext;
         }
 
-        public IRepository<TEntity> GetRepository<TEntity>() where TEntity : BWModel
+        public IRepository<TEntity, TId> GetRepository<TEntity, TId>()
+            where TEntity : IdModel<TId>
         {
             if (this._repositories == null)
             {
@@ -26,10 +27,10 @@ namespace BWYou.Web.MVC.DAOs
             object repository;
             if (this._repositories.TryGetValue(typeof(TEntity), out repository) == false)
             {
-                repository = new DbContextRepository<TEntity>(this._dbContext);
+                repository = new DbContextRepository<TEntity, TId>(this._dbContext);
                 this._repositories[typeof(TEntity)] = repository;
             }
-            return (IRepository<TEntity>)repository;
+            return (IRepository<TEntity, TId>)repository;
         }
 
         public int SaveChanges()
@@ -46,5 +47,6 @@ namespace BWYou.Web.MVC.DAOs
         {
             this._dbContext.Dispose();
         }
+
     }
 }

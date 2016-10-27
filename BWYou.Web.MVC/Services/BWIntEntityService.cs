@@ -15,16 +15,16 @@ using System.Web.Http.ModelBinding;
 
 namespace BWYou.Web.MVC.Services
 {
-    public class BWEntityService<TEntity, TId> : IdEntityService<TEntity, TId>
-        where TEntity : BWModel<TId>
+    public class BWIntEntityService<TEntity> : BWEntityService<TEntity, int?>
+        where TEntity : BWIntModel
     {
-        public BWEntityService(DbContext dbContext)
+        public BWIntEntityService(DbContext dbContext)
             : base(dbContext)
         {
 
         }
 
-        public BWEntityService(IUnitOfWork unitOfWork)
+        public BWIntEntityService(IUnitOfWork unitOfWork)
             : base(unitOfWork)
         {
 

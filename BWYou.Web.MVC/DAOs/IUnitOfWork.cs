@@ -6,7 +6,8 @@ namespace BWYou.Web.MVC.DAOs
 {
     public interface IUnitOfWork : IDisposable
     {
-        IRepository<TEntity> GetRepository<TEntity>() where TEntity : BWModel;
+        IRepository<TEntity, TId> GetRepository<TEntity, TId>()
+            where TEntity : IdModel<TId>;
         int SaveChanges();
         Task SaveChangesAsync();
     }

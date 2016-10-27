@@ -2,6 +2,7 @@
 using BWYou.Web.MVC.Extensions;
 using BWYou.Web.MVC.Models;
 using log4net;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -13,13 +14,13 @@ namespace BWYou.Web.MVC.DAOs
     /// IRepository 구현한 공통 구현체
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
-    public class DbContextRepository<TEntity> : IRepository<TEntity>
-        where TEntity : BWModel
+    public class DbContextRepository<TEntity, TId> : IRepository<TEntity, TId>
+        where TEntity : IdModel<TId>
     {
         /// <summary>
         /// 로그
         /// </summary>
-        public ILog logger = LogManager.GetLogger(typeof(DbContextRepository<TEntity>));
+        public ILog logger = LogManager.GetLogger(typeof(DbContextRepository<TEntity, TId>));
 
         private DbContext _dbContext;
         private DbSet<TEntity> _dbSet;
@@ -176,7 +177,7 @@ namespace BWYou.Web.MVC.DAOs
         public void Clone(TEntity source)
         {
             logger.Info(string.Format("Clone Entity : type={0}, id={1}", source.GetType().FullName, source.Id));
-            var clone = source.Clone(new Dictionary<object, object>(), false, true, CascadeRelationAttribute.CascadeDirection.Down, true);
+            var clone = source.Clone<TEntity, TId>(new Dictionary<object, object>(), false, true, CascadeRelationAttribute.CascadeDirection.Down, true);
             this._dbContext.Entry(source).State = EntityState.Detached;
             this._dbSet.Add(clone);
         }
