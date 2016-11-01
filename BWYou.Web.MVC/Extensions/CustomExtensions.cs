@@ -189,7 +189,13 @@ namespace BWYou.Web.MVC.Extensions
             }
         }
 
-
+        /// <summary>
+        /// CascadeRelationAttribute 가 아닌 동일 이름의 property의 값을 소스에서 타겟으로 복사한다.
+        /// </summary>
+        /// <typeparam name="TTarget"></typeparam>
+        /// <typeparam name="TSource"></typeparam>
+        /// <param name="target"></param>
+        /// <param name="source"></param>
         public static void MapFrom<TTarget, TSource>(this TTarget target, TSource source)
             where TSource : IDbModel
             where TTarget : IModelLoader<TSource>
@@ -228,7 +234,13 @@ namespace BWYou.Web.MVC.Extensions
             }
 
         }
-
+        /// <summary>
+        /// 동일 이름의 property의 값을 소스에서 타겟으로 복사한다.
+        /// </summary>
+        /// <typeparam name="TSource"></typeparam>
+        /// <typeparam name="TTarget"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="target"></param>
         public static void MapFromBindingModelToBaseModel<TSource, TTarget>(this TSource source, TTarget target)
             where TSource : IBindingModel<TTarget>
             where TTarget : IDbModel

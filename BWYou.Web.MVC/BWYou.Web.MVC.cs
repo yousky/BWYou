@@ -4,8 +4,10 @@
  *  \section info 개발목적
  *          - ASP.NET MVC + Entity Framwork + Identity 공통 처리
  *  \section advenced 추가정보
- *          - Version : 0.3.2.1
- *          - Last Updated : 2016.10.27
+ *          - Version : 0.3.2.2
+ *          - Last Updated : 2016.10.31
+ *              -# VM 처리를 위한 컨트롤러 추가
+ *          - Last Updated : 2016.10.27 Version : 0.3.2.1
  *              -# NotImpl 버그 수정, Update 시 재확인 할 때 발생하는 버그 수정
  *          - Last Updated : 2016.10.27 Version : 0.3.2.0
  *              -# IBWModel 을 IDbModel로 이름 변경

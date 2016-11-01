@@ -146,12 +146,17 @@
     <Compile Include="Attributes\UpdatableAttribute.cs" />
     <Compile Include="BindingModels\IBindingModel.cs" />
     <Compile Include="BWYou.Web.MVC.cs" />
+    <Compile Include="Controllers\BWApiVMController.cs" />
+    <Compile Include="Controllers\BWStringApiVMController.cs" />
+    <Compile Include="Controllers\BWLongApiVMController.cs" />
+    <Compile Include="Controllers\BWIntApiVMController.cs" />
     <Compile Include="Controllers\BWStringApiController.cs" />
     <Compile Include="Controllers\BWLongApiController.cs" />
     <Compile Include="Controllers\BWIntApiController.cs" />
     <Compile Include="Controllers\IdApiController.cs" />
     <Compile Include="Controllers\BWApiController.cs" />
     <Compile Include="Controllers\BWController.cs" />
+    <Compile Include="Controllers\IdApiVMController.cs" />
     <Compile Include="DAOs\BWIdentityDbContext.cs" />
     <Compile Include="DAOs\DbContextRepository.cs" />
     <Compile Include="DAOs\DbContextUnitOfWork.cs" />
