@@ -9,8 +9,9 @@ namespace BWYou.Web.MVC.ViewModels
     {
         public WebStatusMessageBody Error { get; set; }
         public List<ValidationObjectError> ModelValidResult { get; set; }
+        public dynamic Etc { get; set; }
 
-        public ErrorResultViewModel(HttpStatusCode httpStatusCode, string message)
+        public ErrorResultViewModel(HttpStatusCode httpStatusCode, string message, dynamic etc = null)
         {
             Error = new WebStatusMessageBody()
             {
@@ -20,9 +21,10 @@ namespace BWYou.Web.MVC.ViewModels
                 Link = "",
                 DeveloperMessage = ""
             };
+            Etc = etc;
         }
 
-        public ErrorResultViewModel(HttpStatusCode httpStatusCode, ExceptionHandlerContext context)
+        public ErrorResultViewModel(HttpStatusCode httpStatusCode, ExceptionHandlerContext context, dynamic etc = null)
         {
             Error = new WebStatusMessageBody()
             {
@@ -36,9 +38,10 @@ namespace BWYou.Web.MVC.ViewModels
                 DeveloperMessage = context.Exception.ToString()
 #endif
             };
+            Etc = etc;
         }
 
-        public ErrorResultViewModel(HttpStatusCode httpStatusCode, ModelStateDictionary modelState)
+        public ErrorResultViewModel(HttpStatusCode httpStatusCode, ModelStateDictionary modelState, dynamic etc = null)
         {
             Error = new WebStatusMessageBody()
             {
@@ -53,6 +56,7 @@ namespace BWYou.Web.MVC.ViewModels
 #endif
             };
             ModelValidResult = GetValidationObjectErrors(modelState);
+            Etc = etc;
         }
 
         protected List<ValidationObjectError> GetValidationObjectErrors(ModelStateDictionary modelState)

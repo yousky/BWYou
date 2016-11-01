@@ -4,8 +4,10 @@
  *  \section info 개발목적
  *          - ASP.NET MVC + Entity Framwork + Identity 공통 처리
  *  \section advenced 추가정보
- *          - Version : 0.3.2.2
- *          - Last Updated : 2016.10.31
+ *          - Version : 0.3.2.3
+ *          - Last Updated : 2016.11.01
+ *              -# ErrorResultViewModel 에서 dynamic Etc 변수 추가
+ *          - Last Updated : 2016.10.31 Version : 0.3.2.2
  *              -# VM 처리를 위한 컨트롤러 추가
  *          - Last Updated : 2016.10.27 Version : 0.3.2.1
  *              -# NotImpl 버그 수정, Update 시 재확인 할 때 발생하는 버그 수정
