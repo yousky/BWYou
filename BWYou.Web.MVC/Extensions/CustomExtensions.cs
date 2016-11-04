@@ -34,7 +34,7 @@ namespace BWYou.Web.MVC.Extensions
             if (source == null)
             {
                 logger.Warn(string.Format("Clone Source is null return default(T): type={0}",
-                                                source.GetType().FullName));
+                                                typeof(TEntity).FullName));
                 return default(TEntity);
             }
             if (seen.ContainsKey(source) == true)
@@ -137,7 +137,7 @@ namespace BWYou.Web.MVC.Extensions
             if (source == null)
             {
                 logger.Warn(string.Format("ActivateRelation Source is null : type={0}",
-                                                source.GetType().FullName));
+                                                typeof(T).FullName));
                 return;
             }
             if (seen.Contains(source) == true)
@@ -203,7 +203,7 @@ namespace BWYou.Web.MVC.Extensions
             if (source == null)
             {
                 logger.Warn(string.Format("MapFrom Source is null : type={0}",
-                                                source.GetType().FullName));
+                                                typeof(TSource).FullName));
                 return;
             }
 
@@ -248,7 +248,7 @@ namespace BWYou.Web.MVC.Extensions
             if (source == null)
             {
                 logger.Warn(string.Format("MapFromBindingModelToBaseModel Source is null : type={0}",
-                                                source.GetType().FullName));
+                                                typeof(TSource).FullName));
                 return;
             }
 
@@ -309,5 +309,80 @@ namespace BWYou.Web.MVC.Extensions
         //    //var predicate = ExpressionExtensions.BuildPredicate<TEntity, TEntity>(model);
         //    return predicate;
         //}
+
+        /// <summary>
+        /// mvc의 ModelStateDictionary 를 http wep api용 ModelStateDictionary 로 변환
+        /// </summary>
+        /// <param name="mvcModelStateDictionary"></param>
+        /// <returns></returns>
+        public static System.Web.Http.ModelBinding.ModelStateDictionary ConvertToHttpModelStateDictionary(this System.Web.Mvc.ModelStateDictionary mvcModelStateDictionary)
+        {
+            System.Web.Http.ModelBinding.ModelStateDictionary httpModelStateDictionary = new System.Web.Http.ModelBinding.ModelStateDictionary();
+            foreach (var item in mvcModelStateDictionary)
+            {
+                var key = item.Key;
+                var modelState = item.Value;
+                foreach (var error in modelState.Errors)
+                {
+                    if (error.Exception != null)
+                    {
+                        httpModelStateDictionary.AddModelError(key, error.Exception);
+                    }
+                    else
+                    {
+                        httpModelStateDictionary.AddModelError(key, error.ErrorMessage);
+                    }
+
+                }
+            }
+            return httpModelStateDictionary;
+        }
+        /// <summary>
+        /// http wep api용 ModelStateDictionary 를 mvc의 ModelStateDictionary 로 변환
+        /// </summary>
+        /// <param name="httpModelStateDictionary"></param>
+        /// <returns></returns>
+        public static System.Web.Mvc.ModelStateDictionary ConvertToMvcModelStateDictionary(this System.Web.Http.ModelBinding.ModelStateDictionary httpModelStateDictionary)
+        {
+            System.Web.Mvc.ModelStateDictionary mvcModelStateDictionary = new System.Web.Mvc.ModelStateDictionary();
+            foreach (var item in httpModelStateDictionary)
+            {
+                var key = item.Key;
+                var modelState = item.Value;
+                foreach (var error in modelState.Errors)
+                {
+                    if (error.Exception != null)
+                    {
+                        mvcModelStateDictionary.AddModelError(key, error.Exception);
+                    }
+                    else
+                    {
+                        mvcModelStateDictionary.AddModelError(key, error.ErrorMessage);
+                    }
+
+                }
+            }
+            return mvcModelStateDictionary;
+        }
+        public static void AddModelErrorFromHttpModelStateDictionary(this System.Web.Mvc.ModelStateDictionary mvcModelStateDictionary, System.Web.Http.ModelBinding.ModelStateDictionary httpModelStateDictionary)
+        {
+            foreach (var item in httpModelStateDictionary)
+            {
+                var key = item.Key;
+                var modelState = item.Value;
+                foreach (var error in modelState.Errors)
+                {
+                    if (error.Exception != null)
+                    {
+                        mvcModelStateDictionary.AddModelError(key, error.Exception);
+                    }
+                    else
+                    {
+                        mvcModelStateDictionary.AddModelError(key, error.ErrorMessage);
+                    }
+
+                }
+            }
+        }
     }
 }

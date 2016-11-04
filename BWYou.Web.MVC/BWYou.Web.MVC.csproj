@@ -193,6 +193,7 @@
     <Compile Include="ViewModels\WebStatusMessageBody.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Exceptions\" />
     <Folder Include="Tests\Controllers\" />
     <Folder Include="Tests\Services\" />
   </ItemGroup>
