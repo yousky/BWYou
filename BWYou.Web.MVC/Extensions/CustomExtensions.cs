@@ -276,29 +276,73 @@ namespace BWYou.Web.MVC.Extensions
 
         }
         /// <summary>
-        /// 동적으로 Where 조건 만들기. model에서 FilterableAttribute이면서 값이 null이 아닌 것을 가지고.
+        /// 동적으로 Where 조건 만들기.
         /// </summary>
         /// <param name="source"></param>
+        /// <param name="ignoreNull">null 값은 무시할 지 여부</param>
+        /// <param name="filterableAttributeRequired">FilterableAttribute인 것만 검색 할지 여부</param>
+        /// <param name="necessaryAddFields">꼭 추가 되어야 하는 조건 필드명들. FilterableAttribute 상관 없이 추가 됨</param>
         /// <returns></returns>
-        public static Expression<Func<T, bool>> GetWhereClause<T>(this T source) where T : IDbModel
+        public static Expression<Func<T, bool>> GetWhereClause<T>(this T source, bool ignoreNull = true, bool filterableAttributeRequired = true, IEnumerable<string> necessaryAddFields = null) where T : IDbModel
         {
-            List<ExpressionFilter> filter = new List<ExpressionFilter>();
-            var props = source.GetType().GetProperties().Where(p => p.GetCustomAttributes(typeof(FilterableAttribute), true).Length != 0);
+            List<ExpressionFilter> filters = new List<ExpressionFilter>();
+            var props = source.GetType().GetProperties().Where(p => 
+                                                                {
+                                                                    if (necessaryAddFields != null && necessaryAddFields.Contains(p.Name))
+                                                                    {
+                                                                        return true;
+                                                                    }
+                                                                    var attr = p.GetCustomAttributes(typeof(FilterableAttribute), true).FirstOrDefault();
+                                                                    if (attr == null)
+                                                                    {
+                                                                        if (filterableAttributeRequired == true)
+                                                                        {
+                                                                            return false;
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            return true;
+                                                                        }
+                                                                    }
+                                                                    if (((FilterableAttribute)attr).IsFilterable == true)
+                                                                    {
+                                                                        return true;
+                                                                    }
+                                                                    return false;
+                                                                }
+                                                            );
             foreach (var prop in props)
             {
                 var value = prop.GetValue(source);
-                if (value != null)
+                if (ignoreNull == false || value != null)
                 {
                     //Type t = Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType;
                     //Convert.ChangeType(value, prop.PropertyType);
-                    filter.Add(new ExpressionFilter() { PropertyName = prop.Name, Operation = Op.Equals, Value = value });
+                    filters.Add(new ExpressionFilter() { PropertyName = prop.Name, Operation = Op.Equals, Value = value });
                 }
             }
-            if (filter.Count <= 0)
+            if (filters.Count <= 0)
             {
                 throw new Exception("Not Exist Filter");
             }
-            return ExpressionBuilder.GetExpression<T>(filter);
+            return ExpressionBuilder.GetExpression<T>(filters);
+            //var deleg = ExpressionBuilder.GetExpression<TEntity>(filter).Compile();   //Compile 하면 DB쪽으로 검색 안 하는 듯 함.. 뭐여.. ~_~;
+            //return deleg;
+        }
+        /// <summary>
+        /// 동적으로 Where 조건 만들기.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="filters">조건 필터들. T의 prop명으로 된 필터들이어야 함</param>
+        /// <returns></returns>
+        public static Expression<Func<T, bool>> GetWhereClause<T>(this T source, IList<ExpressionFilter> filters) where T : IDbModel
+        {
+            if (filters.Count <= 0)
+            {
+                throw new Exception("Not Exist Filter");
+            }
+            return ExpressionBuilder.GetExpression<T>(filters);
             //var deleg = ExpressionBuilder.GetExpression<TEntity>(filter).Compile();   //Compile 하면 DB쪽으로 검색 안 하는 듯 함.. 뭐여.. ~_~;
             //return deleg;
         }

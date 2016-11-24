@@ -4,8 +4,15 @@
  *  \section info 개발목적
  *          - ASP.NET MVC + Entity Framwork + Identity 공통 처리
  *  \section advenced 추가정보
- *          - Version : 0.3.2.4
- *          - Last Updated : 2016.11.04
+ *          - Version : 0.3.2.7
+ *          - Last Updated : 2016.11.24
+ *              -# 로깅 강화
+ *          - Updated : 2016.11.17 Version : 0.3.2.6
+ *              -# GetWhereClause 옵션 다양화. nullable 처리 시 Equal 버그 수정. 테스트 강화
+ *              -# FilterableAttribute, UpdatableAttribute 조건 강화
+ *          - Updated : 2016.11.07 Version : 0.3.2.5
+ *              -# MessageHandler에서 Custom 코드 사용 때 response.ReasonPhrase null 처리 버그 수정
+ *          - Updated : 2016.11.04 Version : 0.3.2.4
  *              -# 확장 함수에서 null 처리 버그 수정
  *              -# mvc 용의 ModelStateDictionary를 http wep api용 ModelStateDictionary로 사용 하기 위한 확장 함수 추가
  *          - Updated : 2016.11.01 Version : 0.3.2.3

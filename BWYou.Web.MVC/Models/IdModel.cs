@@ -9,7 +9,7 @@ namespace BWYou.Web.MVC.Models
     {
         [Key]
         [Display(Name = "ID")]
-        [Filterable]
+        [Filterable(false)]
         public virtual TId Id { get; set; }
     }
 

@@ -44,6 +44,7 @@ namespace BWYou.Web.MVC.DAOs
             int cntModified = 0;
             foreach (var entry in ChangeTracker.Entries().Where(p => (p.State == EntityState.Added || p.State == EntityState.Deleted || p.State == EntityState.Modified)))
             {
+                logger.Debug(string.Format("ChangeEntity : {0} {1}", entry.Entity.ToString(), entry.State.ToString()));
                 if (entry.State == EntityState.Modified)
                 {
                     cntModified++;
@@ -72,7 +73,7 @@ namespace BWYou.Web.MVC.DAOs
                 }
             }
 
-            logger.Info(string.Format("ChangeEntity Count : Added={0}, Deleted={1}, Modified={2}", cntAdded, cntDeleted, cntModified));
+            logger.Debug(string.Format("ChangeEntity Count : Added={0}, Deleted={1}, Modified={2}", cntAdded, cntDeleted, cntModified));
         }
 
     }

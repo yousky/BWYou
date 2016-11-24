@@ -178,14 +178,45 @@ namespace BWYou.Web.MVC.Services
         /// 업데이트 가능한 프로퍼티 이름들의 배열 획득
         /// </summary>
         /// <param name="model"></param>
+        /// <param name="ignoreNull">null 값은 무시할 지 여부. 기본값은 null 이어도 적용하기</param>
+        /// <param name="updatableAttributeRequired">UpdatableAttribute인 것만 검색 할지 여부</param>
+        /// <param name="necessaryAddFields">꼭 추가 되어야 하는 조건 필드명들. UpdatableAttribute 상관 없이 추가 됨</param>
         /// <returns></returns>
-        public string[] GetUpdatablePropertiesNameArray(TEntity model)
+        public string[] GetUpdatablePropertiesNameArray(TEntity model, bool ignoreNull = false, bool updatableAttributeRequired = true, IEnumerable<string> necessaryAddFields = null)
         {
-            var props = model.GetType().GetProperties().Where(p => p.GetCustomAttributes(typeof(UpdatableAttribute), true).Length != 0);
+            var props = model.GetType().GetProperties().Where(p => 
+                                                                {
+                                                                    if (necessaryAddFields != null && necessaryAddFields.Contains(p.Name))
+                                                                    {
+                                                                        return true;
+                                                                    }
+                                                                    var attr = p.GetCustomAttributes(typeof(UpdatableAttribute), true).FirstOrDefault();
+                                                                    if (attr == null)
+                                                                    {
+                                                                        if (updatableAttributeRequired == true)
+                                                                        {
+                                                                            return false;
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            return true;
+                                                                        }
+                                                                    }
+                                                                    if (((UpdatableAttribute)attr).IsUpdatable == true)
+                                                                    {
+                                                                        return true;
+                                                                    }
+                                                                    return false;
+                                                                }
+                                                            );
             List<string> updateProperties = new List<string>();
-            foreach (var item in props)
+            foreach (var prop in props)
             {
-                updateProperties.Add(item.Name);
+                var value = prop.GetValue(model);
+                if (ignoreNull == false || value != null)
+                {
+                    updateProperties.Add(prop.Name);
+                }
             }
             if (updateProperties.Count <= 0)
             {

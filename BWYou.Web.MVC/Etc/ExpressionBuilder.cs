@@ -54,15 +54,15 @@ namespace BWYou.Web.MVC.Etc
 
         private static Expression GetExpression<T>(ParameterExpression param, ExpressionFilter filter)
         {
+            ConstantExpression constant = Expression.Constant(filter.Value);
+
             Expression member = Expression.Property(param, filter.PropertyName);
             Type typeIfNullable = Nullable.GetUnderlyingType(member.Type);
-            if (typeIfNullable != null)
+            if (typeIfNullable != null && constant.Value != null)
             {
                 //member = Expression.Call(member, "GetValueOrDefault", Type.EmptyTypes);   //이거 쓰면 컴파일 해야만 쓸 수 있고, 컴파일 하면 DB에서 쿼리 날리지 않고, 받아 와서 조건 처리 해 버림.. 성능 이슈..
-                member = Expression.Convert(member, typeIfNullable);    //nullable 타입은 기본 타입으로 컨버트 해서 비교 하도록 처리.
+                member = Expression.Convert(member, typeIfNullable);    //nullable 타입은 value가 null 아닐 경우에만 기본 타입으로 컨버트 해서 비교 하도록 처리.
             }
-
-            ConstantExpression constant = Expression.Constant(filter.Value);
 
             switch (filter.Operation)
             {

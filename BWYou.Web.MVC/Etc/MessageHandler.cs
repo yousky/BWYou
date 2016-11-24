@@ -37,7 +37,7 @@ namespace BWYou.Web.MVC.Etc
                                             await response.Content.ReadAsByteArrayAsync()
                                             : Encoding.UTF8.GetBytes(string.Format("ContentLength = {0}", response.Content.Headers.ContentLength));    //1k 넘으면 내용 출력 안 하도록 하기. 이걸로 크기 알 수 없음.. ~_~; 결국 적용 안 됨.
                 else
-                    responseMessage = Encoding.UTF8.GetBytes(response.ReasonPhrase);
+                    responseMessage = Encoding.UTF8.GetBytes(response.ReasonPhrase != null ? response.ReasonPhrase : "");
 
                 await OutgoingMessageAsync(corrId, requestInfo, responseMessage);
 

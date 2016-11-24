@@ -6,6 +6,17 @@ namespace BWYou.Web.MVC.Etc
         public string PropertyName { get; set; }
         public Op Operation { get; set; }
         public object Value { get; set; }
+
+        public ExpressionFilter()
+        {
+
+        }
+        public ExpressionFilter(string PropertyName, Op Operation, object Value)
+        {
+            this.PropertyName = PropertyName;
+            this.Operation = Operation;
+            this.Value = Value;
+        }
     }
 
     public enum Op
