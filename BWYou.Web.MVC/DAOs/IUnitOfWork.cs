@@ -27,6 +27,6 @@ namespace BWYou.Web.MVC.DAOs
         /// Save changes asynchronously
         /// </summary>
         /// <returns></returns>
-        Task SaveChangesAsync();
+        Task<int> SaveChangesAsync();
     }
 }

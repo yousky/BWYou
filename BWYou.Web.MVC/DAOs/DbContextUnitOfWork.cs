@@ -58,7 +58,7 @@ namespace BWYou.Web.MVC.DAOs
         /// Save changes asynchronously
         /// </summary>
         /// <returns></returns>
-        public Task SaveChangesAsync()
+        public Task<int> SaveChangesAsync()
         {
             return this._dbContext.SaveChangesAsync();
         }

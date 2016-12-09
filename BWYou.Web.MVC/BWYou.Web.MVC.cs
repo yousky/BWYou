@@ -4,6 +4,9 @@
  *  \section info 개발목적
  *          - ASP.NET MVC + Entity Framwork + Identity 공통 처리
  *  \section advenced 추가정보
+ *          - Version : 0.3.2.9
+ *          - Last Updated : 2016.12.09
+ *              -# Task<int> SaveChangesAsync() 리턴값 정형화
  *          - Version : 0.3.2.8
  *          - Last Updated : 2016.12.09
  *              -# array로 생성, 삭제 기능
