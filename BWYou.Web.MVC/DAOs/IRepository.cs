@@ -1,5 +1,6 @@
 ﻿using BWYou.Web.MVC.Models;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,83 +8,93 @@ using System.Threading.Tasks;
 namespace BWYou.Web.MVC.DAOs
 {
     /// <summary>
-    /// Repository 인터페이스
+    /// Repository Interface
+    /// When saving in IUnitOfWork, it is applied within one transaction.
+    /// reference https://github.com/gyuwon/.NET-Data-Access-Layer
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
+    /// <typeparam name="TId"></typeparam>
     public interface IRepository<TEntity, TId>
         where TEntity : IdModel<TId>
     {
         /// <summary>
-        /// PK 이용 Select
+        /// DbContext
+        /// </summary>
+        DbContext DbContext { get; }
+        /// <summary>
+        /// DbSet
+        /// </summary>
+        DbSet<TEntity> DbSet { get; }
+
+        /// <summary>
+        /// Find a specific entity
         /// </summary>
         /// <param name="keyValues"></param>
         /// <returns></returns>
         TEntity Find(params object[] keyValues);
         /// <summary>
-        /// 비동기 PK 이용 Select
+        /// Find a specific entity asynchronously
         /// </summary>
         /// <param name="keyValues"></param>
         /// <returns></returns>
         Task<TEntity> FindAsync(params object[] keyValues);
         /// <summary>
-        /// IQueryable 노출
+        /// Expose query objects
         /// </summary>
         IQueryable<TEntity> Query { get; }
         /// <summary>
-        /// 생성
+        /// Create entity
         /// </summary>
         /// <param name="entity"></param>
         void Create(TEntity entity);
         /// <summary>
-        /// PK 제외 모든 칼럼 업데이트
+        /// Create entities
+        /// </summary>
+        /// <param name="entities"></param>
+        void Create(IEnumerable<TEntity> entities);
+        /// <summary>
+        /// Update all columns except PK
         /// </summary>
         /// <param name="entity"></param>
         void Update(TEntity entity);
         /// <summary>
-        /// 관리 되지 않고 있는 TEntity의 특정 칼럼만 업데이트.
+        /// Update only certain columns of unmanaged TEntity.
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="updateProperties"></param>
         void Update(TEntity entity, params string[] updateProperties);
         /// <summary>
-        /// 관리 되지 않고 있는 TEntity의 값이 있는 칼럼들 모두 업데이트.
+        /// Update columns of unmanaged TEntity where values exist.
         /// </summary>
         /// <param name="entity"></param>
         void UpdateExceptNullValue(TEntity entity);
         /// <summary>
-        /// 관리 되지 않고 있는 TEntity의 특정 칼럼중에서 값이 있는 칼럼들 모두 업데이트
+        /// Update only certain columns of unmanaged TEntity where values exist.
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="updateProperties"></param>
         void UpdateExceptNullValue(TEntity entity, params string[] updateProperties);
         /// <summary>
-        /// 삭제
+        /// Remove
+        /// Activation processing is included to delete related data.
         /// </summary>
         /// <param name="entity"></param>
         void Remove(TEntity entity);
         /// <summary>
-        /// 다시 불러오기
+        /// Remove entities.
+        /// Activation processing is included to delete related data.
+        /// </summary>
+        /// <param name="entities"></param>
+        void Remove(IEnumerable<TEntity> entities);
+        /// <summary>
+        /// Reload a entity
         /// </summary>
         /// <param name="entity"></param>
         void Reload(TEntity entity);
         /// <summary>
-        /// Deep 복사
+        /// Clone(Deep Copy)
         /// </summary>
         /// <param name="source"></param>
         void Clone(TEntity source);
-        /// <summary>
-        /// DBSet 노출
-        /// </summary>
-        DbSet<TEntity> DBSet
-        {
-            get;
-        }
-        /// <summary>
-        /// DbContext 노출
-        /// </summary>
-        DbContext DBContext
-        {
-            get;
-        }
     }
 }

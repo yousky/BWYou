@@ -20,7 +20,8 @@ namespace BWYou.Web.MVC.Extensions
         /// <summary>
         /// Deep 복사 본 만들기. DB 저장을 위해 관계 처리
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TEntity"></typeparam>
+        /// <typeparam name="TId"></typeparam>
         /// <param name="source"></param>
         /// <param name="seen"></param>
         /// <param name="bCopykey"></param>

@@ -11,195 +11,201 @@ using System.Threading.Tasks;
 namespace BWYou.Web.MVC.DAOs
 {
     /// <summary>
-    /// IRepository 구현한 공통 구현체
+    /// Common IRepository Implementation
+    /// reference https://github.com/gyuwon/.NET-Data-Access-Layer
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
+    /// <typeparam name="TId"></typeparam>
     public class DbContextRepository<TEntity, TId> : IRepository<TEntity, TId>
         where TEntity : IdModel<TId>
     {
+        readonly ILog logger = LogManager.GetLogger(typeof(DbContextRepository<TEntity, TId>));
+
         /// <summary>
-        /// 로그
+        /// DbContext
         /// </summary>
-        public ILog logger = LogManager.GetLogger(typeof(DbContextRepository<TEntity, TId>));
-
-        private DbContext _dbContext;
-        private DbSet<TEntity> _dbSet;
+        public DbContext DbContext { get; protected set; }
+        /// <summary>
+        /// DbSet
+        /// </summary>
+        public DbSet<TEntity> DbSet { get; protected set; }
 
         /// <summary>
-        /// 생성자
+        /// Constructor
         /// </summary>
         public DbContextRepository()
         {
 
         }
         /// <summary>
-        /// 생성자
+        /// Constructor
         /// </summary>
         /// <param name="dbContext"></param>
         public DbContextRepository(DbContext dbContext)
         {
-            this._dbContext = dbContext;
-            this._dbSet = dbContext.Set<TEntity>();
+            this.DbContext = dbContext;
+            this.DbSet = dbContext.Set<TEntity>();
         }
         /// <summary>
-        /// PK 이용 Select
+        /// Find a specific entity
         /// </summary>
         /// <param name="keyValues"></param>
         /// <returns></returns>
         public TEntity Find(params object[] keyValues)
         {
-            return this._dbSet.Find(keyValues);
+            return this.DbSet.Find(keyValues);
         }
         /// <summary>
-        /// 비동기 PK 이용 Select
+        /// Find a specific entity asynchronously
         /// </summary>
         /// <param name="keyValues"></param>
         /// <returns></returns>
         public Task<TEntity> FindAsync(params object[] keyValues)
         {
-            return this._dbSet.FindAsync(keyValues);
+            return this.DbSet.FindAsync(keyValues);
         }
         /// <summary>
-        /// IQueryable 노출
+        /// Expose query objects
         /// </summary>
         public IQueryable<TEntity> Query
         {
             get
             {
-                return this._dbSet;
+                return this.DbSet;
             }
         }
         /// <summary>
-        /// 생성
+        /// Create entity
         /// </summary>
         /// <param name="entity"></param>
         public void Create(TEntity entity)
         {
-            this._dbSet.Add(entity);
+            this.DbSet.Add(entity);
         }
-
         /// <summary>
-        /// PK 제외 모든 칼럼 업데이트
+        /// Create entities
+        /// </summary>
+        /// <param name="entities"></param>
+        public void Create(IEnumerable<TEntity> entities)
+        {
+            this.DbSet.AddRange(entities);
+        }
+        /// <summary>
+        /// Update all columns except PK
         /// </summary>
         /// <param name="entity"></param>
         public void Update(TEntity entity)
         {
-            this._dbContext.Entry(entity).State = EntityState.Modified;
+            this.DbContext.Entry(entity).State = EntityState.Modified;
         }
         /// <summary>
-        /// 관리 되지 않고 있는 TEntity의 특정 칼럼만 업데이트.
+        /// Update only certain columns of unmanaged TEntity.
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="updateProperties">원하는 칼럼 배열</param>
         public void Update(TEntity entity, params string[] updateProperties)
         {
-            if (this._dbContext.Entry(entity).State != EntityState.Detached)
+            if (this.DbContext.Entry(entity).State != EntityState.Detached)
             {
-                logger.Warn(string.Format("관리 되고 있는 Entity의 수동 업데이트 발생(Skip)  : type={0}, id={1}", entity.GetType().FullName, entity.Id));
+                logger.Warn(string.Format("Manually Updating the Entity Managed(Skip)  : type={0}, id={1}", entity.GetType().FullName, entity.Id));
                 return;
             }
 
-            this._dbContext.Entry(entity).State = EntityState.Unchanged;
+            this.DbContext.Entry(entity).State = EntityState.Unchanged;
 
             foreach (string name in updateProperties)
             {
-                this._dbContext.Entry(entity).Property(name).IsModified = true;
+                this.DbContext.Entry(entity).Property(name).IsModified = true;
             }
         }
 
         /// <summary>
-        /// 관리 되지 않고 있는 TEntity의 값이 있는 칼럼들 모두 업데이트.
+        /// Update columns of unmanaged TEntity where values exist.
         /// </summary>
         /// <param name="entity"></param>
         public void UpdateExceptNullValue(TEntity entity)
         {
-            if (this._dbContext.Entry(entity).State != EntityState.Detached)
+            if (this.DbContext.Entry(entity).State != EntityState.Detached)
             {
-                logger.Warn(string.Format("관리 되고 있는 Entity의 수동 업데이트 발생(Skip)  : type={0}, id={1}", entity.GetType().FullName, entity.Id));
+                logger.Warn(string.Format("Manually Updating the Entity Managed(Skip) : type={0}, id={1}", entity.GetType().FullName, entity.Id));
                 return;
             }
 
-            this._dbContext.Entry(entity).State = EntityState.Modified;
+            this.DbContext.Entry(entity).State = EntityState.Modified;
 
-            foreach (string name in this._dbContext.Entry(entity).CurrentValues.PropertyNames)
+            foreach (string name in this.DbContext.Entry(entity).CurrentValues.PropertyNames)
             {
-                if (this._dbContext.Entry(entity).Property(name).CurrentValue == null)
+                if (this.DbContext.Entry(entity).Property(name).CurrentValue == null)
                 {
-                    this._dbContext.Entry(entity).Property(name).IsModified = false;
+                    this.DbContext.Entry(entity).Property(name).IsModified = false;
                 }
             }
         }
 
         /// <summary>
-        /// 관리 되지 않고 있는 TEntity의 특정 칼럼중에서 값이 있는 칼럼들 모두 업데이트.
+        /// Update only certain columns of unmanaged TEntity where values exist.
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="updateProperties"></param>
         public void UpdateExceptNullValue(TEntity entity, params string[] updateProperties)
         {
-            if (this._dbContext.Entry(entity).State != EntityState.Detached)
+            if (this.DbContext.Entry(entity).State != EntityState.Detached)
             {
-                logger.Warn(string.Format("관리 되고 있는 Entity 업데이트 무시 : type={0}, id={1}", entity.GetType().FullName, entity.Id));
+                logger.Warn(string.Format("Manually Updating the Entity Managed(Skip) : type={0}, id={1}", entity.GetType().FullName, entity.Id));
                 return;
             }
 
-            this._dbContext.Entry(entity).State = EntityState.Unchanged;
+            this.DbContext.Entry(entity).State = EntityState.Unchanged;
 
             foreach (string name in updateProperties)
             {
-                if (this._dbContext.Entry(entity).Property(name).CurrentValue != null)
+                if (this.DbContext.Entry(entity).Property(name).CurrentValue != null)
                 {
-                    this._dbContext.Entry(entity).Property(name).IsModified = true;
+                    this.DbContext.Entry(entity).Property(name).IsModified = true;
                 }
             }
         }
         /// <summary>
-        /// 삭제. 연결 된 관계 자료도 삭제 하기 위하여 자동 활성화
+        /// Remove.
+        /// Activation processing is included to delete related data.
         /// </summary>
         /// <param name="entity"></param>
         public void Remove(TEntity entity)
         {
-            entity.ActivateRelation4Cascade(new HashSet<object>()); //Lazy loading이나, 특이한 관계 구조 처리를 수동으로 하기 위하여 관계 활성화 필수
-            this._dbSet.Remove(entity);
+            entity.ActivateRelation4Cascade(new HashSet<object>()); //Relational Activation Required to Manually Handle Unusual Relationship Structures or Lazy loading
+            this.DbSet.Remove(entity);
         }
         /// <summary>
-        /// 다시 불러오기
+        /// Remove entities.
+        /// Activation processing is included to delete related data.
+        /// </summary>
+        /// <param name="entities"></param>
+        public void Remove(IEnumerable<TEntity> entities)
+        {
+            foreach (var entity in entities)
+            {
+                entity.ActivateRelation4Cascade(new HashSet<object>()); //Relational Activation Required to Manually Handle Unusual Relationship Structures or Lazy loading
+            }
+            this.DbSet.RemoveRange(entities);
+        }
+        /// <summary>
+        /// Reload a entity
         /// </summary>
         /// <param name="entity"></param>
         public void Reload(TEntity entity)
         {
-            this._dbContext.Entry(entity).Reload();
+            this.DbContext.Entry(entity).Reload();
         }
         /// <summary>
-        /// Entity를 복사하여 DB에 생성한다.
+        /// Clone(Deep Copy)
         /// </summary>
-        /// <param name="source">복사 할 Entity</param>
+        /// <param name="source"></param>
         public void Clone(TEntity source)
         {
             logger.Info(string.Format("Clone Entity : type={0}, id={1}", source.GetType().FullName, source.Id));
             var clone = source.Clone<TEntity, TId>(new Dictionary<object, object>(), false, true, CascadeRelationAttribute.CascadeDirection.Down, true);
-            this._dbContext.Entry(source).State = EntityState.Detached;
-            this._dbSet.Add(clone);
-        }
-        /// <summary>
-        /// DBSet 노출
-        /// </summary>
-        public DbSet<TEntity> DBSet
-        {
-            get
-            {
-                return this._dbSet;
-            }
-        }
-        /// <summary>
-        /// DbContext 노출
-        /// </summary>
-        public DbContext DBContext
-        {
-            get
-            {
-                return this._dbContext;
-            }
+            this.DbContext.Entry(source).State = EntityState.Detached;
+            this.DbSet.Add(clone);
         }
     }
 }

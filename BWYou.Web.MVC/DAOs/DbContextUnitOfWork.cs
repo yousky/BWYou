@@ -6,17 +6,31 @@ using System.Threading.Tasks;
 
 namespace BWYou.Web.MVC.DAOs
 {
+    /// <summary>
+    /// Common IUnitOfWork Implementation
+    /// reference https://github.com/gyuwon/.NET-Data-Access-Layer
+    /// </summary>
+    /// <typeparam name="TDbContext"></typeparam>
     public class DbContextUnitOfWork<TDbContext> : IUnitOfWork
         where TDbContext : DbContext
     {
         private TDbContext _dbContext;
         private Dictionary<Type, object> _repositories;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="dbContext"></param>
         public DbContextUnitOfWork(TDbContext dbContext)
         {
             this._dbContext = dbContext;
         }
-
+        /// <summary>
+        /// Get a repository
+        /// </summary>
+        /// <typeparam name="TEntity"></typeparam>
+        /// <typeparam name="TId"></typeparam>
+        /// <returns></returns>
         public IRepository<TEntity, TId> GetRepository<TEntity, TId>()
             where TEntity : IdModel<TId>
         {
@@ -32,17 +46,25 @@ namespace BWYou.Web.MVC.DAOs
             }
             return (IRepository<TEntity, TId>)repository;
         }
-
+        /// <summary>
+        /// Save changes
+        /// </summary>
+        /// <returns></returns>
         public int SaveChanges()
         {
             return this._dbContext.SaveChanges();
         }
-
+        /// <summary>
+        /// Save changes asynchronously
+        /// </summary>
+        /// <returns></returns>
         public Task SaveChangesAsync()
         {
             return this._dbContext.SaveChangesAsync();
         }
-
+        /// <summary>
+        /// Dispose
+        /// </summary>
         public void Dispose()
         {
             this._dbContext.Dispose();

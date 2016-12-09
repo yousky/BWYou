@@ -4,8 +4,11 @@
  *  \section info 개발목적
  *          - ASP.NET MVC + Entity Framwork + Identity 공통 처리
  *  \section advenced 추가정보
- *          - Version : 0.3.2.7
- *          - Last Updated : 2016.11.24
+ *          - Version : 0.3.2.8
+ *          - Last Updated : 2016.12.09
+ *              -# array로 생성, 삭제 기능
+ *              -# 영문 메세지들로 여러부분 변경중.
+ *          - Last Updated : 2016.11.24 Version : 0.3.2.7
  *              -# 로깅 강화
  *          - Updated : 2016.11.17 Version : 0.3.2.6
  *              -# GetWhereClause 옵션 다양화. nullable 처리 시 Equal 버그 수정. 테스트 강화

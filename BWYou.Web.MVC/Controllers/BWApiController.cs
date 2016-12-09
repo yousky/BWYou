@@ -18,6 +18,7 @@ namespace BWYou.Web.MVC.Controllers
     /// 단 여기서 직접적으로 호출 되지 않도록 함수 앞에 Base를 붙이고, protected 처리 해서 기능을 상속 받은 자식이 호출 해서 사용하도록 처리
     /// </summary>
     /// <typeparam name="TEntity">기본 모델 엔티티</typeparam>
+    /// <typeparam name="TId"></typeparam>
     public class BWApiController<TEntity, TId> : IdApiController<TEntity, TId>
         where TEntity : BWModel<TId>
     {
