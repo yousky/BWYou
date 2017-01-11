@@ -175,6 +175,7 @@
     <Compile Include="Models\BWIntModel.cs" />
     <Compile Include="Models\BWModel.cs" />
     <Compile Include="Models\ICUModel.cs" />
+    <Compile Include="Models\IKeyModel.cs" />
     <Compile Include="Models\IIdModel.cs" />
     <Compile Include="Models\IdModel.cs" />
     <Compile Include="Models\IDbModel.cs" />

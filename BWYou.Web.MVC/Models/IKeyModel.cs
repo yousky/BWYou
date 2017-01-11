@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BWYou.Web.MVC.Models
 {
-    public interface IIdModel<TId> : IKeyModel
+    public interface IKeyModel : IDbModel
     {
-        TId Id { get; set; }
+        string GetKeyName();
     }
 
 

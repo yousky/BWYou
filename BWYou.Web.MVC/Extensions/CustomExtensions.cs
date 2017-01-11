@@ -21,7 +21,6 @@ namespace BWYou.Web.MVC.Extensions
         /// Deep 복사 본 만들기. DB 저장을 위해 관계 처리
         /// </summary>
         /// <typeparam name="TEntity"></typeparam>
-        /// <typeparam name="TId"></typeparam>
         /// <param name="source"></param>
         /// <param name="seen"></param>
         /// <param name="bCopykey"></param>
@@ -29,8 +28,8 @@ namespace BWYou.Web.MVC.Extensions
         /// <param name="direction"></param>
         /// <param name="bClone"></param>
         /// <returns></returns>
-        public static TEntity Clone<TEntity, TId>(this TEntity source, Dictionary<object, object> seen, bool bCopykey, bool bCascade, CascadeRelationAttribute.CascadeDirection direction, bool bClone)
-            where TEntity : IdModel<TId>
+        public static TEntity Clone<TEntity>(this TEntity source, Dictionary<object, object> seen, bool bCopykey, bool bCascade, CascadeRelationAttribute.CascadeDirection direction, bool bClone)
+            where TEntity : IKeyModel
         {
             if (source == null)
             {
@@ -47,8 +46,7 @@ namespace BWYou.Web.MVC.Extensions
             if (direction == CascadeRelationAttribute.CascadeDirection.Up || bClone == false)
             {
                 logger.Warn(string.Format("Clone Source as it is : type={0}, id={1}",
-                                                source.GetType().FullName,
-                                                typeof(TEntity).IsAssignableFrom(source.GetType()) ? ((TEntity)(object)source).Id.ToString() : "source not IdModel<TId>"));
+                                                source.GetType().FullName, source.ToString()));
                 seen.Add(source, source);
                 return source;
             }
@@ -62,10 +60,11 @@ namespace BWYou.Web.MVC.Extensions
                                                                     && p.GetCustomAttributes(typeof(NonCopyableAttribute)).Count() == 0
                                                                     && p.GetCustomAttributes(typeof(CascadeRelationAttribute), true).Length == 0
                                                                     && p.GetCustomAttributes(typeof(CascadeRelationAttribute)).Count() == 0);
+
+            var keyName = source.GetKeyName();  //Key의 이름은 동적으로 받아서 사용.
             foreach (var prop in props)
             {
-                //Key의 이름은 Id로 한다고 본다. IdModel<TId> 사용 시 Id가 PK가 됨
-                if (prop.Name == "Id")
+                if (prop.Name == keyName)
                 {
                     if (bCopykey == false)
                     {
@@ -85,14 +84,14 @@ namespace BWYou.Web.MVC.Extensions
 
                 foreach (var prop in props)
                 {
-                    if (typeof(TEntity).IsAssignableFrom(prop.PropertyType))
+                    if (typeof(IKeyModel).IsAssignableFrom(prop.PropertyType))
                     {
-                        var t = prop.GetValue(source, null);
-
+                        var t = (IKeyModel)prop.GetValue(source, null);
+                        
                         CascadeRelationAttribute attr = (CascadeRelationAttribute)prop.GetCustomAttribute(typeof(CascadeRelationAttribute));
-                        prop.SetValue(clone, t == null ? null : ((TEntity)t).Clone<TEntity, TId>(seen, bCopykey, bCascade, attr.Direction, attr.Clonable), null);
+                        prop.SetValue(clone, t == null ? null : t.Clone(seen, bCopykey, bCascade, attr.Direction, attr.Clonable), null);
                     }
-                    else if (typeof(ICollection<>).IsAssignableFrom(prop.PropertyType.GetGenericTypeDefinition()))
+                    else if (prop.PropertyType.IsGenericType && typeof(ICollection<>).IsAssignableFrom(prop.PropertyType.GetGenericTypeDefinition()))
                     {
                         var listType = typeof(List<>);
                         var constructedListType = listType.MakeGenericType(prop.PropertyType.GetGenericArguments()[0]);
@@ -101,14 +100,14 @@ namespace BWYou.Web.MVC.Extensions
                         var t = (IEnumerable)prop.GetValue(source, null);
                         foreach (var item in t)
                         {
-                            if (typeof(TEntity).IsAssignableFrom(item.GetType()))
+                            if (typeof(IKeyModel).IsAssignableFrom(item.GetType()))
                             {
                                 CascadeRelationAttribute attr = (CascadeRelationAttribute)prop.GetCustomAttribute(typeof(CascadeRelationAttribute));
-                                instance.Add(item == null ? null : ((TEntity)item).Clone<TEntity, TId>(seen, bCopykey, bCascade, attr.Direction, attr.Clonable));
+                                instance.Add(item == null ? null : ((IKeyModel)item).Clone(seen, bCopykey, bCascade, attr.Direction, attr.Clonable));
                             }
                             else
                             {
-                                logger.Warn(string.Format("Clone Property ICollection<T> T not IdModel<TId> type={0}, ToString={1}",
+                                logger.Warn(string.Format("Clone Property ICollection<T> T not IKeyModel type={0}, ToString={1}",
                                                                 item.GetType().FullName,
                                                                 item.GetType().ToString()));
                             }
@@ -117,7 +116,7 @@ namespace BWYou.Web.MVC.Extensions
                     }
                     else
                     {
-                        logger.Warn(string.Format("Clone Property not IdModel<TId> type={0}, ToString={1}",
+                        logger.Warn(string.Format("Clone Property not IKeyModel type={0}, ToString={1}",
                                                         prop.PropertyType.FullName,
                                                         prop.PropertyType.ToString()));
                     }

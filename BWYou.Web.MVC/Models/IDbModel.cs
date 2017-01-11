@@ -7,7 +7,7 @@ namespace BWYou.Web.MVC.Models
     /// </summary>
     public interface IDbModel
     {
-
+        string ToString();
     }
 
 

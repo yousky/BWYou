@@ -203,7 +203,7 @@ namespace BWYou.Web.MVC.DAOs
         public void Clone(TEntity source)
         {
             logger.Info(string.Format("Clone Entity : type={0}, id={1}", source.GetType().FullName, source.Id));
-            var clone = source.Clone<TEntity, TId>(new Dictionary<object, object>(), false, true, CascadeRelationAttribute.CascadeDirection.Down, true);
+            var clone = source.Clone(new Dictionary<object, object>(), false, true, CascadeRelationAttribute.CascadeDirection.Down, true);
             this.DbContext.Entry(source).State = EntityState.Detached;
             this.DbSet.Add(clone);
         }
