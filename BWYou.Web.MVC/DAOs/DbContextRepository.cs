@@ -200,12 +200,14 @@ namespace BWYou.Web.MVC.DAOs
         /// Clone(Deep Copy)
         /// </summary>
         /// <param name="source"></param>
-        public void Clone(TEntity source)
+        /// <returns></returns>
+        public TEntity Clone(TEntity source)
         {
             logger.Info(string.Format("Clone Entity : type={0}, id={1}", source.GetType().FullName, source.Id));
             var clone = source.Clone(new Dictionary<object, object>(), false, true, CascadeRelationAttribute.CascadeDirection.Down, true);
             this.DbContext.Entry(source).State = EntityState.Detached;
             this.DbSet.Add(clone);
+            return clone;
         }
     }
 }

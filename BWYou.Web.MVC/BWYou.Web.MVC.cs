@@ -4,8 +4,10 @@
  *  \section info 개발목적
  *          - ASP.NET MVC + Entity Framwork + Identity 공통 처리
  *  \section advenced 추가정보
- *          - Version : 0.3.2.10
- *          - Last Updated : 2017.01.11
+ *          - Version : 0.3.3.0
+ *          - Last Updated : 2017.03.22
+ *              -# Clone 시 클론 된 것을 리턴하도록 변경
+ *          - Updated : 2017.01.11 Version : 0.3.2.10
  *              -# Clone 시 Generic 처리 쪽 큰 버그 수정
  *          - Updated : 2016.12.09 Version : 0.3.2.9
  *              -# Task<int> SaveChangesAsync() 리턴값 정형화

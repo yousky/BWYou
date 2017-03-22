@@ -322,9 +322,9 @@ namespace BWYou.Web.MVC.Services
         /// <returns></returns>
         protected virtual async Task<TEntity> CloneAsync(TEntity model)
         {
-            this._repo.Clone(model);
+            var clone = this._repo.Clone(model);
             await this._unitOfWork.SaveChangesAsync();
-            return model;
+            return clone;
         }
 
         /// <summary>

@@ -95,6 +95,7 @@ namespace BWYou.Web.MVC.DAOs
         /// Clone(Deep Copy)
         /// </summary>
         /// <param name="source"></param>
-        void Clone(TEntity source);
+        /// <returns></returns>
+        TEntity Clone(TEntity source);
     }
 }
