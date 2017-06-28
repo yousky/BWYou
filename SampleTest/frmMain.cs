@@ -32,13 +32,13 @@ namespace SampleTest
             //fServer.Show();
             //fClient.Show();
 
-            Uri uri = new Uri("https://maxst.blob.core.windows.net/public/trsc%5C14%5C24%5Cimg%5C8c59928cfef545c5b06c450c270d8203.jpg");
-            FileInfo fi = new FileInfo(Path.Combine(@"C:\Temp", uri.LocalPath.Substring(1)));
-            if (fi.Directory.Exists == false)
-            {
-                fi.Directory.Create();
-            }
-            string filename = Path.GetFileName(uri.LocalPath);
+            //Uri uri = new Uri("https://maxst.blob.core.windows.net/public/trsc%5C14%5C24%5Cimg%5C8c59928cfef545c5b06c450c270d8203.jpg");
+            //FileInfo fi = new FileInfo(Path.Combine(@"C:\Temp", uri.LocalPath.Substring(1)));
+            //if (fi.Directory.Exists == false)
+            //{
+            //    fi.Directory.Create();
+            //}
+            //string filename = Path.GetFileName(uri.LocalPath);
 
         }
 
@@ -145,8 +145,8 @@ namespace SampleTest
             List<string> lsDecompressedFilesPathName;
             BWYou.Compress.ZIP czip = new BWYou.Compress.ZIP();
             czip.fcEvent += new BWYou.Compress.ZIP.FileCompressEvent(WriteCompressProgress);
-            //czip.Compress(@"C:\TEST\test.zip", @"C:\TEST\dir1");
-            czip.DeCompress(@"C:\TEST\Unzip", @"C:\TEST\test.zip", out lsDecompressedFilesPathName);
+            czip.Compress(@"C:\Temp\test.zip", @"C:\Temp\Test");
+            //czip.DeCompress(@"C:\TEST\Unzip", @"C:\TEST\test.zip", out lsDecompressedFilesPathName);
             //czip.DeCompress(@"D:\test\", @"D:\testZip\60_Backup_2011\dongshin\2011\01\15\574513.zip", out lsDecompressedFilesPathName);
             //czip.DeCompress(@"D:\test\", @"D:\Sync\프로젝트\마이그레이션\!프로그램\Mig_Decomp\236351_2009_04_06_11_40_19_677_error_무한압축해제함.ZIP", out lsDecompressedFilesPathName);
             czip.fcEvent -= new BWYou.Compress.ZIP.FileCompressEvent(WriteCompressProgress);

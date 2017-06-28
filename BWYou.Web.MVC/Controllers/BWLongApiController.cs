@@ -19,7 +19,7 @@ namespace BWYou.Web.MVC.Controllers
     /// </summary>
     /// <typeparam name="TEntity">기본 모델 엔티티</typeparam>
     public class BWLongApiController<TEntity> : BWApiController<TEntity, long?>
-        where TEntity : BWLongModel
+        where TEntity : BWModel<long?>
     {
         public BWLongApiController(DbContext dbContext)
             : base(dbContext)

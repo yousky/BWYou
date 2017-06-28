@@ -428,5 +428,20 @@ namespace BWYou.Web.MVC.Extensions
                 }
             }
         }
+
+        public static bool IsSubclassOfRawGeneric(this Object source, Type generic)
+        {
+            Type toCheck = source.GetType();
+            while (toCheck != null && toCheck != typeof(object))
+            {
+                var cur = toCheck.IsGenericType ? toCheck.GetGenericTypeDefinition() : toCheck;
+                if (generic == cur)
+                {
+                    return true;
+                }
+                toCheck = toCheck.BaseType;
+            }
+            return false;
+        }
     }
 }

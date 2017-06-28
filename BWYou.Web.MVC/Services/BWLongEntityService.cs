@@ -16,7 +16,7 @@ using System.Web.Http.ModelBinding;
 namespace BWYou.Web.MVC.Services
 {
     public class BWLongEntityService<TEntity> : BWEntityService<TEntity, long?>
-        where TEntity : BWLongModel
+        where TEntity : BWModel<long?>
     {
         public BWLongEntityService(DbContext dbContext)
             : base(dbContext)

@@ -16,7 +16,7 @@ using System.Web.Http.ModelBinding;
 namespace BWYou.Web.MVC.Services
 {
     public class BWStringEntityService<TEntity> : BWEntityService<TEntity, string>
-        where TEntity : BWStringModel
+        where TEntity : BWModel<string>
     {
         public BWStringEntityService(DbContext dbContext)
             : base(dbContext)

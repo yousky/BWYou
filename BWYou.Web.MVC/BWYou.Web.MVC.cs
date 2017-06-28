@@ -4,8 +4,10 @@
  *  \section info 개발목적
  *          - ASP.NET MVC + Entity Framwork + Identity 공통 처리
  *  \section advenced 추가정보
- *          - Version : 0.3.3.0
- *          - Last Updated : 2017.03.22
+ *          - Version : 0.3.4.0
+ *          - Last Updated : 2017.06.23
+ *              -# SoftDelete 구현
+ *          - Updated : 2017.03.22 Version : 0.3.3.0
  *              -# Clone 시 클론 된 것을 리턴하도록 변경
  *          - Updated : 2017.01.11 Version : 0.3.2.10
  *              -# Clone 시 Generic 처리 쪽 큰 버그 수정

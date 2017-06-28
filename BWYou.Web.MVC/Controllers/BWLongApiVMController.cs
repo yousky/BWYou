@@ -14,7 +14,7 @@ using System.Web.ModelBinding;
 namespace BWYou.Web.MVC.Controllers
 {
     public class BWLongApiVMController<TEntity, TVM> : BWApiVMController<TEntity, long?, TVM>
-        where TEntity : BWLongModel
+        where TEntity : BWModel<long?>
         where TVM : IModelLoader<TEntity>, new()
     {
         public BWLongApiVMController(DbContext dbContext)

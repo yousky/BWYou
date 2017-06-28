@@ -14,7 +14,7 @@ namespace BWYou.Web.MVC.Tests.Extensions
     [TestFixture]
     class CustomExtensionsTest
     {
-        class FilterableModel : BWIntModel
+        class FilterableModel : BWModel<int?>
         {
             public int? Col1 { get; set; }
             [Filterable]

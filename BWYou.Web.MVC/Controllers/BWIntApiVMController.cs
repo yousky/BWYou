@@ -14,7 +14,7 @@ using System.Web.ModelBinding;
 namespace BWYou.Web.MVC.Controllers
 {
     public class BWIntApiVMController<TEntity, TVM> : BWApiVMController<TEntity, int?, TVM>
-        where TEntity : BWIntModel
+        where TEntity : BWModel<int?>
         where TVM : IModelLoader<TEntity>, new()
     {
         public BWIntApiVMController(DbContext dbContext)

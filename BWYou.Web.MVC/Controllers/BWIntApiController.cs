@@ -19,7 +19,7 @@ namespace BWYou.Web.MVC.Controllers
     /// </summary>
     /// <typeparam name="TEntity">기본 모델 엔티티</typeparam>
     public class BWIntApiController<TEntity> : BWApiController<TEntity, int?>
-        where TEntity : BWIntModel
+        where TEntity : BWModel<int?>
     {
         public BWIntApiController(DbContext dbContext)
             : base(dbContext)
