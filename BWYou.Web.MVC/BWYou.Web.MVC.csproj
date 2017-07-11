@@ -168,6 +168,7 @@
     <Compile Include="Etc\ExpressionBuilder.cs" />
     <Compile Include="Etc\ExpressionFilter.cs" />
     <Compile Include="Etc\MessageHandler.cs" />
+    <Compile Include="Exceptions\ErrorResultVMException.cs" />
     <Compile Include="Extensions\CustomExtensions.cs" />
     <Compile Include="Extensions\ExpressionExtensions.cs" />
     <Compile Include="Extensions\OrderedQueryableExtensions.cs" />
@@ -199,7 +200,6 @@
     <Compile Include="ViewModels\WebStatusMessageBody.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Exceptions\" />
     <Folder Include="Tests\Controllers\" />
     <Folder Include="Tests\Services\" />
   </ItemGroup>

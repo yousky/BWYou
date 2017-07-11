@@ -11,6 +11,11 @@ namespace BWYou.Web.MVC.ViewModels
         public List<ValidationObjectError> ModelValidResult { get; set; }
         public dynamic Etc { get; set; }
 
+        public ErrorResultViewModel()
+        {
+            
+        }
+
         public ErrorResultViewModel(HttpStatusCode httpStatusCode, string message, dynamic etc = null)
         {
             Error = new WebStatusMessageBody()

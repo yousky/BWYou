@@ -14,7 +14,13 @@ namespace BWYou.Web.MVC.ViewModels
         /// 에러 메세지
         /// </summary>
         public string ErrorMessage { get; set; }
+        /// <summary>
+        /// 기본 생성자
+        /// </summary>
+        public ValidationObjectError()
+        {
 
+        }
         /// <summary>
         /// 생성자
         /// </summary>

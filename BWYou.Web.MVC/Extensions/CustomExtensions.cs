@@ -428,6 +428,13 @@ namespace BWYou.Web.MVC.Extensions
                 }
             }
         }
+        public static void AddModelErrorFromModelValidResult(this System.Web.Mvc.ModelStateDictionary mvcModelStateDictionary, List<ValidationObjectError> modelValidResults)
+        {
+            foreach (var item in modelValidResults)
+            {
+                mvcModelStateDictionary.AddModelError(item.ObjectName, item.ErrorMessage);
+            }
+        }
 
         public static bool IsSubclassOfRawGeneric(this Object source, Type generic)
         {
