@@ -18,6 +18,13 @@ namespace BWYou.Web.MVC.ViewModels
         /// </summary>
         public MetaData MetaData { get; set; }
         /// <summary>
+        /// 기본 생성자
+        /// </summary>
+        public PageResultViewModel()
+        {
+
+        }
+        /// <summary>
         /// 결과 객체 저장용 생성자. 메타 정보는 직접 주입 필요.
         /// </summary>
         /// <param name="result"></param>
@@ -43,6 +50,15 @@ namespace BWYou.Web.MVC.ViewModels
         {
             this.Result = result;
             this.MetaData = new MetaData(result);
+        }
+        /// <summary>
+        /// IPagedList로 변환
+        /// </summary>
+        /// <returns></returns>
+        public IPagedList<T> ToPagedList()
+        {
+            var p = new PagedList<T>(this.Result, this.MetaData.PageIndex, this.MetaData.PageSize);
+            return p;
         }
     }
 }

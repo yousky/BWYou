@@ -4,8 +4,12 @@
  *  \section info 개발목적
  *          - ASP.NET MVC + Entity Framwork + Identity 공통 처리
  *  \section advenced 추가정보
- *          - Version : 0.3.4.0
- *          - Last Updated : 2017.06.23
+ *          - Version : 0.3.5.2
+ *          - Last Updated : 2017.07.11
+ *              -# PagedListViewModel 삭제 하고 대신 PageResultViewModel에서 ToPagedList 기능 추가
+ *          - Updated : 2017.07.11 Version : 0.3.5.1
+ *              -# PagedListViewModel 추가
+ *          - Updated : 2017.06.23 Version : 0.3.4.0
  *              -# SoftDelete 구현
  *          - Updated : 2017.03.22 Version : 0.3.3.0
  *              -# Clone 시 클론 된 것을 리턴하도록 변경

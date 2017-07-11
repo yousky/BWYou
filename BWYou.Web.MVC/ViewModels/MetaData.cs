@@ -17,6 +17,10 @@ namespace BWYou.Web.MVC.ViewModels
 
         #endregion PageInfo
 
+        public MetaData()
+        {
+
+        }
         public MetaData(IPagedList pagedList)
         {
             this.TotalItemCount = pagedList.TotalItemCount;
