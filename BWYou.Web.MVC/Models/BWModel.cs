@@ -18,8 +18,8 @@ namespace BWYou.Web.MVC.Models
 
         public BWModel()
         {
-            CreateDT = DateTime.Now;
-            UpdateDT = DateTime.Now;
+            CreateDT = DateTime.UtcNow;
+            UpdateDT = DateTime.UtcNow;
         }
     }
 }

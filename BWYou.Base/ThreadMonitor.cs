@@ -94,7 +94,7 @@ namespace BWYou.Base
             this.classWork4Monitor = classWork4Monitor;
             if (classWork4Monitor != null)
             {
-                this.LastHeartBeatDateTime = DateTime.Now;
+                this.LastHeartBeatDateTime = DateTime.UtcNow;
                 this.LastWorkProgressState = WorkProgressState.Working;
                 classWork4Monitor.HeartBeat += new HeartBeatEventHandler(WriteClassWork4Monitor_HeartBeatDateTime);
                 classWork4Monitor.WorkProgress += new WorkEventHandler(WriteClassWork4Monitor_WorkProgress);
@@ -116,7 +116,7 @@ namespace BWYou.Base
         /// <param name="e"></param>
         private void WriteClassWork4Monitor_HeartBeatDateTime(object sender, EventArgs e)
         {
-            this.LastHeartBeatDateTime = DateTime.Now;
+            this.LastHeartBeatDateTime = DateTime.UtcNow;
         }
         /// <summary>
         /// 감시 하고 있는 작업 살아 있는지 여부 확인
@@ -131,7 +131,7 @@ namespace BWYou.Base
             {
                 if (LastWorkProgressState == WorkProgressState.Working || LastWorkProgressState == WorkProgressState.Standby || LastWorkProgressState == WorkProgressState.Suspended)
                 {
-                    if (LastHeartBeatDateTime.AddSeconds(WorkTimeoutSecond).CompareTo(DateTime.Now) < 0)
+                    if (LastHeartBeatDateTime.AddSeconds(WorkTimeoutSecond).CompareTo(DateTime.UtcNow) < 0)
                     {
                         bDeadedThread = true;
                         SayMessage(this, "ClassWork4Monitor Dead[Timeout(" + WorkTimeoutSecond.ToString() + "s)] : " + classWork4Monitor.Name, MessagePriority.Warn);

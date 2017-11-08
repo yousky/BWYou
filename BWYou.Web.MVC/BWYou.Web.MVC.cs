@@ -4,8 +4,10 @@
  *  \section info 개발목적
  *          - ASP.NET MVC + Entity Framwork + Identity 공통 처리
  *  \section advenced 추가정보
- *          - Version : 0.3.5.3
- *          - Last Updated : 2017.07.11
+ *          - Version : 0.3.6.0
+ *          - Last Updated : 2017.11.08
+ *              -# 기준 시간을 DateTime.Now에서 DateTime.UtcNow로 변경
+ *          - Updated : 2017.07.11 Version : 0.3.5.3
  *              -# ViewModels 중에 기본 생성자 없는 것들 추가 해 둠.
  *              -# ErrorResultVMException 클래스 추가, AddModelErrorFromModelValidResult 확장 함수 추가
  *          - Updated : 2017.07.11 Version : 0.3.5.2

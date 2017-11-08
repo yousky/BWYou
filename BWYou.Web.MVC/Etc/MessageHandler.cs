@@ -19,7 +19,7 @@ namespace BWYou.Web.MVC.Etc
         {
             try
             {
-                var corrId = string.Format("{0}{1}", DateTime.Now.Ticks, Thread.CurrentThread.ManagedThreadId);
+                var corrId = string.Format("{0}{1}", DateTime.UtcNow.Ticks, Thread.CurrentThread.ManagedThreadId);
                 var requestInfo = string.Format("{0} {1}", request.Method, request.RequestUri);
 
                 var requestMessage = request.Content.Headers.ContentLength < 1024 ?

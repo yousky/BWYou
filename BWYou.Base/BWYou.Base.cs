@@ -5,17 +5,19 @@
  *          - 즐겨 사용 할 클래스 모음
  *  \section advenced 추가정보
  *          - Version : 0.3.0.1
- *          - Last Updated : 2014.11.10
+ *          - Last Updated : 2017.11.08
+ *              -# 기준 시간을 DateTime.Now에서 DateTime.UtcNow로 변경
+ *          - Updated : 2014.11.10 Version : 0.3.0.1
  *              -# ThreadBase, ThreadWhile, ThreadMonitor BeatHeart 더 발생 시킴
  *              -# ThreadMonitor 초기 값 세팅 추가
- *          - Last Updated : 2013.07.22 Version : 0.3.0.0
+ *          - Updated : 2013.07.22 Version : 0.3.0.0
  *              -# ClassWork HeartBeat Event 추가
  *              -# ThreadBase, ThreadWhile 재정리, 0.1초 간격으로 스레드 While문 처리 되도록 수정
  *              -# ThreadBase 일시 정지, 다시 시작 기능 추가
  *              -# ThreadMonitor 추가(작업이 죽었는지 여부를 감시 하는 모니터 스레드)
- *          - Last Updated : 2013.05.02 Version : 0.2.5.1
+ *          - Updated : 2013.05.02 Version : 0.2.5.1
  *              -# Dispoing 버그 수정
- *          - Last Updated : 2013.04.25 Version : 0.2.5.0
+ *          - Updated : 2013.04.25 Version : 0.2.5.0
  *              -# Config Class 추가
  *          - Updated : 2013.02.07 Version : 0.2.4.1
  *              -# ClassBase Event 버그 수정
@@ -124,7 +126,7 @@ namespace BWYou.Base
         {
             lock (wlog)
             {
-                File.AppendAllText(LogFilePathName, "[" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss fff") + "]" + "\t" + Message + Environment.NewLine, Encoding.UTF8);
+                File.AppendAllText(LogFilePathName, "[" + DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss fff") + "]" + "\t" + Message + Environment.NewLine, Encoding.UTF8);
             }
         }
 

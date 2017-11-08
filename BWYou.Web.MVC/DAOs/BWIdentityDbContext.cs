@@ -61,7 +61,7 @@ namespace BWYou.Web.MVC.DAOs
                 if (typeof(ICUModel).IsAssignableFrom(entry.Entity.GetType()))
                 {
                     Type t = typeof(int?);
-                    DateTime dtCur = DateTime.Now;
+                    DateTime dtCur = DateTime.UtcNow;
                     if (entry.State == EntityState.Added)
                     {
                         ((ICUModel)entry.Entity).CreateDT = dtCur;
