@@ -57,7 +57,7 @@ namespace BWYou.Web.MVC.ViewModels
         /// <returns></returns>
         public IPagedList<T> ToPagedList()
         {
-            var p = new PagedList<T>(this.Result, this.MetaData.PageIndex, this.MetaData.PageSize);
+            var p = new StaticPagedList<T>(this.Result, this.MetaData.PageIndex, this.MetaData.PageSize, this.MetaData.TotalItemCount);
             return p;
         }
     }
