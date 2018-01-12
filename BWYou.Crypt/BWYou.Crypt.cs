@@ -4,8 +4,10 @@
  *  \section info 개발목적
  *          - 범용적으로 사용 되는 암호화, 복호화, 해싱 관련 알고리즘을 쉽게 사용 하기 위한 공통 모듈
  *  \section advenced 추가정보
- *          - Version : 1.0.0.1
- *          - Last Updated : 2015.08.18
+ *          - Version : 1.1.0.0
+ *          - Last Updated : 2018.01.12
+ *              -# Hash to Hex String 추가
+ *          - Updated : 2015.08.18 Version : 1.0.0.1
  *              -# 대상 프레임워크 4.5로 변경
  *              -# BWYou.Crypt NameSpace 생성
  *              -# BWYou.Crypt 클래스를 BWYou.Crypt.Crypt로 변경

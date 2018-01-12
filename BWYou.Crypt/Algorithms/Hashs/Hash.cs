@@ -29,9 +29,17 @@ namespace BWYou.Crypt.Algorithms.Hashs
         {
             return Convert.ToBase64String(ComputeHash(srcData));
         }
+        public string ComputeHashToHexString(byte[] srcData)
+        {
+            return BitConverter.ToString(ComputeHash(srcData));
+        }
         public string ComputeHashFromUTF8StringToBase64String(string srcUTF8String)
         {
             return Convert.ToBase64String(ComputeHashFromUTF8String(srcUTF8String));
+        }
+        public string ComputeHashFromUTF8StringToHexString(string srcUTF8String)
+        {
+            return BitConverter.ToString(ComputeHashFromUTF8String(srcUTF8String));
         }
 
         public void Dispose()

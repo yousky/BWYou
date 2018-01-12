@@ -23,6 +23,7 @@ namespace BWYou.Crypt.Tests.Algorithms.Hashs
 
             // 동작
             string computedHashBase64String = hash.ComputeHashFromUTF8StringToBase64String(planUTF8String);
+            string computedHashBase64String_hex = hash.ComputeHashFromUTF8StringToHexString(planUTF8String);
             string computedHashBase64String2 = hash.ComputeHashFromUTF8StringToBase64String(planUTF8String2);
 
             // 어설션
