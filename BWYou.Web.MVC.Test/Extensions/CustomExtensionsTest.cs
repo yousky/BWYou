@@ -1,15 +1,16 @@
-﻿using BWYou.Web.MVC.Models;
-using NUnit.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BWYou.Web.MVC.Extensions;
+using NUnit.Framework;
+using NUnit.Framework.Constraints;
+using BWYou.Web.MVC.Models;
 using BWYou.Web.MVC.Attributes;
+using BWYou.Web.MVC.Extensions;
 using BWYou.Web.MVC.Etc;
 
-namespace BWYou.Web.MVC.Tests.Extensions
+namespace BWYou.Web.MVC.Test.Extensions
 {
     [TestFixture]
     class CustomExtensionsTest
@@ -25,7 +26,6 @@ namespace BWYou.Web.MVC.Tests.Extensions
             public int? Col4 { get; set; }
         }
 
-        [ExpectedException(ExpectedMessage = "Not Exist Filter")]
         [Test]
         public void GetWhereClause_FilterableModel_NotExistFilter()
         {
@@ -33,12 +33,10 @@ namespace BWYou.Web.MVC.Tests.Extensions
             var model = new FilterableModel() { };
 
             // 동작
-            var r = model.GetWhereClause();
 
             // 어설션
-            Assert.IsNull(r);
-
-            //null일 경우 제대로 처리 되는지
+            var ex = Assert.Throws<Exception>(delegate { model.GetWhereClause(); });
+            Assert.That(ex.Message, Is.EqualTo("Not Exist Filter"));
         }
         [Test]
         public void GetWhereClause_FilterableModel_NotFilterableAttributeRequired()

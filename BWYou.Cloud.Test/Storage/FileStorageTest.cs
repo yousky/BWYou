@@ -8,27 +8,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BWYou.Cloud.Tests.Storage
+namespace BWYou.Cloud.Test.Storage
 {
     [TestFixture]
     class FileStorageTest
     {
         [Test]
-        public void ShouldEqualUriWhenFileUpload()
+        public void UploadAndDownload()
         {
             // 정렬
-            string publicRootUrl = @"https://www.hyundaiar.com/temp";
-            string rootPath = @"C:\ArPlatform\Temp";
-            string container = @"testConta";
-            string destpath = @"testDest\ttt";
-            string srcpathname = @"X:\test\test.js";
+            string publicRootUrl = @"https://test.doma.in/Storage";
+            string rootPath = Path.Combine(Path.GetDirectoryName(typeof(FileStorageTest).Assembly.Location), @"Storage");
+            string container = @"Sample";
+            string destpath = @"Dest";
+            string srcpathname = Path.Combine(Path.GetDirectoryName(typeof(FileStorageTest).Assembly.Location), @"Storage\Sample\Dest\test.js");
             IStorage storage = new FileStorage(rootPath, publicRootUrl);
 
             // 동작
             Exception ex = null;
             try
             {
-                storage.Upload(srcpathname, container, destpath, false, false, false);
                 storage.Upload(srcpathname, container, destpath, false, false, false);
             }
             catch (Exception e)
@@ -46,10 +45,10 @@ namespace BWYou.Cloud.Tests.Storage
         public void ShouldEqualUriWhenFileDownload()
         {
             // 정렬
-            string publicRootUrl = @"https://www.hyundaiar.com/temp";
-            string rootPath = @"C:\ArPlatform\Temp";
-            string uri = @"https://www.hyundaiar.com/temp/testConta/testDest/ttt/791f9f24545d4417bc05aaf4b5f4e26b.js";
-            string destpath = @"C:\ArPlatform\Temp";
+            string publicRootUrl = @"https://test.doma.in/Storage";
+            string rootPath = Path.Combine(Path.GetDirectoryName(typeof(FileStorageTest).Assembly.Location), @"Storage");
+            string uri = @"https://test.doma.in/Storage/Sample/Dest/test.js";
+            string destpath = Path.Combine(rootPath, "Download");
             string destfilename = @"test.js";
             IStorage storage = new FileStorage(rootPath, publicRootUrl);
 

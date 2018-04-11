@@ -289,6 +289,17 @@ namespace BWYou.Web.MVC.Services
             return await DeleteAsync(model);
         }
         /// <summary>
+        /// Delete entities. No validation.
+        /// </summary>
+        /// <param name="models"></param>
+        /// <param name="ModelState"></param>
+        /// <returns></returns>
+        public virtual async Task<IEnumerable<TEntity>> ValidAndDeleteAsync(IEnumerable<TEntity> models, ModelStateDictionary ModelState)
+        {
+            //No validation.
+            return await DeleteAsync(models);
+        }
+        /// <summary>
         /// Delete entity
         /// </summary>
         /// <param name="model"></param>
@@ -298,6 +309,12 @@ namespace BWYou.Web.MVC.Services
             this._repo.Remove(model);
             await this._unitOfWork.SaveChangesAsync();
             return model;
+        }
+        protected virtual async Task<IEnumerable<TEntity>> DeleteAsync(IEnumerable<TEntity> models)
+        {
+            this._repo.Remove(models);
+            await this._unitOfWork.SaveChangesAsync();
+            return models;
         }
         /// <summary>
         /// Clone entity after validation

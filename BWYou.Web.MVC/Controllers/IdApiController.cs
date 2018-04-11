@@ -2,6 +2,7 @@
 using BWYou.Web.MVC.Services;
 using BWYou.Web.MVC.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Net;
 using System.Net.Http;
@@ -141,6 +142,21 @@ namespace BWYou.Web.MVC.Controllers
 
             return Request.CreateResponse(HttpStatusCode.BadRequest, new ErrorResultViewModel(HttpStatusCode.BadRequest, ModelState));
         }
+        protected virtual async Task<HttpResponseMessage> BasePostAsync(IEnumerable<TEntity> models)
+        {
+            TryValidateModel(models);
+            if (ModelState.IsValid)
+            {
+                var retModel = await this._service.ValidAndCreateAsync(models, ModelState);
+
+                if (retModel != null)
+                {
+                    return Request.CreateResponse(HttpStatusCode.Created, retModel);
+                }
+            }
+
+            return Request.CreateResponse(HttpStatusCode.BadRequest, new ErrorResultViewModel(HttpStatusCode.BadRequest, ModelState));
+        }
         /// <summary>
         /// Update entity after validation
         /// </summary>
@@ -171,6 +187,17 @@ namespace BWYou.Web.MVC.Controllers
         protected virtual async Task<HttpResponseMessage> BaseDeleteAsync(TId id)
         {
             var retModel = await this._service.ValidAndDeleteAsync(id, ModelState);
+
+            if (retModel != null)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, retModel);
+            }
+
+            return Request.CreateResponse(HttpStatusCode.BadRequest, new ErrorResultViewModel(HttpStatusCode.BadRequest, ModelState));
+        }
+        protected virtual async Task<HttpResponseMessage> BaseDeleteAsync(IEnumerable<TEntity> models)
+        {
+            var retModel = await this._service.ValidAndDeleteAsync(models, ModelState);
 
             if (retModel != null)
             {

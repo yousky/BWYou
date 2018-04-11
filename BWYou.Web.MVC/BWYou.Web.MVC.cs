@@ -4,8 +4,11 @@
  *  \section info 개발목적
  *          - ASP.NET MVC + Entity Framwork + Identity 공통 처리
  *  \section advenced 추가정보
- *          - Version : 0.3.6.1
- *          - Last Updated : 2017.12.06
+ *          - Version : 0.3.7.0
+ *          - Last Updated : 2018.04.11
+ *              -# Post, Put시 모델의 Array 처리 할 수 있도록 작업
+ *              -# 테스트를 별도 프로젝트에서 수행하도록 수정
+ *          - Updated : 2017.12.06 Version : 0.3.6.1
  *              -# PageResultViewModel의 ToPagedList의 메타데이터 처리 못 하던 버그 수정
  *          - Updated : 2017.11.08 Version : 0.3.6.0
  *              -# 기준 시간을 DateTime.Now에서 DateTime.UtcNow로 변경

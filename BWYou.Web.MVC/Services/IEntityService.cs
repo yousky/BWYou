@@ -146,6 +146,13 @@ namespace BWYou.Web.MVC.Services
         /// <returns></returns>
         Task<TEntity> ValidAndDeleteAsync(TId id, ModelStateDictionary ModelState);
         /// <summary>
+        /// Delete entities. No validation.
+        /// </summary>
+        /// <param name="models"></param>
+        /// <param name="ModelState"></param>
+        /// <returns></returns>
+        Task<IEnumerable<TEntity>> ValidAndDeleteAsync(IEnumerable<TEntity> models, ModelStateDictionary ModelState);
+        /// <summary>
         /// Clone entity after validation
         /// </summary>
         /// <param name="id"></param>
