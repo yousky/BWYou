@@ -294,10 +294,10 @@ namespace BWYou.Web.MVC.Services
         /// <param name="models"></param>
         /// <param name="ModelState"></param>
         /// <returns></returns>
-        public virtual async Task<IEnumerable<TEntity>> ValidAndDeleteAsync(IEnumerable<TEntity> models, ModelStateDictionary ModelState)
+        public virtual async Task<IEnumerable<TId>> ValidAndDeleteAsync(IEnumerable<TId> ids, ModelStateDictionary ModelState)
         {
             //No validation.
-            return await DeleteAsync(models);
+            return await DeleteAsync(ids);
         }
         /// <summary>
         /// Delete entity
@@ -310,11 +310,12 @@ namespace BWYou.Web.MVC.Services
             await this._unitOfWork.SaveChangesAsync();
             return model;
         }
-        protected virtual async Task<IEnumerable<TEntity>> DeleteAsync(IEnumerable<TEntity> models)
+        protected virtual async Task<IEnumerable<TId>> DeleteAsync(IEnumerable<TId> ids)
         {
-            this._repo.Remove(models);
+            this._repo.DbSet.RemoveRange(this._repo.DbSet.Where(x => ids.Contains(x.Id)));
+            //this._repo.Remove(models);
             await this._unitOfWork.SaveChangesAsync();
-            return models;
+            return ids;
         }
         /// <summary>
         /// Clone entity after validation

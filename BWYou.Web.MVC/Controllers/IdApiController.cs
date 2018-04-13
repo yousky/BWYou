@@ -3,6 +3,7 @@ using BWYou.Web.MVC.Services;
 using BWYou.Web.MVC.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Net;
 using System.Net.Http;
@@ -144,7 +145,12 @@ namespace BWYou.Web.MVC.Controllers
         }
         protected virtual async Task<HttpResponseMessage> BasePostAsync(IEnumerable<TEntity> models)
         {
-            TryValidateModel(models);
+            int i = 0;
+            foreach (var model in models)
+            {
+                TryValidateModel(model, string.Format("[{0}]", i));
+                i++;
+            }
             if (ModelState.IsValid)
             {
                 var retModel = await this._service.ValidAndCreateAsync(models, ModelState);
@@ -195,9 +201,9 @@ namespace BWYou.Web.MVC.Controllers
 
             return Request.CreateResponse(HttpStatusCode.BadRequest, new ErrorResultViewModel(HttpStatusCode.BadRequest, ModelState));
         }
-        protected virtual async Task<HttpResponseMessage> BaseDeleteAsync(IEnumerable<TEntity> models)
+        protected virtual async Task<HttpResponseMessage> BaseDeleteAsync(IEnumerable<TId> ids)
         {
-            var retModel = await this._service.ValidAndDeleteAsync(models, ModelState);
+            var retModel = await this._service.ValidAndDeleteAsync(ids, ModelState);
 
             if (retModel != null)
             {
@@ -240,7 +246,7 @@ namespace BWYou.Web.MVC.Controllers
         /// <returns></returns>
         protected internal bool TryValidateModel(object model)
         {
-            return TryValidateModel(model, null /* prefix */);
+            return TryValidateModel(model, "" /* prefix */);
         }
         /// <summary>
         /// Revalidation for Web Api
@@ -248,19 +254,22 @@ namespace BWYou.Web.MVC.Controllers
         /// <param name="model"></param>
         /// <param name="prefix"></param>
         /// <returns></returns>
-        protected internal bool TryValidateModel(object model, string prefix)
+        protected internal bool TryValidateModel(object model, string prefix = "")
         {
             if (model == null)
             {
                 throw new ArgumentNullException("model");
             }
-
-            ModelMetadata metadata = ModelMetadataProviders.Current.GetMetadataForType(() => model, model.GetType());
-            var t = new ModelBindingExecutionContext(new HttpContextWrapper(HttpContext.Current), new System.Web.ModelBinding.ModelStateDictionary());
-
-            foreach (ModelValidationResult validationResult in ModelValidator.GetModelValidator(metadata, t).Validate(null))
+            
+            var context = new ValidationContext(model, null, null);
+            var vrs = new List<ValidationResult>();
+            Validator.TryValidateObject(model, context, vrs, true);
+            foreach (var vr in vrs)
             {
-                ModelState.AddModelError(validationResult.MemberName, validationResult.Message);
+                foreach (var member in vr.MemberNames)
+                {
+                    ModelState.AddModelError(prefix + member, vr.ErrorMessage);
+                }
             }
 
             return ModelState.IsValid;

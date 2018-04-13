@@ -4,8 +4,13 @@
  *  \section info 개발목적
  *          - ASP.NET MVC + Entity Framwork + Identity 공통 처리
  *  \section advenced 추가정보
- *          - Version : 0.3.7.0
- *          - Last Updated : 2018.04.11
+ *          - Version : 0.3.8.0
+ *          - Last Updated : 2018.04.13
+ *              -# 컨트롤러 통합 테스트 완료
+ *              -# BasePostAsync Array 생성 밸리데이션 시 메세지에 Array index 추가 처리
+ *              -# TryValidateModel 메세지에 prefiex 처리.
+ *              -# BaseDeleteAsync Array로 지울 때 Array 형식 변경           
+ *          - Updated : 2018.04.11 Version : 0.3.7.0
  *              -# Post, Put시 모델의 Array 처리 할 수 있도록 작업
  *              -# 테스트를 별도 프로젝트에서 수행하도록 수정
  *          - Updated : 2017.12.06 Version : 0.3.6.1

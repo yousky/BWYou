@@ -151,7 +151,7 @@ namespace BWYou.Web.MVC.Services
         /// <param name="models"></param>
         /// <param name="ModelState"></param>
         /// <returns></returns>
-        Task<IEnumerable<TEntity>> ValidAndDeleteAsync(IEnumerable<TEntity> models, ModelStateDictionary ModelState);
+        Task<IEnumerable<TId>> ValidAndDeleteAsync(IEnumerable<TId> models, ModelStateDictionary ModelState);
         /// <summary>
         /// Clone entity after validation
         /// </summary>

@@ -98,18 +98,21 @@ namespace BWYou.Web.MVC.Extensions
                         var instance = (IList)Activator.CreateInstance(constructedListType);
 
                         var t = (IEnumerable)prop.GetValue(source, null);
-                        foreach (var item in t)
+                        if (t != null)
                         {
-                            if (typeof(IKeyModel).IsAssignableFrom(item.GetType()))
+                            foreach (var item in t)
                             {
-                                CascadeRelationAttribute attr = (CascadeRelationAttribute)prop.GetCustomAttribute(typeof(CascadeRelationAttribute));
-                                instance.Add(item == null ? null : ((IKeyModel)item).Clone(seen, bCopykey, bCascade, attr.Direction, attr.Clonable));
-                            }
-                            else
-                            {
-                                logger.Warn(string.Format("Clone Property ICollection<T> T not IKeyModel type={0}, ToString={1}",
-                                                                item.GetType().FullName,
-                                                                item.GetType().ToString()));
+                                if (typeof(IKeyModel).IsAssignableFrom(item.GetType()))
+                                {
+                                    CascadeRelationAttribute attr = (CascadeRelationAttribute)prop.GetCustomAttribute(typeof(CascadeRelationAttribute));
+                                    instance.Add(item == null ? null : ((IKeyModel)item).Clone(seen, bCopykey, bCascade, attr.Direction, attr.Clonable));
+                                }
+                                else
+                                {
+                                    logger.Warn(string.Format("Clone Property ICollection<T> T not IKeyModel type={0}, ToString={1}",
+                                                                    item.GetType().FullName,
+                                                                    item.GetType().ToString()));
+                                }
                             }
                         }
                         prop.SetValue(clone, instance, null);
@@ -165,17 +168,20 @@ namespace BWYou.Web.MVC.Extensions
                     else if (typeof(ICollection<>).IsAssignableFrom(prop.PropertyType.GetGenericTypeDefinition()))
                     {
                         var t = (IEnumerable)prop.GetValue(source, null);
-                        foreach (var item in t)
+                        if (t != null)
                         {
-                            if (typeof(IDbModel).IsAssignableFrom(item.GetType()))
+                            foreach (var item in t)
                             {
-                                ((IDbModel)item).ActivateRelation4Cascade(seen);
-                            }
-                            else
-                            {
-                                logger.Warn(string.Format("ActivateRelation Property ICollection<T> T not IDbModel type={0}, ToString={1}",
-                                                                item.GetType().FullName,
-                                                                item.GetType().ToString()));
+                                if (typeof(IDbModel).IsAssignableFrom(item.GetType()))
+                                {
+                                    ((IDbModel)item).ActivateRelation4Cascade(seen);
+                                }
+                                else
+                                {
+                                    logger.Warn(string.Format("ActivateRelation Property ICollection<T> T not IDbModel type={0}, ToString={1}",
+                                                                    item.GetType().FullName,
+                                                                    item.GetType().ToString()));
+                                }
                             }
                         }
                     }
