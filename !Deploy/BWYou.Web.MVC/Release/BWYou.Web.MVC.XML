@@ -548,15 +548,6 @@
             <param name="httpModelStateDictionary"></param>
             <returns></returns>
         </member>
-        <member name="T:BWYou.Web.MVC.Extensions.ExpressionExtensions">
-            <summary>
-            nullable 처리 추가.
-            int, bool, string만 되고, 따로 따로 만들어야 해서 일단 ExpressionBuilder 쓸 생각임. 이건 참고만...
-            
-            참조
-            http://www.codeproject.com/Articles/493917/Dynamic-Querying-with-LINQ-to-Entities-and-Express
-            </summary>
-        </member>
         <member name="T:BWYou.Web.MVC.Extensions.OrderedQueryableExtensions">
             <summary>
             IQueryable을 정렬 하여 IOrderedQueryable을 만드는 확장 함수

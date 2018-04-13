@@ -10,7 +10,7 @@ namespace BWYou.Web.MVC.Attributes
     public class RequireMappedHttpsAttribute : RequireHttpsAttribute
     {
         public readonly int HttpsPort;
-        public readonly bool Permanent;
+        public readonly new bool Permanent;
 
         public RequireMappedHttpsAttribute(int HttpsPort = 443, bool Permanent = false)
         {
