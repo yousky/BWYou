@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BWYou.Network</name>
+    </assembly>
+    <members>
+        <member name="T:BWYou.Network">
+            <summary>
+            네트워크 쪽 특화 클래스
+            </summary>
+        </member>
+        <member name="F:BWYou.Network.lastError">
+            <summary>
+            마지막 에러 메세지 저장
+            </summary>
+        </member>
+        <member name="M:BWYou.Network.FindMacAddress">
+            <summary>
+            맥주소 찾기(기본으로 네트워크망 이름이 "로컬 영역 연결"인 경우에 찾고, 없을 경우 임의의 맥주소 찾음)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Network.FindMacAddress(System.String)">
+            <summary>
+            특정 네트워크망 이름의 맥주소 찾기
+            </summary>
+            <param name="strNetworkName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Network.setErrorLog(System.Exception)">
+            <summary>
+            에러 객체를 따로 출력하거나 하는 등을 위하여 따로 둠.
+            </summary>
+            <param name="ex">Exception 객체</param>
+        </member>
+        <member name="P:BWYou.Network.LastError">
+            <summary>
+            마지막 에러 메세지 보여주기
+            </summary>
+        </member>
+        <member name="T:BWYou.Network.Mail">
+            <summary>
+            메일 관련 클래스
+            </summary>
+        </member>
+        <member name="F:BWYou.Network.Mail.lastError">
+            <summary>
+            마지막 에러 메세지 저장
+            </summary>
+        </member>
+        <member name="M:BWYou.Network.Mail.#ctor(System.String,System.Int32,System.Boolean,System.String,System.String,System.String,System.String)">
+            <summary>
+            생성자, 기본 값 변경
+            </summary>
+            <param name="smtpServer"></param>
+            <param name="smtpPort"></param>
+            <param name="smtpSSL"></param>
+            <param name="smtpID"></param>
+            <param name="smtpPW"></param>
+            <param name="smtpFrom"></param>
+            <param name="smtpTo"></param>
+        </member>
+        <member name="M:BWYou.Network.Mail.SendMail(System.String,System.String,System.String,System.String)">
+            <summary>
+            메일 발송
+            </summary>
+            <param name="smtpFrom"></param>
+            <param name="smtpTo"></param>
+            <param name="mailSubject"></param>
+            <param name="mailMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Network.Mail.SendMail(System.String,System.String)">
+            <summary>
+            메일 발송
+            </summary>
+            <param name="mailSubject"></param>
+            <param name="mailMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Network.Mail.setErrorLog(System.Exception)">
+            <summary>
+            에러 객체를 따로 출력하거나 하는 등을 위하여 따로 둠.
+            </summary>
+            <param name="ex">Exception 객체</param>
+        </member>
+        <member name="P:BWYou.Network.Mail.LastError">
+            <summary>
+            마지막 에러 메세지 보여주기
+            </summary>
+        </member>
+    </members>
+</doc>

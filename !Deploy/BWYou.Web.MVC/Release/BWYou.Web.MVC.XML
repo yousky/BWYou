@@ -1,0 +1,1101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BWYou.Web.MVC</name>
+    </assembly>
+    <members>
+        <member name="T:BWYou.Web.MVC.Attributes.CascadeRelationAttribute">
+            <summary>
+            순차적으로 향해 지는 프로퍼티임을 나타냄
+            </summary>
+        </member>
+        <member name="M:BWYou.Web.MVC.Attributes.CascadeRelationAttribute.#ctor(BWYou.Web.MVC.Attributes.CascadeRelationAttribute.CascadeDirection)">
+            <summary>
+            생성자. 관계 연결의 방향이 필요
+            </summary>
+            <param name="Direction">관계 연결의 방향</param>
+        </member>
+        <member name="P:BWYou.Web.MVC.Attributes.CascadeRelationAttribute.Direction">
+            <summary>
+            관계 연결의 방향
+            </summary>
+        </member>
+        <member name="P:BWYou.Web.MVC.Attributes.CascadeRelationAttribute.Clonable">
+            <summary>
+            복사 가능 한 값인지 여부. false일 경우는 원본이 그대로 들어감.
+            </summary>
+        </member>
+        <member name="T:BWYou.Web.MVC.Attributes.CascadeRelationAttribute.CascadeDirection">
+            <summary>
+            관계 연결의 방향
+            </summary>
+        </member>
+        <member name="F:BWYou.Web.MVC.Attributes.CascadeRelationAttribute.CascadeDirection.Down">
+            <summary>
+            부모가 자식을 바라 보는 방향
+            </summary>
+        </member>
+        <member name="F:BWYou.Web.MVC.Attributes.CascadeRelationAttribute.CascadeDirection.Up">
+            <summary>
+            자식이 부모를 바라 보는 방향
+            </summary>
+        </member>
+        <member name="T:BWYou.Web.MVC.Attributes.FilterableAttribute">
+            <summary>
+            DB에서 검색 시 Where 조건으로 필터링 될 수 있는지 조건 처리.
+            </summary>
+        </member>
+        <member name="T:BWYou.Web.MVC.Attributes.NonCopyableAttribute">
+            <summary>
+            Copy 되어 질 수 없는 칼럼임을 나타냄
+            </summary>
+        </member>
+        <member name="T:BWYou.Web.MVC.Attributes.UpdatableAttribute">
+            <summary>
+            DB에서 업데이트 될 수 있는 칼럼임을 나타냄.
+            Web에서 바인딩 되어 서비스의 UpdateAsync 에서만 사용 됨.
+            바인딩모델을 사용 하는 곳이 아니면 의미 없음.
+            </summary>
+        </member>
+        <member name="T:BWYou.Web.MVC.Controllers.IdApiController`2">
+            <summary>
+            공통으로 사용 할 수 있도록 genetic을 활용 하여 공통 모델에 대한 Restful 기능을 구현
+            단 여기서 직접적으로 호출 되지 않도록 함수 앞에 Base를 붙이고, protected 처리 해서 기능을 상속 받은 자식이 호출 해서 사용하도록 처리
+            </summary>
+            <typeparam name="TEntity">기본 모델 엔티티</typeparam>
+            <typeparam name="TId"></typeparam>
+        </member>
+        <member name="M:BWYou.Web.MVC.Controllers.IdApiController`2.BaseGetListAsync">
+            <summary>
+            Get all lists
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Controllers.IdApiController`2.BaseGetListAsync(System.String)">
+            <summary>
+            Get all sorted lists
+            </summary>
+            <param name="sort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Controllers.IdApiController`2.BaseGetListAsync(System.Int32,System.String)">
+            <summary>
+            Get sorted paged list
+            </summary>
+            <param name="page"></param>
+            <param name="sort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Controllers.IdApiController`2.BaseGetFilteredListAsync(`0)">
+            <summary>
+            Get all filtered lists
+            </summary>
+            <param name="searchModel">Search for the same item with a value</param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Controllers.IdApiController`2.BaseGetFilteredListAsync(`0,System.String)">
+            <summary>
+            Get all sorted filtered lists
+            </summary>
+            <param name="searchModel">Search for the same item with a value</param>
+            <param name="sort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Controllers.IdApiController`2.BaseGetFilteredListAsync(`0,System.Int32,System.String)">
+            <summary>
+            Get sorted filtered paged lists
+            </summary>
+            <param name="searchModel">Search for the same item with a value</param>
+            <param name="page"></param>
+            <param name="sort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Controllers.IdApiController`2.BaseGetAsync(`1)">
+            <summary>
+            Get a specific entity
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Controllers.IdApiController`2.BasePostAsync(`0)">
+            <summary>
+            Create entity after validation
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Controllers.IdApiController`2.BasePutAsync(`1,`0)">
+            <summary>
+            Update entity after validation
+            </summary>
+            <param name="id"></param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Controllers.IdApiController`2.BaseDeleteAsync(`1)">
+            <summary>
+            Delete entity after validation
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Controllers.IdApiController`2.BaseCloneAsync(`1)">
+            <summary>
+            Clone entity after validation
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Controllers.IdApiController`2.TryValidateModel(System.Object)">
+            <summary>
+            Revalidation for Web Api
+            http://stackoverflow.com/questions/12906359/revalidate-model-when-using-webapi-tryvalidatemode-equivalent
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Controllers.IdApiController`2.TryValidateModel(System.Object,System.String)">
+            <summary>
+            Revalidation for Web Api
+            </summary>
+            <param name="model"></param>
+            <param name="prefix"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BWYou.Web.MVC.Controllers.BWStringApiController`1">
+            <summary>
+            공통으로 사용 할 수 있도록 genetic을 활용 하여 공통 모델에 대한 Restful 기능을 구현
+            단 여기서 직접적으로 호출 되지 않도록 함수 앞에 Base를 붙이고, protected 처리 해서 기능을 상속 받은 자식이 호출 해서 사용하도록 처리
+            </summary>
+            <typeparam name="TEntity">기본 모델 엔티티</typeparam>
+        </member>
+        <member name="T:BWYou.Web.MVC.Controllers.BWApiController`2">
+            <summary>
+            공통으로 사용 할 수 있도록 genetic을 활용 하여 공통 모델에 대한 Restful 기능을 구현
+            단 여기서 직접적으로 호출 되지 않도록 함수 앞에 Base를 붙이고, protected 처리 해서 기능을 상속 받은 자식이 호출 해서 사용하도록 처리
+            </summary>
+            <typeparam name="TEntity">기본 모델 엔티티</typeparam>
+            <typeparam name="TId"></typeparam>
+        </member>
+        <member name="T:BWYou.Web.MVC.Controllers.BWLongApiController`1">
+            <summary>
+            공통으로 사용 할 수 있도록 genetic을 활용 하여 공통 모델에 대한 Restful 기능을 구현
+            단 여기서 직접적으로 호출 되지 않도록 함수 앞에 Base를 붙이고, protected 처리 해서 기능을 상속 받은 자식이 호출 해서 사용하도록 처리
+            </summary>
+            <typeparam name="TEntity">기본 모델 엔티티</typeparam>
+        </member>
+        <member name="T:BWYou.Web.MVC.Controllers.BWIntApiController`1">
+            <summary>
+            공통으로 사용 할 수 있도록 genetic을 활용 하여 공통 모델에 대한 Restful 기능을 구현
+            단 여기서 직접적으로 호출 되지 않도록 함수 앞에 Base를 붙이고, protected 처리 해서 기능을 상속 받은 자식이 호출 해서 사용하도록 처리
+            </summary>
+            <typeparam name="TEntity">기본 모델 엔티티</typeparam>
+        </member>
+        <member name="T:BWYou.Web.MVC.DAOs.DbContextRepository`2">
+            <summary>
+            Common IRepository Implementation
+            reference https://github.com/gyuwon/.NET-Data-Access-Layer
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TId"></typeparam>
+        </member>
+        <member name="T:BWYou.Web.MVC.DAOs.IRepository`2">
+            <summary>
+            Repository Interface
+            When saving in IUnitOfWork, it is applied within one transaction.
+            reference https://github.com/gyuwon/.NET-Data-Access-Layer
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TId"></typeparam>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.IRepository`2.Find(System.Object[])">
+            <summary>
+            Find a specific entity
+            </summary>
+            <param name="keyValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.IRepository`2.FindAsync(System.Object[])">
+            <summary>
+            Find a specific entity asynchronously
+            </summary>
+            <param name="keyValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.IRepository`2.Create(`0)">
+            <summary>
+            Create entity
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.IRepository`2.Create(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Create entities
+            </summary>
+            <param name="entities"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.IRepository`2.Update(`0)">
+            <summary>
+            Update all columns except PK
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.IRepository`2.Update(`0,System.String[])">
+            <summary>
+            Update only certain columns of unmanaged TEntity.
+            </summary>
+            <param name="entity"></param>
+            <param name="updateProperties"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.IRepository`2.UpdateExceptNullValue(`0)">
+            <summary>
+            Update columns of unmanaged TEntity where values exist.
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.IRepository`2.UpdateExceptNullValue(`0,System.String[])">
+            <summary>
+            Update only certain columns of unmanaged TEntity where values exist.
+            </summary>
+            <param name="entity"></param>
+            <param name="updateProperties"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.IRepository`2.Remove(`0)">
+            <summary>
+            Remove
+            Activation processing is included to delete related data.
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.IRepository`2.Remove(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Remove entities.
+            Activation processing is included to delete related data.
+            </summary>
+            <param name="entities"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.IRepository`2.Reload(`0)">
+            <summary>
+            Reload a entity
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.IRepository`2.Clone(`0)">
+            <summary>
+            Clone(Deep Copy)
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="P:BWYou.Web.MVC.DAOs.IRepository`2.DbContext">
+            <summary>
+            DbContext
+            </summary>
+        </member>
+        <member name="P:BWYou.Web.MVC.DAOs.IRepository`2.DbSet">
+            <summary>
+            DbSet
+            </summary>
+        </member>
+        <member name="P:BWYou.Web.MVC.DAOs.IRepository`2.Query">
+            <summary>
+            Expose query objects
+            </summary>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.DbContextRepository`2.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.DbContextRepository`2.#ctor(System.Data.Entity.DbContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="dbContext"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.DbContextRepository`2.Find(System.Object[])">
+            <summary>
+            Find a specific entity
+            </summary>
+            <param name="keyValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.DbContextRepository`2.FindAsync(System.Object[])">
+            <summary>
+            Find a specific entity asynchronously
+            </summary>
+            <param name="keyValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.DbContextRepository`2.Create(`0)">
+            <summary>
+            Create entity
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.DbContextRepository`2.Create(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Create entities
+            </summary>
+            <param name="entities"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.DbContextRepository`2.Update(`0)">
+            <summary>
+            Update all columns except PK
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.DbContextRepository`2.Update(`0,System.String[])">
+            <summary>
+            Update only certain columns of unmanaged TEntity.
+            </summary>
+            <param name="entity"></param>
+            <param name="updateProperties">원하는 칼럼 배열</param>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.DbContextRepository`2.UpdateExceptNullValue(`0)">
+            <summary>
+            Update columns of unmanaged TEntity where values exist.
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.DbContextRepository`2.UpdateExceptNullValue(`0,System.String[])">
+            <summary>
+            Update only certain columns of unmanaged TEntity where values exist.
+            </summary>
+            <param name="entity"></param>
+            <param name="updateProperties"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.DbContextRepository`2.Remove(`0)">
+            <summary>
+            Remove.
+            Activation processing is included to delete related data.
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.DbContextRepository`2.Remove(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Remove entities.
+            Activation processing is included to delete related data.
+            </summary>
+            <param name="entities"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.DbContextRepository`2.Reload(`0)">
+            <summary>
+            Reload a entity
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.DbContextRepository`2.Clone(`0)">
+            <summary>
+            Clone(Deep Copy)
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="P:BWYou.Web.MVC.DAOs.DbContextRepository`2.DbContext">
+            <summary>
+            DbContext
+            </summary>
+        </member>
+        <member name="P:BWYou.Web.MVC.DAOs.DbContextRepository`2.DbSet">
+            <summary>
+            DbSet
+            </summary>
+        </member>
+        <member name="P:BWYou.Web.MVC.DAOs.DbContextRepository`2.Query">
+            <summary>
+            Expose query objects
+            </summary>
+        </member>
+        <member name="T:BWYou.Web.MVC.DAOs.DbContextUnitOfWork`1">
+            <summary>
+            Common IUnitOfWork Implementation
+            reference https://github.com/gyuwon/.NET-Data-Access-Layer
+            </summary>
+            <typeparam name="TDbContext"></typeparam>
+        </member>
+        <member name="T:BWYou.Web.MVC.DAOs.IUnitOfWork">
+            <summary>
+            One transaction processing Interface
+            reference https://github.com/gyuwon/.NET-Data-Access-Layer
+            </summary>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.IUnitOfWork.GetRepository``2">
+            <summary>
+            Get a repository
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TId"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.IUnitOfWork.SaveChanges">
+            <summary>
+            Save changes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.IUnitOfWork.SaveChangesAsync">
+            <summary>
+            Save changes asynchronously
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.DbContextUnitOfWork`1.#ctor(`0)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="dbContext"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.DbContextUnitOfWork`1.GetRepository``2">
+            <summary>
+            Get a repository
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TId"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.DbContextUnitOfWork`1.SaveChanges">
+            <summary>
+            Save changes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.DbContextUnitOfWork`1.SaveChangesAsync">
+            <summary>
+            Save changes asynchronously
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.DAOs.DbContextUnitOfWork`1.Dispose">
+            <summary>
+            Dispose
+            </summary>
+        </member>
+        <member name="T:BWYou.Web.MVC.Etc.MessageHandler">
+            <summary>
+            WebAPI 로그 등으로 사용하기 위한 메세지 핸들러
+            </summary>
+        </member>
+        <member name="M:BWYou.Web.MVC.Extensions.CustomExtensions.Clone``1(``0,System.Collections.Generic.Dictionary{System.Object,System.Object},System.Boolean,System.Boolean,BWYou.Web.MVC.Attributes.CascadeRelationAttribute.CascadeDirection,System.Boolean)">
+            <summary>
+            Deep 복사 본 만들기. DB 저장을 위해 관계 처리
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="source"></param>
+            <param name="seen"></param>
+            <param name="bCopykey"></param>
+            <param name="bCascade"></param>
+            <param name="direction"></param>
+            <param name="bClone"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Extensions.CustomExtensions.ActivateRelation4Cascade``1(``0,System.Collections.Generic.HashSet{System.Object})">
+            <summary>
+            관계 정보를 모두 불러와서 활성화 시키기. 지우기용.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="seen"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.Extensions.CustomExtensions.MapFrom``2(``0,``1)">
+            <summary>
+            CascadeRelationAttribute 가 아닌 동일 이름의 property의 값을 소스에서 타겟으로 복사한다.
+            </summary>
+            <typeparam name="TTarget"></typeparam>
+            <typeparam name="TSource"></typeparam>
+            <param name="target"></param>
+            <param name="source"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.Extensions.CustomExtensions.MapFromBindingModelToBaseModel``2(``0,``1)">
+            <summary>
+            동일 이름의 property의 값을 소스에서 타겟으로 복사한다.
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <typeparam name="TTarget"></typeparam>
+            <param name="source"></param>
+            <param name="target"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.Extensions.CustomExtensions.GetWhereClause``1(``0,System.Boolean,System.Boolean,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            동적으로 Where 조건 만들기.
+            </summary>
+            <param name="source"></param>
+            <param name="ignoreNull">null 값은 무시할 지 여부</param>
+            <param name="filterableAttributeRequired">FilterableAttribute인 것만 검색 할지 여부</param>
+            <param name="necessaryAddFields">꼭 추가 되어야 하는 조건 필드명들. FilterableAttribute 상관 없이 추가 됨</param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Extensions.CustomExtensions.GetWhereClause``1(``0,System.Collections.Generic.IList{BWYou.Web.MVC.Etc.ExpressionFilter})">
+            <summary>
+            동적으로 Where 조건 만들기.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="filters">조건 필터들. T의 prop명으로 된 필터들이어야 함</param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Extensions.CustomExtensions.ConvertToHttpModelStateDictionary(System.Web.Mvc.ModelStateDictionary)">
+            <summary>
+            mvc의 ModelStateDictionary 를 http wep api용 ModelStateDictionary 로 변환
+            </summary>
+            <param name="mvcModelStateDictionary"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Extensions.CustomExtensions.ConvertToMvcModelStateDictionary(System.Web.Http.ModelBinding.ModelStateDictionary)">
+            <summary>
+            http wep api용 ModelStateDictionary 를 mvc의 ModelStateDictionary 로 변환
+            </summary>
+            <param name="httpModelStateDictionary"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BWYou.Web.MVC.Extensions.ExpressionExtensions">
+            <summary>
+            nullable 처리 추가.
+            int, bool, string만 되고, 따로 따로 만들어야 해서 일단 ExpressionBuilder 쓸 생각임. 이건 참고만...
+            
+            참조
+            http://www.codeproject.com/Articles/493917/Dynamic-Querying-with-LINQ-to-Entities-and-Express
+            </summary>
+        </member>
+        <member name="T:BWYou.Web.MVC.Extensions.OrderedQueryableExtensions">
+            <summary>
+            IQueryable을 정렬 하여 IOrderedQueryable을 만드는 확장 함수
+            
+            참조
+            http://www.codeproject.com/Articles/493917/Dynamic-Querying-with-LINQ-to-Entities-and-Express
+            http://stackoverflow.com/questions/41244/dynamic-linq-orderby-on-ienumerablet
+            </summary>
+        </member>
+        <member name="T:BWYou.Web.MVC.Models.IDbModel">
+            <summary>
+            DB 관리 되는 모델임을 나타냄
+            </summary>
+        </member>
+        <member name="T:BWYou.Web.MVC.Services.IdEntityService`2">
+            <summary>
+            IEntityService Implementation for TId
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TId"></typeparam>
+        </member>
+        <member name="T:BWYou.Web.MVC.Services.IEntityService`2">
+            <summary>
+            EntityService Interface
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TId"></typeparam>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.GetFilteredListAsync(`0)">
+            <summary>
+            Get all filtered lists
+            </summary>
+            <param name="model">Search for the same item with a value</param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.GetFilteredListAsync(`0,System.String)">
+            <summary>
+            Get all sorted filtered lists
+            </summary>
+            <param name="model">Search for the same item with a value</param>
+            <param name="sort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.GetFilteredListAsync(`0,System.String,System.Int32,System.Int32)">
+            <summary>
+            Get sorted filtered paged lists
+            </summary>
+            <param name="model">Search for the same item with a value</param>
+            <param name="sort"></param>
+            <param name="pageNumber"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.GetFilteredListAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Get all filtered lists
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.GetFilteredListAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.String)">
+            <summary>
+            Get all sorted filtered lists
+            </summary>
+            <param name="filter"></param>
+            <param name="sort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.GetFilteredListAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.String,System.Int32,System.Int32)">
+            <summary>
+            Get sorted filtered paged lists
+            </summary>
+            <param name="filter"></param>
+            <param name="sort"></param>
+            <param name="pageNumber"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.Query">
+            <summary>
+            Expose query objects
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.GetFilteredQuery(`0)">
+            <summary>
+            Expose filtered query objects
+            </summary>
+            <param name="model">Search for the same item with a value</param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.GetFilteredQuery(`0,System.String)">
+            <summary>
+            Expose sorted filtered query objects
+            </summary>
+            <param name="model">Search for the same item with a value</param>
+            <param name="sort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.GetFilteredQuery(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Expose filtered query objects
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.GetFilteredQuery(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.String)">
+            <summary>
+            Expose sorted filtered query objects
+            </summary>
+            <param name="filter"></param>
+            <param name="sort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.GetListAsync">
+            <summary>
+            Get all lists
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.GetListAsync(System.String)">
+            <summary>
+            Get all sorted lists
+            </summary>
+            <param name="sort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.GetListAsync(System.String,System.Int32,System.Int32)">
+            <summary>
+            Get sorted paged list
+            </summary>
+            <param name="sort"></param>
+            <param name="pageNumber"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.GetAsync(`1)">
+            <summary>
+            Get a specific entity
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.ValidAndCreateAsync(`0,System.Web.Http.ModelBinding.ModelStateDictionary)">
+            <summary>
+            Create entity after validation
+            </summary>
+            <param name="entity"></param>
+            <param name="ModelState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.ValidAndCreateAsync(System.Collections.Generic.IEnumerable{`0},System.Web.Http.ModelBinding.ModelStateDictionary)">
+            <summary>
+            Create entities after validation
+            </summary>
+            <param name="entities"></param>
+            <param name="ModelState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.ValidAndUpdateAsync(`0,System.Web.Http.ModelBinding.ModelStateDictionary)">
+            <summary>
+            Update entity after validation
+            </summary>
+            <param name="entity"></param>
+            <param name="ModelState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.ValidAndDeleteAsync(`1,System.Web.Http.ModelBinding.ModelStateDictionary)">
+            <summary>
+            Delete entity after validation
+            </summary>
+            <param name="id"></param>
+            <param name="ModelState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.ValidAndDeleteAsync(System.Collections.Generic.IEnumerable{`1},System.Web.Http.ModelBinding.ModelStateDictionary)">
+            <summary>
+            Delete entities. No validation.
+            </summary>
+            <param name="models"></param>
+            <param name="ModelState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.ValidAndCloneAsync(`1,System.Web.Http.ModelBinding.ModelStateDictionary)">
+            <summary>
+            Clone entity after validation
+            </summary>
+            <param name="id"></param>
+            <param name="ModelState"></param>
+            <returns></returns>
+        </member>
+        <member name="F:BWYou.Web.MVC.Services.IdEntityService`2._unitOfWork">
+            <summary>
+            IUnitOfWork
+            </summary>
+        </member>
+        <member name="F:BWYou.Web.MVC.Services.IdEntityService`2._repo">
+            <summary>
+            IRepository
+            </summary>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.#ctor(System.Data.Entity.DbContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="dbContext"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.#ctor(BWYou.Web.MVC.DAOs.IUnitOfWork)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="unitOfWork"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.GetFilteredListAsync(`0)">
+            <summary>
+            Get all filtered lists
+            </summary>
+            <param name="model">Search for the same item with a value</param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.GetFilteredListAsync(`0,System.String)">
+            <summary>
+            Get all sorted filtered lists
+            </summary>
+            <param name="model">Search for the same item with a value</param>
+            <param name="sort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.GetFilteredListAsync(`0,System.String,System.Int32,System.Int32)">
+            <summary>
+            Get sorted filtered paged lists
+            </summary>
+            <param name="model">Search for the same item with a value</param>
+            <param name="sort"></param>
+            <param name="pageNumber"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.GetFilteredListAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Get all filtered lists
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.GetFilteredListAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.String)">
+            <summary>
+            Get all sorted filtered lists
+            </summary>
+            <param name="filter"></param>
+            <param name="sort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.GetFilteredListAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.String,System.Int32,System.Int32)">
+            <summary>
+            Get sorted filtered paged lists
+            </summary>
+            <param name="filter"></param>
+            <param name="sort"></param>
+            <param name="pageNumber"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.Query">
+            <summary>
+            Expose query objects
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.GetFilteredQuery(`0)">
+            <summary>
+            Expose filtered query objects
+            </summary>
+            <param name="model">Search for the same item with a value</param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.GetFilteredQuery(`0,System.String)">
+            <summary>
+            Expose sorted filtered query objects
+            </summary>
+            <param name="model">Search for the same item with a value</param>
+            <param name="sort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.GetFilteredQuery(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Expose filtered query objects
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.GetFilteredQuery(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.String)">
+            <summary>
+            Expose sorted filtered query objects
+            </summary>
+            <param name="filter"></param>
+            <param name="sort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.GetListAsync">
+            <summary>
+            Get all lists
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.GetListAsync(System.String)">
+            <summary>
+            Get all sorted lists
+            </summary>
+            <param name="sort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.GetListAsync(System.String,System.Int32,System.Int32)">
+            <summary>
+            Get sorted paged list
+            </summary>
+            <param name="sort"></param>
+            <param name="pageNumber"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.GetAsync(`1)">
+            <summary>
+            Get a specific entity
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.ValidAndCreateAsync(`0,System.Web.Http.ModelBinding.ModelStateDictionary)">
+            <summary>
+            Create entity after validation
+            </summary>
+            <param name="model"></param>
+            <param name="ModelState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.ValidAndCreateAsync(System.Collections.Generic.IEnumerable{`0},System.Web.Http.ModelBinding.ModelStateDictionary)">
+            <summary>
+            Create entities after validation
+            </summary>
+            <param name="models"></param>
+            <param name="ModelState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.CreateAsync(`0)">
+            <summary>
+            Create entity
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.CreateAsync(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Create entities
+            </summary>
+            <param name="models"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.ValidAndUpdateAsync(`0,System.Web.Http.ModelBinding.ModelStateDictionary)">
+            <summary>
+            Update entity after validation
+            </summary>
+            <param name="model"></param>
+            <param name="ModelState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.UpdateAsync(`0)">
+            <summary>
+            Update entity
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.ValidAndDeleteAsync(`1,System.Web.Http.ModelBinding.ModelStateDictionary)">
+            <summary>
+            Delete entity after validation
+            </summary>
+            <param name="id"></param>
+            <param name="ModelState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.ValidAndDeleteAsync(System.Collections.Generic.IEnumerable{`1},System.Web.Http.ModelBinding.ModelStateDictionary)">
+            <summary>
+            Delete entities. No validation.
+            </summary>
+            <param name="models"></param>
+            <param name="ModelState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.DeleteAsync(`0)">
+            <summary>
+            Delete entity
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.ValidAndCloneAsync(`1,System.Web.Http.ModelBinding.ModelStateDictionary)">
+            <summary>
+            Clone entity after validation
+            </summary>
+            <param name="id"></param>
+            <param name="ModelState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.CloneAsync(`0)">
+            <summary>
+            Clone entity
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.BeatAsync">
+            <summary>
+            Make sure you are alive and try a DB query to keep the DB connection
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.GetUpdatablePropertiesNameArray(`0,System.Boolean,System.Boolean,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Get an array of [Updatable] property names
+            </summary>
+            <param name="model"></param>
+            <param name="ignoreNull">Whether null values are ignored.</param>
+            <param name="updatableAttributeRequired">Whether to retrieve only [Updatable] Attribute</param>
+            <param name="necessaryAddFields">Field names that must be added. All other conditions are ignored</param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.Dispose">
+            <summary>
+            Dispose
+            </summary>
+        </member>
+        <member name="T:BWYou.Web.MVC.ViewModels.PageResultViewModel`1">
+            <summary>
+            페이지 정보 저장용 클래스
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:BWYou.Web.MVC.ViewModels.PageResultViewModel`1.#ctor">
+            <summary>
+            기본 생성자
+            </summary>
+        </member>
+        <member name="M:BWYou.Web.MVC.ViewModels.PageResultViewModel`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            결과 객체 저장용 생성자. 메타 정보는 직접 주입 필요.
+            </summary>
+            <param name="result"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.ViewModels.PageResultViewModel`1.#ctor(System.Collections.Generic.IEnumerable{`0},BWYou.Web.MVC.ViewModels.MetaData)">
+            <summary>
+            결과 객체와 메타 정보를 한번에 저장하기 위한 생성자
+            </summary>
+            <param name="result"></param>
+            <param name="MetaData"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.ViewModels.PageResultViewModel`1.#ctor(PagedList.IPagedList{`0})">
+            <summary>
+            페이지 결과 객체용 생성자. 가장 일반적으로 사용
+            </summary>
+            <param name="result"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.ViewModels.PageResultViewModel`1.ToPagedList">
+            <summary>
+            IPagedList로 변환
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:BWYou.Web.MVC.ViewModels.PageResultViewModel`1.Result">
+            <summary>
+            페이지 결과 객체
+            </summary>
+        </member>
+        <member name="P:BWYou.Web.MVC.ViewModels.PageResultViewModel`1.MetaData">
+            <summary>
+            페이지 메타 정보
+            </summary>
+        </member>
+        <member name="T:BWYou.Web.MVC.ViewModels.ValidationObjectError">
+            <summary>
+            밸리데이션 에러 저장용 클래스
+            </summary>
+        </member>
+        <member name="M:BWYou.Web.MVC.ViewModels.ValidationObjectError.#ctor">
+            <summary>
+            기본 생성자
+            </summary>
+        </member>
+        <member name="M:BWYou.Web.MVC.ViewModels.ValidationObjectError.#ctor(System.String,System.String)">
+            <summary>
+            생성자
+            </summary>
+            <param name="ObjectName"></param>
+            <param name="ErrorMessage"></param>
+        </member>
+        <member name="P:BWYou.Web.MVC.ViewModels.ValidationObjectError.ObjectName">
+            <summary>
+            오브젝트 명
+            </summary>
+        </member>
+        <member name="P:BWYou.Web.MVC.ViewModels.ValidationObjectError.ErrorMessage">
+            <summary>
+            에러 메세지
+            </summary>
+        </member>
+        <member name="T:BWYou.Web.MVC.ViewModels.WebStatusMessageBody">
+            <summary>
+            웹 결과 상태 메세지 본문 클래스
+            </summary>
+        </member>
+        <member name="M:BWYou.Web.MVC.ViewModels.WebStatusMessageBody.#ctor">
+            <summary>
+            생성자
+            </summary>
+        </member>
+        <member name="P:BWYou.Web.MVC.ViewModels.WebStatusMessageBody.Status">
+            <summary>
+            상태
+            </summary>
+        </member>
+        <member name="P:BWYou.Web.MVC.ViewModels.WebStatusMessageBody.Code">
+            <summary>
+            코드
+            </summary>
+        </member>
+        <member name="P:BWYou.Web.MVC.ViewModels.WebStatusMessageBody.Message">
+            <summary>
+            메세지
+            </summary>
+        </member>
+        <member name="P:BWYou.Web.MVC.ViewModels.WebStatusMessageBody.Link">
+            <summary>
+            관련 링크
+            </summary>
+        </member>
+        <member name="P:BWYou.Web.MVC.ViewModels.WebStatusMessageBody.DeveloperMessage">
+            <summary>
+            개발자용 메세지
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,348 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BWYou.Crypt</name>
+    </assembly>
+    <members>
+        <member name="T:BWYou.Crypt.Algorithms.Symmetrics.Symmetric">
+            <summary>
+            대칭키 암호화
+            </summary>
+        </member>
+        <member name="T:BWYou.Crypt.regTopPath">
+            <summary>
+            레지스트리의 기본 상위 패스
+            </summary>
+        </member>
+        <member name="F:BWYou.Crypt.regTopPath.ClassesRoot">
+            <summary>
+            HKEY_CLASSES_ROOT
+            </summary>
+        </member>
+        <member name="F:BWYou.Crypt.regTopPath.CurrentConfig">
+            <summary>
+            HKEY_CURRENT_CONFIG
+            </summary>
+        </member>
+        <member name="F:BWYou.Crypt.regTopPath.CurrentUser">
+            <summary>
+            HKEY_CURRENT_USER
+            </summary>
+        </member>
+        <member name="F:BWYou.Crypt.regTopPath.DynData">
+            <summary>
+            HKEY_DYN_DATA
+            </summary>
+        </member>
+        <member name="F:BWYou.Crypt.regTopPath.LocalMachine">
+            <summary>
+            HKEY_LOCAL_MACHINE
+            </summary>
+        </member>
+        <member name="F:BWYou.Crypt.regTopPath.PerformanceData">
+            <summary>
+            HKEY_PERFORMANCE_DATA
+            </summary>
+        </member>
+        <member name="F:BWYou.Crypt.regTopPath.Users">
+            <summary>
+            HKEY_USERS
+            </summary>
+        </member>
+        <member name="F:BWYou.Crypt.Crypt.lastError">
+            <summary>
+            마지막 에러 메세지 저장
+            </summary>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.WriteFile(System.IO.FileMode,System.String,System.Byte[])">
+            <summary>
+            파일에 쓰기
+            </summary>
+            <param name="fmode">Create : 새로 쓰거나 덮어쓰기, OpenOrCreate : 새로 쓰거나 이어서 쓰기</param>
+            <param name="path"></param>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.WriteFile(System.IO.FileMode,System.String,System.String)">
+            <summary>
+            파일에 쓰기
+            </summary>
+            <param name="fmode">Create : 새로 쓰거나 덮어쓰기, OpenOrCreate : 새로 쓰거나 이어서 쓰기</param>
+            <param name="path"></param>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.ReadFile(System.String,System.Int32,System.Byte[]@)">
+            <summary>
+            파일 읽기. 최대 인트형 크기만큼
+            </summary>
+            <param name="path"></param>
+            <param name="nReadLength">읽을 크기(byte)</param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.ReadFile(System.String,System.Int32,System.String@)">
+            <summary>
+            파일 읽기. 최대 인트형 크기만큼
+            </summary>
+            <param name="path"></param>
+            <param name="nReadLength">읽을 크기(byte)</param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.ReadRegistry(BWYou.Crypt.regTopPath,System.String,System.String,System.String@)">
+            <summary>
+            레지스트리를 문자열로 읽기
+            </summary>
+            <param name="topPath"></param>
+            <param name="path">HKEY_LOCAL_MACHHINE 하위 패스</param>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns>읽은 키 값</returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.ReadRegistry(BWYou.Crypt.regTopPath,System.String,System.String,System.Byte[]@)">
+            <summary>
+            레지스트리를 바이트형으로 읽기
+            </summary>
+            <param name="topPath"></param>
+            <param name="path"></param>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.WriteRegistry(BWYou.Crypt.regTopPath,System.String,System.String,System.String)">
+            <summary>
+            레지스트리에 문자열로 쓰기
+            </summary>
+            <param name="topPath"></param>
+            <param name="path">HKEY_LOCAL_MACHHINE 하위 패스</param>
+            <param name="rKey">키 이름</param>
+            <param name="rVal">키의 값</param>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.WriteRegistry(BWYou.Crypt.regTopPath,System.String,System.String,System.Byte[])">
+            <summary>
+            레지스트리에 바이트형으로 쓰기
+            </summary>
+            <param name="topPath"></param>
+            <param name="path"></param>
+            <param name="rKey"></param>
+            <param name="rVal"></param>
+        </member>
+        <member name="F:BWYou.Crypt.Crypt.des">
+            <summary>
+            DES 암호화를 위하여 생성
+            </summary>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.Encrypt(System.String,System.String@)">
+            <summary>
+            KEY와 IV를 이용한 단순 암호화. 문자열 출력
+            </summary>
+            <param name="thisEncode"></param>
+            <param name="Result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.Encrypt(System.String,System.String@,System.Byte[],System.Byte[])">
+            <summary>
+            암호화. 문자열 출력
+            </summary>
+            <param name="thisEncode"></param>
+            <param name="Result"></param>
+            <param name="key">암호화 시 사용할 KEY</param>
+            <param name="iv">암호화 시 사용할 IV</param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.Encrypt(System.String,System.Byte[]@)">
+            <summary>
+            KEY와 IV를 이용한 단순 암호화. byte[] 출력
+            </summary>
+            <param name="thisEncode"></param>
+            <param name="Result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.Encrypt(System.String,System.Byte[]@,System.Byte[],System.Byte[])">
+            <summary>
+            암호화. byte[] 출력
+            </summary>
+            <param name="thisEncode"></param>
+            <param name="Result"></param>
+            <param name="key">암호화 시 사용할 KEY</param>
+            <param name="iv">암호화 시 사용할 IV</param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.Encrypt(System.Byte[],System.Byte[]@)">
+            <summary>
+            KEY와 IV를 이용한 단순 암호화. byte[] 입력 byte[] 출력
+            </summary>
+            <param name="thisEncode"></param>
+            <param name="Result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.Encrypt(System.Byte[],System.Byte[]@,System.Byte[],System.Byte[])">
+            <summary>
+            암호화. byte[] 입력 byte[] 출력
+            </summary>
+            <param name="thisEncode"></param>
+            <param name="Result"></param>
+            <param name="key">암호화 시 사용할 KEY</param>
+            <param name="iv">암호화 시 사용할 IV</param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.Decrypt(System.String,System.String@)">
+            <summary>
+            KEY와 IV를 이용한 단순 복호화. 문자열 입력
+            </summary>
+            <param name="thisDecode"></param>
+            <param name="Result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.Decrypt(System.String,System.String@,System.Byte[],System.Byte[])">
+            <summary>
+            복호화. 문자열 입력
+            </summary>
+            <param name="thisDecode"></param>
+            <param name="Result"></param>
+            <param name="key">복호화 시 사용할 KEY</param>
+            <param name="iv">복호화 시 사용할 IV</param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.Decrypt(System.Byte[],System.String@)">
+            <summary>
+            KEY와 IV를 이용한 단순 복호화. byte[] 입력
+            </summary>
+            <param name="thisDecode"></param>
+            <param name="Result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.Decrypt(System.Byte[],System.String@,System.Byte[],System.Byte[])">
+            <summary>
+            복호화. byte[] 입력
+            </summary>
+            <param name="thisDecode"></param>
+            <param name="Result"></param>
+            <param name="key">복호화 시 사용할 KEY</param>
+            <param name="iv">복호화 시 사용할 IV</param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.Decrypt(System.Byte[],System.Byte[]@)">
+            <summary>
+            KEY와 IV를 이용한 단순 복호화. byte[] 입력 byte[] 출력
+            </summary>
+            <param name="thisDecode"></param>
+            <param name="Result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.Decrypt(System.Byte[],System.Byte[]@,System.Byte[],System.Byte[])">
+            <summary>
+            복호화. byte[] 입력 byte[] 출력
+            </summary>
+            <param name="thisDecode"></param>
+            <param name="Result"></param>
+            <param name="key">복호화 시 사용할 KEY</param>
+            <param name="iv">복호화 시 사용할 IV</param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.InAndOut(System.String,System.String,System.Byte[]@,System.Byte[]@)">
+            <summary>
+            문자열 2개와 조합하여, KEY와 IV 만들기
+            </summary>
+            <param name="str1"></param>
+            <param name="str2"></param>
+            <param name="key"></param>
+            <param name="iv"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.InAndOut(System.String,System.String,System.String,System.Byte[]@,System.Byte[]@)">
+            <summary>
+            문자열 3개를 조합하여, KEY와 IV 만들기
+            </summary>
+            <param name="str1"></param>
+            <param name="str2"></param>
+            <param name="str3"></param>
+            <param name="key"></param>
+            <param name="iv"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.EncryptAndWriteFile(System.Byte[],System.String)">
+            <summary>
+            암호화하여 파일로 저장
+            </summary>
+            <param name="thisEncode"></param>
+            <param name="filepath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.EncryptAndWriteFile(System.Byte[],System.String,System.Byte[],System.Byte[])">
+            <summary>
+            암호화하여 파일로 저장, key, iv 이용
+            </summary>
+            <param name="thisEncode"></param>
+            <param name="filepath"></param>
+            <param name="key"></param>
+            <param name="iv"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.ReadFileAndDecrypt(System.String,System.Byte[]@)">
+            <summary>
+            암호화된 파일 읽기
+            </summary>
+            <param name="filepath"></param>
+            <param name="ResDecode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.ReadFileAndDecrypt(System.String,System.Byte[]@,System.Byte[],System.Byte[])">
+            <summary>
+            암호화된 파일 읽기, key, iv 이용
+            </summary>
+            <param name="filepath"></param>
+            <param name="ResDecode"></param>
+            <param name="key"></param>
+            <param name="iv"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.ConverDecryptFile2EncrypteFile(System.String,System.String)">
+            <summary>
+            평문 파일 읽어서 암호화된 파일로 변환(파일2파일)
+            </summary>
+            <param name="thisEncodefilepath"></param>
+            <param name="filepath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.ConverDecryptFile2EncrypteFile(System.String,System.String,System.Byte[],System.Byte[])">
+            <summary>
+            평문 파일 읽어서 암호화된 파일로 변환(파일2파일), key, iv 이용
+            </summary>
+            <param name="thisEncodefilepath"></param>
+            <param name="filepath"></param>
+            <param name="key"></param>
+            <param name="iv"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.ConverEncrypteFile2DecryptFile(System.String,System.String)">
+            <summary>
+            암호화된 파일 읽어서 복호화된 파일로 변환(파일2파일)
+            </summary>
+            <param name="filepath"></param>
+            <param name="thisDecodefilepath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.ConverEncrypteFile2DecryptFile(System.String,System.String,System.Byte[],System.Byte[])">
+            <summary>
+            암호화된 파일 읽어서 복호화된 파일로 변환(파일2파일), key, iv 이용
+            </summary>
+            <param name="filepath"></param>
+            <param name="thisDecodefilepath"></param>
+            <param name="key"></param>
+            <param name="iv"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Crypt.Crypt.setErrorLog(System.Exception)">
+            <summary>
+            에러 객체를 따로 출력하거나 하는 등을 위하여 따로 둠.
+            </summary>
+            <param name="ex">Exception 객체</param>
+        </member>
+        <member name="P:BWYou.Crypt.Crypt.LastError">
+            <summary>
+            마지막 에러 메세지 보여주기
+            </summary>
+        </member>
+    </members>
+</doc>
