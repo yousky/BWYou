@@ -4,8 +4,13 @@
  *  \section info 개발목적
  *          - ASP.NET MVC + Entity Framwork + Identity 공통 처리
  *  \section advenced 추가정보
- *          - Version : 0.3.8.0
- *          - Last Updated : 2018.04.13
+ *          - Version : 0.3.9.1
+ *          - Last Updated : 2018.04.18
+ *              -# add Utils.TryValidateModel
+ *          - Updated : 2018.04.13 Version : 0.3.9.0
+ *              -# change Web TargetFramework 4.6.1
+ *              -# update nuget packages.
+ *          - Updated : 2018.04.13 Version : 0.3.8.0
  *              -# 컨트롤러 통합 테스트 완료
  *              -# BasePostAsync Array 생성 밸리데이션 시 메세지에 Array index 추가 처리
  *              -# TryValidateModel 메세지에 prefiex 처리.

@@ -68,7 +68,7 @@ namespace BWYou.Web.MVC.Test.Controllers
 #if DEBUG
                 this.Database.Log += m => System.Diagnostics.Debug.WriteLine(m);
 #endif
-                this.Configuration.LazyLoadingEnabled = false; 
+                this.Configuration.LazyLoadingEnabled = false;
             }
 
             public virtual DbSet<Product> Products { get; set; }
@@ -161,6 +161,7 @@ namespace BWYou.Web.MVC.Test.Controllers
                 {
                     context.Database.Delete();
                 }
+                //Id는 참고만 해야 할 듯. 스스로 알아서 만드는데?
                 context.Products.AddRange(new List<Product>{
                          new Product
                          {

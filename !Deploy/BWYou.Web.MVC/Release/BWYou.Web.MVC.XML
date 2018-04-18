@@ -146,22 +146,6 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:BWYou.Web.MVC.Controllers.IdApiController`2.TryValidateModel(System.Object)">
-            <summary>
-            Revalidation for Web Api
-            http://stackoverflow.com/questions/12906359/revalidate-model-when-using-webapi-tryvalidatemode-equivalent
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BWYou.Web.MVC.Controllers.IdApiController`2.TryValidateModel(System.Object,System.String)">
-            <summary>
-            Revalidation for Web Api
-            </summary>
-            <param name="model"></param>
-            <param name="prefix"></param>
-            <returns></returns>
-        </member>
         <member name="T:BWYou.Web.MVC.Controllers.BWStringApiController`1">
             <summary>
             공통으로 사용 할 수 있도록 genetic을 활용 하여 공통 모델에 대한 Restful 기능을 구현
@@ -475,6 +459,22 @@
             <summary>
             WebAPI 로그 등으로 사용하기 위한 메세지 핸들러
             </summary>
+        </member>
+        <member name="M:BWYou.Web.MVC.Etc.Utils.TryValidateModel(System.Web.Http.ModelBinding.ModelStateDictionary,System.Object)">
+            <summary>
+            Revalidation for Web Api
+            http://stackoverflow.com/questions/12906359/revalidate-model-when-using-webapi-tryvalidatemode-equivalent
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Etc.Utils.TryValidateModel(System.Web.Http.ModelBinding.ModelStateDictionary,System.Object,System.String)">
+            <summary>
+            Revalidation for Web Api
+            </summary>
+            <param name="model"></param>
+            <param name="prefix"></param>
+            <returns></returns>
         </member>
         <member name="M:BWYou.Web.MVC.Extensions.CustomExtensions.Clone``1(``0,System.Collections.Generic.Dictionary{System.Object,System.Object},System.Boolean,System.Boolean,BWYou.Web.MVC.Attributes.CascadeRelationAttribute.CascadeDirection,System.Boolean)">
             <summary>

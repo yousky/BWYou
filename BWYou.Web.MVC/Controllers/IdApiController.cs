@@ -1,4 +1,5 @@
-﻿using BWYou.Web.MVC.Models;
+﻿using BWYou.Web.MVC.Etc;
+using BWYou.Web.MVC.Models;
 using BWYou.Web.MVC.Services;
 using BWYou.Web.MVC.ViewModels;
 using System;
@@ -238,41 +239,14 @@ namespace BWYou.Web.MVC.Controllers
             base.Dispose(disposing);
         }
 
-        /// <summary>
-        /// Revalidation for Web Api
-        /// http://stackoverflow.com/questions/12906359/revalidate-model-when-using-webapi-tryvalidatemode-equivalent
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
         protected internal bool TryValidateModel(object model)
         {
             return TryValidateModel(model, "" /* prefix */);
         }
-        /// <summary>
-        /// Revalidation for Web Api
-        /// </summary>
-        /// <param name="model"></param>
-        /// <param name="prefix"></param>
-        /// <returns></returns>
+
         protected internal bool TryValidateModel(object model, string prefix = "")
         {
-            if (model == null)
-            {
-                throw new ArgumentNullException("model");
-            }
-            
-            var context = new ValidationContext(model, null, null);
-            var vrs = new List<ValidationResult>();
-            Validator.TryValidateObject(model, context, vrs, true);
-            foreach (var vr in vrs)
-            {
-                foreach (var member in vr.MemberNames)
-                {
-                    ModelState.AddModelError(prefix + member, vr.ErrorMessage);
-                }
-            }
-
-            return ModelState.IsValid;
+            return Utils.TryValidateModel(ModelState, model, prefix);
         }
     }
 }

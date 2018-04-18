@@ -153,6 +153,7 @@
     <Compile Include="Etc\ExpressionBuilder.cs" />
     <Compile Include="Etc\ExpressionFilter.cs" />
     <Compile Include="Etc\MessageHandler.cs" />
+    <Compile Include="Etc\Utils.cs" />
     <Compile Include="Exceptions\ErrorResultVMException.cs" />
     <Compile Include="Extensions\CustomExtensions.cs" />
     <Compile Include="Extensions\OrderedQueryableExtensions.cs" />
