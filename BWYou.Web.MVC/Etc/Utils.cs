@@ -33,6 +33,7 @@ namespace BWYou.Web.MVC.Etc
                 throw new ArgumentNullException("model");
             }
 
+            bool isValid = true;
             var context = new ValidationContext(model, null, null);
             var vrs = new List<ValidationResult>();
             Validator.TryValidateObject(model, context, vrs, true);
@@ -41,10 +42,11 @@ namespace BWYou.Web.MVC.Etc
                 foreach (var member in vr.MemberNames)
                 {
                     modelState.AddModelError(prefix + member, vr.ErrorMessage);
+                    isValid = false;
                 }
             }
 
-            return modelState.IsValid;
+            return isValid;
         }
     }
 }

@@ -4,8 +4,10 @@
  *  \section info 개발목적
  *          - ASP.NET MVC + Entity Framwork + Identity 공통 처리
  *  \section advenced 추가정보
- *          - Version : 0.3.9.1
+ *          - Version : 0.3.9.2
  *          - Last Updated : 2018.04.18
+ *              -# change Utils.TryValidateModel : return only param model validation result
+ *          - Updated : 2018.04.18 Version : 0.3.9.1
  *              -# add Utils.TryValidateModel
  *          - Updated : 2018.04.13 Version : 0.3.9.0
  *              -# change Web TargetFramework 4.6.1
