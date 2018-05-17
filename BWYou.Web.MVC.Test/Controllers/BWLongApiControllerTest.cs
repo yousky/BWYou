@@ -503,6 +503,32 @@ namespace BWYou.Web.MVC.Test.Controllers
             Assert.AreEqual(products.First().Id, 15);
         }
         [Test]
+        public async Task BaseGetFilteredListAsyncWithInfiniteScrollSortWhenNullValue()
+        {
+            // Arrange
+            var controller = new ProductApiController(new TestContext("TestDBContext"));
+            controller.Request = new HttpRequestMessage();
+            controller.Request.SetConfiguration(new HttpConfiguration());
+            Product searchModel = new Product() { Name = "InfScllList" };
+            string sort = "Id";
+            string limitBaseColName = "Id";
+            long? after = 13;
+            long? before = null;
+            int limit = 2;
+
+            // Act
+            var result = await controller.BaseGetFilteredListAsync(searchModel, sort, limitBaseColName, after, before, limit);
+            var content = await result.Content.ReadAsStringAsync();
+            var products = JsonConvert.DeserializeObject<IEnumerable<Product>>(content);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(result.StatusCode, HttpStatusCode.OK);
+            Assert.AreEqual(products.Count(), 2);
+            Assert.AreEqual(products.Last().Id, 15);
+            Assert.AreEqual(products.First().Id, 14);
+        }
+        [Test]
         public async Task BaseGetAsync()
         {
             // Arrange

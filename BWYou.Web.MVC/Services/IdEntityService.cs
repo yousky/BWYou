@@ -146,16 +146,22 @@ namespace BWYou.Web.MVC.Services
         public virtual async Task<IEnumerable<TEntity>> GetFilteredListAsync(Expression<Func<TEntity, bool>> filter, string sort, string limitBaseColName, TId after, TId before, int limit)
         {
             List<ExpressionFilter> filters = new List<ExpressionFilter>();
-            filters.Add(new ExpressionFilter(limitBaseColName, Op.GreaterThan, after));
-            filters.Add(new ExpressionFilter(limitBaseColName, Op.LessThanOrEqual, before));
+            if (after != null)
+            {
+                filters.Add(new ExpressionFilter(limitBaseColName, Op.GreaterThan, after));
+            }
+            if (before != null)
+            {
+                filters.Add(new ExpressionFilter(limitBaseColName, Op.LessThanOrEqual, before)); 
+            }
 
-            var expr = ExpressionBuilder.GetExpression<TEntity>(filters);
-
-            var a = this._repo.Query.AsExpandable().Where(filter);
-            var b = a.Where(expr);
-            var c = b.SortBy(sort).Take(limit);
-            var d = await c.ToListAsync();
-            return d;
+            var q = this._repo.Query.AsExpandable().Where(filter);
+            if (filters.Count > 0)
+            {
+                var expr = ExpressionBuilder.GetExpression<TEntity>(filters);
+                q = q.Where(expr);
+            }
+            return await q.SortBy(sort).Take(limit).ToListAsync();
         }
         /// <summary>
         /// Expose query objects
