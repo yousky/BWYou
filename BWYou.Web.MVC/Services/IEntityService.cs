@@ -40,6 +40,17 @@ namespace BWYou.Web.MVC.Services
         /// <returns></returns>
         Task<IPagedList<TEntity>> GetFilteredListAsync(TEntity model, string sort, int pageNumber, int pageSize);
         /// <summary>
+        /// Get all sorted filtered lists (for infinite scroll)
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="sort"></param>
+        /// <param name="limitBaseColName">after, before column name</param>
+        /// <param name="after"></param>
+        /// <param name="before"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
+        Task<IEnumerable<TEntity>> GetFilteredListAsync(TEntity model, string sort, string limitBaseColName, TId after, TId before, int limit);
+        /// <summary>
         /// Get all filtered lists
         /// </summary>
         /// <param name="filter"></param>
@@ -61,6 +72,17 @@ namespace BWYou.Web.MVC.Services
         /// <param name="pageSize"></param>
         /// <returns></returns>
         Task<IPagedList<TEntity>> GetFilteredListAsync(Expression<Func<TEntity, bool>> filter, string sort, int pageNumber, int pageSize);
+        /// <summary>
+        /// Get all sorted filtered lists (for infinite scroll)
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <param name="sort"></param>
+        /// <param name="limitBaseColName">after, before column name</param>
+        /// <param name="after"></param>
+        /// <param name="before"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
+        Task<IEnumerable<TEntity>> GetFilteredListAsync(Expression<Func<TEntity, bool>> filter, string sort, string limitBaseColName, TId after, TId before, int limit);
         /// <summary>
         /// Expose query objects
         /// </summary>

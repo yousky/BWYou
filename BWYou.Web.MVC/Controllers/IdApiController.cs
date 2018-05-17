@@ -109,6 +109,21 @@ namespace BWYou.Web.MVC.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, models);
         }
         /// <summary>
+        /// Get all sorted filtered lists (for infinite scroll)
+        /// </summary>
+        /// <param name="searchModel">Search for the same item with a value</param>
+        /// <param name="sort"></param>
+        /// <param name="after"></param>
+        /// <param name="before"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
+        protected virtual async Task<HttpResponseMessage> BaseGetFilteredListAsync(TEntity searchModel, string sort, string limitBaseColName, TId after, TId before, int limit)
+        {
+            var models = await this._service.GetFilteredListAsync(searchModel, sort, limitBaseColName, after, before, limit);
+
+            return Request.CreateResponse(HttpStatusCode.OK, models);
+        }
+        /// <summary>
         /// Get a specific entity
         /// </summary>
         /// <param name="id"></param>

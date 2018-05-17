@@ -4,8 +4,10 @@
  *  \section info 개발목적
  *          - ASP.NET MVC + Entity Framwork + Identity 공통 처리
  *  \section advenced 추가정보
- *          - Version : 0.3.9.2
- *          - Last Updated : 2018.04.18
+ *          - Version : 0.4.0.0
+ *          - Last Updated : 2018.05.17
+ *              -# add Infinite Scroll Feature
+ *          - Updated : 2018.04.18 Version : 0.3.9.2
  *              -# change Utils.TryValidateModel : return only param model validation result
  *          - Updated : 2018.04.18 Version : 0.3.9.1
  *              -# add Utils.TryValidateModel

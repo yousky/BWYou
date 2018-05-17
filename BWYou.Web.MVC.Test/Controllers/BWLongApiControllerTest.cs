@@ -118,6 +118,10 @@ namespace BWYou.Web.MVC.Test.Controllers
             {
                 return base.BaseGetFilteredListAsync(searchModel, page, sort);
             }
+            internal new Task<System.Net.Http.HttpResponseMessage> BaseGetFilteredListAsync(Product searchModel, string sort, string limitBaseColName, long? after, long? before, int limit)
+            {
+                return base.BaseGetFilteredListAsync(searchModel, sort, limitBaseColName, after, before, limit);
+            }
             internal new Task<HttpResponseMessage> BaseGetAsync(long? id)
             {
                 return base.BaseGetAsync(id);
@@ -266,6 +270,30 @@ namespace BWYou.Web.MVC.Test.Controllers
                                      Name = "ps12_2"
                                  }
                              }
+                         },
+                         new Product
+                         {
+                             Id = 13,
+                             Name = "InfScllList",
+                             NotFilterName = "InfScllList1"
+                         },
+                         new Product
+                         {
+                             Id = 14,
+                             Name = "InfScllList",
+                             NotFilterName = "InfScllList2"
+                         },
+                         new Product
+                         {
+                             Id = 15,
+                             Name = "InfScllList",
+                             NotFilterName = "InfScllList3"
+                         },
+                         new Product
+                         {
+                             Id = 16,
+                             Name = "InfScllList",
+                             NotFilterName = "InfScllList4"
                          },
                     });
                 context.SaveChanges();
@@ -447,6 +475,32 @@ namespace BWYou.Web.MVC.Test.Controllers
             Assert.GreaterOrEqual(products.Result.Count(), 2);
             Assert.AreEqual(products.Result.Last().Id, 3);
             Assert.AreEqual(products.MetaData.IsFirstPage, true);
+        }
+        [Test]
+        public async Task BaseGetFilteredListAsyncWithInfiniteScrollSort()
+        {
+            // Arrange
+            var controller = new ProductApiController(new TestContext("TestDBContext"));
+            controller.Request = new HttpRequestMessage();
+            controller.Request.SetConfiguration(new HttpConfiguration());
+            Product searchModel = new Product() { Name = "InfScllList" };
+            string sort = "-Id";
+            string limitBaseColName = "Id";
+            long? after = 13;
+            long? before = 15;
+            int limit = 2;
+
+            // Act
+            var result = await controller.BaseGetFilteredListAsync(searchModel, sort, limitBaseColName, after, before, limit);
+            var content = await result.Content.ReadAsStringAsync();
+            var products = JsonConvert.DeserializeObject<IEnumerable<Product>>(content);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(result.StatusCode, HttpStatusCode.OK);
+            Assert.AreEqual(products.Count(), 2);
+            Assert.AreEqual(products.Last().Id, 14);
+            Assert.AreEqual(products.First().Id, 15);
         }
         [Test]
         public async Task BaseGetAsync()

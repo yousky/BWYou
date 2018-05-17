@@ -84,6 +84,21 @@ namespace BWYou.Web.MVC.Services
             return GetFilteredListAsync(predicate, sort, pageNumber, pageSize);
         }
         /// <summary>
+        /// Get sorted filtered paged lists (for infinite scroll)
+        /// </summary>
+        /// <param name="model">Search for the same item with a value</param>
+        /// <param name="sort"></param>
+        /// <param name="limitBaseColName">after, before column name</param>
+        /// <param name="after"></param>
+        /// <param name="before"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
+        public virtual Task<IEnumerable<TEntity>> GetFilteredListAsync(TEntity model, string sort, string limitBaseColName, TId after, TId before, int limit)
+        {
+            var predicate = model.GetWhereClause();
+            return GetFilteredListAsync(predicate, sort, limitBaseColName, after, before, limit);
+        }
+        /// <summary>
         /// Get all filtered lists
         /// </summary>
         /// <param name="filter"></param>
@@ -117,6 +132,30 @@ namespace BWYou.Web.MVC.Services
                 IOrderedQueryable<TEntity> orderedQueryable = this._repo.Query.AsExpandable().Where(filter).SortBy(sort);
                 return orderedQueryable.ToPagedList(pageNumber, pageSize);
             });
+        }
+        /// <summary>
+        /// Get all sorted filtered lists (for infinite scroll)
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <param name="sort"></param>
+        /// <param name="limitBaseColName">after, before column name</param>
+        /// <param name="after"></param>
+        /// <param name="before"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
+        public virtual async Task<IEnumerable<TEntity>> GetFilteredListAsync(Expression<Func<TEntity, bool>> filter, string sort, string limitBaseColName, TId after, TId before, int limit)
+        {
+            List<ExpressionFilter> filters = new List<ExpressionFilter>();
+            filters.Add(new ExpressionFilter(limitBaseColName, Op.GreaterThan, after));
+            filters.Add(new ExpressionFilter(limitBaseColName, Op.LessThanOrEqual, before));
+
+            var expr = ExpressionBuilder.GetExpression<TEntity>(filters);
+
+            var a = this._repo.Query.AsExpandable().Where(filter);
+            var b = a.Where(expr);
+            var c = b.SortBy(sort).Take(limit);
+            var d = await c.ToListAsync();
+            return d;
         }
         /// <summary>
         /// Expose query objects
