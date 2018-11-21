@@ -2,7 +2,9 @@
 using log4net;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
+using System.Data.Common;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -18,8 +20,38 @@ namespace BWYou.Web.MVC.DAOs
 
         }
 
+        public BWIdentityDbContext(DbCompiledModel model)
+            : base(model)
+        {
+
+        }
+
+        public BWIdentityDbContext(string nameOrConnectionString)
+            : base(nameOrConnectionString)
+        {
+
+        }
+
+        public BWIdentityDbContext(DbConnection existingConnection, bool contextOwnsConnection)
+            : base(existingConnection, contextOwnsConnection)
+        {
+
+        }
+
         public BWIdentityDbContext(string nameOrConnectionString, bool throwIfV1Schema)
             : base(nameOrConnectionString, throwIfV1Schema)
+        {
+
+        }
+
+        public BWIdentityDbContext(string nameOrConnectionString, DbCompiledModel model)
+            : base(nameOrConnectionString, model)
+        {
+
+        }
+
+        public BWIdentityDbContext(DbConnection existingConnection, DbCompiledModel model, bool contextOwnsConnection)
+            : base(existingConnection, model, contextOwnsConnection)
         {
 
         }

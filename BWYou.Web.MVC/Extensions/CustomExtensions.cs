@@ -202,7 +202,7 @@ namespace BWYou.Web.MVC.Extensions
         /// <typeparam name="TSource"></typeparam>
         /// <param name="target"></param>
         /// <param name="source"></param>
-        public static void MapFrom<TTarget, TSource>(this TTarget target, TSource source)
+        public static void MapFrom<TTarget, TSource>(this TTarget target, TSource source, bool ignoreNull = true)
             where TSource : IDbModel
             where TTarget : IModelLoader<TSource>
         {
@@ -236,7 +236,10 @@ namespace BWYou.Web.MVC.Extensions
             foreach (var field in commonFields)
             {
                 var value = source.GetType().GetProperty(field.Name).GetValue(source, null);
-                target.GetType().GetProperty(field.Name).SetValue(target, value, null);
+                if (ignoreNull == false || value != null)
+                {
+                    target.GetType().GetProperty(field.Name).SetValue(target, value, null); 
+                }
             }
 
         }
@@ -247,7 +250,7 @@ namespace BWYou.Web.MVC.Extensions
         /// <typeparam name="TTarget"></typeparam>
         /// <param name="source"></param>
         /// <param name="target"></param>
-        public static void MapFromBindingModelToBaseModel<TSource, TTarget>(this TSource source, TTarget target)
+        public static void MapFromBindingModelToBaseModel<TSource, TTarget>(this TSource source, TTarget target, bool ignoreNull = true)
             where TSource : IBindingModel<TTarget>
             where TTarget : IDbModel
         {
@@ -277,7 +280,10 @@ namespace BWYou.Web.MVC.Extensions
             foreach (var field in commonFields)
             {
                 var value = source.GetType().GetProperty(field.Name).GetValue(source, null);
-                target.GetType().GetProperty(field.Name).SetValue(target, value, null);
+                if (ignoreNull == false || value != null)
+                {
+                    target.GetType().GetProperty(field.Name).SetValue(target, value, null); 
+                }
             }
 
         }

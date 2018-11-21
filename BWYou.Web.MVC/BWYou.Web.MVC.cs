@@ -4,8 +4,12 @@
  *  \section info 개발목적
  *          - ASP.NET MVC + Entity Framwork + Identity 공통 처리
  *  \section advenced 추가정보
- *          - Version : 0.4.0.1
- *          - Last Updated : 2018.05.17
+ *          - Version : 0.4.0.3
+ *          - Last Updated : 2018.11.21
+ *              -# add CustomExtensions의 맵핑 처리에서 null 처리 여부 옵션 추가.
+ *          - Updated : 2018.11.16 Version : 0.4.0.2
+ *              -# add BWIdentityDbContext ctors
+ *          - Updated : 2018.05.17 Version : 0.4.0.1
  *              -# add Infinite Scroll Feature
  *          - Updated : 2018.04.18 Version : 0.3.9.2
  *              -# change Utils.TryValidateModel : return only param model validation result
