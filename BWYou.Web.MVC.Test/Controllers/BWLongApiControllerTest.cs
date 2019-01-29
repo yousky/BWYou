@@ -493,7 +493,7 @@ namespace BWYou.Web.MVC.Test.Controllers
             // Act
             var result = await controller.BaseGetFilteredListAsync(searchModel, sort, limitBaseColName, after, before, limit);
             var content = await result.Content.ReadAsStringAsync();
-            var crvm = JsonConvert.DeserializeObject<CursorResultViewModel<Product>>(content);
+            var crvm = JsonConvert.DeserializeObject<CursorResultViewModel<Product, long?>>(content);
 
             // Assert
             Assert.IsNotNull(result);
@@ -502,8 +502,8 @@ namespace BWYou.Web.MVC.Test.Controllers
             Assert.AreEqual(crvm.Result.Last().Id, 14);
             Assert.AreEqual(crvm.Result.First().Id, 15);
             Assert.GreaterOrEqual(crvm.MetaData.TotalUnlimitItemCount, 2);
-            Assert.AreEqual(crvm.MetaData.Before.Id, 14);
-            Assert.AreEqual(crvm.MetaData.After.Id, 15);
+            Assert.AreEqual(crvm.MetaData.Before, 14);
+            Assert.AreEqual(crvm.MetaData.After, 15);
             Assert.AreEqual(crvm.MetaData.Limit, limit);
             Assert.AreEqual(crvm.MetaData.IsDescending, true);
             Assert.AreEqual(crvm.MetaData.IsRemaining, false);
@@ -525,7 +525,7 @@ namespace BWYou.Web.MVC.Test.Controllers
             // Act
             var result = await controller.BaseGetFilteredListAsync(searchModel, sort, limitBaseColName, after, before, limit);
             var content = await result.Content.ReadAsStringAsync();
-            var crvm = JsonConvert.DeserializeObject<CursorResultViewModel<Product>>(content);
+            var crvm = JsonConvert.DeserializeObject<CursorResultViewModel<Product, long?>>(content);
 
             // Assert
             Assert.IsNotNull(result);
@@ -534,8 +534,8 @@ namespace BWYou.Web.MVC.Test.Controllers
             Assert.AreEqual(crvm.Result.Last().Id, 15);
             Assert.AreEqual(crvm.Result.First().Id, 14);
             Assert.GreaterOrEqual(crvm.MetaData.TotalUnlimitItemCount, 3);
-            Assert.AreEqual(crvm.MetaData.Before.Id, 14);
-            Assert.AreEqual(crvm.MetaData.After.Id, 15);
+            Assert.AreEqual(crvm.MetaData.Before, 14);
+            Assert.AreEqual(crvm.MetaData.After, 15);
             Assert.AreEqual(crvm.MetaData.Limit, limit);
             Assert.AreEqual(crvm.MetaData.IsDescending, false);
             Assert.AreEqual(crvm.MetaData.IsRemaining, true);
