@@ -162,11 +162,7 @@ namespace BWYou.Web.MVC.Services
                 var expr = ExpressionBuilder.GetExpression<TEntity>(filters);
                 q = q.Where(expr);
             }
-
-            var unlimitCnt = await q.LongCountAsync();
-            var limitListResult = await q.SortBy(sort).Take(limit).ToListAsync();
-            var cmd = new CursorMetaData<TEntity>(limitListResult, sort, limit, unlimitCnt);
-            var crvm = new CursorResultViewModel<TEntity>(limitListResult, cmd);
+            var crvm = await CursorResultViewModel<TEntity>.BuildAsync(q, sort, limit);
 
             return crvm;
         }

@@ -1,6 +1,10 @@
-﻿using BWYou.Web.MVC.Models;
+﻿using BWYou.Web.MVC.Extensions;
+using BWYou.Web.MVC.Models;
 using PagedList;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace BWYou.Web.MVC.ViewModels
 {
@@ -42,6 +46,15 @@ namespace BWYou.Web.MVC.ViewModels
         {
             this.Result = result;
             this.MetaData = MetaData;
+        }
+        public static async Task<CursorResultViewModel<TEntity>> BuildAsync(IQueryable<TEntity> query, string sortOrder, int limit)
+        {
+            var unlimitCnt = await query.LongCountAsync();
+            var limitListResult = await query.SortBy(sortOrder).Take(limit).ToListAsync();
+            var cmd = new CursorMetaData<TEntity>(limitListResult, sortOrder, limit, unlimitCnt);
+            var crvm = new CursorResultViewModel<TEntity>(limitListResult, cmd);
+
+            return crvm;
         }
     }
 }
