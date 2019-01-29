@@ -6,8 +6,7 @@ using System.Linq;
 
 namespace BWYou.Web.MVC.ViewModels
 {
-    public class CursorMetaData<TEntity, TId>
-        where TEntity : IIdModel<TId>
+    public class CursorMetaData<TEntity>
     {
         #region CursorInfo
 

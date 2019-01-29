@@ -493,7 +493,7 @@ namespace BWYou.Web.MVC.Test.Controllers
             // Act
             var result = await controller.BaseGetFilteredListAsync(searchModel, sort, limitBaseColName, after, before, limit);
             var content = await result.Content.ReadAsStringAsync();
-            var crvm = JsonConvert.DeserializeObject<CursorResultViewModel<Product, long?>>(content);
+            var crvm = JsonConvert.DeserializeObject<CursorResultViewModel<Product>>(content);
 
             // Assert
             Assert.IsNotNull(result);
@@ -525,7 +525,7 @@ namespace BWYou.Web.MVC.Test.Controllers
             // Act
             var result = await controller.BaseGetFilteredListAsync(searchModel, sort, limitBaseColName, after, before, limit);
             var content = await result.Content.ReadAsStringAsync();
-            var crvm = JsonConvert.DeserializeObject<CursorResultViewModel<Product, long?>>(content);
+            var crvm = JsonConvert.DeserializeObject<CursorResultViewModel<Product>>(content);
 
             // Assert
             Assert.IsNotNull(result);

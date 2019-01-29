@@ -8,8 +8,7 @@ namespace BWYou.Web.MVC.ViewModels
     /// 커서 형태의 정보 저장용 클래스
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
-    public class CursorResultViewModel<TEntity, TId>
-        where TEntity : IIdModel<TId>
+    public class CursorResultViewModel<TEntity>
     {
         /// <summary>
         /// 페이지 결과 객체
@@ -18,7 +17,7 @@ namespace BWYou.Web.MVC.ViewModels
         /// <summary>
         /// 페이지 메타 정보
         /// </summary>
-        public CursorMetaData<TEntity, TId> MetaData { get; set; }
+        public CursorMetaData<TEntity> MetaData { get; set; }
         /// <summary>
         /// 기본 생성자
         /// </summary>
@@ -39,7 +38,7 @@ namespace BWYou.Web.MVC.ViewModels
         /// </summary>
         /// <param name="result"></param>
         /// <param name="MetaData"></param>
-        public CursorResultViewModel(IEnumerable<TEntity> result, CursorMetaData<TEntity, TId> MetaData)
+        public CursorResultViewModel(IEnumerable<TEntity> result, CursorMetaData<TEntity> MetaData)
         {
             this.Result = result;
             this.MetaData = MetaData;
