@@ -178,7 +178,9 @@
     <Compile Include="Services\IEntityService.cs" />
     <Compile Include="ViewModels\ErrorResultViewModel.cs" />
     <Compile Include="ViewModels\IModelLoader.cs" />
+    <Compile Include="ViewModels\CursorMetaData.cs" />
     <Compile Include="ViewModels\MetaData.cs" />
+    <Compile Include="ViewModels\CursorResultViewModel.cs" />
     <Compile Include="ViewModels\PageResultViewModel.cs" />
     <Compile Include="ViewModels\ValidationObjectError.cs" />
     <Compile Include="ViewModels\WebStatusMessageBody.cs" />

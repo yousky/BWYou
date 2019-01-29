@@ -1,4 +1,5 @@
 ﻿using BWYou.Web.MVC.Models;
+using BWYou.Web.MVC.ViewModels;
 using PagedList;
 using System;
 using System.Collections.Generic;
@@ -49,7 +50,7 @@ namespace BWYou.Web.MVC.Services
         /// <param name="before"></param>
         /// <param name="limit"></param>
         /// <returns></returns>
-        Task<IEnumerable<TEntity>> GetFilteredListAsync(TEntity model, string sort, string limitBaseColName, TId after, TId before, int limit);
+        Task<CursorResultViewModel<TEntity>> GetFilteredListAsync(TEntity model, string sort, string limitBaseColName, TId after, TId before, int limit);
         /// <summary>
         /// Get all filtered lists
         /// </summary>
@@ -82,7 +83,7 @@ namespace BWYou.Web.MVC.Services
         /// <param name="before"></param>
         /// <param name="limit"></param>
         /// <returns></returns>
-        Task<IEnumerable<TEntity>> GetFilteredListAsync(Expression<Func<TEntity, bool>> filter, string sort, string limitBaseColName, TId after, TId before, int limit);
+        Task<CursorResultViewModel<TEntity>> GetFilteredListAsync(Expression<Func<TEntity, bool>> filter, string sort, string limitBaseColName, TId after, TId before, int limit);
         /// <summary>
         /// Expose query objects
         /// </summary>

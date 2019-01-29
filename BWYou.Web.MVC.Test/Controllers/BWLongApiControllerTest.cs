@@ -487,20 +487,26 @@ namespace BWYou.Web.MVC.Test.Controllers
             string sort = "-Id";
             string limitBaseColName = "Id";
             long? after = 13;
-            long? before = 15;
+            long? before = 16;
             int limit = 2;
 
             // Act
             var result = await controller.BaseGetFilteredListAsync(searchModel, sort, limitBaseColName, after, before, limit);
             var content = await result.Content.ReadAsStringAsync();
-            var products = JsonConvert.DeserializeObject<IEnumerable<Product>>(content);
+            var crvm = JsonConvert.DeserializeObject<CursorResultViewModel<Product>>(content);
 
             // Assert
             Assert.IsNotNull(result);
             Assert.AreEqual(result.StatusCode, HttpStatusCode.OK);
-            Assert.AreEqual(products.Count(), 2);
-            Assert.AreEqual(products.Last().Id, 14);
-            Assert.AreEqual(products.First().Id, 15);
+            Assert.AreEqual(crvm.Result.Count(), 2);
+            Assert.AreEqual(crvm.Result.Last().Id, 14);
+            Assert.AreEqual(crvm.Result.First().Id, 15);
+            Assert.GreaterOrEqual(crvm.MetaData.TotalUnlimitItemCount, 2);
+            Assert.AreEqual(crvm.MetaData.Before.Id, 14);
+            Assert.AreEqual(crvm.MetaData.After.Id, 15);
+            Assert.AreEqual(crvm.MetaData.Limit, limit);
+            Assert.AreEqual(crvm.MetaData.IsDescending, true);
+            Assert.AreEqual(crvm.MetaData.IsRemaining, false);
         }
         [Test]
         public async Task BaseGetFilteredListAsyncWithInfiniteScrollSortWhenNullValue()
@@ -519,14 +525,20 @@ namespace BWYou.Web.MVC.Test.Controllers
             // Act
             var result = await controller.BaseGetFilteredListAsync(searchModel, sort, limitBaseColName, after, before, limit);
             var content = await result.Content.ReadAsStringAsync();
-            var products = JsonConvert.DeserializeObject<IEnumerable<Product>>(content);
+            var crvm = JsonConvert.DeserializeObject<CursorResultViewModel<Product>>(content);
 
             // Assert
             Assert.IsNotNull(result);
             Assert.AreEqual(result.StatusCode, HttpStatusCode.OK);
-            Assert.AreEqual(products.Count(), 2);
-            Assert.AreEqual(products.Last().Id, 15);
-            Assert.AreEqual(products.First().Id, 14);
+            Assert.AreEqual(crvm.Result.Count(), 2);
+            Assert.AreEqual(crvm.Result.Last().Id, 15);
+            Assert.AreEqual(crvm.Result.First().Id, 14);
+            Assert.GreaterOrEqual(crvm.MetaData.TotalUnlimitItemCount, 3);
+            Assert.AreEqual(crvm.MetaData.Before.Id, 14);
+            Assert.AreEqual(crvm.MetaData.After.Id, 15);
+            Assert.AreEqual(crvm.MetaData.Limit, limit);
+            Assert.AreEqual(crvm.MetaData.IsDescending, false);
+            Assert.AreEqual(crvm.MetaData.IsRemaining, true);
         }
         [Test]
         public async Task BaseGetAsync()

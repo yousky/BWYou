@@ -3,6 +3,7 @@ using BWYou.Web.MVC.DAOs;
 using BWYou.Web.MVC.Etc;
 using BWYou.Web.MVC.Extensions;
 using BWYou.Web.MVC.Models;
+using BWYou.Web.MVC.ViewModels;
 using LinqKit;
 using PagedList;
 using System;
@@ -93,7 +94,7 @@ namespace BWYou.Web.MVC.Services
         /// <param name="before"></param>
         /// <param name="limit"></param>
         /// <returns></returns>
-        public virtual Task<IEnumerable<TEntity>> GetFilteredListAsync(TEntity model, string sort, string limitBaseColName, TId after, TId before, int limit)
+        public virtual Task<CursorResultViewModel<TEntity>> GetFilteredListAsync(TEntity model, string sort, string limitBaseColName, TId after, TId before, int limit)
         {
             var predicate = model.GetWhereClause();
             return GetFilteredListAsync(predicate, sort, limitBaseColName, after, before, limit);
@@ -140,10 +141,10 @@ namespace BWYou.Web.MVC.Services
         /// <param name="sort"></param>
         /// <param name="limitBaseColName">after, before column name</param>
         /// <param name="after"></param>
-        /// <param name="before"></param>
+        /// <param name="before">해당 </param>
         /// <param name="limit"></param>
         /// <returns></returns>
-        public virtual async Task<IEnumerable<TEntity>> GetFilteredListAsync(Expression<Func<TEntity, bool>> filter, string sort, string limitBaseColName, TId after, TId before, int limit)
+        public virtual async Task<CursorResultViewModel<TEntity>> GetFilteredListAsync(Expression<Func<TEntity, bool>> filter, string sort, string limitBaseColName, TId after, TId before, int limit)
         {
             List<ExpressionFilter> filters = new List<ExpressionFilter>();
             if (after != null)
@@ -152,7 +153,7 @@ namespace BWYou.Web.MVC.Services
             }
             if (before != null)
             {
-                filters.Add(new ExpressionFilter(limitBaseColName, Op.LessThanOrEqual, before)); 
+                filters.Add(new ExpressionFilter(limitBaseColName, Op.LessThan, before));
             }
 
             var q = this._repo.Query.AsExpandable().Where(filter);
@@ -161,7 +162,13 @@ namespace BWYou.Web.MVC.Services
                 var expr = ExpressionBuilder.GetExpression<TEntity>(filters);
                 q = q.Where(expr);
             }
-            return await q.SortBy(sort).Take(limit).ToListAsync();
+
+            var unlimitCnt = await q.LongCountAsync();
+            var limitListResult = await q.SortBy(sort).Take(limit).ToListAsync();
+            var cmd = new CursorMetaData<TEntity>(limitListResult, sort, limit, unlimitCnt);
+            var crvm = new CursorResultViewModel<TEntity>(limitListResult, cmd);
+
+            return crvm;
         }
         /// <summary>
         /// Expose query objects
