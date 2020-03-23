@@ -110,6 +110,17 @@
             <param name="sort"></param>
             <returns></returns>
         </member>
+        <member name="M:BWYou.Web.MVC.Controllers.IdApiController`2.BaseGetFilteredListAsync(`0,System.String,System.String,`1,`1,System.Int32)">
+            <summary>
+            Get all sorted filtered lists (for infinite scroll)
+            </summary>
+            <param name="searchModel">Search for the same item with a value</param>
+            <param name="sort"></param>
+            <param name="after"></param>
+            <param name="before"></param>
+            <param name="limit"></param>
+            <returns></returns>
+        </member>
         <member name="M:BWYou.Web.MVC.Controllers.IdApiController`2.BaseGetAsync(`1)">
             <summary>
             Get a specific entity
@@ -497,7 +508,7 @@
             <param name="source"></param>
             <param name="seen"></param>
         </member>
-        <member name="M:BWYou.Web.MVC.Extensions.CustomExtensions.MapFrom``2(``0,``1)">
+        <member name="M:BWYou.Web.MVC.Extensions.CustomExtensions.MapFrom``2(``0,``1,System.Boolean)">
             <summary>
             CascadeRelationAttribute 가 아닌 동일 이름의 property의 값을 소스에서 타겟으로 복사한다.
             </summary>
@@ -506,7 +517,7 @@
             <param name="target"></param>
             <param name="source"></param>
         </member>
-        <member name="M:BWYou.Web.MVC.Extensions.CustomExtensions.MapFromBindingModelToBaseModel``2(``0,``1)">
+        <member name="M:BWYou.Web.MVC.Extensions.CustomExtensions.MapFromBindingModelToBaseModel``2(``0,``1,System.Boolean)">
             <summary>
             동일 이름의 property의 값을 소스에서 타겟으로 복사한다.
             </summary>
@@ -601,6 +612,18 @@
             <param name="pageSize"></param>
             <returns></returns>
         </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.GetFilteredListAsync(`0,System.String,System.String,`1,`1,System.Int32)">
+            <summary>
+            Get all sorted filtered lists (for infinite scroll)
+            </summary>
+            <param name="model"></param>
+            <param name="sort"></param>
+            <param name="limitBaseColName">after, before column name</param>
+            <param name="after"></param>
+            <param name="before"></param>
+            <param name="limit"></param>
+            <returns></returns>
+        </member>
         <member name="M:BWYou.Web.MVC.Services.IEntityService`2.GetFilteredListAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
             Get all filtered lists
@@ -624,6 +647,18 @@
             <param name="sort"></param>
             <param name="pageNumber"></param>
             <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IEntityService`2.GetFilteredListAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.String,System.String,`1,`1,System.Int32)">
+            <summary>
+            Get all sorted filtered lists (for infinite scroll)
+            </summary>
+            <param name="filter"></param>
+            <param name="sort"></param>
+            <param name="limitBaseColName">after, before column name</param>
+            <param name="after"></param>
+            <param name="before"></param>
+            <param name="limit"></param>
             <returns></returns>
         </member>
         <member name="M:BWYou.Web.MVC.Services.IEntityService`2.Query">
@@ -786,6 +821,18 @@
             <param name="pageSize"></param>
             <returns></returns>
         </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.GetFilteredListAsync(`0,System.String,System.String,`1,`1,System.Int32)">
+            <summary>
+            Get sorted filtered paged lists (for infinite scroll)
+            </summary>
+            <param name="model">Search for the same item with a value</param>
+            <param name="sort"></param>
+            <param name="limitBaseColName">after, before column name</param>
+            <param name="after"></param>
+            <param name="before"></param>
+            <param name="limit"></param>
+            <returns></returns>
+        </member>
         <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.GetFilteredListAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
             Get all filtered lists
@@ -809,6 +856,18 @@
             <param name="sort"></param>
             <param name="pageNumber"></param>
             <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.GetFilteredListAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.String,System.String,`1,`1,System.Int32)">
+            <summary>
+            Get all sorted filtered lists (for infinite scroll)
+            </summary>
+            <param name="filter"></param>
+            <param name="sort"></param>
+            <param name="limitBaseColName">after, before column name</param>
+            <param name="after"></param>
+            <param name="before">해당 </param>
+            <param name="limit"></param>
             <returns></returns>
         </member>
         <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.Query">
@@ -978,6 +1037,45 @@
         <member name="M:BWYou.Web.MVC.Services.IdEntityService`2.Dispose">
             <summary>
             Dispose
+            </summary>
+        </member>
+        <member name="P:BWYou.Web.MVC.ViewModels.CursorMetaData`1.TotalUnlimitItemCount">
+            <summary>
+            검색 범위에 해당하는 전체 개수
+            </summary>
+        </member>
+        <member name="T:BWYou.Web.MVC.ViewModels.CursorResultViewModel`1">
+            <summary>
+            커서 형태의 정보 저장용 클래스
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:BWYou.Web.MVC.ViewModels.CursorResultViewModel`1.#ctor">
+            <summary>
+            기본 생성자
+            </summary>
+        </member>
+        <member name="M:BWYou.Web.MVC.ViewModels.CursorResultViewModel`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            결과 객체 저장용 생성자. 메타 정보는 직접 주입 필요.
+            </summary>
+            <param name="result"></param>
+        </member>
+        <member name="M:BWYou.Web.MVC.ViewModels.CursorResultViewModel`1.#ctor(System.Collections.Generic.IEnumerable{`0},BWYou.Web.MVC.ViewModels.CursorMetaData{`0})">
+            <summary>
+            결과 객체와 메타 정보를 한번에 저장하기 위한 생성자
+            </summary>
+            <param name="result"></param>
+            <param name="MetaData"></param>
+        </member>
+        <member name="P:BWYou.Web.MVC.ViewModels.CursorResultViewModel`1.Result">
+            <summary>
+            페이지 결과 객체
+            </summary>
+        </member>
+        <member name="P:BWYou.Web.MVC.ViewModels.CursorResultViewModel`1.MetaData">
+            <summary>
+            페이지 메타 정보
             </summary>
         </member>
         <member name="T:BWYou.Web.MVC.ViewModels.PageResultViewModel`1">
