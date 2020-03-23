@@ -38,14 +38,6 @@ namespace BWYou.Web.MVC.Controllers
             // Logs error no matter what
             if (filterContext.Exception != null)
             {
-                message = string.Format(CultureInfo.InvariantCulture,
-                                            "Exception occured {0}.{1} => {2} \r\n {3}",
-                                            filterContext.Controller.GetType().Name,
-                                            filterContext.ActionDescriptor.ActionName.Trim(),
-                                            filterContext.Exception.Message,
-                                            filterContext.Exception.StackTrace);
-                logger.Error(message);
-
                 try
                 {
                     message = string.Format(CultureInfo.InvariantCulture,
@@ -54,7 +46,7 @@ namespace BWYou.Web.MVC.Controllers
                                                 filterContext.ActionDescriptor.ActionName.Trim(),
                                                 filterContext.Exception.Message,
                                                 filterContext.Exception.StackTrace);
-                    logger.Error(message);
+                    logger.Error(message, filterContext.Exception);
                 }
                 catch (System.Exception ex)
                 {
@@ -65,7 +57,7 @@ namespace BWYou.Web.MVC.Controllers
                                         ex.Message,
                                         ex.StackTrace);
 
-                    logger.Error(message);
+                    logger.Error(message, ex);
                 }
             }
 

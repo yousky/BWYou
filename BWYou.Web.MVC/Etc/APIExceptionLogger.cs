@@ -50,7 +50,7 @@ namespace BWYou.Web.MVC.Etc
                                             context.Exception.Message,
                                             context.Exception.StackTrace);
 
-                        logger.Error(message);
+                        logger.Error(message, context.Exception);
                     }
                     catch (Exception ex)
                     {
@@ -61,7 +61,7 @@ namespace BWYou.Web.MVC.Etc
                                             ex.Message,
                                             ex.StackTrace);
 
-                        logger.Error(message);
+                        logger.Error(message, ex);
                     }
                 }
             }
@@ -72,7 +72,7 @@ namespace BWYou.Web.MVC.Etc
                                             ex.Message,
                                             ex.StackTrace);
 
-                logger.Error(message);
+                logger.Error(message, ex);
             }
         }
     }

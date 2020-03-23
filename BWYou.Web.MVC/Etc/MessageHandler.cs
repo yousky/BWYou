@@ -17,11 +17,10 @@ namespace BWYou.Web.MVC.Etc
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
+            var corrId = string.Format("{0}{1}", DateTime.UtcNow.Ticks, Thread.CurrentThread.ManagedThreadId);
+            var requestInfo = string.Format("{0} {1}", request.Method, request.RequestUri);
             try
             {
-                var corrId = string.Format("{0}{1}", DateTime.UtcNow.Ticks, Thread.CurrentThread.ManagedThreadId);
-                var requestInfo = string.Format("{0} {1}", request.Method, request.RequestUri);
-
                 var requestMessage = request.Content.Headers.ContentLength < 1024 ?
                                             await request.Content.ReadAsByteArrayAsync()
                                             : Encoding.UTF8.GetBytes(string.Format("ContentLength = {0}", request.Content.Headers.ContentLength));    //1k 넘으면 내용 출력 안 하도록 하기.
@@ -43,6 +42,13 @@ namespace BWYou.Web.MVC.Etc
 
                 return response;
             }
+            catch (OperationCanceledException ex)
+            {
+                var message = string.Format("{0} - Request: {1}\r\n OperationCanceledException : {2}", corrId, requestInfo, ex.Message);
+
+                logger.Info(message);
+                throw ex;
+            }
             catch (Exception ex)
             {
                 var message = string.Format(CultureInfo.InvariantCulture,
@@ -50,7 +56,7 @@ namespace BWYou.Web.MVC.Etc
                             ex.Message,
                             ex.StackTrace);
 
-                logger.Error(message);
+                logger.Error(message, ex);
                 throw ex;
             }
         }
